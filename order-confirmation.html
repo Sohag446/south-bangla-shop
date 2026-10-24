@@ -1,0 +1,176 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Order Confirmation & Invoice | South Bangla Computers</title>
+  <meta name="description" content="Simulated order receipt and delivery status tracking for South Bangla Computers prototype.">
+  <link rel="stylesheet" href="css/tokens.css">
+  <link rel="stylesheet" href="css/base.css">
+  <link rel="stylesheet" href="css/layout.css">
+  <link rel="stylesheet" href="css/components.css">
+  <link rel="stylesheet" href="css/print.css" media="print">
+</head>
+<body data-root="" data-page="order-confirmation">
+  <a href="#main-content" class="sbc-skip-link">Skip to main content</a>
+  <div id="sbc-header"></div>
+
+  <main id="main-content" class="l-container" style="padding-top: var(--sp-6); padding-bottom: var(--sp-12);">
+    <div id="confirmation-content" style="max-width: 800px; margin: 0 auto;">
+      <!-- Populated via JS -->
+    </div>
+  </main>
+
+  <div id="sbc-footer"></div>
+  <div id="sbc-toast" role="status" aria-live="polite"></div>
+
+  <!-- Standard Prototype Scripts -->
+  <script defer src="js/config.js"></script>
+  <script defer src="js/i18n/en.js"></script>
+  <script defer src="js/core/util.js"></script>
+  <script defer src="js/core/storage.js"></script>
+  <script defer src="data/categories.js"></script>
+  <script defer src="data/brands.js"></script>
+  <script defer src="data/branches.js"></script>
+  <script defer src="data/news.js"></script>
+  <script defer src="data/faq.js"></script>
+  <script defer src="data/downloads.js"></script>
+  <script defer src="data/districts.js"></script>
+  <script defer src="data/configurator-rules.js"></script>
+  <script defer src="data/site-claims.js"></script>
+  <script defer src="data/users.js"></script>
+  <script defer src="data/products.js"></script>
+  <script defer src="js/core/store.js"></script>
+  <script defer src="js/core/validate.js"></script>
+  <script defer src="js/core/ui.js"></script>
+  <script defer src="js/layout.js"></script>
+  <script defer src="js/search.js"></script>
+  <script defer src="js/cards.js"></script>
+  <script defer src="js/demo.js"></script>
+
+  <script defer>
+    window.addEventListener("SBC:ready", function () {
+      const util = window.SBC.util;
+      const store = window.SBC.store;
+      const ui = window.SBC.ui;
+
+      const orderId = util.getQueryParam("id");
+      const orders = store.getOrders();
+      let order = orders.find(o => o.id === orderId);
+
+      // Fallback to latest order if none specified
+      if (!order && orders.length > 0) order = orders[0];
+
+      const wrap = document.getElementById("confirmation-content");
+      if (!order) {
+        wrap.innerHTML = `
+          <div style="text-align:center;padding:60px 20px;background:#fff;border-radius:var(--r-lg);border:1px solid var(--gray-200);">
+            <h2 style="font-size:var(--fs-h3);margin-bottom:8px;">No Order Found</h2>
+            <p style="color:var(--c-text-muted);font-size:var(--fs-sm);margin-bottom:20px;">We couldn't locate this order in your local demo history.</p>
+            <a href="products.html" class="sbc-btn sbc-btn--primary">Browse Products</a>
+          </div>
+        `;
+        return;
+      }
+
+      wrap.innerHTML = `
+        <!-- Success Banner -->
+        <div style="background:#F0FDF4;border:1px solid #BBF7D0;border-radius:var(--r-lg);padding:24px;text-align:center;margin-bottom:var(--sp-6);">
+          <div style="color:var(--green-700);margin-bottom:8px;">${ui.icon("check-circle", "xl")}</div>
+          <h1 style="font-size:var(--fs-h2);color:var(--green-800);margin:0 0 8px;">Order Placed Successfully!</h1>
+          <p style="font-size:14px;color:#166534;margin:0 0 16px;">
+            Thank you for ordering with South Bangla Computers. A simulation confirmation SMS has been prepared.
+          </p>
+          <div style="display:inline-flex;gap:12px;background:#fff;padding:8px 16px;border-radius:var(--r-md);border:1px solid #BBF7D0;font-size:13px;">
+            <span>Order Reference: <strong>${util.esc(order.id)}</strong></span>
+            <span>&bull;</span>
+            <span>Date: <strong>${new Date(order.createdAt).toLocaleDateString()}</strong></span>
+          </div>
+        </div>
+
+        <!-- Printable Invoice Box -->
+        <div class="sbc-invoice-print-area" style="background:#fff;border:1px solid var(--gray-200);border-radius:var(--r-lg);padding:var(--sp-8);box-shadow:var(--sh-sm);margin-bottom:var(--sp-8);">
+          <div style="display:flex;justify-content:space-between;align-items:flex-start;border-bottom:2px solid var(--navy-900);padding-bottom:16px;margin-bottom:20px;">
+            <div>
+              <h2 style="font-size:20px;color:var(--navy-900);margin:0 0 4px;font-weight:800;">South Bangla Computers</h2>
+              <p style="font-size:12px;color:var(--c-text-muted);margin:0;">
+                Striving For ICT Excellence Since 1999<br>
+                Computer City Center (Multiplan), New Elephant Road, Dhaka
+              </p>
+            </div>
+            <div style="text-align:right;">
+              <span class="sbc-badge sbc-badge--in-stock" style="margin-bottom:6px;">${order.status.toUpperCase()}</span>
+              <div style="font-size:13px;font-weight:700;">INVOICE #${util.esc(order.id)}</div>
+            </div>
+          </div>
+
+          <div style="display:grid;grid-template-columns:1fr 1fr;gap:20px;font-size:13px;margin-bottom:24px;">
+            <div>
+              <strong style="color:var(--navy-900);display:block;margin-bottom:4px;">Customer & Delivery:</strong>
+              <div>${util.esc(order.customer ? order.customer.name : 'Valued Customer')}</div>
+              <div>${util.esc(order.customer ? order.customer.phone : '')}</div>
+              <div>${util.esc(order.delivery ? order.delivery.address : 'Standard Delivery')}</div>
+            </div>
+            <div style="text-align:right;">
+              <strong style="color:var(--navy-900);display:block;margin-bottom:4px;">Order Details:</strong>
+              <div>Payment: <strong>${util.esc(order.paymentMethod || 'Cash on Delivery')}</strong></div>
+              <div>Delivery: <strong>${order.deliveryMethod === 'pickup' ? 'Showroom Pickup' : 'Courier Delivery'}</strong></div>
+            </div>
+          </div>
+
+          <table class="sbc-table" style="font-size:13px;margin-bottom:20px;">
+            <thead>
+              <tr>
+                <th>Item & Description</th>
+                <th style="text-align:center;">Qty</th>
+                <th style="text-align:right;">Unit Price</th>
+                <th style="text-align:right;">Amount</th>
+              </tr>
+            </thead>
+            <tbody>
+              ${order.items.map(it => `
+                <tr>
+                  <td>
+                    <strong>${util.esc(it.product.name)}</strong>
+                    <div style="font-size:11px;color:var(--c-text-muted);">Model: ${util.esc(it.product.model)}</div>
+                  </td>
+                  <td style="text-align:center;">${it.qty}</td>
+                  <td style="text-align:right;">${util.formatBDT(it.unitPrice)}</td>
+                  <td style="text-align:right;">${util.formatBDT(it.lineTotal)}</td>
+                </tr>
+              `).join("")}
+            </tbody>
+          </table>
+
+          <div style="display:flex;justify-content:flex-end;">
+            <div style="width:260px;font-size:13px;">
+              <div style="display:flex;justify-content:space-between;margin-bottom:6px;">
+                <span>Subtotal:</span><strong>${util.formatBDT(order.subtotal)}</strong>
+              </div>
+              <div style="display:flex;justify-content:space-between;margin-bottom:8px;">
+                <span>Delivery:</span><strong>${util.formatBDT(order.deliveryFee)}</strong>
+              </div>
+              <div style="border-top:2px solid var(--gray-200);padding-top:8px;display:flex;justify-content:space-between;font-size:16px;font-weight:800;color:var(--navy-900);">
+                <span>Total Paid/Due:</span><span>${util.formatBDT(order.total)}</span>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Action Buttons -->
+        <div style="display:flex;gap:12px;justify-content:center;flex-wrap:wrap;">
+          <button class="sbc-btn sbc-btn--primary" onclick="window.print()">
+            ${ui.icon("printer", "sm")} Print Invoice
+          </button>
+          <a href="${util.U('account/orders.html')}" class="sbc-btn sbc-btn--outline">
+            Track in My Account
+          </a>
+          <a href="products.html" class="sbc-btn sbc-btn--ghost">
+            Continue Shopping &rarr;
+          </a>
+        </div>
+      `;
+    });
+  </script>
+</body>
+</html>

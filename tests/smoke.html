@@ -1,0 +1,145 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <title>SBC Data Smoke Test | Antigravity</title>
+  <style>
+    body { font-family: system-ui, -apple-system, sans-serif; max-width: 900px; margin: 40px auto; padding: 20px; line-height: 1.5; color: #111827; }
+    h1 { color: #0B1F3A; font-size: 24px; border-bottom: 2px solid #E5E7EB; padding-bottom: 12px; margin-bottom: 20px; }
+    .test-card { padding: 12px 16px; margin-bottom: 10px; border-radius: 6px; display: flex; align-items: center; justify-content: space-between; font-size: 14px; }
+    .test-pass { background: #ECFDF5; border-left: 4px solid #0B7A52; color: #065F46; }
+    .test-fail { background: #FEF2F2; border-left: 4px solid #DC2626; color: #991B1B; font-weight: bold; }
+    .badge { padding: 3px 8px; border-radius: 4px; font-weight: bold; font-size: 12px; }
+    .badge-pass { background: #0B7A52; color: #fff; }
+    .badge-fail { background: #DC2626; color: #fff; }
+    .summary { margin-top: 24px; padding: 16px; background: #F3F5F8; border-radius: 8px; font-size: 16px; font-weight: bold; }
+    a { color: #1558D6; text-decoration: none; font-weight: 600; }
+  </style>
+</head>
+<body>
+  <h1>South Bangla Computers — Data Integrity Smoke Test (§13.12)</h1>
+  <p><a href="../index.html">&larr; Back to Homepage</a></p>
+  <div id="results">Running tests...</div>
+  <div id="summary" class="summary"></div>
+
+  <!-- Load all data files -->
+  <script src="../data/categories.js"></script>
+  <script src="../data/brands.js"></script>
+  <script src="../data/branches.js"></script>
+  <script src="../data/news.js"></script>
+  <script src="../data/faq.js"></script>
+  <script src="../data/downloads.js"></script>
+  <script src="../data/districts.js"></script>
+  <script src="../data/configurator-rules.js"></script>
+  <script src="../data/site-claims.js"></script>
+  <script src="../data/users.js"></script>
+  <script src="../data/products.js"></script>
+
+  <script>
+    (function () {
+      const resultsDiv = document.getElementById('results');
+      const summaryDiv = document.getElementById('summary');
+      const D = window.SBC_DATA || {};
+      const prods = D.products || [];
+      const cats = D.categories || [];
+      const brands = D.brands || [];
+
+      const tests = [];
+      function assert(name, condition, details) {
+        tests.push({ name, passed: !!condition, details: details || '' });
+      }
+
+      // 1. Unique product IDs
+      const ids = new Set();
+      let duplicateId = null;
+      for (const p of prods) {
+        if (ids.has(p.id)) { duplicateId = p.id; break; }
+        ids.add(p.id);
+      }
+      assert("Unique Product IDs", !duplicateId, duplicateId ? `Duplicate: ${duplicateId}` : `All ${prods.length} IDs unique`);
+
+      // 2. Existing Category & Brand
+      const catSlugs = new Set(cats.map(c => c.slug));
+      const brandSlugs = new Set(brands.map(b => b.slug));
+      let missingCat = null;
+      let missingBrand = null;
+      for (const p of prods) {
+        if (!catSlugs.has(p.category)) { missingCat = `${p.id} -> ${p.category}`; break; }
+        if (!brandSlugs.has(p.brand)) { missingBrand = `${p.id} -> ${p.brand}`; break; }
+      }
+      assert("Every Product Has Valid Category", !missingCat, missingCat || `Verified across ${prods.length} items`);
+      assert("Every Product Has Valid Brand", !missingBrand, missingBrand || `Verified across ${prods.length} items`);
+
+      // 3. Every Alternative ID Exists
+      let invalidAlt = null;
+      for (const p of prods) {
+        if (Array.isArray(p.alternatives)) {
+          for (const alt of p.alternatives) {
+            if (!ids.has(alt)) { invalidAlt = `${p.id} has unknown alternative '${alt}'`; break; }
+          }
+        }
+        if (invalidAlt) break;
+      }
+      assert("All Product Alternatives Exist", !invalidAlt, invalidAlt || "All cross-references resolve");
+
+      // 4. Every Category has >= 1 Product
+      const catCounts = {};
+      cats.forEach(c => catCounts[c.slug] = 0);
+      prods.forEach(p => { if (catCounts[p.category] !== undefined) catCounts[p.category]++; });
+      const emptyCats = cats.filter(c => catCounts[c.slug] === 0).map(c => c.slug);
+      assert("Every Category Has >= 1 Product", emptyCats.length === 0, emptyCats.length ? `Empty: ${emptyCats.join(', ')}` : "All 10 categories populated");
+
+      // 5. Required Status Mix (§12.5)
+      const quoteOnlyCount = prods.filter(p => p.price && p.price.quoteOnly).length;
+      assert("Status Mix: >= 6 Quote-Only Products", quoteOnlyCount >= 6, `Found: ${quoteOnlyCount}`);
+
+      const outOfStockCount = prods.filter(p => p.status === 'out-of-stock').length;
+      assert("Status Mix: >= 3 Out-of-Stock Products", outOfStockCount >= 3, `Found: ${outOfStockCount}`);
+
+      const lowStockCount = prods.filter(p => p.status === 'low-stock').length;
+      assert("Status Mix: >= 3 Low-Stock Products (<= 5 units)", lowStockCount >= 3, `Found: ${lowStockCount}`);
+
+      const preorderCount = prods.filter(p => p.status === 'preorder').length;
+      assert("Status Mix: >= 2 Preorder Products", preorderCount >= 2, `Found: ${preorderCount}`);
+
+      const discontinued = prods.filter(p => p.status === 'discontinued');
+      assert("Status Mix: >= 1 Discontinued Product (AX12 Pro)", discontinued.length >= 1 && discontinued.some(p => p.id === 'tenda-ax12-pro'), `Found: ${discontinued.map(p => p.id).join(', ')}`);
+
+      const compareAtCount = prods.filter(p => p.price && p.price.compareAt && p.price.compareAt > p.price.retail).length;
+      assert("Pricing Mix: >= 8 Products with Discounts (compareAt)", compareAtCount >= 8, `Found: ${compareAtCount}`);
+
+      const newCount = prods.filter(p => p.isNew).length;
+      assert("Flag Mix: >= 10 isNew Products", newCount >= 10, `Found: ${newCount}`);
+
+      // 6. No price below 0
+      const negativePrices = prods.filter(p => p.price && (p.price.retail < 0 || p.price.dealer < 0));
+      assert("No Price Below 0", negativePrices.length === 0, negativePrices.length ? `Negative prices: ${negativePrices.map(p => p.id)}` : "All prices non-negative");
+
+      // 7. No isNew on discontinued (Blueprint P3)
+      const invalidNewDiscontinued = prods.filter(p => p.status === 'discontinued' && p.isNew);
+      assert("No isNew Flag on Discontinued Items (P3 rule)", invalidNewDiscontinued.length === 0, invalidNewDiscontinued.length ? `Violations: ${invalidNewDiscontinued.map(p => p.id)}` : "Discontinued items correctly suppress isNew");
+
+      // Render
+      let html = '';
+      let passedCount = 0;
+      tests.forEach(t => {
+        if (t.passed) passedCount++;
+        html += `
+          <div class="test-card ${t.passed ? 'test-pass' : 'test-fail'}">
+            <div>
+              <strong>${t.name}</strong>
+              <div style="font-size: 12px; margin-top: 2px;">${t.details}</div>
+            </div>
+            <span class="badge ${t.passed ? 'badge-pass' : 'badge-fail'}">${t.passed ? 'PASS' : 'FAIL'}</span>
+          </div>
+        `;
+      });
+
+      resultsDiv.innerHTML = html;
+      const allPassed = passedCount === tests.length;
+      summaryDiv.innerHTML = `Result: ${passedCount} / ${tests.length} tests passed. ${allPassed ? '<span style="color:#0B7A52">ALL INTEGRITY CHECKS PASSED &#10004;</span>' : '<span style="color:#DC2626">SOME CHECKS FAILED &#10008;</span>'}`;
+      summaryDiv.style.color = allPassed ? '#0B7A52' : '#DC2626';
+    })();
+  </script>
+</body>
+</html>

@@ -1,0 +1,206 @@
+﻿<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Customer Support & RMA Service | South Bangla Computers</title>
+  <meta name="description" content="Official South Bangla Computers customer support, serial warranty status checker, and nationwide RMA drop-off centers.">
+  <link rel="stylesheet" href="css/tokens.css">
+  <link rel="stylesheet" href="css/base.css">
+  <link rel="stylesheet" href="css/layout.css">
+  <link rel="stylesheet" href="css/components.css">
+  <link rel="stylesheet" href="css/print.css" media="print">
+</head>
+<body data-root="" data-page="support">
+  <a href="#main-content" class="sbc-skip-link">Skip to main content</a>
+  <div id="sbc-header"></div>
+
+  <!-- ========================================================================
+       CONSISTENT GLOBAL FULL-WIDTH BANNER DESIGN (Customer Care & RMA Theme)
+       ======================================================================== -->
+  <section class="sbc-page-banner sbc-page-banner--contact" aria-label="Support & RMA Banner">
+    <div class="sbc-page-banner__inner l-container">
+      <div class="sbc-page-banner__content">
+        <nav class="sbc-page-banner__crumb" aria-label="Breadcrumb">
+          <a href="index.html">Home</a>
+          <span class="sbc-page-banner__crumb-sep">/</span>
+          <span class="sbc-page-banner__crumb-current">Customer Support &amp; RMA</span>
+        </nav>
+        <h1 class="sbc-page-banner__title">
+          <span class="sbc-page-banner__title-line1">Official Customer Care &amp;</span>
+          <span class="sbc-page-banner__title-line2">1-Hour RMA Diagnostics</span>
+        </h1>
+        <p class="sbc-page-banner__desc">
+          Verify official hardware warranty status with serial lookup, get 12-hour live technical assistance, or drop off hardware at any of our 8 nationwide service and testing labs.
+        </p>
+        <div class="sbc-page-banner__actions">
+          <a href="#serial-lookup-card" class="sbc-banner-btn sbc-banner-btn--primary">
+            Check Serial Warranty &darr;
+          </a>
+          <a href="warranty.html" class="sbc-banner-btn sbc-banner-btn--secondary">
+            View Warranty Policy
+          </a>
+        </div>
+      </div>
+          <h3 class="sbc-banner-tech-card__title">Direct RMA &amp; Verification Hub</h3>
+          <ul class="sbc-banner-tech-card__list">
+            <li class="sbc-banner-tech-card__item">
+              <svg class="sbc-icon sbc-icon--xs" aria-hidden="true"><use href="#icon-check"></use></svg>
+              <span><strong>Serial Database:</strong> Real-time warranty lookup</span>
+            </li>
+            <li class="sbc-banner-tech-card__item">
+              <svg class="sbc-icon sbc-icon--xs" aria-hidden="true"><use href="#icon-check"></use></svg>
+              <span><strong>Engineer Support:</strong> Cisco, Tenda &amp; Meetion certified</span>
+            </li>
+            <li class="sbc-banner-tech-card__item">
+              <svg class="sbc-icon sbc-icon--xs" aria-hidden="true"><use href="#icon-check"></use></svg>
+              <span><strong>Diagnostic Lab:</strong> Fiber OTDR &amp; component repair</span>
+            </li>
+            <li class="sbc-banner-tech-card__item">
+              <svg class="sbc-icon sbc-icon--xs" aria-hidden="true"><use href="#icon-check"></use></svg>
+              <span><strong>Hotline:</strong> 01979-994431 (10 AM &ndash; 8 PM)</span>
+            </li>
+          </ul>
+          <div class="sbc-banner-tech-card__metric-grid">
+            <div class="sbc-banner-tech-card__metric">
+              <span class="sbc-banner-tech-card__metric-val">&lt; 1 hr</span>
+              <span class="sbc-banner-tech-card__metric-lbl">Walk-in RMA</span>
+            </div>
+            <div class="sbc-banner-tech-card__metric">
+              <span class="sbc-banner-tech-card__metric-val">12 hrs</span>
+              <span class="sbc-banner-tech-card__metric-lbl">Daily Helpdesk</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <main id="main-content" class="l-container" style="padding-bottom: var(--sp-12);">
+    <!-- Serial Number Warranty Lookup Box -->
+    <div id="serial-lookup-card" style="background:#ffffff;border:1px solid var(--gray-200);border-radius:14px;padding:32px;margin-bottom:var(--sp-8);box-shadow:0 4px 16px rgba(0,0,0,0.03);text-align:center;">
+      <h2 style="font-size:22px;color:var(--navy-900);margin:0 0 8px;font-weight:700;">Check Your Hardware Warranty Status</h2>
+      <p style="font-size:14px;color:var(--c-text-muted);margin:0 auto 20px;max-width:560px;">
+        Enter the serial number from your South Bangla Computers holographic warranty card or device barcode sticker.
+      </p>
+      <div style="max-width:540px;margin:0 auto;display:flex;gap:8px;">
+        <input type="text" id="serial-input" class="sbc-input" placeholder="Enter Product Serial (e.g. TND2026-8910)" style="flex:1;height:46px;font-size:14px;">
+        <button class="sbc-btn sbc-btn--primary" id="check-serial-btn" style="height:46px;padding:0 24px;">Verify Warranty</button>
+      </div>
+      <div id="serial-result" style="max-width:540px;margin:16px auto 0;text-align:left;"></div>
+    </div>
+
+    <!-- Quick Channels 4-Card Grid -->
+    <section style="margin-bottom:var(--sp-10);">
+      <div style="display:grid;grid-template-columns:repeat(auto-fit, minmax(240px, 1fr));gap:var(--sp-4);">
+        <div class="sbc-card" style="padding:24px;text-align:center;">
+          <div style="color:var(--blue-600);margin-bottom:12px;" id="s-icon-1"></div>
+          <h3 style="font-size:16px;color:var(--navy-900);margin:0 0 6px;">Central Phone Hotline</h3>
+          <p style="font-size:13px;color:var(--c-text-secondary);margin:0 0 12px;">Saturday – Thursday, 10 AM – 8 PM</p>
+          <a href="tel:01973009007" class="sbc-btn sbc-btn--outline sbc-btn--sm sbc-btn--full">01973009007</a>
+        </div>
+
+        <div class="sbc-card" style="padding:24px;text-align:center;">
+          <div style="color:var(--green-700);margin-bottom:12px;" id="s-icon-2"></div>
+          <h3 style="font-size:16px;color:var(--navy-900);margin:0 0 6px;">WhatsApp Support</h3>
+          <p style="font-size:13px;color:var(--c-text-secondary);margin:0 0 12px;">Chat directly for quick technical advice</p>
+          <a href="https://wa.me/8801973009007" target="_blank" class="sbc-btn sbc-btn--outline sbc-btn--sm sbc-btn--full">Start WhatsApp Chat</a>
+        </div>
+
+        <div class="sbc-card" style="padding:24px;text-align:center;">
+          <div style="color:var(--amber-800);margin-bottom:12px;" id="s-icon-3"></div>
+          <h3 style="font-size:16px;color:var(--navy-900);margin:0 0 6px;">Firmware & Manuals</h3>
+          <p style="font-size:13px;color:var(--c-text-secondary);margin:0 0 12px;">Download drivers, tools, and datasheets</p>
+          <a href="downloads.html" class="sbc-btn sbc-btn--outline sbc-btn--sm sbc-btn--full">Downloads Portal</a>
+        </div>
+
+        <div class="sbc-card" style="padding:24px;text-align:center;">
+          <div style="color:var(--navy-900);margin-bottom:12px;" id="s-icon-4"></div>
+          <h3 style="font-size:16px;color:var(--navy-900);margin:0 0 6px;">8 Service Showrooms</h3>
+          <p style="font-size:13px;color:var(--c-text-secondary);margin:0 0 12px;">Dhaka, Chattogram, and Khulna hubs</p>
+          <a href="branches.html" class="sbc-btn sbc-btn--outline sbc-btn--sm sbc-btn--full">Find Nearest Center</a>
+        </div>
+      </div>
+    </section>
+
+    <!-- Support FAQ Link Strip -->
+    <section style="background:#fff;border:1px solid var(--gray-200);border-radius:var(--r-lg);padding:var(--sp-6);display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:16px;">
+      <div>
+        <h3 style="font-size:18px;color:var(--navy-900);margin:0 0 4px;">Have questions regarding warranty guidelines or returns?</h3>
+        <p style="font-size:13px;color:var(--c-text-muted);margin:0;">
+          Read through our official warranty policy, replacement conditions, and frequently answered technical questions.
+        </p>
+      </div>
+      <div style="display:flex;gap:8px;">
+        <a href="warranty.html" class="sbc-btn sbc-btn--outline sbc-btn--sm">Warranty Policy</a>
+        <a href="faq.html" class="sbc-btn sbc-btn--primary sbc-btn--sm">View FAQs &rarr;</a>
+      </div>
+    </section>
+  </main>
+
+  <div id="sbc-footer"></div>
+  <div id="sbc-toast" role="status" aria-live="polite"></div>
+
+  <!-- Standard Prototype Scripts -->
+  <script defer src="js/config.js"></script>
+  <script defer src="js/i18n/en.js"></script>
+  <script defer src="js/core/util.js"></script>
+  <script defer src="js/core/storage.js"></script>
+  <script defer src="data/categories.js"></script>
+  <script defer src="data/brands.js"></script>
+  <script defer src="data/branches.js"></script>
+  <script defer src="data/news.js"></script>
+  <script defer src="data/faq.js"></script>
+  <script defer src="data/downloads.js"></script>
+  <script defer src="data/districts.js"></script>
+  <script defer src="data/configurator-rules.js"></script>
+  <script defer src="data/site-claims.js"></script>
+  <script defer src="data/users.js"></script>
+  <script defer src="data/products.js"></script>
+  <script defer src="js/core/store.js"></script>
+  <script defer src="js/core/validate.js"></script>
+  <script defer src="js/core/ui.js"></script>
+  <script defer src="js/layout.js"></script>
+  <script defer src="js/search.js"></script>
+  <script defer src="js/cards.js"></script>
+  <script defer src="js/demo.js"></script>
+
+  <script defer>
+    window.addEventListener("SBC:ready", function () {
+      const ui = window.SBC.ui;
+      const util = window.SBC.util;
+
+      document.getElementById("s-icon-1").innerHTML = ui.icon("phone", "lg");
+      document.getElementById("s-icon-2").innerHTML = ui.icon("message-square", "lg");
+      document.getElementById("s-icon-3").innerHTML = ui.icon("download", "lg");
+      document.getElementById("s-icon-4").innerHTML = ui.icon("map-pin", "lg");
+
+      const checkBtn = document.getElementById("check-serial-btn");
+      const input = document.getElementById("serial-input");
+      const resDiv = document.getElementById("serial-result");
+
+      checkBtn.addEventListener("click", () => {
+        const val = input.value.trim();
+        if (!val) {
+          ui.toast("Please enter a valid serial number", "warning");
+          return;
+        }
+
+        resDiv.innerHTML = `
+          <div style="background:#fff;border-radius:var(--r-md);padding:14px;border:1px solid #93C5FD;box-shadow:var(--sh-md);">
+            <div style="display:flex;justify-content:space-between;align-items:center;margin-bottom:6px;">
+              <strong style="color:var(--navy-900);font-size:14px;">Serial: ${util.esc(val.toUpperCase())}</strong>
+              <span class="sbc-badge sbc-badge--in-stock">ACTIVE WARRANTY</span>
+            </div>
+            <div style="font-size:12px;color:var(--c-text-secondary);line-height:1.4;">
+              <strong>Matched Product:</strong> Genuine Tenda / BDCOM Channel Import<br>
+              <strong>Warranty Coverage:</strong> Official 1-Year SBC Replacement Warranty<br>
+              <strong>Expiry Date:</strong> 18 September 2027 &bull; Drop-off available at any of our 8 branches.
+            </div>
+          </div>
+        `;
+      });
+    });
+  </script>
+</body>
+</html>

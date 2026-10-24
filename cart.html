@@ -1,0 +1,471 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Shopping Cart | South Bangla Computers</title>
+  <meta name="description" content="Review items in your shopping cart, adjust quantities, and proceed to checkout simulation at South Bangla Computers.">
+  <link rel="canonical" href="https://www.southbanglabd.com/cart">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="css/tokens.css">
+  <link rel="stylesheet" href="css/base.css">
+  <link rel="stylesheet" href="css/components.css">
+  <link rel="stylesheet" href="css/layout.css">
+  <link rel="stylesheet" href="css/glamora-shop.css">
+  <style>
+    .cart-page-wrap {
+      max-width: 1320px;
+      margin: 0 auto;
+      padding: 0 20px 64px;
+      width: 100%;
+      box-sizing: border-box;
+    }
+    .cart-breadcrumb {
+      display: flex;
+      align-items: center;
+      gap: 8px;
+      padding: 16px 0 24px;
+      font-size: 13px;
+      color: #6b7280;
+    }
+    .cart-breadcrumb a {
+      color: #6b7280;
+      text-decoration: none;
+    }
+    .cart-breadcrumb a:hover {
+      color: var(--glam-sbc-teal);
+    }
+    .cart-title {
+      font-size: 24px;
+      font-weight: 800;
+      color: #111827;
+      margin: 0 0 24px;
+    }
+    .cart-layout {
+      display: grid;
+      grid-template-columns: 1.5fr 0.9fr;
+      gap: 36px;
+      align-items: start;
+    }
+    @media (max-width: 960px) {
+      .cart-layout {
+        grid-template-columns: 1fr;
+        gap: 24px;
+      }
+    }
+    .cart-items-card {
+      background: #ffffff;
+      border: 1px solid #eaeaea;
+      border-radius: 16px;
+      padding: 24px;
+      box-shadow: 0 4px 16px rgba(0,0,0,0.02);
+    }
+    .cart-item-row {
+      display: flex;
+      gap: 16px;
+      align-items: center;
+      padding: 18px 0;
+      border-bottom: 1px solid #f1f4f6;
+    }
+    .cart-item-row:last-child {
+      border-bottom: none;
+    }
+    .cart-item-img {
+      width: 76px;
+      height: 76px;
+      border-radius: 10px;
+      background: #f8fafc;
+      border: 1px solid #eaeaea;
+      padding: 6px;
+      object-fit: contain;
+      flex-shrink: 0;
+    }
+    .cart-item-info {
+      flex: 1;
+      min-width: 0;
+    }
+    .cart-item-brand {
+      font-size: 11px;
+      font-weight: 700;
+      text-transform: uppercase;
+      color: var(--glam-sbc-teal);
+      letter-spacing: 0.5px;
+    }
+    .cart-item-title {
+      font-size: 14.5px;
+      font-weight: 700;
+      color: #111827;
+      margin: 3px 0 4px;
+      white-space: nowrap;
+      overflow: hidden;
+      text-overflow: ellipsis;
+    }
+    .cart-item-title a {
+      color: inherit;
+      text-decoration: none;
+    }
+    .cart-item-title a:hover {
+      color: var(--glam-sbc-teal);
+    }
+    .cart-item-meta {
+      font-size: 12px;
+      color: #6b7280;
+    }
+    .cart-item-price {
+      font-size: 15px;
+      font-weight: 700;
+      color: #111827;
+      white-space: nowrap;
+    }
+    .cart-stepper {
+      display: inline-flex;
+      align-items: center;
+      border: 1.5px solid #e5e7eb;
+      border-radius: 8px;
+      height: 36px;
+      background: #fff;
+    }
+    .cart-stepper button {
+      width: 30px;
+      height: 100%;
+      border: none;
+      background: transparent;
+      font-size: 16px;
+      cursor: pointer;
+      color: #374151;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+    .cart-stepper button:hover {
+      color: var(--glam-sbc-teal);
+    }
+    .cart-stepper input {
+      width: 32px;
+      text-align: center;
+      border: none;
+      font-size: 13px;
+      font-weight: 700;
+      outline: none;
+      background: transparent;
+    }
+    .cart-remove-btn {
+      background: transparent;
+      border: none;
+      color: #9ca3af;
+      cursor: pointer;
+      padding: 6px;
+      border-radius: 6px;
+      transition: all 0.15s;
+    }
+    .cart-remove-btn:hover {
+      color: #ef4444;
+      background: #fef2f2;
+    }
+    .cart-summary-card {
+      background: #ffffff;
+      border: 1px solid #eaeaea;
+      border-radius: 16px;
+      padding: 24px;
+      box-shadow: 0 4px 16px rgba(0,0,0,0.02);
+      position: sticky;
+      top: 24px;
+    }
+    .cart-summary-title {
+      font-size: 17px;
+      font-weight: 800;
+      color: #111827;
+      margin: 0 0 16px;
+      padding-bottom: 12px;
+      border-bottom: 1px solid #f1f4f6;
+    }
+    .cart-summary-row {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      font-size: 13.5px;
+      color: #4b5563;
+      margin-bottom: 12px;
+    }
+    .cart-summary-total {
+      display: flex;
+      justify-content: space-between;
+      align-items: baseline;
+      font-size: 18px;
+      font-weight: 800;
+      color: #111827;
+      padding-top: 14px;
+      margin-top: 14px;
+      border-top: 1px solid #eaeaea;
+    }
+    .cart-btn-checkout {
+      width: 100%;
+      height: 48px;
+      background: var(--glam-sbc-teal);
+      color: #ffffff;
+      font-size: 14.5px;
+      font-weight: 700;
+      border: none;
+      border-radius: 10px;
+      cursor: pointer;
+      transition: all 0.2s;
+      margin-top: 18px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 8px;
+      text-decoration: none;
+      box-shadow: 0 4px 12px rgba(0, 88, 131, 0.2);
+    }
+    .cart-btn-checkout:hover {
+      background: #004566;
+      transform: translateY(-1px);
+    }
+    .cart-btn-continue {
+      width: 100%;
+      text-align: center;
+      display: block;
+      margin-top: 12px;
+      font-size: 13px;
+      color: #6b7280;
+      text-decoration: none;
+      font-weight: 600;
+    }
+    .cart-btn-continue:hover {
+      color: var(--glam-sbc-teal);
+    }
+    .cart-empty-box {
+      text-align: center;
+      padding: 64px 20px;
+      background: #ffffff;
+      border-radius: 20px;
+      border: 1px solid #eaeaea;
+    }
+    .cart-empty-icon {
+      font-size: 42px;
+      margin-bottom: 14px;
+      color: #9ca3af;
+    }
+  </style>
+</head>
+<body class="glam-shop-page" data-root="" data-page="cart">
+
+  <!-- ========================================================================
+       UNIFIED HEADER (SOUTH BANGLA COMPUTER GLOBAL DESIGN SYSTEM)
+       ======================================================================== -->
+  <div id="sbc-header"></div>
+
+  <main class="cart-page-wrap">
+    <!-- Breadcrumb -->
+    <nav class="cart-breadcrumb" aria-label="Breadcrumb">
+      <a href="index.html">Home</a>
+      <span>&rsaquo;</span>
+      <a href="shop.html">Shop</a>
+      <span>&rsaquo;</span>
+      <strong style="color:#111827;">Shopping Cart</strong>
+    </nav>
+
+    <h1 class="cart-title">Your Shopping Cart</h1>
+
+    <!-- Cart Layout Container (Rendered Dynamically) -->
+    <div id="cart-main-content">
+      <!-- Dynamically populated -->
+    </div>
+  </main>
+
+  <!-- ========================================================================
+       FOOTER
+       ======================================================================== -->
+  <!-- ========================================================================
+       UNIFIED FOOTER (SOUTH BANGLA COMPUTER GLOBAL DESIGN SYSTEM)
+       ======================================================================== -->
+  <div id="sbc-footer"></div>
+
+  <div id="sbc-toast" role="status" aria-live="polite"></div>
+
+  <!-- Standard Prototype Scripts -->
+  <script defer src="js/config.js"></script>
+  <script defer src="js/i18n/en.js"></script>
+  <script defer src="js/core/util.js"></script>
+  <script defer src="js/core/storage.js"></script>
+  <script defer src="data/categories.js"></script>
+  <script defer src="data/brands.js"></script>
+  <script defer src="data/shop-products.js"></script>
+  <script defer src="data/products.js"></script>
+  <script defer src="js/core/store.js"></script>
+  <script defer src="js/core/ui.js"></script>
+  <script defer src="js/layout.js"></script>
+
+  <script defer>
+    window.addEventListener("DOMContentLoaded", function () {
+      const util = window.SBC.util;
+      const store = window.SBC.store;
+      const ui = window.SBC.ui;
+
+      function updateHeaderBadge() {
+        const badge = document.getElementById("glam-cart-count");
+        if (badge && store.getCartCount) {
+          badge.innerHTML = `
+            <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M6 2L3 6v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2V6l-3-4z"></path><line x1="3" y1="6" x2="21" y2="6"></line><path d="M16 10a4 4 0 0 1-8 0"></path></svg>
+            MY CART (${store.getCartCount()})
+          `;
+        }
+      }
+
+      function renderCart() {
+        const wrap = document.getElementById("cart-main-content");
+        if (!wrap) return;
+
+        updateHeaderBadge();
+        const details = store.getCartDetails();
+
+        if (details.length === 0) {
+          wrap.innerHTML = `
+            <div class="cart-empty-box">
+              <div class="cart-empty-icon">🛒</div>
+              <h2 style="font-size:20px; font-weight:800; margin:0 0 8px;">Your shopping cart is empty</h2>
+              <p style="color:#6b7280; font-size:14px; max-width:440px; margin:0 auto 24px;">
+                Explore our catalog for genuine Meetion peripherals, Tenda Wi-Fi 6 routers, Cisco switches, and optical fiber equipment.
+              </p>
+              <a href="shop.html" class="cart-btn-checkout" style="max-width:220px; margin:0 auto; text-decoration:none;">
+                Explore Products &rarr;
+              </a>
+            </div>
+          `;
+          return;
+        }
+
+        const subtotal = store.getCartSubtotal();
+        const totalItems = store.getCartCount();
+
+        let itemsHtml = details.map(item => {
+          const p = item.product;
+          const firstImg = (p.images && p.images[0]) ? p.images[0] : "";
+          const resolvedImg = util.imgUrl(firstImg);
+
+          return `
+            <div class="cart-item-row" data-id="${util.esc(p.id)}">
+              <img src="${util.esc(resolvedImg)}" alt="${util.esc(p.name)}" class="cart-item-img" onerror="this.onerror=null;this.src='assets/img/placeholder-product.svg';">
+              <div class="cart-item-info">
+                <span class="cart-item-brand">${util.esc(p.brand || '')}</span>
+                <h4 class="cart-item-title">
+                  <a href="product.html?id=${encodeURIComponent(p.id)}">${util.esc(p.name)}</a>
+                </h4>
+                <div class="cart-item-meta">Unit: ${util.formatBDT(item.unitPrice)}</div>
+              </div>
+              <div class="cart-stepper">
+                <button type="button" class="js-dec" data-id="${util.esc(p.id)}" aria-label="Decrease">&minus;</button>
+                <input type="text" value="${item.qty}" readonly>
+                <button type="button" class="js-inc" data-id="${util.esc(p.id)}" aria-label="Increase">&plus;</button>
+              </div>
+              <div class="cart-item-price">
+                ${util.formatBDT(item.lineTotal)}
+              </div>
+              <button type="button" class="cart-remove-btn js-remove" data-id="${util.esc(p.id)}" aria-label="Remove item">
+                <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="3 6 5 6 21 6"></polyline><path d="M19 6v14a2 2 0 0 1-2 2H7a2 2 0 0 1-2-2V6m3 0V4a2 2 0 0 1 2-2h4a2 2 0 0 1 2 2v2"></path></svg>
+              </button>
+            </div>
+          `;
+        }).join("");
+
+        wrap.innerHTML = `
+          <div class="cart-layout">
+            <!-- Left: Cart Items -->
+            <div class="cart-items-card">
+              <div style="display:flex; justify-content:space-between; align-items:center; margin-bottom:14px; padding-bottom:12px; border-bottom:1px solid #f1f4f6;">
+                <span style="font-size:14px; font-weight:700; color:#374151;">Items (${totalItems})</span>
+                <button type="button" class="js-clear-cart" style="background:transparent; border:none; color:#ef4444; font-size:12px; font-weight:700; cursor:pointer;">Clear All</button>
+              </div>
+              ${itemsHtml}
+              <div style="margin-top:20px; padding-top:16px; border-top:1px solid #f1f4f6;">
+                <a href="shop.html" style="font-size:13px; font-weight:700; color:var(--glam-sbc-teal); text-decoration:none; display:inline-flex; align-items:center; gap:6px;">
+                  &larr; Continue Shopping
+                </a>
+              </div>
+            </div>
+
+            <!-- Right: Order Summary -->
+            <div class="cart-summary-card">
+              <h3 class="cart-summary-title">Order Summary</h3>
+              <div class="cart-summary-row">
+                <span>Subtotal</span>
+                <strong>${util.formatBDT(subtotal)}</strong>
+              </div>
+              <div class="cart-summary-row">
+                <span>Estimated VAT (15%)</span>
+                <span>Included</span>
+              </div>
+              <div class="cart-summary-row">
+                <span>Nationwide Shipping</span>
+                <span style="color:#15803d; font-weight:600;">Calculated at Checkout</span>
+              </div>
+              <div class="cart-summary-total">
+                <span>Total Due</span>
+                <span style="color:var(--glam-sbc-teal);">${util.formatBDT(subtotal)}</span>
+              </div>
+              <a href="checkout.html" class="cart-btn-checkout">
+                Proceed to Checkout &rarr;
+              </a>
+              <a href="shop.html" class="cart-btn-continue">
+                Add More Products
+              </a>
+              <div style="margin-top:20px; padding-top:16px; border-top:1px solid #f1f4f6; font-size:11.5px; color:#9ca3af; text-align:center;">
+                🔒 Secure 256-bit Encrypted Checkout • Official SBC Warranty
+              </div>
+            </div>
+          </div>
+        `;
+
+        // Wire event listeners
+        wrap.querySelectorAll(".js-dec").forEach(btn => {
+          btn.addEventListener("click", () => {
+            const id = btn.dataset.id;
+            const currentItem = details.find(d => d.product.id === id);
+            if (currentItem) {
+              if (currentItem.qty > 1) {
+                store.updateCartQty(id, currentItem.qty - 1);
+              } else {
+                store.removeFromCart(id);
+              }
+              renderCart();
+            }
+          });
+        });
+
+        wrap.querySelectorAll(".js-inc").forEach(btn => {
+          btn.addEventListener("click", () => {
+            const id = btn.dataset.id;
+            const currentItem = details.find(d => d.product.id === id);
+            if (currentItem) {
+              store.updateCartQty(id, currentItem.qty + 1);
+              renderCart();
+            }
+          });
+        });
+
+        wrap.querySelectorAll(".js-remove").forEach(btn => {
+          btn.addEventListener("click", () => {
+            const id = btn.dataset.id;
+            store.removeFromCart(id);
+            if (ui && ui.toast) ui.toast("Item removed from cart", "info");
+            renderCart();
+          });
+        });
+
+        const clearBtn = wrap.querySelector(".js-clear-cart");
+        if (clearBtn) {
+          clearBtn.addEventListener("click", () => {
+            store.clearCart();
+            if (ui && ui.toast) ui.toast("Cart cleared", "info");
+            renderCart();
+          });
+        }
+      }
+
+      renderCart();
+    });
+  </script>
+</body>
+</html>

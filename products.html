@@ -1,0 +1,139 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Shop - All Products & Equipment Catalog | South Bangla Computers</title>
+  <meta name="description" content="Shop the complete catalog of networking routers, PoE switches, fiber optic ONUs, solar hybrid inverters, and network cables with live stock filters.">
+  <link rel="stylesheet" href="css/tokens.css">
+  <link rel="stylesheet" href="css/base.css">
+  <link rel="stylesheet" href="css/layout.css">
+  <link rel="stylesheet" href="css/components.css">
+  <link rel="stylesheet" href="css/print.css" media="print">
+  <style>
+    .catalog-layout {
+      display: grid;
+      grid-template-columns: 280px 1fr;
+      gap: var(--sp-6);
+      align-items: start;
+    }
+    @media (max-width: 900px) {
+      .catalog-layout {
+        grid-template-columns: 1fr;
+      }
+      #catalog-sidebar {
+        display: none;
+      }
+      #catalog-sidebar.is-open {
+        display: block;
+      }
+    }
+  </style>
+</head>
+<body data-root="" data-page="shop">
+  <a href="#main-content" class="sbc-skip-link">Skip to main content</a>
+  <div id="sbc-header"></div>
+
+  <main id="main-content" class="l-container" style="padding-top: var(--sp-6); padding-bottom: var(--sp-12);">
+    <!-- Breadcrumbs -->
+    <nav aria-label="Breadcrumb" class="sbc-breadcrumbs" style="margin-bottom: var(--sp-4);">
+      <ol style="display:flex;gap:var(--sp-2);list-style:none;padding:0;margin:0;font-size:var(--fs-xs);color:var(--c-text-muted);">
+        <li><a href="index.html">Home</a> <span aria-hidden="true">&rsaquo;</span></li>
+        <li style="color:var(--navy-900);font-weight:600;" aria-current="page">Shop</li>
+      </ol>
+    </nav>
+
+    <!-- Page Header -->
+    <div style="margin-bottom: var(--sp-6); display:flex; justify-content:space-between; align-items:flex-end; flex-wrap:wrap; gap:var(--sp-4);">
+      <div>
+        <h1 style="font-size:var(--fs-h2); color:var(--navy-900); margin:0 0 6px;">Shop &mdash; Hardware Catalog &amp; Equipment Inventory</h1>
+        <p style="color:var(--c-text-muted); font-size:var(--fs-sm); margin:0;">
+          Showing authentic ICT products with local warranty and dealer bulk availability.
+        </p>
+      </div>
+      <button class="sbc-btn sbc-btn--outline sbc-btn--sm js-toggle-mobile-filter" style="display:none;" id="mobile-filter-btn">
+        Filters & Facets
+      </button>
+    </div>
+
+    <!-- Main Catalog 2-Column Layout -->
+    <div class="catalog-layout">
+      <!-- Faceted Sidebar -->
+      <aside id="catalog-sidebar" aria-label="Product Filters">
+        <!-- Rendered by window.SBC.filters.initListing -->
+      </aside>
+
+      <!-- Products Column -->
+      <section aria-label="Catalog Products">
+        <!-- Toolbar (View switcher, sorting, count) -->
+        <div id="catalog-toolbar" style="margin-bottom: var(--sp-4);">
+          <!-- Rendered by window.SBC.filters.initListing -->
+        </div>
+
+        <!-- Product Grid / List Container -->
+        <div id="catalog-products-container">
+          <!-- Rendered by window.SBC.filters.initListing -->
+        </div>
+
+        <!-- Pagination Controls -->
+        <div id="catalog-pagination" style="margin-top: var(--sp-8);">
+          <!-- Rendered by window.SBC.filters.initListing -->
+        </div>
+      </section>
+    </div>
+  </main>
+
+  <div id="sbc-footer"></div>
+  <div id="sbc-toast" role="status" aria-live="polite"></div>
+
+  <!-- Standard Prototype Scripts -->
+  <script defer src="js/config.js"></script>
+  <script defer src="js/i18n/en.js"></script>
+  <script defer src="js/core/util.js"></script>
+  <script defer src="js/core/storage.js"></script>
+  <script defer src="data/categories.js"></script>
+  <script defer src="data/brands.js"></script>
+  <script defer src="data/branches.js"></script>
+  <script defer src="data/news.js"></script>
+  <script defer src="data/faq.js"></script>
+  <script defer src="data/downloads.js"></script>
+  <script defer src="data/districts.js"></script>
+  <script defer src="data/configurator-rules.js"></script>
+  <script defer src="data/site-claims.js"></script>
+  <script defer src="data/users.js"></script>
+  <script defer src="data/products.js"></script>
+  <script defer src="js/core/store.js"></script>
+  <script defer src="js/core/validate.js"></script>
+  <script defer src="js/core/ui.js"></script>
+  <script defer src="js/layout.js"></script>
+  <script defer src="js/search.js"></script>
+  <script defer src="js/cards.js"></script>
+  <script defer src="js/filters.js"></script>
+  <script defer src="js/demo.js"></script>
+
+  <script defer>
+    window.addEventListener("SBC:ready", function () {
+      const containerEl = document.getElementById("catalog-products-container");
+      const sidebarEl = document.getElementById("catalog-sidebar");
+      const paginationEl = document.getElementById("catalog-pagination");
+      const toolbarEl = document.getElementById("catalog-toolbar");
+
+      if (window.SBC && window.SBC.filters) {
+        window.SBC.filters.initListing(containerEl, sidebarEl, paginationEl, toolbarEl);
+      }
+
+      // Mobile filter toggle
+      const mobBtn = document.getElementById("mobile-filter-btn");
+      if (mobBtn && sidebarEl) {
+        if (window.innerWidth <= 900) {
+          mobBtn.style.display = "inline-flex";
+        }
+        mobBtn.addEventListener("click", () => {
+          sidebarEl.classList.toggle("is-open");
+          mobBtn.textContent = sidebarEl.classList.contains("is-open") ? "Hide Filters" : "Filters & Facets";
+        });
+      }
+    });
+  </script>
+</body>
+</html>

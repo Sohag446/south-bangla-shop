@@ -1,0 +1,167 @@
+/**
+ * South Bangla Computers Design Tokens
+ * Generated from DESIGN-TOKENS.json & Blueprint §8
+ */
+:root {
+  /* Colors */
+  --navy-900: #0B1F3A;
+  --navy-800: #102A4C;
+  --blue-600: #1558D6;
+  --blue-700: #1048B0;
+  --blue-50: #EAF1FD;
+  --green-700: #0B7A52;
+  --green-50: #E6F4EE;
+  --amber-800: #92400E;
+  --amber-50: #FEF3C7;
+  --red-700: #C62828;
+  --red-50: #FDECEC;
+  --gray-900: #111827;
+  --gray-700: #3A4452;
+  --gray-500: #6B7685;
+  --gray-300: #CBD2DC;
+  --gray-200: #E3E7ED;
+  --gray-100: #F3F5F8;
+  --gray-50: #F7F8FA;
+  --white: #FFFFFF;
+
+  /* Semantic Aliases */
+  --c-text: var(--gray-900);
+  --c-text-secondary: var(--gray-700);
+  --c-text-muted: var(--gray-500);
+  --c-text-on-dark: var(--white);
+  --c-text-link: var(--blue-600);
+  --c-surface: var(--white);
+  --c-surface-alt: var(--gray-50);
+  --c-surface-section: var(--gray-100);
+  --c-surface-dark: var(--navy-900);
+  --c-surface-dealer-bar: var(--navy-800);
+  --c-border: var(--gray-200);
+  --c-border-input: var(--gray-300);
+  --c-primary: var(--blue-600);
+  --c-primary-hover: var(--blue-700);
+  --c-primary-soft: var(--blue-50);
+  --c-success: var(--green-700);
+  --c-success-soft: var(--green-50);
+  --c-warning: var(--amber-800);
+  --c-warning-soft: var(--amber-50);
+  --c-danger: var(--red-700);
+  --c-danger-soft: var(--red-50);
+  --c-focus-ring: var(--blue-600);
+  --c-focus-ring-on-dark: var(--white);
+  --c-overlay: rgba(11, 31, 58, 0.40);
+
+  /* Typography */
+  --font-sans: "Inter", system-ui, -apple-system, "Segoe UI", Roboto, "Noto Sans", "Noto Sans Bengali", "Hind Siliguri", Arial, sans-serif;
+  --font-mono: ui-monospace, SFMono-Regular, Menlo, Consolas, monospace;
+  --fw-regular: 400;
+  --fw-medium: 500;
+  --fw-semibold: 600;
+  --fw-bold: 700;
+
+  /* Font Sizes */
+  --fs-display: 3.5rem;
+  --fs-h1: 50px;
+  --fs-h2: 1.875rem;
+  --fs-h3: 1.375rem;
+  --fs-h4: 1.125rem;
+  --fs-body: 1rem;
+  --fs-sm: 0.875rem;
+  --fs-xs: 0.75rem;
+
+  /* Spacing */
+  --sp-1: 4px;
+  --sp-2: 8px;
+  --sp-3: 12px;
+  --sp-4: 16px;
+  --sp-5: 20px;
+  --sp-6: 24px;
+  --sp-8: 32px;
+  --sp-10: 40px;
+  --sp-12: 48px;
+  --sp-16: 64px;
+  --sp-20: 80px;
+
+  /* Section Spacing */
+  --section-paddingDesktop: 64px;
+  --section-paddingMobile: 40px;
+  --section-titleToContentDesktop: 32px;
+  --section-titleToContentMobile: 24px;
+
+  /* Radius (max 8px except pill) */
+  --r-sm: 4px;
+  --r-md: 6px;
+  --r-lg: 8px;
+  --r-pill: 999px;
+
+  /* Borders */
+  --bw-hairline: 1px;
+  --bw-focus: 3px;
+  --bw-inputFocus: 2px;
+
+  /* Shadows */
+  --shadow-sm: 0 1px 2px rgba(11, 31, 58, 0.08);
+  --shadow-md: 0 4px 12px rgba(11, 31, 58, 0.10);
+  --shadow-lg: 0 12px 32px rgba(11, 31, 58, 0.16);
+
+  /* Z-Index */
+  --z-base: 0;
+  --z-stickyBar: 100;
+  --z-header: 200;
+  --z-dropdown: 300;
+  --z-drawer: 400;
+  --z-modal: 500;
+  --z-toast: 600;
+  --z-skipLink: 700;
+
+  /* Motion */
+  --motion-fast: 150ms;
+  --motion-drawer: 240ms;
+  --motion-skeletonShimmer: 1200ms;
+  --motion-easing: cubic-bezier(0.2, 0, 0, 1);
+
+  /* Containers & Layout */
+  --container-max: 1320px;
+  --container-reading: 780px;
+  --container-gutterDesktop: 20px;
+  --container-gutterMobile: 20px;
+
+  --layout-announcementBarHeight: 40px;
+  --layout-headerHeightDesktop: 72px;
+  --layout-headerHeightMobile: 56px;
+  --layout-searchWidthPercentDesktop: 40%;
+  --layout-heroMinHeightDesktop: 520px;
+  --layout-heroMinHeightTablet: 440px;
+  --layout-categoryTileHeight: 96px;
+  --layout-filterSidebarLg: 260px;
+  --layout-filterSidebarXl: 280px;
+  --layout-drawerWidth: 420px;
+  --layout-mobileDrawerWidthMax: 320px;
+  --layout-modalMaxWidth: 560px;
+  --layout-toastMaxWidth: 420px;
+  --layout-stickyBuyBarHeight: 72px;
+  --layout-dealerSidebarWidth: 248px;
+  --layout-accountSidebarWidth: 248px;
+  --layout-prototypeStripHeight: 28px;
+}
+
+@media (max-width: 767px) {
+  :root {
+    --fs-display: 2.25rem;
+    --fs-h1: 1.75rem;
+    --fs-h2: 1.375rem;
+    --fs-h3: 1.25rem;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  :root {
+    --motion-fast: 0ms;
+    --motion-drawer: 0ms;
+    --motion-skeletonShimmer: 0ms;
+  }
+  * {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+  }
+}

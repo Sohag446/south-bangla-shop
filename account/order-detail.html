@@ -1,0 +1,131 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Order Detail & Tracking | South Bangla Computers</title>
+  <meta name="description" content="View delivery tracking timeline, product line items, and invoice breakdown for your order.">
+  <link rel="stylesheet" href="../css/tokens.css">
+  <link rel="stylesheet" href="../css/base.css">
+  <link rel="stylesheet" href="../css/layout.css">
+  <link rel="stylesheet" href="../css/components.css">
+  <link rel="stylesheet" href="../css/print.css" media="print">
+  <style>
+    .account-layout {
+      display: grid;
+      grid-template-columns: 260px 1fr;
+      gap: var(--sp-8);
+      align-items: start;
+    }
+    @media (max-width: 900px) {
+      .account-layout {
+        grid-template-columns: 1fr;
+      }
+    }
+    .account-nav-link {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+      padding: 10px 14px;
+      border-radius: var(--r-md);
+      color: var(--navy-800);
+      font-size: 14px;
+      font-weight: 500;
+      text-decoration: none;
+      transition: background var(--trans-fast);
+    }
+    .account-nav-link:hover {
+      background: var(--gray-100);
+    }
+    .account-nav-link.is-active {
+      background: #EFF6FF;
+      color: var(--blue-700);
+      font-weight: 700;
+    }
+  </style>
+</head>
+<body data-root="../" data-page="account">
+  <a href="#main-content" class="sbc-skip-link">Skip to main content</a>
+  <div id="sbc-header"></div>
+
+  <main id="main-content" class="l-container" style="padding-top: var(--sp-6); padding-bottom: var(--sp-12);">
+    <!-- Breadcrumbs -->
+    <nav aria-label="Breadcrumb" class="sbc-breadcrumbs" style="margin-bottom: var(--sp-6);">
+      <ol style="display:flex;gap:var(--sp-2);list-style:none;padding:0;margin:0;font-size:var(--fs-xs);color:var(--c-text-muted);">
+        <li><a href="../index.html">Home</a> <span aria-hidden="true">&rsaquo;</span></li>
+        <li><a href="index.html">My Account</a> <span aria-hidden="true">&rsaquo;</span></li>
+        <li><a href="orders.html">Orders</a> <span aria-hidden="true">&rsaquo;</span></li>
+        <li style="color:var(--navy-900);font-weight:600;" aria-current="page">Order Details</li>
+      </ol>
+    </nav>
+
+    <div class="account-layout">
+      <!-- Account Sidebar Nav -->
+      <aside style="background:#fff;border:1px solid var(--gray-200);border-radius:var(--r-lg);padding:var(--sp-4);">
+        <div style="padding:12px;border-bottom:1px solid var(--gray-200);margin-bottom:8px;">
+          <strong id="acc-nav-name" style="display:block;font-size:15px;color:var(--navy-900);">Customer Account</strong>
+          <span id="acc-nav-email" style="font-size:12px;color:var(--c-text-muted);">customer@demo.sbc</span>
+        </div>
+        <nav style="display:flex;flex-direction:column;gap:4px;">
+          <a href="index.html" class="account-nav-link">Overview Dashboard</a>
+          <a href="orders.html" class="account-nav-link is-active">Order History</a>
+          <a href="addresses.html" class="account-nav-link">Delivery Addresses</a>
+          <a href="settings.html" class="account-nav-link">Account Settings</a>
+          <a href="../wishlist.html" class="account-nav-link">My Wishlist</a>
+          <div style="border-top:1px solid var(--gray-200);margin:8px 0;"></div>
+          <a href="#" class="account-nav-link js-logout" style="color:var(--red-700);">Sign Out</a>
+        </nav>
+      </aside>
+
+      <!-- Order Detail Mount Container (Managed by js/account.js) -->
+      <section id="order-detail-container"></section>
+    </div>
+  </main>
+
+  <div id="sbc-footer"></div>
+  <div id="sbc-toast" role="status" aria-live="polite"></div>
+
+  <!-- Standard Prototype Scripts -->
+  <script defer src="../js/config.js"></script>
+  <script defer src="../js/i18n/en.js"></script>
+  <script defer src="../js/core/util.js"></script>
+  <script defer src="../js/core/storage.js"></script>
+  <script defer src="../data/categories.js"></script>
+  <script defer src="../data/brands.js"></script>
+  <script defer src="../data/branches.js"></script>
+  <script defer src="../data/news.js"></script>
+  <script defer src="../data/faq.js"></script>
+  <script defer src="../data/downloads.js"></script>
+  <script defer src="../data/districts.js"></script>
+  <script defer src="../data/configurator-rules.js"></script>
+  <script defer src="../data/site-claims.js"></script>
+  <script defer src="../data/users.js"></script>
+  <script defer src="../data/shop-products.js"></script>
+  <script defer src="../data/products.js"></script>
+  <script defer src="../js/core/store.js"></script>
+  <script defer src="../js/core/validate.js"></script>
+  <script defer src="../js/core/ui.js"></script>
+  <script defer src="../js/layout.js"></script>
+  <script defer src="../js/search.js"></script>
+  <script defer src="../js/cards.js"></script>
+  <script defer src="../js/account.js"></script>
+  <script defer src="../js/demo.js"></script>
+
+  <script defer>
+    window.addEventListener("SBC:ready", function () {
+      const store = window.SBC.store;
+      const session = store.getSession();
+
+      if (session) {
+        document.getElementById("acc-nav-name").textContent = session.name;
+        document.getElementById("acc-nav-email").textContent = session.email;
+      }
+
+      const container = document.getElementById("order-detail-container");
+      if (window.SBC && window.SBC.account) {
+        window.SBC.account.initOrderDetail(container);
+      }
+    });
+  </script>
+</body>
+</html>

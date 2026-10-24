@@ -1,0 +1,169 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Dealer Portal Login | South Bangla Computers</title>
+  <meta name="description" content="Sign in to the South Bangla Computers B2B Dealer Portal for wholesale pricing and purchase orders.">
+  <link rel="stylesheet" href="../css/tokens.css">
+  <link rel="stylesheet" href="../css/base.css">
+  <link rel="stylesheet" href="../css/layout.css">
+  <link rel="stylesheet" href="../css/components.css">
+  <link rel="stylesheet" href="../css/print.css" media="print">
+</head>
+<body data-root="../" data-page="dealer">
+  <a href="#main-content" class="sbc-skip-link">Skip to main content</a>
+  <div id="sbc-header"></div>
+
+  <main id="main-content" class="l-container" style="padding-top: var(--sp-8); padding-bottom: var(--sp-12);">
+    <div style="max-width: 460px; margin: 0 auto;">
+      <div style="text-align:center; margin-bottom: var(--sp-6);">
+        <span class="sbc-badge sbc-badge--tag" style="margin-bottom:8px;">B2B Wholesale Portal</span>
+        <h1 style="font-size:var(--fs-h2); color:var(--navy-900); margin:0 0 6px;">Authorized Dealer Login</h1>
+        <p style="color:var(--c-text-muted); font-size:var(--fs-sm); margin:0;">
+          Access your trade pricing tiers, credit limit, and bulk purchase order tools
+        </p>
+      </div>
+
+      <!-- Quick Demo Credentials Box -->
+      <div style="background:#F0FDF4; border:1px solid #BBF7D0; border-radius:var(--r-md); padding:14px; margin-bottom:var(--sp-6);">
+        <div style="font-size:12px; font-weight:700; color:#166534; margin-bottom:6px;">AUTHORIZED DEALER DEMO CREDENTIALS:</div>
+        <div style="font-size:12px; color:#14532D; margin-bottom:10px;">
+          Email: <code>dealer@demo.sbc</code> &bull; Pass: <code>Dealer@1234</code>
+        </div>
+        <button type="button" class="sbc-btn sbc-btn--sm sbc-btn--primary sbc-btn--full js-fill-dealer-demo">
+          Auto-fill Demo Dealer Account
+        </button>
+      </div>
+
+      <!-- Login Form Card -->
+      <div style="background:#fff; border:1px solid var(--gray-200); border-radius:var(--r-lg); padding:var(--sp-6); box-shadow:var(--sh-sm);">
+        <form id="dealer-login-form" novalidate>
+          <div class="sbc-form-group">
+            <label for="dl-email" class="sbc-label sbc-label--required">Registered Business Email:</label>
+            <input type="email" id="dl-email" class="sbc-input" required placeholder="name@company.com">
+            <span class="sbc-input-error" id="dl-email-err"></span>
+          </div>
+
+          <div class="sbc-form-group">
+            <div style="display:flex; justify-content:space-between; align-items:center;">
+              <label for="dl-password" class="sbc-label sbc-label--required">Password:</label>
+              <a href="../forgot-password.html" style="font-size:12px;">Forgot password?</a>
+            </div>
+            <div style="position:relative;">
+              <input type="password" id="dl-password" class="sbc-input" required placeholder="••••••••">
+              <button type="button" class="js-toggle-pwd" style="position:absolute; right:10px; top:50%; transform:translateY(-50%); border:none; background:none; cursor:pointer; font-size:12px; color:var(--gray-500);">Show</button>
+            </div>
+            <span class="sbc-input-error" id="dl-password-err"></span>
+          </div>
+
+          <button type="submit" class="sbc-btn sbc-btn--primary sbc-btn--lg sbc-btn--full" style="margin-top:var(--sp-4);">
+            Sign In to Dealer Hub &rarr;
+          </button>
+        </form>
+
+        <div style="text-align:center; margin-top:var(--sp-6); padding-top:var(--sp-4); border-top:1px solid var(--gray-200); font-size:13px; color:var(--c-text-muted);">
+          Not registered as an SBC dealer yet? <a href="register.html" style="font-weight:600;">Apply online</a>
+        </div>
+      </div>
+    </div>
+  </main>
+
+  <div id="sbc-footer"></div>
+  <div id="sbc-toast" role="status" aria-live="polite"></div>
+
+  <!-- Standard Prototype Scripts -->
+  <script defer src="../js/config.js"></script>
+  <script defer src="../js/i18n/en.js"></script>
+  <script defer src="../js/core/util.js"></script>
+  <script defer src="../js/core/storage.js"></script>
+  <script defer src="../data/categories.js"></script>
+  <script defer src="../data/brands.js"></script>
+  <script defer src="../data/branches.js"></script>
+  <script defer src="../data/news.js"></script>
+  <script defer src="../data/faq.js"></script>
+  <script defer src="../data/downloads.js"></script>
+  <script defer src="../data/districts.js"></script>
+  <script defer src="../data/configurator-rules.js"></script>
+  <script defer src="../data/site-claims.js"></script>
+  <script defer src="../data/users.js"></script>
+  <script defer src="../data/products.js"></script>
+  <script defer src="../js/core/store.js"></script>
+  <script defer src="../js/core/validate.js"></script>
+  <script defer src="../js/core/ui.js"></script>
+  <script defer src="../js/layout.js"></script>
+  <script defer src="../js/search.js"></script>
+  <script defer src="../js/cards.js"></script>
+  <script defer src="../js/dealer.js"></script>
+  <script defer src="../js/demo.js"></script>
+
+  <script defer>
+    window.addEventListener("SBC:ready", function () {
+      const util = window.SBC.util;
+      const store = window.SBC.store;
+      const validate = window.SBC.validate;
+      const ui = window.SBC.ui;
+      const seedUsers = (window.SBC_DATA && window.SBC_DATA.users) || {};
+
+      const form = document.getElementById("dealer-login-form");
+      const emailInput = document.getElementById("dl-email");
+      const pwdInput = document.getElementById("dl-password");
+      const fillBtn = document.querySelector(".js-fill-dealer-demo");
+      const togglePwdBtn = document.querySelector(".js-toggle-pwd");
+
+      if (fillBtn) {
+        fillBtn.addEventListener("click", () => {
+          emailInput.value = "dealer@demo.sbc";
+          pwdInput.value = "Dealer@1234";
+        });
+      }
+
+      if (togglePwdBtn) {
+        togglePwdBtn.addEventListener("click", () => {
+          const isPwd = pwdInput.type === "password";
+          pwdInput.type = isPwd ? "text" : "password";
+          togglePwdBtn.textContent = isPwd ? "Hide" : "Show";
+        });
+      }
+
+      form.addEventListener("submit", function (e) {
+        e.preventDefault();
+
+        const email = emailInput.value.trim();
+        const pwd = pwdInput.value.trim();
+        let hasError = false;
+
+        if (!validate.isEmail(email)) {
+          document.getElementById("dl-email-err").textContent = "Please enter your registered business email";
+          hasError = true;
+        } else {
+          document.getElementById("dl-email-err").textContent = "";
+        }
+
+        if (!pwd) {
+          document.getElementById("dl-password-err").textContent = "Password is required";
+          hasError = true;
+        } else {
+          document.getElementById("dl-password-err").textContent = "";
+        }
+
+        if (hasError) return;
+
+        const dealerUser = seedUsers.dealer || {
+          id: "dealer-001",
+          name: "Delta Networks Ltd.",
+          email: email,
+          role: "dealer",
+          tier: 1,
+          creditLimit: 500000,
+          creditUsed: 125000
+        };
+
+        store.setSession(dealerUser);
+        ui.toast("Signed in as Authorized Dealer!", "success");
+        setTimeout(() => window.location.href = util.U("dealer/dashboard.html"), 400);
+      });
+    });
+  </script>
+</body>
+</html>

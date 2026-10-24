@@ -1,0 +1,213 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Purchase Order Details | South Bangla Computers</title>
+  <meta name="description" content="View wholesale purchase order details, delivery challan, and printable invoice for Delta Networks Ltd.">
+  <link rel="stylesheet" href="../css/tokens.css">
+  <link rel="stylesheet" href="../css/base.css">
+  <link rel="stylesheet" href="../css/layout.css">
+  <link rel="stylesheet" href="../css/components.css">
+  <link rel="stylesheet" href="../css/print.css" media="print">
+  <style>
+    .dealer-layout {
+      display: grid;
+      grid-template-columns: 260px 1fr;
+      gap: var(--sp-8);
+      align-items: start;
+    }
+    @media (max-width: 900px) {
+      .dealer-layout {
+        grid-template-columns: 1fr;
+      }
+    }
+    .dealer-nav-link {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+      padding: 10px 14px;
+      border-radius: var(--r-md);
+      color: var(--navy-800);
+      font-size: 14px;
+      font-weight: 500;
+      text-decoration: none;
+      transition: background var(--trans-fast);
+    }
+    .dealer-nav-link:hover {
+      background: var(--gray-100);
+    }
+    .dealer-nav-link.is-active {
+      background: #F0FDF4;
+      color: var(--green-800);
+      font-weight: 700;
+    }
+  </style>
+</head>
+<body data-root="../" data-page="dealer">
+  <a href="#main-content" class="sbc-skip-link">Skip to main content</a>
+  <div id="sbc-header"></div>
+
+  <main id="main-content" class="l-container" style="padding-top: var(--sp-6); padding-bottom: var(--sp-12);">
+    <!-- Breadcrumbs -->
+    <nav aria-label="Breadcrumb" class="sbc-breadcrumbs" style="margin-bottom: var(--sp-6);">
+      <ol style="display:flex;gap:var(--sp-2);list-style:none;padding:0;margin:0;font-size:var(--fs-xs);color:var(--c-text-muted);">
+        <li><a href="../index.html">Home</a> <span aria-hidden="true">&rsaquo;</span></li>
+        <li><a href="dashboard.html">Dealer Hub</a> <span aria-hidden="true">&rsaquo;</span></li>
+        <li><a href="orders.html">Purchase Orders</a> <span aria-hidden="true">&rsaquo;</span></li>
+        <li style="color:var(--navy-900);font-weight:600;" aria-current="page">PO-2026-9921</li>
+      </ol>
+    </nav>
+
+    <div class="dealer-layout">
+      <!-- Dealer Sidebar Nav -->
+      <aside style="background:#fff;border:1px solid var(--gray-200);border-radius:var(--r-lg);padding:var(--sp-4);">
+        <div style="padding:12px;border-bottom:1px solid var(--gray-200);margin-bottom:8px;">
+          <div class="sbc-badge sbc-badge--in-stock" style="margin-bottom:6px;font-size:10px;">TIER 1 PLATINUM</div>
+          <strong style="display:block;font-size:15px;color:var(--navy-900);">Delta Networks Ltd.</strong>
+          <span style="font-size:12px;color:var(--c-text-muted);">Dealer ID: SBC-DLR-0891</span>
+        </div>
+        <nav style="display:flex;flex-direction:column;gap:4px;">
+          <a href="dashboard.html" class="dealer-nav-link">Overview Dashboard</a>
+          <a href="pricing.html" class="dealer-nav-link">Wholesale Price Sheet</a>
+          <a href="bulk-order.html" class="dealer-nav-link">Bulk Order Tool (SKU)</a>
+          <a href="orders.html" class="dealer-nav-link is-active">Purchase Orders</a>
+          <a href="settings.html" class="dealer-nav-link">Business Profile</a>
+          <a href="support.html" class="dealer-nav-link">Priority RMA Support</a>
+          <div style="border-top:1px solid var(--gray-200);margin:8px 0;"></div>
+          <a href="../products.html" class="dealer-nav-link">Browse Full Catalog</a>
+          <a href="#" class="dealer-nav-link js-logout" style="color:var(--red-700);">Sign Out</a>
+        </nav>
+      </aside>
+
+      <!-- Purchase Order Detail View -->
+      <section>
+        <div style="display:flex;justify-content:space-between;align-items:center;margin-bottom:var(--sp-6);flex-wrap:wrap;gap:12px;">
+          <div>
+            <h1 style="font-size:var(--fs-h2);color:var(--navy-900);margin:0 0 4px;">Purchase Order #PO-2026-9921</h1>
+            <p style="color:var(--c-text-muted);font-size:var(--fs-sm);margin:0;">
+              Issued to South Bangla Computers Wholesale Fulfillment Division
+            </p>
+          </div>
+          <button class="sbc-btn sbc-btn--primary sbc-btn--sm" onclick="window.print()">
+            Print Wholesale Invoice / Challan
+          </button>
+        </div>
+
+        <!-- Printable PO Card -->
+        <div style="background:#fff;border:1px solid var(--gray-200);border-radius:var(--r-lg);padding:var(--sp-8);box-shadow:var(--sh-sm);margin-bottom:var(--sp-6);">
+          <div style="display:flex;justify-content:space-between;border-bottom:2px solid var(--navy-900);padding-bottom:16px;margin-bottom:20px;">
+            <div>
+              <h2 style="font-size:20px;color:var(--navy-900);margin:0 0 4px;font-weight:800;">South Bangla Computers</h2>
+              <div style="font-size:12px;color:var(--c-text-muted);">
+                Authorized ICT Distribution &bull; Trade VAT Reg: 001928471-0101<br>
+                Elephant Road Central Hub, Dhaka
+              </div>
+            </div>
+            <div style="text-align:right;">
+              <span class="sbc-badge sbc-badge--in-stock" style="margin-bottom:4px;">DISPATCHED / IN TRANSIT</span>
+              <div style="font-size:13px;font-weight:700;">CHALLAN #CH-9921</div>
+            </div>
+          </div>
+
+          <div style="display:grid;grid-template-columns:1fr 1fr;gap:20px;font-size:13px;margin-bottom:24px;">
+            <div>
+              <strong style="color:var(--navy-900);display:block;margin-bottom:4px;">Consignee / Dealer Details:</strong>
+              <div><strong>Delta Networks Ltd.</strong></div>
+              <div>Trade License: TRAD/DN/2026/0912</div>
+              <div>Attn: Kamrul Hasan (01711002233)</div>
+              <div>House 24, Road 7, Sector 4, Uttara, Dhaka</div>
+            </div>
+            <div style="text-align:right;">
+              <strong style="color:var(--navy-900);display:block;margin-bottom:4px;">PO Logistics & Payment:</strong>
+              <div>Issue Date: <strong>20 Oct 2026</strong></div>
+              <div>Payment Terms: <strong>30-Day Rolling Trade Credit</strong></div>
+              <div>Dispatch Carrier: <strong>SA Paribahan (CN: 8492019)</strong></div>
+              <div>Account Manager: <strong>Md. Asaduzzaman</strong></div>
+            </div>
+          </div>
+
+          <table class="sbc-table" style="font-size:13px;margin-bottom:20px;">
+            <thead>
+              <tr>
+                <th>Model & Description</th>
+                <th style="text-align:center;">Brand</th>
+                <th style="text-align:center;">Qty</th>
+                <th style="text-align:right;">Wholesale Unit</th>
+                <th style="text-align:right;">Total (BDT)</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td>
+                  <strong>TEG1116P-16-150W</strong>
+                  <div style="font-size:11px;color:var(--c-text-muted);">16-Port Gigabit PoE Managed Switch</div>
+                </td>
+                <td style="text-align:center;">Tenda</td>
+                <td style="text-align:center;">15</td>
+                <td style="text-align:right;">৳11,000</td>
+                <td style="text-align:right;">৳1,65,000</td>
+              </tr>
+              <tr>
+                <td>
+                  <strong>EPON/GPON XPON 1GE ONU</strong>
+                  <div style="font-size:11px;color:var(--c-text-muted);">Fiber Bridge / Routing Dual-Mode ONU</div>
+                </td>
+                <td style="text-align:center;">Netis</td>
+                <td style="text-align:center;">50</td>
+                <td style="text-align:right;">৳1,600</td>
+                <td style="text-align:right;">৳80,000</td>
+              </tr>
+            </tbody>
+          </table>
+
+          <div style="display:flex;justify-content:flex-end;">
+            <div style="width:280px;font-size:13px;">
+              <div style="display:flex;justify-content:space-between;margin-bottom:6px;">
+                <span>Subtotal (Wholesale):</span><strong>৳2,45,000</strong>
+              </div>
+              <div style="display:flex;justify-content:space-between;margin-bottom:8px;">
+                <span>Logistics & Freight:</span><strong>FREE (Tier-1 Benefit)</strong>
+              </div>
+              <div style="border-top:2px solid var(--gray-200);padding-top:8px;display:flex;justify-content:space-between;font-size:16px;font-weight:800;color:var(--navy-900);">
+                <span>PO Total:</span><span>৳2,45,000</span>
+              </div>
+              <div style="font-size:11px;color:var(--green-700);margin-top:4px;text-align:right;">
+                Billed to Credit Line (Due in 30 Days)
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+    </div>
+  </main>
+
+  <div id="sbc-footer"></div>
+  <div id="sbc-toast" role="status" aria-live="polite"></div>
+
+  <!-- Standard Prototype Scripts -->
+  <script defer src="../js/config.js"></script>
+  <script defer src="../js/i18n/en.js"></script>
+  <script defer src="../js/core/util.js"></script>
+  <script defer src="../js/core/storage.js"></script>
+  <script defer src="../data/categories.js"></script>
+  <script defer src="../data/brands.js"></script>
+  <script defer src="../data/branches.js"></script>
+  <script defer src="../data/news.js"></script>
+  <script defer src="../data/faq.js"></script>
+  <script defer src="../data/downloads.js"></script>
+  <script defer src="../data/districts.js"></script>
+  <script defer src="../data/configurator-rules.js"></script>
+  <script defer src="../data/site-claims.js"></script>
+  <script defer src="../data/users.js"></script>
+  <script defer src="../data/products.js"></script>
+  <script defer src="../js/core/store.js"></script>
+  <script defer src="../js/core/validate.js"></script>
+  <script defer src="../js/core/ui.js"></script>
+  <script defer src="../js/layout.js"></script>
+  <script defer src="../js/search.js"></script>
+  <script defer src="../js/cards.js"></script>
+  <script defer src="../js/dealer.js"></script>
+  <script defer src="../js/demo.js"></script>
+</body>
+</html>

@@ -1,0 +1,215 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Customer Registration | South Bangla Computers</title>
+  <meta name="description" content="Create a new customer account at South Bangla Computers to order genuine ICT hardware and access warranty service.">
+  <link rel="stylesheet" href="css/tokens.css">
+  <link rel="stylesheet" href="css/base.css">
+  <link rel="stylesheet" href="css/layout.css">
+  <link rel="stylesheet" href="css/components.css">
+  <link rel="stylesheet" href="css/print.css" media="print">
+</head>
+<body data-root="" data-page="register">
+  <a href="#main-content" class="sbc-skip-link">Skip to main content</a>
+  <div id="sbc-header"></div>
+
+  <main id="main-content" class="l-container" style="padding-top: var(--sp-8); padding-bottom: var(--sp-12);">
+    <div style="max-width: 500px; margin: 0 auto;">
+      <div style="text-align:center; margin-bottom: var(--sp-6);">
+        <h1 style="font-size:var(--fs-h2); color:var(--navy-900); margin:0 0 6px;">Create Customer Account</h1>
+        <p style="color:var(--c-text-muted); font-size:var(--fs-sm); margin:0;">
+          Join South Bangla Computers for retail orders and warranty claims
+        </p>
+      </div>
+
+      <div style="background:#fff; border:1px solid var(--gray-200); border-radius:var(--r-lg); padding:var(--sp-6); box-shadow:var(--sh-sm);">
+        <form id="customer-register-form" novalidate>
+          <div class="sbc-form-group">
+            <label for="reg-name" class="sbc-label sbc-label--required">Full Name:</label>
+            <input type="text" id="reg-name" class="sbc-input" required placeholder="e.g. Sohag Hossen">
+            <span class="sbc-input-error" id="reg-name-err"></span>
+          </div>
+
+          <div class="sbc-form-group">
+            <label for="reg-phone" class="sbc-label sbc-label--required">Mobile Number (BD 11-digit):</label>
+            <input type="tel" id="reg-phone" class="sbc-input" required placeholder="01XXXXXXXXX">
+            <span class="sbc-input-error" id="reg-phone-err"></span>
+          </div>
+
+          <div class="sbc-form-group">
+            <label for="reg-email" class="sbc-label sbc-label--required">Email Address:</label>
+            <input type="email" id="reg-email" class="sbc-input" required placeholder="name@example.com">
+            <span class="sbc-input-error" id="reg-email-err"></span>
+          </div>
+
+          <div class="sbc-form-group">
+            <label for="reg-district" class="sbc-label sbc-label--required">Home / Delivery District:</label>
+            <select id="reg-district" class="sbc-select">
+              <option value="Dhaka">Dhaka</option>
+              <option value="Chattogram">Chattogram</option>
+              <option value="Khulna">Khulna</option>
+              <option value="Rajshahi">Rajshahi</option>
+              <option value="Sylhet">Sylhet</option>
+              <option value="Barishal">Barishal</option>
+              <option value="Rangpur">Rangpur</option>
+              <option value="Mymensingh">Mymensingh</option>
+            </select>
+          </div>
+
+          <div class="sbc-form-group">
+            <label for="reg-pwd" class="sbc-label sbc-label--required">Password:</label>
+            <input type="password" id="reg-pwd" class="sbc-input" required placeholder="At least 8 characters">
+            <span class="sbc-input-error" id="reg-pwd-err"></span>
+          </div>
+
+          <div class="sbc-form-group">
+            <label for="reg-pwd2" class="sbc-label sbc-label--required">Confirm Password:</label>
+            <input type="password" id="reg-pwd2" class="sbc-input" required placeholder="Repeat password">
+            <span class="sbc-input-error" id="reg-pwd2-err"></span>
+          </div>
+
+          <div class="sbc-form-group">
+            <label class="sbc-checkbox-label" style="font-size:12px;">
+              <input type="checkbox" id="reg-terms" required checked>
+              <span>I agree to the South Bangla Computers <a href="terms.html" target="_blank">Terms</a> and <a href="privacy.html" target="_blank">Privacy Policy</a>.</span>
+            </label>
+            <span class="sbc-input-error" id="reg-terms-err"></span>
+          </div>
+
+          <button type="submit" class="sbc-btn sbc-btn--primary sbc-btn--lg sbc-btn--full" style="margin-top:var(--sp-4);">
+            Complete Registration &rarr;
+          </button>
+        </form>
+
+        <div style="text-align:center; margin-top:var(--sp-6); padding-top:var(--sp-4); border-top:1px solid var(--gray-200); font-size:13px; color:var(--c-text-muted);">
+          Already have an account? <a href="login.html" style="font-weight:600;">Sign in</a>
+        </div>
+      </div>
+
+      <!-- Dealer Callout -->
+      <div style="text-align:center; margin-top:var(--sp-6); padding:14px; background:#F8FAFC; border-radius:var(--r-md); border:1px solid var(--gray-200);">
+        <strong style="font-size:13px; color:var(--navy-900);">Are you an IT Retailer or ISP Owner?</strong>
+        <p style="font-size:12px; color:var(--c-text-muted); margin:4px 0 10px;">
+          Apply for trade pricing, credit terms, and dedicated wholesale manager access.
+        </p>
+        <a href="dealer/register.html" class="sbc-btn sbc-btn--outline sbc-btn--sm">
+          Apply for Wholesale Dealer Account &rarr;
+        </a>
+      </div>
+    </div>
+  </main>
+
+  <div id="sbc-footer"></div>
+  <div id="sbc-toast" role="status" aria-live="polite"></div>
+
+  <!-- Standard Prototype Scripts -->
+  <script defer src="js/config.js"></script>
+  <script defer src="js/i18n/en.js"></script>
+  <script defer src="js/core/util.js"></script>
+  <script defer src="js/core/storage.js"></script>
+  <script defer src="data/categories.js"></script>
+  <script defer src="data/brands.js"></script>
+  <script defer src="data/branches.js"></script>
+  <script defer src="data/news.js"></script>
+  <script defer src="data/faq.js"></script>
+  <script defer src="data/downloads.js"></script>
+  <script defer src="data/districts.js"></script>
+  <script defer src="data/configurator-rules.js"></script>
+  <script defer src="data/site-claims.js"></script>
+  <script defer src="data/users.js"></script>
+  <script defer src="data/products.js"></script>
+  <script defer src="js/core/store.js"></script>
+  <script defer src="js/core/validate.js"></script>
+  <script defer src="js/core/ui.js"></script>
+  <script defer src="js/layout.js"></script>
+  <script defer src="js/search.js"></script>
+  <script defer src="js/cards.js"></script>
+  <script defer src="js/demo.js"></script>
+
+  <script defer>
+    window.addEventListener("SBC:ready", function () {
+      const util = window.SBC.util;
+      const store = window.SBC.store;
+      const validate = window.SBC.validate;
+      const ui = window.SBC.ui;
+
+      const form = document.getElementById("customer-register-form");
+
+      form.addEventListener("submit", function (e) {
+        e.preventDefault();
+
+        const name = document.getElementById("reg-name").value.trim();
+        const phone = document.getElementById("reg-phone").value.trim();
+        const email = document.getElementById("reg-email").value.trim();
+        const district = document.getElementById("reg-district").value;
+        const pwd = document.getElementById("reg-pwd").value;
+        const pwd2 = document.getElementById("reg-pwd2").value;
+        const terms = document.getElementById("reg-terms").checked;
+
+        let hasError = false;
+
+        if (!name) {
+          document.getElementById("reg-name-err").textContent = "Full name is required";
+          hasError = true;
+        } else {
+          document.getElementById("reg-name-err").textContent = "";
+        }
+
+        if (!validate.isBdPhone(phone)) {
+          document.getElementById("reg-phone-err").textContent = "Enter valid 11-digit BD mobile number";
+          hasError = true;
+        } else {
+          document.getElementById("reg-phone-err").textContent = "";
+        }
+
+        if (!validate.isEmail(email)) {
+          document.getElementById("reg-email-err").textContent = "Enter a valid email address";
+          hasError = true;
+        } else {
+          document.getElementById("reg-email-err").textContent = "";
+        }
+
+        if (pwd.length < 8) {
+          document.getElementById("reg-pwd-err").textContent = "Password must be at least 8 characters";
+          hasError = true;
+        } else {
+          document.getElementById("reg-pwd-err").textContent = "";
+        }
+
+        if (pwd !== pwd2) {
+          document.getElementById("reg-pwd2-err").textContent = "Passwords do not match";
+          hasError = true;
+        } else {
+          document.getElementById("reg-pwd2-err").textContent = "";
+        }
+
+        if (!terms) {
+          document.getElementById("reg-terms-err").textContent = "You must agree to terms";
+          hasError = true;
+        } else {
+          document.getElementById("reg-terms-err").textContent = "";
+        }
+
+        if (hasError) return;
+
+        // Create new session
+        const newUser = {
+          id: `cust-${Date.now()}`,
+          name: name,
+          email: email,
+          phone: phone,
+          role: "customer",
+          district: district,
+          address: `House #12, Road #4, ${district}`
+        };
+
+        store.setSession(newUser);
+        ui.toast(`Welcome to South Bangla Computers, ${name}!`, "success");
+        setTimeout(() => window.location.href = util.U("account/index.html"), 400);
+      });
+    });
+  </script>
+</body>
+</html>

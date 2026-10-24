@@ -1,0 +1,141 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Article View | South Bangla Computers</title>
+  <meta name="description" content="Technical networking insights, buying guides, and company news from South Bangla Computers.">
+  <link rel="stylesheet" href="css/tokens.css">
+  <link rel="stylesheet" href="css/base.css">
+  <link rel="stylesheet" href="css/layout.css">
+  <link rel="stylesheet" href="css/components.css">
+  <link rel="stylesheet" href="css/print.css" media="print">
+</head>
+<body data-root="" data-page="article">
+  <a href="#main-content" class="sbc-skip-link">Skip to main content</a>
+  <div id="sbc-header"></div>
+
+  <main id="main-content" class="l-container" style="padding-top: var(--sp-6); padding-bottom: var(--sp-12);">
+    <!-- Breadcrumbs -->
+    <nav aria-label="Breadcrumb" class="sbc-breadcrumbs" style="margin-bottom: var(--sp-6);">
+      <ol style="display:flex;gap:var(--sp-2);list-style:none;padding:0;margin:0;font-size:var(--fs-xs);color:var(--c-text-muted);">
+        <li><a href="index.html">Home</a> <span aria-hidden="true">&rsaquo;</span></li>
+        <li><a href="news.html">News & Insights</a> <span aria-hidden="true">&rsaquo;</span></li>
+        <li id="article-crumb-title" style="color:var(--navy-900);font-weight:600;" aria-current="page">Article</li>
+      </ol>
+    </nav>
+
+    <!-- Main Article Body -->
+    <article style="max-width:800px;margin:0 auto;background:#fff;border:1px solid var(--gray-200);border-radius:var(--r-lg);padding:var(--sp-8);box-shadow:var(--sh-sm);margin-bottom:var(--sp-8);">
+      <div style="margin-bottom:16px;">
+        <span class="sbc-badge sbc-badge--tag" id="art-category">Buying Guide</span>
+      </div>
+
+      <h1 id="art-title" style="font-size:var(--fs-h1);color:var(--navy-900);margin:0 0 12px;line-height:1.25;"></h1>
+
+      <div style="display:flex;gap:16px;align-items:center;font-size:13px;color:var(--c-text-muted);border-bottom:1px solid var(--gray-200);padding-bottom:16px;margin-bottom:24px;">
+        <span id="art-author">By South Bangla Technical Team</span>
+        <span>&bull;</span>
+        <span id="art-date">21 October 2026</span>
+        <span>&bull;</span>
+        <span id="art-read-time">5 Min Read</span>
+      </div>
+
+      <!-- Article Body -->
+      <div id="art-body" style="font-size:15px;line-height:1.8;color:var(--navy-900);"></div>
+
+      <!-- Action Footer -->
+      <div style="border-top:1px solid var(--gray-200);padding-top:20px;margin-top:32px;display:flex;justify-content:space-between;align-items:center;">
+        <a href="news.html" class="sbc-btn sbc-btn--outline sbc-btn--sm">&larr; Back to All Articles</a>
+        <a href="products.html" class="sbc-btn sbc-btn--primary sbc-btn--sm">Explore Featured Equipment &rarr;</a>
+      </div>
+    </article>
+
+    <!-- Related Products -->
+    <section style="max-width:800px;margin:0 auto;">
+      <h3 style="font-size:var(--fs-h3);color:var(--navy-900);margin-bottom:16px;">Recommended Equipment Mentioned</h3>
+      <div id="art-related-products" style="display:grid;grid-template-columns:repeat(auto-fill, minmax(240px, 1fr));gap:var(--sp-4);"></div>
+    </section>
+  </main>
+
+  <div id="sbc-footer"></div>
+  <div id="sbc-toast" role="status" aria-live="polite"></div>
+
+  <!-- Standard Prototype Scripts -->
+  <script defer src="js/config.js"></script>
+  <script defer src="js/i18n/en.js"></script>
+  <script defer src="js/core/util.js"></script>
+  <script defer src="js/core/storage.js"></script>
+  <script defer src="data/categories.js"></script>
+  <script defer src="data/brands.js"></script>
+  <script defer src="data/branches.js"></script>
+  <script defer src="data/news.js"></script>
+  <script defer src="data/faq.js"></script>
+  <script defer src="data/downloads.js"></script>
+  <script defer src="data/districts.js"></script>
+  <script defer src="data/configurator-rules.js"></script>
+  <script defer src="data/site-claims.js"></script>
+  <script defer src="data/users.js"></script>
+  <script defer src="data/products.js"></script>
+  <script defer src="js/core/store.js"></script>
+  <script defer src="js/core/validate.js"></script>
+  <script defer src="js/core/ui.js"></script>
+  <script defer src="js/layout.js"></script>
+  <script defer src="js/search.js"></script>
+  <script defer src="js/cards.js"></script>
+  <script defer src="js/demo.js"></script>
+
+  <script defer>
+    window.addEventListener("SBC:ready", function () {
+      const util = window.SBC.util;
+      const D = window.SBC_DATA || {};
+      const news = D.news || [];
+      const prods = D.products || [];
+
+      const slug = util.getQueryParam("slug") || (news[0] ? news[0].slug : "");
+      let article = news.find(n => n.slug === slug);
+      if (!article) article = news[0];
+
+      if (!article) return;
+
+      document.title = `${article.title} | South Bangla Computers`;
+      document.getElementById("art-title").textContent = article.title;
+      document.getElementById("art-crumb-title").textContent = article.title;
+      document.getElementById("art-category").textContent = article.category;
+      document.getElementById("art-author").textContent = `By ${article.author || 'SBC Editorial Team'}`;
+      document.getElementById("art-date").textContent = article.date;
+      document.getElementById("art-read-time").textContent = article.readTime || "5 Min Read";
+
+      // Populate body content
+      document.getElementById("art-body").innerHTML = `
+        <p style="font-size:16px;font-weight:500;color:var(--navy-800);margin-bottom:20px;line-height:1.6;">
+          ${util.esc(article.excerpt)}
+        </p>
+        <div style="background:var(--gray-50);border:1px solid var(--gray-200);border-radius:var(--r-md);padding:20px;margin-bottom:24px;">
+          <h3 style="font-size:16px;color:var(--navy-900);margin:0 0 10px;">Executive Summary</h3>
+          <p style="margin:0;font-size:14px;color:var(--c-text-secondary);line-height:1.6;">
+            ${util.esc(article.body ? article.body.substring(0, 300) : article.excerpt)}...
+          </p>
+        </div>
+        <h3 style="font-size:18px;color:var(--navy-900);margin:24px 0 12px;">Technical Key Points</h3>
+        <p style="margin-bottom:16px;">
+          ${util.esc(article.body || article.excerpt)}
+        </p>
+        <div style="background:#F0FDF4;border-left:4px solid var(--green-700);padding:16px;border-radius:0 var(--r-md) var(--r-md) 0;margin:24px 0;">
+          <strong style="color:var(--green-800);font-size:14px;display:block;margin-bottom:4px;">South Bangla Channel Recommendation:</strong>
+          <span style="font-size:13px;color:#166534;">
+            Always verify the presence of the official South Bangla Computers holographic warranty seal when purchasing hardware in Bangladesh to safeguard against unauthorized gray-market imports.
+          </span>
+        </div>
+      `;
+
+      // Related products
+      const relGrid = document.getElementById("art-related-products");
+      if (relGrid) {
+        const sampleProds = prods.slice(0, 3);
+        relGrid.innerHTML = sampleProds.map(p => window.SBC.cards.productCard(p)).join("");
+      }
+    });
+  </script>
+</body>
+</html>

@@ -1,0 +1,199 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Photo & Event Gallery | South Bangla Computers</title>
+  <meta name="description" content="South Bangla Computers media gallery, channel partner events, showroom inaugurations, and technology exhibitions across Bangladesh.">
+  <link rel="stylesheet" href="css/tokens.css">
+  <link rel="stylesheet" href="css/base.css">
+  <link rel="stylesheet" href="css/layout.css">
+  <link rel="stylesheet" href="css/components.css">
+  <link rel="stylesheet" href="css/print.css" media="print">
+</head>
+<body data-root="" data-page="media">
+  <a href="#main-content" class="sbc-skip-link">Skip to main content</a>
+  <div id="sbc-header"></div>
+
+  <main id="main-content" class="l-container" style="padding-top: var(--sp-6); padding-bottom: var(--sp-12);">
+    <!-- Breadcrumbs -->
+    <nav aria-label="Breadcrumb" class="sbc-breadcrumbs" style="margin-bottom: var(--sp-6);">
+      <ol style="display:flex;gap:var(--sp-2);list-style:none;padding:0;margin:0;font-size:var(--fs-xs);color:var(--c-text-muted);">
+        <li><a href="index.html">Home</a> <span aria-hidden="true">&rsaquo;</span></li>
+        <li><a href="about.html">Company</a> <span aria-hidden="true">&rsaquo;</span></li>
+        <li style="color:var(--navy-900);font-weight:600;" aria-current="page">Media & Events</li>
+      </ol>
+    </nav>
+
+    <!-- Header Section -->
+    <div style="text-align:center;max-width:680px;margin:0 auto var(--sp-8);">
+      <span class="sbc-badge sbc-badge--tag" style="margin-bottom:8px;">Company Highlights</span>
+      <h1 style="font-size:var(--fs-h1);color:var(--navy-900);margin:0 0 8px;">Photo & Event Gallery</h1>
+      <p style="color:var(--c-text-muted);font-size:var(--fs-base);margin:0;">
+        Moments from our partner conventions, technical workshops, branch inaugurations, and national ICT expos.
+      </p>
+    </div>
+
+    <!-- Media Filter Tabs -->
+    <div style="display:flex;justify-content:center;gap:8px;flex-wrap:wrap;margin-bottom:var(--sp-8);">
+      <button class="sbc-chip is-active js-media-filter" data-tag="all">All Photos (6)</button>
+      <button class="sbc-chip js-media-filter" data-tag="events">Dealer Conventions</button>
+      <button class="sbc-chip js-media-filter" data-tag="branches">Showrooms</button>
+      <button class="sbc-chip js-media-filter" data-tag="expos">ICT Expos & Launches</button>
+    </div>
+
+    <!-- Media Grid -->
+    <div id="media-grid" style="display:grid;grid-template-columns:repeat(auto-fill, minmax(320px, 1fr));gap:var(--sp-6);">
+      <!-- Populated via JS -->
+    </div>
+  </main>
+
+  <div id="sbc-footer"></div>
+  <div id="sbc-toast" role="status" aria-live="polite"></div>
+
+  <!-- Standard Prototype Scripts -->
+  <script defer src="js/config.js"></script>
+  <script defer src="js/i18n/en.js"></script>
+  <script defer src="js/core/util.js"></script>
+  <script defer src="js/core/storage.js"></script>
+  <script defer src="data/categories.js"></script>
+  <script defer src="data/brands.js"></script>
+  <script defer src="data/branches.js"></script>
+  <script defer src="data/news.js"></script>
+  <script defer src="data/faq.js"></script>
+  <script defer src="data/downloads.js"></script>
+  <script defer src="data/districts.js"></script>
+  <script defer src="data/configurator-rules.js"></script>
+  <script defer src="data/site-claims.js"></script>
+  <script defer src="data/users.js"></script>
+  <script defer src="data/products.js"></script>
+  <script defer src="js/core/store.js"></script>
+  <script defer src="js/core/validate.js"></script>
+  <script defer src="js/core/ui.js"></script>
+  <script defer src="js/layout.js"></script>
+  <script defer src="js/search.js"></script>
+  <script defer src="js/cards.js"></script>
+  <script defer src="js/demo.js"></script>
+
+  <script defer>
+    function initMedia() {
+      const util = window.SBC ? window.SBC.util : null;
+      const ui = window.SBC ? window.SBC.ui : null;
+
+      const mediaItems = [
+        {
+          id: "m1",
+          title: "Annual Channel Partner Meet 2026",
+          tag: "events",
+          date: "February 2026",
+          location: "Pan Pacific Sonargaon, Dhaka",
+          desc: "Keynote presentation on Wi-Fi 7 enterprise rollouts with 200+ authorized dealers across Bangladesh."
+        },
+        {
+          id: "m2",
+          title: "Computer City Center Central Showroom",
+          tag: "branches",
+          date: "Showroom",
+          location: "Multiplan Center, Elephant Road, Dhaka",
+          desc: "Our primary flagship retail and wholesale fulfillment hub with live demo counters."
+        },
+        {
+          id: "m3",
+          title: "Tenda Wi-Fi 7 National Product Launch",
+          tag: "expos",
+          date: "January 2026",
+          location: "Dhaka, Bangladesh",
+          desc: "Unveiling the BE12 Pro and high-density business networking routers."
+        },
+        {
+          id: "m4",
+          title: "Agrabad Commercial Showroom Launch",
+          tag: "branches",
+          date: "Showroom",
+          location: "Chattogram Hub",
+          desc: "Expanding regional distributor support and fast warranty RMA across the port city."
+        },
+        {
+          id: "m5",
+          title: "ISPAB Bangladesh Tech Expo Pavilion",
+          tag: "expos",
+          date: "November 2025",
+          location: "BICC, Dhaka",
+          desc: "Showcasing BDCOM GPON/EPON chassis OLTs and V-SOL fiber optic transceivers."
+        },
+        {
+          id: "m6",
+          title: "Fiber Splicing & Optical Field Training",
+          tag: "events",
+          date: "October 2025",
+          location: "SBC Technical Lab, Dhaka",
+          desc: "Hands-on calibration workshop for telecom technicians and regional ISP engineers."
+        }
+      ];
+
+      function renderGrid(tag = "all") {
+        const filtered = mediaItems.filter(m => tag === "all" || m.tag === tag);
+        const grid = document.getElementById("media-grid");
+
+        grid.innerHTML = filtered.map(item => `
+          <div class="sbc-card" style="overflow:hidden;display:flex;flex-direction:column;cursor:pointer;" class="js-media-card" data-id="${item.id}">
+            <div style="aspect-ratio:16/9;background:linear-gradient(135deg, #0B1F3A 0%, #1558D6 100%);display:flex;align-items:center;justify-content:center;color:#fff;padding:20px;text-align:center;">
+              <div>
+                <div style="font-size:32px;margin-bottom:8px;">&#128247;</div>
+                <strong style="font-size:16px;">${util.esc(item.title)}</strong>
+              </div>
+            </div>
+            <div style="padding:20px;flex:1;display:flex;flex-direction:column;">
+              <div style="display:flex;justify-content:space-between;margin-bottom:8px;font-size:12px;color:var(--c-text-muted);">
+                <span>${util.esc(item.location)}</span>
+                <strong>${util.esc(item.date)}</strong>
+              </div>
+              <p style="font-size:13px;color:var(--c-text-secondary);margin:0;line-height:1.5;flex:1;">
+                ${util.esc(item.desc)}
+              </p>
+            </div>
+          </div>
+        `).join("");
+
+        grid.querySelectorAll(".sbc-card").forEach((card, idx) => {
+          card.addEventListener("click", () => {
+            const item = filtered[idx];
+            ui.modal({
+              title: item.title,
+              body: `
+                <div style="text-align:center;">
+                  <div style="aspect-ratio:16/9;background:#0B1F3A;border-radius:var(--r-md);display:flex;align-items:center;justify-content:center;color:#fff;margin-bottom:16px;font-size:24px;">
+                    &#128247; ${util.esc(item.title)}
+                  </div>
+                  <h4 style="font-size:16px;color:var(--navy-900);margin-bottom:6px;">${util.esc(item.location)} (${util.esc(item.date)})</h4>
+                  <p style="font-size:14px;color:var(--c-text-secondary);line-height:1.6;">${util.esc(item.desc)}</p>
+                </div>
+              `,
+              footer: `
+                <button class="sbc-btn sbc-btn--primary sbc-btn--full" onclick="window.SBC.ui.closeModal();">Close</button>
+              `
+            });
+          });
+        });
+      }
+
+      document.querySelectorAll(".js-media-filter").forEach(btn => {
+        btn.addEventListener("click", () => {
+          document.querySelectorAll(".js-media-filter").forEach(b => b.classList.remove("is-active"));
+          btn.classList.add("is-active");
+          renderGrid(btn.dataset.tag);
+        });
+      });
+
+      renderGrid("all");
+    }
+
+    if (document.readyState !== "loading" && window.SBC && window.SBC.isReady) {
+      initMedia();
+    } else {
+      window.addEventListener("SBC:ready", initMedia);
+      document.addEventListener("DOMContentLoaded", () => setTimeout(initMedia, 50));
+    }
+  </script>
+</body>
+</html>

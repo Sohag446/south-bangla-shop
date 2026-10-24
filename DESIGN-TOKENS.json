@@ -1,0 +1,299 @@
+{
+  "meta": {
+    "name": "South Bangla Computers Design Tokens",
+    "version": "1.0.0",
+    "date": "2026-10-21",
+    "source": "SOUTH-BANGLA-ECOMMERCE-UX-UI-DEVELOPMENT-BLUEPRINT.md section 8 (authoritative for intent); this file is authoritative for numeric values",
+    "status": "Draft. Brand blue/navy come from the Blueprint, not from a supplied brand guide. Green must be re-sampled from the supplied logo (Blueprint Q2).",
+    "cssMapping": "Each group has a _prefix. CSS custom property = _prefix + key, declared on :root in css/tokens.css. Example: color.blue-600 -> --blue-600 ; fontSize.h1 -> --fs-h1 ; spacing.4 -> --sp-4. Generate css/tokens.css from this file; never hard-code values in component CSS.",
+    "unitsNote": "Numbers without units are pixels unless the key says otherwise. rem assumes 16px root."
+  },
+  "color": {
+    "_prefix": "--",
+    "navy-900": "#0B1F3A",
+    "navy-800": "#102A4C",
+    "blue-600": "#1558D6",
+    "blue-700": "#1048B0",
+    "blue-50": "#EAF1FD",
+    "green-700": "#0B7A52",
+    "green-50": "#E6F4EE",
+    "amber-800": "#92400E",
+    "amber-50": "#FEF3C7",
+    "red-700": "#C62828",
+    "red-50": "#FDECEC",
+    "gray-900": "#111827",
+    "gray-700": "#3A4452",
+    "gray-500": "#6B7685",
+    "gray-300": "#CBD2DC",
+    "gray-200": "#E3E7ED",
+    "gray-100": "#F3F5F8",
+    "gray-50": "#F7F8FA",
+    "white": "#FFFFFF"
+  },
+  "semantic": {
+    "_prefix": "--c-",
+    "_note": "Aliases. Values are names of color tokens. Components should prefer these.",
+    "text": "gray-900",
+    "text-secondary": "gray-700",
+    "text-muted": "gray-500",
+    "text-on-dark": "white",
+    "text-link": "blue-600",
+    "surface": "white",
+    "surface-alt": "gray-50",
+    "surface-section": "gray-100",
+    "surface-dark": "navy-900",
+    "surface-dealer-bar": "navy-800",
+    "border": "gray-200",
+    "border-input": "gray-300",
+    "primary": "blue-600",
+    "primary-hover": "blue-700",
+    "primary-soft": "blue-50",
+    "success": "green-700",
+    "success-soft": "green-50",
+    "warning": "amber-800",
+    "warning-soft": "amber-50",
+    "danger": "red-700",
+    "danger-soft": "red-50",
+    "focus-ring": "blue-600",
+    "focus-ring-on-dark": "white",
+    "overlay": "rgba(11,31,58,0.40)"
+  },
+  "contrastNotes": {
+    "approximateOnWhite": {
+      "blue-600": "6.2:1",
+      "green-700": "5.3:1",
+      "red-700": "5.6:1",
+      "gray-500": "4.6:1"
+    },
+    "rule": "Body text >= 4.5:1, large text and UI boundaries >= 3:1. Values above are hand-calculated approximations and must be verified with a checker (QA-A11Y-04)."
+  },
+  "typography": {
+    "fontFamily": {
+      "_prefix": "--font-",
+      "sans": "\"Inter\", system-ui, -apple-system, \"Segoe UI\", Roboto, \"Noto Sans\", \"Noto Sans Bengali\", \"Hind Siliguri\", Arial, sans-serif",
+      "mono": "ui-monospace, SFMono-Regular, Menlo, Consolas, monospace"
+    },
+    "fontWeight": {
+      "_prefix": "--fw-",
+      "regular": 400,
+      "medium": 500,
+      "semibold": 600,
+      "bold": 700
+    },
+    "fontSize": {
+      "_prefix": "--fs-",
+      "display": { "value": "3rem", "valueMobile": "2.25rem", "lineHeight": 1.1, "weight": 700 },
+      "h1": { "value": "2.25rem", "valueMobile": "1.75rem", "lineHeight": 1.2, "weight": 700 },
+      "h2": { "value": "1.75rem", "valueMobile": "1.375rem", "lineHeight": 1.25, "weight": 600 },
+      "h3": { "value": "1.25rem", "valueMobile": "1.25rem", "lineHeight": 1.3, "weight": 600 },
+      "h4": { "value": "1.0625rem", "valueMobile": "1.0625rem", "lineHeight": 1.4, "weight": 600 },
+      "body": { "value": "1rem", "valueMobile": "1rem", "lineHeight": 1.6, "weight": 400 },
+      "sm": { "value": "0.875rem", "valueMobile": "0.875rem", "lineHeight": 1.5, "weight": 400 },
+      "xs": { "value": "0.75rem", "valueMobile": "0.75rem", "lineHeight": 1.4, "weight": 500 }
+    },
+    "mobileBreakpointForSizes": 767,
+    "rules": {
+      "minimumFontSizePx": 12,
+      "proseMaxWidthCh": 72,
+      "numerals": "font-variant-numeric: tabular-nums for prices and spec tables",
+      "bengaliMinLineHeight": 1.6
+    }
+  },
+  "spacing": {
+    "_prefix": "--sp-",
+    "1": 4, "2": 8, "3": 12, "4": 16, "5": 20, "6": 24, "8": 32, "10": 40, "12": 48, "16": 64, "20": 80
+  },
+  "sectionSpacing": {
+    "_prefix": "--section-",
+    "paddingDesktop": 64,
+    "paddingMobile": 40,
+    "titleToContentDesktop": 32,
+    "titleToContentMobile": 24
+  },
+  "radius": {
+    "_prefix": "--r-",
+    "sm": 4,
+    "md": 6,
+    "lg": 8,
+    "pill": 999,
+    "_rule": "No radius above 8px except pill, which is for chips only."
+  },
+  "border": {
+    "_prefix": "--bw-",
+    "hairline": 1,
+    "focus": 3,
+    "inputFocus": 2
+  },
+  "shadow": {
+    "_prefix": "--shadow-",
+    "sm": "0 1px 2px rgba(11,31,58,.08)",
+    "md": "0 4px 12px rgba(11,31,58,.10)",
+    "lg": "0 12px 32px rgba(11,31,58,.16)",
+    "_rule": "lg is for modals only."
+  },
+  "zIndex": {
+    "_prefix": "--z-",
+    "base": 0,
+    "stickyBar": 100,
+    "header": 200,
+    "dropdown": 300,
+    "drawer": 400,
+    "modal": 500,
+    "toast": 600,
+    "skipLink": 700
+  },
+  "motion": {
+    "_prefix": "--motion-",
+    "fast": "150ms",
+    "drawer": "240ms",
+    "skeletonShimmer": "1200ms",
+    "easing": "cubic-bezier(0.2, 0, 0, 1)",
+    "hoverIntentMs": 120,
+    "searchDebounceMs": 150,
+    "toastDurationMs": 4000,
+    "toastUndoDurationMs": 6000,
+    "undoRemoveMs": 5000,
+    "simulatedCheckoutMs": 1200,
+    "simulatedSlowNetworkMs": 1500,
+    "initialSkeletonMs": 400,
+    "reducedMotionRule": "Under prefers-reduced-motion: reduce set transitions to 0ms, disable shimmer and auto-rotation."
+  },
+  "breakpoints": {
+    "_prefix": "--bp-",
+    "_note": "min-width, mobile-first. CSS custom properties cannot be used inside @media; hard-code these numbers in media queries and keep them identical to this table.",
+    "sm": 480,
+    "md": 768,
+    "lg": 1024,
+    "xl": 1280,
+    "2xl": 1536,
+    "designTargets": [360, 768, 1024, 1280, 1536],
+    "minimumSupportedWidth": 320
+  },
+  "container": {
+    "_prefix": "--container-",
+    "max": 1280,
+    "reading": 760,
+    "gutterDesktop": 24,
+    "gutterMobile": 16
+  },
+  "grid": {
+    "_prefix": "--grid-",
+    "columns": 12,
+    "gapDesktop": 24,
+    "gapMobile": 16,
+    "productGridColumns": { "below768": 2, "from768": 3, "from1024WithSidebar": 3, "from1280WithoutSidebar": 4, "from1536": 4 }
+  },
+  "layout": {
+    "_prefix": "--layout-",
+    "announcementBarHeight": 40,
+    "headerHeightDesktop": 72,
+    "headerHeightMobile": 56,
+    "headerBreakpointToHamburger": 1024,
+    "searchWidthPercentDesktop": 40,
+    "heroMinHeightDesktop": 520,
+    "heroMinHeightTablet": 440,
+    "campaignTileAspect": "16 / 7",
+    "categoryTileHeight": 96,
+    "filterSidebarLg": 260,
+    "filterSidebarXl": 280,
+    "drawerWidth": 420,
+    "mobileDrawerWidthMax": 320,
+    "modalMaxWidth": 560,
+    "toastMaxWidth": 420,
+    "toastMaxStack": 3,
+    "stickyBuyBarHeight": 72,
+    "pdpGalleryColumnPercent": 55,
+    "pdpBuyBoxColumnPercent": 45,
+    "dealerSidebarWidth": 248,
+    "accountSidebarWidth": 248,
+    "prototypeStripHeight": 28,
+    "demoToolsButtonOffset": 16
+  },
+  "component": {
+    "button": {
+      "heightDefault": 44, "heightSm": 36, "paddingXDefault": 20, "paddingXSm": 14,
+      "fontSizeToken": "fs-sm", "fontWeight": 600, "radiusToken": "r-md",
+      "iconOnlySize": 40, "minTouchTarget": 44, "gapIconLabel": 8
+    },
+    "input": {
+      "height": 44, "paddingX": 12, "borderToken": "gray-300", "radiusToken": "r-md",
+      "textareaMinHeight": 120, "checkboxSize": 20, "labelGap": 6, "errorGap": 6
+    },
+    "productCard": {
+      "imageAspect": "1 / 1", "imageFit": "contain", "padding": 16, "gap": 8,
+      "titleLines": 2, "maxBadges": 2, "borderToken": "gray-200", "radiusToken": "r-lg",
+      "hoverLiftMaxPx": 2, "listViewImageSize": 120, "compactImageSize": 96
+    },
+    "categoryTile": { "height": 96, "iconSize": 32, "radiusToken": "r-lg" },
+    "brandLogoTile": { "heroTileHeight": 120, "standardLogoCell": "160 x 72", "logoMaxHeight": 40 },
+    "badge": { "height": 22, "paddingX": 8, "fontSizeToken": "fs-xs", "radiusToken": "r-sm" },
+    "chip": { "height": 36, "paddingX": 14, "radiusToken": "pill" },
+    "quantityStepper": { "buttonSize": 44, "inputWidth": 56, "compactButtonSize": 36 },
+    "gallery": { "mainAspect": "1 / 1", "thumbSize": 72, "thumbGap": 8, "maxImages": 6, "lightboxMaxWidth": 1100 },
+    "searchSuggestions": { "maxProducts": 5, "maxCategories": 2, "maxBrands": 2, "thumbSize": 40, "rowHeight": 56, "minChars": 2, "panelMaxHeight": 480 },
+    "table": { "cellPaddingY": 12, "cellPaddingX": 16, "headerBackgroundToken": "gray-100", "stackToCardsBelow": 768 },
+    "toast": { "paddingY": 12, "paddingX": 16, "iconSize": 20 },
+    "avatar": { "size": 40 },
+    "skeleton": { "baseToken": "gray-100", "highlightToken": "gray-200" },
+    "icon": { "grid": 24, "stroke": 1.75, "sizes": [16, 20, 24, 32, 48] },
+    "stepper": { "markerSize": 32, "lineThickness": 2 },
+    "progressBar": { "height": 6, "radiusToken": "pill" },
+    "focusRing": { "width": 3, "offset": 2, "colorToken": "focus-ring", "colorOnDarkToken": "focus-ring-on-dark" }
+  },
+  "imageRules": {
+    "product": { "ratio": "1:1", "minPx": 800, "recommendedPx": 1000, "paddingPercent": 8 },
+    "thumbnail": { "ratio": "1:1", "px": 160 },
+    "hero": { "ratio": "16:10", "px": "1600x1000" },
+    "campaign": { "ratio": "16:7", "px": "1200x525" },
+    "news": { "ratio": "16:9", "px": "1200x675" },
+    "brandLogo": { "ratio": "2:1", "px": "240x120", "format": "SVG preferred, else transparent PNG" },
+    "og": { "ratio": "1.91:1", "px": "1200x630" },
+    "maxFileSizeKbProduction": 150
+  },
+  "stockStatus": {
+    "in-stock": { "label": "In stock", "colorToken": "green-700", "bgToken": "green-50" },
+    "low-stock": { "label": "Low stock", "colorToken": "amber-800", "bgToken": "amber-50", "thresholdUnits": 5 },
+    "preorder": { "label": "Pre-order", "colorToken": "blue-700", "bgToken": "blue-50" },
+    "out-of-stock": { "label": "Out of stock", "colorToken": "gray-700", "bgToken": "gray-200" },
+    "discontinued": { "label": "Discontinued", "colorToken": "gray-700", "bgToken": "gray-200" }
+  },
+  "badgeVariants": {
+    "new": { "colorToken": "blue-700", "bgToken": "blue-50", "suppressedWhen": "status == discontinued" },
+    "best-seller": { "colorToken": "blue-700", "bgToken": "blue-50", "demo": true },
+    "discount": { "colorToken": "green-700", "bgToken": "green-50", "minPercent": 5 },
+    "low-stock": { "colorToken": "amber-800", "bgToken": "amber-50" },
+    "out-of-stock": { "colorToken": "gray-700", "bgToken": "gray-200" },
+    "discontinued": { "colorToken": "gray-700", "bgToken": "gray-200" },
+    "preorder": { "colorToken": "blue-700", "bgToken": "blue-50" },
+    "dealer-price": { "colorToken": "white", "bgToken": "navy-900" },
+    "demo-price": { "colorToken": "gray-700", "bgToken": "white", "outlineToken": "gray-300" }
+  },
+  "currency": {
+    "code": "BDT",
+    "symbol": "৳",
+    "grouping": "lakh (last 3 digits, then groups of 2)",
+    "example": "৳ 1,25,000",
+    "digits": "western",
+    "decimals": 0
+  },
+  "storage": {
+    "namespace": "sbc.",
+    "keys": [
+      "sbc.cart", "sbc.wishlist", "sbc.compare", "sbc.recent", "sbc.recentSearches",
+      "sbc.users", "sbc.session", "sbc.orders", "sbc.orderSeq", "sbc.addresses",
+      "sbc.dealerDraft", "sbc.dealerApps", "sbc.dealerOrders", "sbc.quotes",
+      "sbc.configurator", "sbc.disclosed", "sbc.priceMode", "sbc.demo", "sbc.version"
+    ],
+    "sessionStorageKeys": ["sbc.configurator"]
+  },
+  "config": {
+    "DEMO_MODE": true,
+    "DEMO_PRICING": true,
+    "PRICE_MODE": "hybrid",
+    "PRICE_MODE_OPTIONS": ["retail", "quote", "hybrid"],
+    "CURRENCY": "BDT",
+    "LANG": "en",
+    "ASSET_BASE_LOCAL": "assets/img/products/",
+    "ASSET_BASE_REMOTE_DEMO": "https://www.southbanglabd.com/backend/products/image/"
+  }
+}

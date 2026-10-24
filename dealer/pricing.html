@@ -1,0 +1,261 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Wholesale Dealer Price Sheet | South Bangla Computers</title>
+  <meta name="description" content="Official dealer tier wholesale pricing sheet with MOQ, retailer margins, and exportable CSV catalog.">
+  <link rel="stylesheet" href="../css/tokens.css">
+  <link rel="stylesheet" href="../css/base.css">
+  <link rel="stylesheet" href="../css/layout.css">
+  <link rel="stylesheet" href="../css/components.css">
+  <link rel="stylesheet" href="../css/print.css" media="print">
+  <style>
+    .dealer-layout {
+      display: grid;
+      grid-template-columns: 260px 1fr;
+      gap: var(--sp-8);
+      align-items: start;
+    }
+    @media (max-width: 900px) {
+      .dealer-layout {
+        grid-template-columns: 1fr;
+      }
+    }
+    .dealer-nav-link {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+      padding: 10px 14px;
+      border-radius: var(--r-md);
+      color: var(--navy-800);
+      font-size: 14px;
+      font-weight: 500;
+      text-decoration: none;
+      transition: background var(--trans-fast);
+    }
+    .dealer-nav-link:hover {
+      background: var(--gray-100);
+    }
+    .dealer-nav-link.is-active {
+      background: #F0FDF4;
+      color: var(--green-800);
+      font-weight: 700;
+    }
+  </style>
+</head>
+<body data-root="../" data-page="dealer">
+  <a href="#main-content" class="sbc-skip-link">Skip to main content</a>
+  <div id="sbc-header"></div>
+
+  <main id="main-content" class="l-container" style="padding-top: var(--sp-6); padding-bottom: var(--sp-12);">
+    <!-- Breadcrumbs -->
+    <nav aria-label="Breadcrumb" class="sbc-breadcrumbs" style="margin-bottom: var(--sp-6);">
+      <ol style="display:flex;gap:var(--sp-2);list-style:none;padding:0;margin:0;font-size:var(--fs-xs);color:var(--c-text-muted);">
+        <li><a href="../index.html">Home</a> <span aria-hidden="true">&rsaquo;</span></li>
+        <li><a href="dashboard.html">Dealer Hub</a> <span aria-hidden="true">&rsaquo;</span></li>
+        <li style="color:var(--navy-900);font-weight:600;" aria-current="page">Wholesale Price Sheet</li>
+      </ol>
+    </nav>
+
+    <div class="dealer-layout">
+      <!-- Dealer Sidebar Nav -->
+      <aside style="background:#fff;border:1px solid var(--gray-200);border-radius:var(--r-lg);padding:var(--sp-4);">
+        <div style="padding:12px;border-bottom:1px solid var(--gray-200);margin-bottom:8px;">
+          <div class="sbc-badge sbc-badge--in-stock" style="margin-bottom:6px;font-size:10px;">TIER 1 PLATINUM</div>
+          <strong style="display:block;font-size:15px;color:var(--navy-900);">Delta Networks Ltd.</strong>
+          <span style="font-size:12px;color:var(--c-text-muted);">Dealer ID: SBC-DLR-0891</span>
+        </div>
+        <nav style="display:flex;flex-direction:column;gap:4px;">
+          <a href="dashboard.html" class="dealer-nav-link">Overview Dashboard</a>
+          <a href="pricing.html" class="dealer-nav-link is-active">Wholesale Price Sheet</a>
+          <a href="bulk-order.html" class="dealer-nav-link">Bulk Order Tool (SKU)</a>
+          <a href="orders.html" class="dealer-nav-link">Purchase Orders</a>
+          <a href="settings.html" class="dealer-nav-link">Business Profile</a>
+          <a href="support.html" class="dealer-nav-link">Priority RMA Support</a>
+          <div style="border-top:1px solid var(--gray-200);margin:8px 0;"></div>
+          <a href="../products.html" class="dealer-nav-link">Browse Full Catalog</a>
+          <a href="#" class="dealer-nav-link js-logout" style="color:var(--red-700);">Sign Out</a>
+        </nav>
+      </aside>
+
+      <!-- Pricing Main Content -->
+      <section>
+        <div style="display:flex;justify-content:space-between;align-items:center;margin-bottom:var(--sp-6);flex-wrap:wrap;gap:12px;">
+          <div>
+            <h1 style="font-size:var(--fs-h2);color:var(--navy-900);margin:0 0 4px;">Tier 1 Wholesale Price Sheet</h1>
+            <p style="color:var(--c-text-muted);font-size:var(--fs-sm);margin:0;">
+              Confidential trade pricing for authorized South Bangla Computers channel partners
+            </p>
+          </div>
+          <button class="sbc-btn sbc-btn--outline sbc-btn--sm js-export-csv">
+            Export CSV Price Sheet
+          </button>
+        </div>
+
+        <!-- Filter Controls -->
+        <div style="background:#fff;border:1px solid var(--gray-200);border-radius:var(--r-md);padding:14px;margin-bottom:16px;display:flex;gap:12px;flex-wrap:wrap;">
+          <input type="text" id="pricing-search" class="sbc-input" placeholder="Search by model or product name..." style="flex:1;min-width:200px;height:38px;">
+          <select id="pricing-cat-filter" class="sbc-select" style="width:200px;height:38px;">
+            <option value="">All Categories</option>
+          </select>
+          <select id="pricing-brand-filter" class="sbc-select" style="width:160px;height:38px;">
+            <option value="">All Brands</option>
+          </select>
+        </div>
+
+        <!-- Table Container -->
+        <div style="background:#fff;border:1px solid var(--gray-200);border-radius:var(--r-lg);overflow:hidden;">
+          <div class="sbc-table-container">
+            <table class="sbc-table" id="pricing-table">
+              <thead>
+                <tr>
+                  <th>Model & Product</th>
+                  <th>Brand</th>
+                  <th>Retail (MSRP)</th>
+                  <th>Dealer Wholesale</th>
+                  <th>Margin</th>
+                  <th>MOQ</th>
+                  <th>Stock</th>
+                  <th>Order</th>
+                </tr>
+              </thead>
+              <tbody id="pricing-tbody"></tbody>
+            </table>
+          </div>
+        </div>
+      </section>
+    </div>
+  </main>
+
+  <div id="sbc-footer"></div>
+  <div id="sbc-toast" role="status" aria-live="polite"></div>
+
+  <!-- Standard Prototype Scripts -->
+  <script defer src="../js/config.js"></script>
+  <script defer src="../js/i18n/en.js"></script>
+  <script defer src="../js/core/util.js"></script>
+  <script defer src="../js/core/storage.js"></script>
+  <script defer src="../data/categories.js"></script>
+  <script defer src="../data/brands.js"></script>
+  <script defer src="../data/branches.js"></script>
+  <script defer src="../data/news.js"></script>
+  <script defer src="../data/faq.js"></script>
+  <script defer src="../data/downloads.js"></script>
+  <script defer src="../data/districts.js"></script>
+  <script defer src="../data/configurator-rules.js"></script>
+  <script defer src="../data/site-claims.js"></script>
+  <script defer src="../data/users.js"></script>
+  <script defer src="../data/products.js"></script>
+  <script defer src="../js/core/store.js"></script>
+  <script defer src="../js/core/validate.js"></script>
+  <script defer src="../js/core/ui.js"></script>
+  <script defer src="../js/layout.js"></script>
+  <script defer src="../js/search.js"></script>
+  <script defer src="../js/cards.js"></script>
+  <script defer src="../js/dealer.js"></script>
+  <script defer src="../js/demo.js"></script>
+
+  <script defer>
+    window.addEventListener("SBC:ready", function () {
+      const util = window.SBC.util;
+      const store = window.SBC.store;
+      const ui = window.SBC.ui;
+      const D = window.SBC_DATA || {};
+      const prods = D.products || [];
+      const cats = D.categories || [];
+      const brands = D.brands || [];
+
+      // Populate filter dropdowns
+      const catSelect = document.getElementById("pricing-cat-filter");
+      cats.forEach(c => {
+        const opt = document.createElement("option");
+        opt.value = c.slug;
+        opt.textContent = c.name;
+        catSelect.appendChild(opt);
+      });
+
+      const brandSelect = document.getElementById("pricing-brand-filter");
+      brands.forEach(b => {
+        const opt = document.createElement("option");
+        opt.value = b.name.toLowerCase();
+        opt.textContent = b.name;
+        brandSelect.appendChild(opt);
+      });
+
+      function renderPricingTable() {
+        const q = document.getElementById("pricing-search").value.trim().toLowerCase();
+        const selectedCat = catSelect.value;
+        const selectedBrand = brandSelect.value;
+
+        const filtered = prods.filter(p => {
+          if (q && !p.name.toLowerCase().includes(q) && !p.model.toLowerCase().includes(q)) return false;
+          if (selectedCat && p.category !== selectedCat) return false;
+          if (selectedBrand && p.brand.toLowerCase() !== selectedBrand) return false;
+          return true;
+        });
+
+        const tbody = document.getElementById("pricing-tbody");
+        tbody.innerHTML = filtered.map(p => {
+          const retail = p.price.retail || 0;
+          const wholesale = p.price.dealer || Math.round(retail * 0.85);
+          const margin = retail > wholesale ? Math.round(((retail - wholesale) / retail) * 100) : 15;
+          const moq = p.price.moq || 1;
+
+          return `
+            <tr>
+              <td>
+                <strong>${util.esc(p.model)}</strong>
+                <div style="font-size:12px;color:var(--c-text-muted);">${util.esc(p.name)}</div>
+              </td>
+              <td>${util.esc(p.brand)}</td>
+              <td>${util.formatBDT(retail)}</td>
+              <td><strong style="color:var(--green-700);">${util.formatBDT(wholesale)}</strong></td>
+              <td><span class="sbc-badge sbc-badge--in-stock">${margin}%</span></td>
+              <td><strong>${moq}</strong></td>
+              <td>
+                <span class="sbc-badge sbc-badge--${p.status}">${p.status.toUpperCase()}</span>
+              </td>
+              <td>
+                <button class="sbc-btn sbc-btn--primary sbc-btn--sm js-order-row" data-id="${p.id}" data-moq="${moq}" ${p.status === 'discontinued' ? 'disabled' : ''}>
+                  + Add (${moq})
+                </button>
+              </td>
+            </tr>
+          `;
+        }).join("");
+
+        tbody.querySelectorAll(".js-order-row").forEach(btn => {
+          btn.addEventListener("click", () => {
+            const id = btn.dataset.id;
+            const moq = parseInt(btn.dataset.moq, 10) || 1;
+            store.addToCart(id, moq);
+            ui.toast(`Added ${moq} units to wholesale purchase order!`, "success");
+          });
+        });
+      }
+
+      document.getElementById("pricing-search").addEventListener("input", renderPricingTable);
+      catSelect.addEventListener("change", renderPricingTable);
+      brandSelect.addEventListener("change", renderPricingTable);
+
+      document.querySelector(".js-export-csv").addEventListener("click", () => {
+        let csv = "Model,Name,Brand,Category,RetailPrice,WholesalePrice,MOQ,Status\n";
+        prods.forEach(p => {
+          const wholesale = p.price.dealer || Math.round((p.price.retail || 0) * 0.85);
+          csv += `"${p.model}","${p.name}","${p.brand}","${p.category}",${p.price.retail || 0},${wholesale},${p.price.moq || 1},"${p.status}"\n`;
+        });
+        const blob = new Blob([csv], { type: "text/csv" });
+        const url = URL.createObjectURL(blob);
+        const a = document.createElement("a");
+        a.href = url;
+        a.download = `SBC_Dealer_Price_Sheet_${new Date().toISOString().slice(0, 10)}.csv`;
+        a.click();
+        ui.toast("CSV Price sheet downloaded", "success");
+      });
+
+      renderPricingTable();
+    });
+  </script>
+</body>
+</html>

@@ -1,0 +1,362 @@
+﻿<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Shop - All Products &amp; Equipment Catalog | South Bangla Computers</title>
+  <meta name="description" content="Explore South Bangla Computers' authorized catalog of Wi-Fi 6/7 routers, PoE switches, fiber optical ONUs, and solar inverters with official warranty.">
+  <link rel="canonical" href="https://www.southbanglabd.com/products">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="css/tokens.css">
+  <link rel="stylesheet" href="css/base.css">
+  <link rel="stylesheet" href="css/components.css">
+  <link rel="stylesheet" href="css/layout.css">
+  <link rel="stylesheet" href="css/glamora-shop.css">
+</head>
+<body class="glam-shop-page" data-root="" data-page="shop">
+
+  <!-- ========================================================================
+       UNIFIED HEADER (SOUTH BANGLA COMPUTER GLOBAL DESIGN SYSTEM)
+       ======================================================================== -->
+  <div id="sbc-header"></div>
+
+  <main class="glam-container">
+    <!-- ========================================================================
+         BREADCRUMB
+         ======================================================================== -->
+    <nav class="glam-breadcrumb" aria-label="Breadcrumb">
+      <a href="index.html">Home</a>
+      <span>&rsaquo;</span>
+      <strong>All Products</strong>
+    </nav>
+
+    <!-- ========================================================================
+         PROMOTIONAL SLIDER (AUTHENTIC RETAIIL ADVERTISEMENTS â€” DOTS-ONLY NAVIGATION)
+         ======================================================================== -->
+    <div class="sbc-shop-slider" id="sbc-shop-slider" aria-label="Promotional Retail Showcase" role="region">
+      <div class="sbc-shop-slides">
+        <!-- Slide 1: Tenda HG1 & TX2L Pro Combo Offer (Authentic Trende BD Retail Advertisement) -->
+        <a href="shop.html?b=tenda#shop-catalog" class="sbc-shop-slide is-active" data-slide="0" aria-label="Tenda HG1 and TX2L Pro Combo Offer - 350 Taka Discount">
+          <img src="assets/img/slider/trende-combo-tenda-hg1-tx2l.png" alt="Tenda HG1 and TX2L Pro Combo Offer with Free Home Delivery in Bangladesh" class="sbc-shop-ad-img" loading="eager" />
+        </a>
+
+        <!-- Slide 2: Whole Home Mesh Wi-Fi 6 MX3 System (Authentic Trende BD Retail Advertisement) -->
+        <a href="shop.html?c=routers-wifi#shop-catalog" class="sbc-shop-slide" data-slide="1" aria-label="Nova MX3 Whole Home High-Speed Mesh Wi-Fi 6 System">
+          <img src="assets/img/slider/trende-tenda-mesh-mx3.png" alt="Nova MX3 Whole Home Mesh Wi-Fi 6 System 1-Pack 2-Pack 3-Pack Best Deal" class="sbc-shop-ad-img" loading="lazy" />
+        </a>
+      </div>
+    </div>
+
+    <!-- Dots Only Navigation (Strict Requirement: No left/right arrows) -->
+    <div class="sbc-shop-dots" id="sbc-shop-slider-dots" role="tablist" aria-label="Promotional Slide Navigation">
+      <button type="button" class="sbc-shop-dot is-active" data-slide-index="0" role="tab" aria-selected="true" aria-label="Slide 1: Tenda HG1 and TX2L Pro Combo Offer"></button>
+      <button type="button" class="sbc-shop-dot" data-slide-index="1" role="tab" aria-selected="false" aria-label="Slide 2: Nova MX3 Mesh Wi-Fi 6 System"></button>
+    </div>
+
+    <!-- ========================================================================
+         TWO-COLUMN CATALOG LAYOUT (SIDEBAR + PRODUCTS)
+         ======================================================================== -->
+    <div class="glam-layout" id="shop-catalog" style="scroll-margin-top: 90px;">
+      <!-- ── Left Column: Filter Sidebar Card ── -->
+      <aside class="glam-sidebar" aria-label="Product Filters">
+        <h2 class="glam-sidebar__heading">Filter Products</h2>
+
+        <!-- 1. Brands (1st) -->
+        <div class="glam-sidebar-section">
+          <button type="button" class="glam-sidebar-toggle" aria-expanded="true" aria-controls="filter-sec-brand">
+            <span>Brands</span>
+            <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="6 9 12 15 18 9"></polyline></svg>
+          </button>
+          <div id="filter-sec-brand" class="glam-sidebar-content">
+            <ul class="glam-checkbox-list" id="glam-brand-list">
+              <!-- Dynamically populated from data/shop-products.js with Meetion first -->
+            </ul>
+          </div>
+        </div>
+
+        <!-- 2. Warranty (2nd) -->
+        <div class="glam-sidebar-section">
+          <button type="button" class="glam-sidebar-toggle" aria-expanded="true" aria-controls="filter-sec-warranty">
+            <span>Warranty</span>
+            <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="6 9 12 15 18 9"></polyline></svg>
+          </button>
+          <div id="filter-sec-warranty" class="glam-sidebar-content">
+            <ul class="glam-checkbox-list" id="glam-warranty-list">
+              <!-- Dynamically populated with warranty tiers & counts -->
+            </ul>
+          </div>
+        </div>
+
+        <!-- 3. Price Range (3rd) -->
+        <div class="glam-sidebar-section">
+          <button type="button" class="glam-sidebar-toggle" aria-expanded="true" aria-controls="filter-sec-price">
+            <span>Price Range</span>
+            <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="6 9 12 15 18 9"></polyline></svg>
+          </button>
+          <div id="filter-sec-price" class="glam-sidebar-content">
+            <div class="glam-price-slider">
+              <div class="glam-price-track">
+                <div class="glam-price-bar"></div>
+              </div>
+            </div>
+            <div class="glam-price-inputs">
+              <div class="glam-price-input-box">
+                <span>From</span>
+                <input type="number" id="glam-price-min" value="500" step="500" aria-label="Minimum Price">
+              </div>
+              <div class="glam-price-input-box">
+                <span>To</span>
+                <input type="number" id="glam-price-max" value="250000" step="1000" aria-label="Maximum Price">
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- 4. Category (4th - with All Categories at top) -->
+        <div class="glam-sidebar-section">
+          <button type="button" class="glam-sidebar-toggle" aria-expanded="true" aria-controls="filter-sec-cat">
+            <span>Category</span>
+            <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="6 9 12 15 18 9"></polyline></svg>
+          </button>
+          <div id="filter-sec-cat" class="glam-sidebar-content">
+            <ul class="glam-checkbox-list" id="glam-cat-list">
+              <!-- Dynamically populated with All Categories at top -->
+            </ul>
+          </div>
+        </div>
+      </aside>
+
+      <!-- ── Right Column: Product Listing Area ── -->
+      <section class="glam-main-listing" aria-label="Products Collection">
+        <!-- Top Toolbar -->
+        <div class="glam-products-header">
+          <div>
+            <div class="glam-products-count" id="glam-products-count">
+              Showing <strong>12</strong> results from total <strong>151</strong> for &ldquo;All Products&rdquo;
+            </div>
+            <!-- Applied Filter Pills -->
+            <div class="glam-applied-filters" id="glam-applied-filters" style="margin-top:8px;"></div>
+          </div>
+
+          <!-- Sort Select -->
+          <div class="glam-sort-wrap">
+            <span>Sort by:</span>
+            <select class="glam-sort-select" id="glam-sort-select" aria-label="Sort options">
+              <option value="popularity">Popularity</option>
+              <option value="price-asc">Price: Low to High</option>
+              <option value="price-desc">Price: High to Low</option>
+              <option value="newest">Newest Arrivals</option>
+              <option value="name-asc">Name: A to Z</option>
+            </select>
+          </div>
+        </div>
+
+        <!-- 3-Column Product Grid -->
+        <div class="glam-grid" id="glam-products-grid">
+          <!-- Dynamically populated by SBC.shop -->
+        </div>
+
+        <!-- Pagination Controls -->
+        <div class="glam-pagination" id="glam-pagination">
+          <!-- Dynamically populated by SBC.shop -->
+        </div>
+      </section>
+    </div>
+
+    <!-- ========================================================================
+         SECTION: "OTHER HARDWARE CATEGORY" (HORIZONTAL FEATURE CARDS)
+         ======================================================================== -->
+    <section class="glam-category-section" aria-label="Other Hardware Categories">
+      <div class="glam-category-header">
+        <h2 class="glam-category-title">OTHER HARDWARE CATEGORY</h2>
+        <div class="glam-category-arrows">
+          <button type="button" class="glam-circle-arrow" aria-label="Previous Category">&larr;</button>
+          <button type="button" class="glam-circle-arrow" aria-label="Next Category">&rarr;</button>
+        </div>
+      </div>
+
+      <div class="glam-category-cards">
+        <!-- Horizontal Card 1: Enterprise Switches -->
+        <div class="glam-category-card">
+          <div class="glam-category-card__left">
+            <h3 class="glam-category-card__title">Switches &amp; PoE</h3>
+            <p class="glam-category-card__desc">
+              Explore high-density Gigabit and Layer 3 managed PoE switches configured for commercial business infrastructure.
+            </p>
+            <a href="shop.html?c=switches" class="glam-category-card__btn">
+              EXPLORE PRODUCT &rsaquo;
+            </a>
+          </div>
+          <div class="glam-category-card__right">
+            <img src="assets/img/home/cat_network_switches.jpg" alt="Cisco &amp; Managed PoE Switches" loading="lazy" onerror="this.src='assets/img/placeholder-product.svg';">
+          </div>
+        </div>
+
+        <!-- Horizontal Card 2: Solar Inverters -->
+        <div class="glam-category-card">
+          <div class="glam-category-card__left">
+            <h3 class="glam-category-card__title">Solar &amp; Power Backup</h3>
+            <p class="glam-category-card__desc">
+              Explore residential and industrial hybrid solar inverters, online UPS systems, and durable LiFePO4 batteries.
+            </p>
+            <a href="shop.html?c=power-backup" class="glam-category-card__btn">
+              EXPLORE PRODUCT &rsaquo;
+            </a>
+          </div>
+          <div class="glam-category-card__right">
+            <img src="https://www.southbanglabd.com/backend/products/image/1331086087.jpg" alt="Must Hybrid Inverter" loading="lazy" onerror="this.onerror=null;this.src='assets/img/placeholder-product.svg';">
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ========================================================================
+         SECTION: "EXPLORE OUR HARDWARE CATALOG" (DARK CALL-TO-ACTION BANNER)
+         ======================================================================== -->
+    <!-- ========================================================================
+         SECTION: B2B & RETAIL PROCUREMENT CALL-TO-ACTION (REDESIGNED BRAND CTA)
+         ======================================================================== -->
+    <section class="glam-bottom-banner" aria-label="Commercial Procurement Showcase">
+      <div class="glam-bottom-banner__inner">
+        <span class="glam-bottom-banner__tag">DIRECT IMPORTER &amp; DISTRIBUTOR PRICING</span>
+        <h2 class="glam-bottom-banner__title">Need Bulk Hardware Procurement or Technical Consultation?</h2>
+        <p class="glam-bottom-banner__desc">
+          We provide verified ICT hardware, volume wholesale tiers for computer retailers and regional ISPs, and official tender quotations across all 64 districts in Bangladesh.
+        </p>
+        <div class="glam-bottom-banner__actions">
+          <a href="quote.html" class="sbc-banner-btn sbc-banner-btn--primary">
+            Request Commercial Quote &rarr;
+          </a>
+          <a href="brand.html" class="sbc-banner-btn sbc-banner-btn--secondary-blue">
+            Explore All 14 Brands
+          </a>
+        </div>
+        <div class="glam-bottom-banner__support">
+          <span>Official Sales Hotline: <strong>+88 01746 175 778</strong></span>
+          <span>•</span>
+          <span>1-Hour Express RMA Helpdesk: <strong>01973009007</strong></span>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <!-- ========================================================================
+       FOOTER WITH MASSIVE WATERMARK (MATCHING GLAMORA FOOTER)
+       ======================================================================== -->
+  <!-- ========================================================================
+       UNIFIED FOOTER (SOUTH BANGLA COMPUTER GLOBAL DESIGN SYSTEM)
+       ======================================================================== -->
+  <div id="sbc-footer"></div>
+
+  <div id="sbc-toast" role="status" aria-live="polite"></div>
+
+  <!-- Core Scripts -->
+  <script defer src="js/config.js"></script>
+  <script defer src="js/i18n/en.js"></script>
+  <script defer src="js/core/util.js"></script>
+  <script defer src="js/core/storage.js"></script>
+  <script defer src="data/categories.js"></script>
+  <script defer src="data/brands.js"></script>
+  <script defer src="data/shop-products.js"></script>
+  <script defer src="js/core/store.js"></script>
+  <script defer src="js/core/ui.js"></script>
+  <script defer src="js/layout.js"></script>
+  <script defer src="js/shop-controller.js"></script>
+
+  <!-- Shop Page Slider & Catalog Controller -->
+  <script defer>
+    window.addEventListener("DOMContentLoaded", function () {
+      // 1. Initialize SBC Shop Catalog
+      if (window.SBC && window.SBC.shop) {
+        window.SBC.shop.init();
+      }
+
+      // 2. Initialize 6-Slide Promotional Slider (Dots-Only Navigation)
+      (function initPromoSlider() {
+        const slider = document.getElementById("sbc-shop-slider");
+        const dotsWrap = document.getElementById("sbc-shop-slider-dots");
+        if (!slider || !dotsWrap) return;
+
+        const slides = slider.querySelectorAll(".sbc-shop-slide");
+        const dots = dotsWrap.querySelectorAll(".sbc-shop-dot");
+        if (slides.length === 0 || dots.length === 0) return;
+
+        let currentIndex = 0;
+        let timer = null;
+        const INTERVAL_MS = 5000;
+
+        function goToSlide(index) {
+          if (index < 0) index = slides.length - 1;
+          if (index >= slides.length) index = 0;
+          currentIndex = index;
+
+          slides.forEach(function (slide, idx) {
+            if (idx === currentIndex) {
+              slide.classList.add("is-active");
+            } else {
+              slide.classList.remove("is-active");
+            }
+          });
+
+          dots.forEach(function (dot, idx) {
+            const isActive = idx === currentIndex;
+            dot.classList.toggle("is-active", isActive);
+            dot.setAttribute("aria-selected", isActive ? "true" : "false");
+            dot.setAttribute("tabindex", isActive ? "0" : "-1");
+          });
+        }
+
+        function startAutoplay() {
+          stopAutoplay();
+          timer = setInterval(function () {
+            goToSlide(currentIndex + 1);
+          }, INTERVAL_MS);
+        }
+
+        function stopAutoplay() {
+          if (timer) {
+            clearInterval(timer);
+            timer = null;
+          }
+        }
+
+        // Attach Dot Click Handlers
+        dots.forEach(function (dot) {
+          dot.addEventListener("click", function () {
+            const idx = parseInt(dot.getAttribute("data-slide-index"), 10);
+            if (!isNaN(idx)) {
+              goToSlide(idx);
+              startAutoplay();
+            }
+          });
+
+          dot.addEventListener("keydown", function (e) {
+            if (e.key === "ArrowRight") {
+              e.preventDefault();
+              goToSlide(currentIndex + 1);
+              dots[currentIndex].focus();
+              startAutoplay();
+            } else if (e.key === "ArrowLeft") {
+              e.preventDefault();
+              goToSlide(currentIndex - 1);
+              dots[currentIndex].focus();
+              startAutoplay();
+            }
+          });
+        });
+
+        // Pause on Hover for User Comfort
+        slider.addEventListener("mouseenter", stopAutoplay);
+        slider.addEventListener("mouseleave", startAutoplay);
+        dotsWrap.addEventListener("mouseenter", stopAutoplay);
+        dotsWrap.addEventListener("mouseleave", startAutoplay);
+
+        // Start initial auto-rotation
+        startAutoplay();
+      })();
+    });
+  </script>
+</body>
+</html>

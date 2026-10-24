@@ -1,0 +1,164 @@
+﻿<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Branches, Showrooms & RMA Centers | South Bangla Computers</title>
+  <meta name="description" content="Visit South Bangla Computers nationwide showrooms and service labs in Dhaka, Chattogram, Khulna, and regional hubs across Bangladesh.">
+  <link rel="canonical" href="https://www.southbanglabd.com/branches">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="css/tokens.css">
+  <link rel="stylesheet" href="css/base.css">
+  <link rel="stylesheet" href="css/layout.css">
+  <link rel="stylesheet" href="css/components.css">
+  <link rel="stylesheet" href="css/print.css" media="print">
+</head>
+<body data-root="" data-page="branches">
+  <a href="#main-content" class="sbc-skip-link">Skip to main content</a>
+  <div id="sbc-header"></div>
+
+  <!-- ========================================================================
+       CONSISTENT GLOBAL FULL-WIDTH BANNER DESIGN (Branches & Showrooms Theme)
+       ======================================================================== -->
+  <section class="sbc-page-banner sbc-page-banner--branches" aria-label="Branches Banner">
+    <div class="sbc-page-banner__inner l-container">
+      <div class="sbc-page-banner__content">
+        <nav class="sbc-page-banner__crumb" aria-label="Breadcrumb">
+          <a href="index.html">Home</a>
+          <span class="sbc-page-banner__crumb-sep">/</span>
+          <span class="sbc-page-banner__crumb-current">Showrooms &amp; Hubs</span>
+        </nav>
+        <h1 class="sbc-page-banner__title">
+          <span class="sbc-page-banner__title-line1">Nationwide Physical</span>
+          <span class="sbc-page-banner__title-line2">Presence &amp; Service Hubs</span>
+        </h1>
+        <p class="sbc-page-banner__desc">
+          Visit our showrooms and RMA laboratories across Dhaka, Chattogram, and Khulna for live hardware testing, counter collection, wholesale dealer orders, and 1-hour warranty assessment.
+        </p>
+        <div class="sbc-page-banner__actions">
+          <a href="contact.html#nationwide-map-section" class="sbc-banner-btn sbc-banner-btn--primary">
+            View Google Map &rarr;
+          </a>
+          <a href="contact.html" class="sbc-banner-btn sbc-banner-btn--secondary">
+            Contact Support Desk
+          </a>
+        </div>
+      </div>
+          <h3 class="sbc-banner-tech-card__title">Direct Showrooms &amp; Service Labs</h3>
+          <ul class="sbc-banner-tech-card__list">
+            <li class="sbc-banner-tech-card__item">
+              <svg class="sbc-icon sbc-icon--xs" aria-hidden="true"><use href="#icon-check"></use></svg>
+              <span><strong>Dhaka HQ:</strong> Multiplan Center &amp; Motijheel</span>
+            </li>
+            <li class="sbc-banner-tech-card__item">
+              <svg class="sbc-icon sbc-icon--xs" aria-hidden="true"><use href="#icon-check"></use></svg>
+              <span><strong>Chattogram:</strong> Agrabad Commercial Area Hub</span>
+            </li>
+            <li class="sbc-banner-tech-card__item">
+              <svg class="sbc-icon sbc-icon--xs" aria-hidden="true"><use href="#icon-check"></use></svg>
+              <span><strong>Khulna:</strong> KDA Avenue Regional Center</span>
+            </li>
+            <li class="sbc-banner-tech-card__item">
+              <svg class="sbc-icon sbc-icon--xs" aria-hidden="true"><use href="#icon-check"></use></svg>
+              <span><strong>Nationwide:</strong> 64-District Courier Support</span>
+            </li>
+          </ul>
+          <div class="sbc-banner-tech-card__metric-grid">
+            <div class="sbc-banner-tech-card__metric">
+              <span class="sbc-banner-tech-card__metric-val">12+</span>
+              <span class="sbc-banner-tech-card__metric-lbl">Showrooms &amp; Labs</span>
+            </div>
+            <div class="sbc-banner-tech-card__metric">
+              <span class="sbc-banner-tech-card__metric-val">64</span>
+              <span class="sbc-banner-tech-card__metric-lbl">Districts Served</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <main id="main-content" class="l-container" style="padding-bottom: var(--sp-12);">
+    <!-- City Filter Tabs -->
+    <div style="display:flex;gap:8px;flex-wrap:wrap;margin-bottom:var(--sp-8);">
+      <button class="sbc-chip is-active js-branch-city" data-city="all">All Locations (12)</button>
+      <button class="sbc-chip js-branch-city" data-city="Dhaka">Dhaka (5)</button>
+      <button class="sbc-chip js-branch-city" data-city="Chattogram">Chattogram (2)</button>
+      <button class="sbc-chip js-branch-city" data-city="Khulna">Khulna (1)</button>
+      <button class="sbc-chip js-branch-city" data-city="regional">New Regional Hubs (4)</button>
+    </div>
+
+    <!-- Branches Grid Container -->
+    <div id="branches-list-grid" style="display:grid;grid-template-columns:repeat(auto-fill, minmax(320px, 1fr));gap:var(--sp-6);">
+      <!-- Populated via JS -->
+    </div>
+  </main>
+
+  <div id="sbc-footer"></div>
+  <div id="sbc-toast" role="status" aria-live="polite"></div>
+
+  <!-- Standard Prototype Scripts -->
+  <script defer src="js/config.js"></script>
+  <script defer src="js/i18n/en.js"></script>
+  <script defer src="js/core/util.js"></script>
+  <script defer src="js/core/storage.js"></script>
+  <script defer src="data/categories.js"></script>
+  <script defer src="data/brands.js"></script>
+  <script defer src="data/branches.js"></script>
+  <script defer src="data/news.js"></script>
+  <script defer src="data/faq.js"></script>
+  <script defer src="data/downloads.js"></script>
+  <script defer src="data/districts.js"></script>
+  <script defer src="data/configurator-rules.js"></script>
+  <script defer src="data/site-claims.js"></script>
+  <script defer src="data/users.js"></script>
+  <script defer src="data/products.js"></script>
+  <script defer src="js/core/store.js"></script>
+  <script defer src="js/core/validate.js"></script>
+  <script defer src="js/core/ui.js"></script>
+  <script defer src="js/layout.js"></script>
+  <script defer src="js/search.js"></script>
+  <script defer src="js/cards.js"></script>
+  <script defer src="js/demo.js"></script>
+
+  <!-- Immediate Initial Rendering for Tabs -->
+  <script defer>
+    function initBranches() {
+      const D = window.SBC_DATA || {};
+      const branches = D.branches || [];
+      const grid = document.getElementById("branches-list-grid");
+      if (!grid) return;
+
+      function renderBranches(city = "all") {
+        const filtered = branches.filter(b => {
+          if (city === "all") return true;
+          if (city === "regional") return b.city !== "Dhaka" && b.city !== "Chattogram" && b.city !== "Khulna";
+          return b.city === city;
+        });
+
+        grid.innerHTML = filtered.map(b => window.SBC.cards.branchCard(b)).join("");
+      }
+
+      document.querySelectorAll(".js-branch-city").forEach(btn => {
+        btn.addEventListener("click", () => {
+          document.querySelectorAll(".js-branch-city").forEach(b => b.classList.remove("is-active"));
+          btn.classList.add("is-active");
+          renderBranches(btn.dataset.city);
+        });
+      });
+
+      // Render default 'all' tab immediately
+      renderBranches("all");
+    }
+
+    if (document.readyState !== "loading" && window.SBC && window.SBC.isReady) {
+      initBranches();
+    } else {
+      window.addEventListener("SBC:ready", initBranches);
+      document.addEventListener("DOMContentLoaded", () => setTimeout(initBranches, 50));
+    }
+  </script>
+</body>
+</html>

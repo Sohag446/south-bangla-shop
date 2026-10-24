@@ -1,0 +1,95 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 500 400" width="100%" height="100%">
+  <defs>
+    <linearGradient id="bodyGrad" x1="0%" y1="0%" x2="0%" y2="100%">
+      <stop offset="0%" stop-color="#2a3547"/>
+      <stop offset="60%" stop-color="#1a2233"/>
+      <stop offset="100%" stop-color="#0f1523"/>
+    </linearGradient>
+    <linearGradient id="facetGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#3d4d68"/>
+      <stop offset="100%" stop-color="#1e2738"/>
+    </linearGradient>
+    <linearGradient id="antennaGrad" x1="0%" y1="0%" x2="100%" y2="0%">
+      <stop offset="0%" stop-color="#3b485e"/>
+      <stop offset="50%" stop-color="#1f2736"/>
+      <stop offset="100%" stop-color="#111622"/>
+    </linearGradient>
+    <filter id="softShadow" x="-10%" y="-10%" width="120%" height="130%">
+      <feDropShadow dx="0" dy="16" stdDeviation="16" flood-color="#001830" flood-opacity="0.25"/>
+    </filter>
+  </defs>
+
+  <!-- Clean Background -->
+  <rect width="500" height="400" fill="#f8fafc" rx="16"/>
+
+  <!-- Shadow under router -->
+  <ellipse cx="250" cy="335" rx="190" ry="22" fill="#001830" opacity="0.12" filter="blur(6px)"/>
+
+  <!-- Antennas (4 High-Gain Antennas for AX3000) -->
+  <!-- Outer Left Antenna -->
+  <g transform="translate(100, 195) rotate(-22)">
+    <rect x="-8" y="-140" width="16" height="145" rx="5" fill="url(#antennaGrad)"/>
+    <path d="M -8 -110 L 8 -110" stroke="#005883" stroke-width="2"/>
+    <circle cx="0" cy="0" r="10" fill="#20293a"/>
+  </g>
+
+  <!-- Inner Left Antenna -->
+  <g transform="translate(175, 185) rotate(-8)">
+    <rect x="-7" y="-155" width="14" height="160" rx="5" fill="url(#antennaGrad)"/>
+    <path d="M -7 -120 L 7 -120" stroke="#72BF44" stroke-width="2"/>
+    <circle cx="0" cy="0" r="10" fill="#20293a"/>
+  </g>
+
+  <!-- Inner Right Antenna -->
+  <g transform="translate(325, 185) rotate(8)">
+    <rect x="-7" y="-155" width="14" height="160" rx="5" fill="url(#antennaGrad)"/>
+    <path d="M -7 -120 L 7 -120" stroke="#72BF44" stroke-width="2"/>
+    <circle cx="0" cy="0" r="10" fill="#20293a"/>
+  </g>
+
+  <!-- Outer Right Antenna -->
+  <g transform="translate(400, 195) rotate(22)">
+    <rect x="-8" y="-140" width="16" height="145" rx="5" fill="url(#antennaGrad)"/>
+    <path d="M -8 -110 L 8 -110" stroke="#005883" stroke-width="2"/>
+    <circle cx="0" cy="0" r="10" fill="#20293a"/>
+  </g>
+
+  <!-- Main Router Chassis -->
+  <g filter="url(#softShadow)">
+    <!-- Base chamfer -->
+    <polygon points="90,265 410,265 375,320 125,320" fill="url(#bodyGrad)"/>
+    
+    <!-- Top Geometric Facets -->
+    <polygon points="125,230 375,230 410,265 90,265" fill="url(#facetGrad)"/>
+    <polygon points="250,215 375,230 250,265 125,230" fill="#323f54"/>
+    <polygon points="250,215 250,265 125,230" fill="#293447"/>
+
+    <!-- Geometric accent lines -->
+    <line x1="250" y1="215" x2="250" y2="280" stroke="#005883" stroke-width="2.5" opacity="0.8"/>
+
+    <!-- Front Bevel / Lip -->
+    <path d="M 90 265 L 410 265 L 405 275 L 95 275 Z" fill="#141a27"/>
+
+    <!-- Status LEDs -->
+    <g transform="translate(250, 274)">
+      <!-- System LED -->
+      <circle cx="-30" cy="0" r="2.5" fill="#72BF44"/>
+      <circle cx="-30" cy="0" r="4.5" fill="#72BF44" opacity="0.3"/>
+      <!-- Internet LED -->
+      <circle cx="-10" cy="0" r="2.5" fill="#007ab5"/>
+      <circle cx="-10" cy="0" r="4.5" fill="#007ab5" opacity="0.3"/>
+      <!-- Wi-Fi 5G LED -->
+      <circle cx="10" cy="0" r="2.5" fill="#72BF44"/>
+      <!-- Wi-Fi 2.4G LED -->
+      <circle cx="30" cy="0" r="2.5" fill="#72BF44"/>
+    </g>
+
+    <!-- Brand Emblem -->
+    <text x="250" y="250" text-anchor="middle" font-family="'Poppins', system-ui, sans-serif" font-size="13" font-weight="800" letter-spacing="3" fill="#ffffff">TENDA</text>
+    <text x="250" y="260" text-anchor="middle" font-family="system-ui, sans-serif" font-size="7" font-weight="600" letter-spacing="1.5" fill="#72BF44">Wi-Fi 6 AX3000</text>
+  </g>
+
+  <!-- Spec Tag -->
+  <rect x="185" y="348" width="130" height="24" rx="12" fill="#e8f2f8" stroke="#bcd4e6" stroke-width="1"/>
+  <text x="250" y="364" text-anchor="middle" font-family="'Poppins', sans-serif" font-size="10" font-weight="600" fill="#005883">Gigabit Dual-Band</text>
+</svg>

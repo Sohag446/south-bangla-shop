@@ -1,0 +1,216 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Dealer Hub Dashboard | South Bangla Computers</title>
+  <meta name="description" content="Authorized dealer portal dashboard with real-time wholesale credit balance, purchase order history, and account manager contacts.">
+  <link rel="stylesheet" href="../css/tokens.css">
+  <link rel="stylesheet" href="../css/base.css">
+  <link rel="stylesheet" href="../css/layout.css">
+  <link rel="stylesheet" href="../css/components.css">
+  <link rel="stylesheet" href="../css/print.css" media="print">
+  <style>
+    .dealer-layout {
+      display: grid;
+      grid-template-columns: 260px 1fr;
+      gap: var(--sp-8);
+      align-items: start;
+    }
+    @media (max-width: 900px) {
+      .dealer-layout {
+        grid-template-columns: 1fr;
+      }
+    }
+    .dealer-nav-link {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+      padding: 10px 14px;
+      border-radius: var(--r-md);
+      color: var(--navy-800);
+      font-size: 14px;
+      font-weight: 500;
+      text-decoration: none;
+      transition: background var(--trans-fast);
+    }
+    .dealer-nav-link:hover {
+      background: var(--gray-100);
+    }
+    .dealer-nav-link.is-active {
+      background: #F0FDF4;
+      color: var(--green-800);
+      font-weight: 700;
+    }
+  </style>
+</head>
+<body data-root="../" data-page="dealer">
+  <a href="#main-content" class="sbc-skip-link">Skip to main content</a>
+  <div id="sbc-header"></div>
+
+  <main id="main-content" class="l-container" style="padding-top: var(--sp-6); padding-bottom: var(--sp-12);">
+    <!-- Breadcrumbs -->
+    <nav aria-label="Breadcrumb" class="sbc-breadcrumbs" style="margin-bottom: var(--sp-6);">
+      <ol style="display:flex;gap:var(--sp-2);list-style:none;padding:0;margin:0;font-size:var(--fs-xs);color:var(--c-text-muted);">
+        <li><a href="../index.html">Home</a> <span aria-hidden="true">&rsaquo;</span></li>
+        <li><a href="index.html">Dealer Network</a> <span aria-hidden="true">&rsaquo;</span></li>
+        <li style="color:var(--navy-900);font-weight:600;" aria-current="page">Dealer Hub</li>
+      </ol>
+    </nav>
+
+    <div class="dealer-layout">
+      <!-- Dealer Sidebar Nav -->
+      <aside style="background:#fff;border:1px solid var(--gray-200);border-radius:var(--r-lg);padding:var(--sp-4);">
+        <div style="padding:12px;border-bottom:1px solid var(--gray-200);margin-bottom:8px;">
+          <div class="sbc-badge sbc-badge--in-stock" style="margin-bottom:6px;font-size:10px;">TIER 1 PLATINUM</div>
+          <strong id="dl-nav-name" style="display:block;font-size:15px;color:var(--navy-900);">Delta Networks Ltd.</strong>
+          <span style="font-size:12px;color:var(--c-text-muted);">Dealer ID: SBC-DLR-0891</span>
+        </div>
+        <nav style="display:flex;flex-direction:column;gap:4px;">
+          <a href="dashboard.html" class="dealer-nav-link is-active">Overview Dashboard</a>
+          <a href="pricing.html" class="dealer-nav-link">Wholesale Price Sheet</a>
+          <a href="bulk-order.html" class="dealer-nav-link">Bulk Order Tool (SKU)</a>
+          <a href="orders.html" class="dealer-nav-link">Purchase Orders</a>
+          <a href="settings.html" class="dealer-nav-link">Business Profile</a>
+          <a href="support.html" class="dealer-nav-link">Priority RMA Support</a>
+          <div style="border-top:1px solid var(--gray-200);margin:8px 0;"></div>
+          <a href="../products.html" class="dealer-nav-link">Browse Full Catalog</a>
+          <a href="#" class="dealer-nav-link js-logout" style="color:var(--red-700);">Sign Out</a>
+        </nav>
+      </aside>
+
+      <!-- Dashboard Main View -->
+      <section>
+        <!-- Top Dealer Welcome Strip -->
+        <div style="background:linear-gradient(135deg, #0B1F3A 0%, #102A4C 100%);color:#fff;border-radius:var(--r-lg);padding:var(--sp-6);margin-bottom:var(--sp-6);display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:16px;">
+          <div>
+            <h1 style="font-size:var(--fs-h2);color:#fff;margin:0 0 4px;">Welcome Back, Delta Networks</h1>
+            <p style="color:var(--blue-50);font-size:var(--fs-sm);margin:0;">
+              Your dedicated Channel Account Manager is <strong>Md. Asaduzzaman (Senior Sales, 01973009017)</strong>
+            </p>
+          </div>
+          <div style="display:flex;gap:8px;">
+            <a href="bulk-order.html" class="sbc-btn sbc-btn--primary sbc-btn--sm">+ Rapid Bulk Order</a>
+            <a href="pricing.html" class="sbc-btn sbc-btn--outline sbc-btn--sm" style="color:#fff;border-color:rgba(255,255,255,0.4);">Download Price Sheet</a>
+          </div>
+        </div>
+
+        <!-- 4 KPI Metrics Cards -->
+        <div style="display:grid;grid-template-columns:repeat(4, 1fr);gap:var(--sp-4);margin-bottom:var(--sp-8);">
+          <div class="sbc-card" style="padding:16px;">
+            <div style="font-size:12px;color:var(--c-text-muted);margin-bottom:4px;">Available Credit Line</div>
+            <div style="font-size:22px;font-weight:800;color:var(--green-700);">৳3,75,000</div>
+            <div style="font-size:11px;color:var(--gray-500);margin-top:4px;">Total Limit: ৳5,00,000</div>
+          </div>
+          <div class="sbc-card" style="padding:16px;">
+            <div style="font-size:12px;color:var(--c-text-muted);margin-bottom:4px;">Active Orders</div>
+            <div style="font-size:22px;font-weight:800;color:var(--navy-900);">2 Orders</div>
+            <div style="font-size:11px;color:var(--blue-600);margin-top:4px;">1 In Transit &bull; 1 Packing</div>
+          </div>
+          <div class="sbc-card" style="padding:16px;">
+            <div style="font-size:12px;color:var(--c-text-muted);margin-bottom:4px;">YTD Wholesale Purchases</div>
+            <div style="font-size:22px;font-weight:800;color:var(--navy-900);">৳14,80,000</div>
+            <div style="font-size:11px;color:var(--gray-500);margin-top:4px;">Rebate Eligible (Tier 1)</div>
+          </div>
+          <div class="sbc-card" style="padding:16px;">
+            <div style="font-size:12px;color:var(--c-text-muted);margin-bottom:4px;">Active RMA Claims</div>
+            <div style="font-size:22px;font-weight:800;color:var(--amber-800);">1 Unit</div>
+            <div style="font-size:11px;color:var(--gray-500);margin-top:4px;">Under Lab Diagnostic</div>
+          </div>
+        </div>
+
+        <!-- Recent Purchase Orders Table -->
+        <div style="background:#fff;border:1px solid var(--gray-200);border-radius:var(--r-lg);padding:var(--sp-6);margin-bottom:var(--sp-6);">
+          <div style="display:flex;justify-content:space-between;align-items:center;margin-bottom:16px;">
+            <h3 style="font-size:var(--fs-h4);color:var(--navy-900);margin:0;">Recent Purchase Orders</h3>
+            <a href="orders.html" style="font-size:13px;font-weight:600;">View All POs &rarr;</a>
+          </div>
+
+          <div class="sbc-table-container">
+            <table class="sbc-table">
+              <thead>
+                <tr>
+                  <th>PO Reference</th>
+                  <th>Date</th>
+                  <th>Items & Quantities</th>
+                  <th>Total BDT</th>
+                  <th>Payment Term</th>
+                  <th>Status</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td><strong>PO-2026-9921</strong></td>
+                  <td>20 Oct 2026</td>
+                  <td>15 × Tenda TEG1116P, 50 × Netis ONU</td>
+                  <td><strong>৳2,45,000</strong></td>
+                  <td>30-Day Credit Line</td>
+                  <td><span class="sbc-badge sbc-badge--in-stock">DISPATCHED</span></td>
+                </tr>
+                <tr>
+                  <td><strong>PO-2026-9844</strong></td>
+                  <td>12 Oct 2026</td>
+                  <td>8 × BDCOM GPON OLT 8-Port, 200 × Fast Connectors</td>
+                  <td><strong>৳5,12,000</strong></td>
+                  <td>Bank Wire Transfer</td>
+                  <td><span class="sbc-badge sbc-badge--tag">DELIVERED</span></td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+        </div>
+
+        <!-- Quick Notice & Warehouse Stock Alert -->
+        <div style="background:#FFFBEB;border:1px solid var(--amber-700);border-radius:var(--r-md);padding:16px;display:flex;align-items:flex-start;gap:12px;">
+          <span style="color:var(--amber-800);font-size:20px;">&#9888;</span>
+          <div>
+            <strong style="color:var(--amber-900);font-size:14px;display:block;margin-bottom:2px;">Special Channel Shipment Notice:</strong>
+            <p style="font-size:13px;color:var(--amber-900);margin:0;">
+              Fresh container arrival: <strong>Tenda Wi-Fi 7 BE12 Pro</strong> and <strong>V-SOL 16-Port GPON OLT</strong> now in stock at our Elephant Road central warehouse. Book wholesale lots before allocation closes.
+            </p>
+          </div>
+        </div>
+      </section>
+    </div>
+  </main>
+
+  <div id="sbc-footer"></div>
+  <div id="sbc-toast" role="status" aria-live="polite"></div>
+
+  <!-- Standard Prototype Scripts -->
+  <script defer src="../js/config.js"></script>
+  <script defer src="../js/i18n/en.js"></script>
+  <script defer src="../js/core/util.js"></script>
+  <script defer src="../js/core/storage.js"></script>
+  <script defer src="../data/categories.js"></script>
+  <script defer src="../data/brands.js"></script>
+  <script defer src="../data/branches.js"></script>
+  <script defer src="../data/news.js"></script>
+  <script defer src="../data/faq.js"></script>
+  <script defer src="../data/downloads.js"></script>
+  <script defer src="../data/districts.js"></script>
+  <script defer src="../data/configurator-rules.js"></script>
+  <script defer src="../data/site-claims.js"></script>
+  <script defer src="../data/users.js"></script>
+  <script defer src="../data/products.js"></script>
+  <script defer src="../js/core/store.js"></script>
+  <script defer src="../js/core/validate.js"></script>
+  <script defer src="../js/core/ui.js"></script>
+  <script defer src="../js/layout.js"></script>
+  <script defer src="../js/search.js"></script>
+  <script defer src="../js/cards.js"></script>
+  <script defer src="../js/dealer.js"></script>
+  <script defer src="../js/demo.js"></script>
+
+  <script defer>
+    window.addEventListener("SBC:ready", function () {
+      const store = window.SBC.store;
+      // Auto-set dealer session if not logged in
+      if (!store.isDealer()) {
+        const dealerUser = (window.SBC_DATA && window.SBC_DATA.users && window.SBC_DATA.users.dealer) || {};
+        store.setSession(dealerUser);
+      }
+    });
+  </script>
+</body>
+</html>

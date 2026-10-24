@@ -1,0 +1,2917 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>South Bangla Computers | Striving For ICT Excellence Since 1999</title>
+  <meta name="description"
+    content="Authorized distributor of networking devices, Wi-Fi 7/6 routers, PoE switches, GPON/EPON fiber ONUs, online UPS, and cabling infrastructure across Bangladesh.">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Caveat:wght@600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="css/tokens.css">
+  <link rel="stylesheet" href="css/base.css">
+  <link rel="stylesheet" href="css/layout.css">
+  <link rel="stylesheet" href="css/components.css">
+  <link rel="stylesheet" href="css/print.css" media="print">
+  <style>
+    /* ==========================================================================
+       HOMEPAGE HERO SECTION WITH VIDEO BANNER (MATCHING SCREENSHOT)
+       ========================================================================== */
+    .sbc-hero {
+      position: relative;
+      background: #071526;
+      color: #fff;
+      min-height: 520px;
+      height: 68vh;
+      max-height: 720px;
+      display: flex;
+      align-items: center;
+      overflow: hidden;
+      padding: 48px 0;
+    }
+
+    /* Background Video Wrap & Cover */
+    .sbc-hero__video-wrap {
+      position: absolute;
+      inset: 0;
+      width: 100%;
+      height: 100%;
+      overflow: hidden;
+      z-index: 1;
+      pointer-events: none;
+    }
+
+    .sbc-hero__video {
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      min-width: 100%;
+      min-height: 100%;
+      width: auto;
+      height: auto;
+      transform: translate(-50%, -50%);
+      object-fit: cover;
+      filter: brightness(0.72);
+    }
+
+    /* Dark Overlay for Ultra-Crisp Text Readability */
+    .sbc-hero__video-overlay {
+      position: absolute;
+      inset: 0;
+      background: linear-gradient(90deg, rgba(7, 21, 38, 0.9) 0%, rgba(7, 21, 38, 0.65) 55%, rgba(7, 21, 38, 0.3) 100%);
+      z-index: 2;
+    }
+
+    /* Hero Container */
+    .sbc-hero__container {
+      position: relative;
+      z-index: 3;
+      width: 100%;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+    }
+
+    /* Left-Aligned Content Container */
+    .sbc-hero__content {
+      max-width: 620px;
+      text-align: left;
+    }
+
+    .sbc-hero__tag {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      margin-bottom: 14px;
+    }
+
+    .sbc-hero__tag-dash {
+      color: #22c55e;
+      font-size: 16px;
+      font-weight: 900;
+      line-height: 1;
+    }
+
+    .sbc-hero__tag-text {
+      font-size: 12px;
+      font-weight: 800;
+      letter-spacing: 1.5px;
+      color: #22c55e;
+      text-transform: uppercase;
+    }
+
+    .sbc-hero__title {
+      font-size: clamp(2.2rem, 4.2vw, 3.4rem);
+      font-weight: 800;
+      color: #ffffff;
+      line-height: 1.15;
+      letter-spacing: -0.5px;
+      margin: 0 0 16px;
+      text-shadow: 0 4px 20px rgba(0, 0, 0, 0.6);
+    }
+
+    .sbc-hero__title-accent {
+      color: #2bb0e6;
+      display: block;
+    }
+
+    .sbc-hero__desc {
+      font-size: 15px;
+      font-weight: 400;
+      color: #cbd5e1;
+      line-height: 1.6;
+      max-width: 560px;
+      margin: 0 0 32px;
+      text-shadow: 0 2px 8px rgba(0, 0, 0, 0.6);
+    }
+
+    /* Button Group */
+    .sbc-hero__btn-group {
+      display: flex;
+      align-items: center;
+      gap: 16px;
+      flex-wrap: wrap;
+    }
+
+    .sbc-hero-btn {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      padding: 12px 28px;
+      font-size: 14.5px;
+      font-weight: 700;
+      border-radius: 6px;
+      text-decoration: none;
+      transition: all 0.2s cubic-bezier(0.16, 1, 0.3, 1);
+      cursor: pointer;
+    }
+
+    .sbc-hero-btn--primary {
+      background: #0070ba;
+      color: #ffffff !important;
+      border: 2px solid #0070ba;
+      box-shadow: 0 4px 14px rgba(0, 112, 186, 0.4);
+    }
+
+    .sbc-hero-btn--primary:hover {
+      background: #005a96;
+      border-color: #005a96;
+      transform: translateY(-2px);
+      box-shadow: 0 8px 20px rgba(0, 112, 186, 0.55);
+    }
+
+    .sbc-hero-btn--secondary {
+      background: transparent;
+      color: #ffffff !important;
+      border: 1.5px solid rgba(255, 255, 255, 0.8);
+      box-shadow: 0 4px 14px rgba(0, 0, 0, 0.2);
+    }
+
+    .sbc-hero-btn--secondary:hover {
+      background: rgba(255, 255, 255, 0.15);
+      border-color: #ffffff;
+      transform: translateY(-2px);
+      box-shadow: 0 8px 20px rgba(0, 0, 0, 0.3);
+    }
+
+    /* Top-right floating script badge matching screenshot */
+    .sbc-hero__script-badge {
+      position: absolute;
+      top: 15px;
+      right: 24px;
+      font-family: 'Caveat', cursive, serif;
+      font-size: clamp(26px, 3.4vw, 38px);
+      font-weight: 700;
+      line-height: 1.15;
+      color: #fef08a;
+      display: flex;
+      flex-direction: column;
+      transform: rotate(-6deg);
+      text-shadow: 0 2px 14px rgba(254, 240, 138, 0.35);
+      pointer-events: none;
+      text-align: right;
+    }
+
+    @media (max-width: 900px) {
+      .sbc-hero__script-badge {
+        display: none;
+      }
+    }
+
+    @media (max-width: 640px) {
+      .sbc-hero {
+        min-height: 480px;
+        height: auto;
+        padding: 50px 0;
+      }
+
+      .sbc-hero__title {
+        font-size: 28px;
+      }
+
+      .sbc-hero__desc {
+        font-size: 13.5px;
+        margin-bottom: 24px;
+      }
+
+      .sbc-hero__btn-group {
+        flex-direction: column;
+        width: 100%;
+        gap: 12px;
+      }
+
+      .sbc-hero-btn {
+        width: 100%;
+        padding: 12px 20px;
+      }
+    }
+
+    /* Campaign Strip */
+    .sbc-campaign-tile {
+      background: #fff;
+      border: 1px solid var(--gray-200);
+      border-radius: var(--r-lg);
+      padding: var(--sp-5);
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: var(--sp-4);
+      text-decoration: none;
+      transition: all var(--motion-fast) var(--motion-easing);
+      box-shadow: var(--shadow-sm);
+    }
+
+    .sbc-campaign-tile:hover {
+      transform: translateY(-2px);
+      box-shadow: var(--shadow-md);
+      border-color: var(--blue-600);
+    }
+
+    /* Tab switcher for Featured */
+    .sbc-tab-btn {
+      padding: var(--sp-2) var(--sp-4);
+      font-size: var(--fs-sm);
+      font-weight: 600;
+      color: var(--c-text-muted);
+      border-bottom: 2px solid transparent;
+      cursor: pointer;
+      transition: all var(--motion-fast);
+    }
+
+    .sbc-tab-btn.is-active {
+      color: var(--blue-600);
+      border-bottom-color: var(--blue-600);
+    }
+
+    /* ==========================================================================
+       HOMEPAGE SECTIONS MATCHING SCREENSHOT EXACTLY
+       ========================================================================== */
+    .sbc-home-section {
+      padding: 42px 0;
+    }
+
+    /* Section Header */
+    .sbc-sec-header {
+      display: flex;
+      align-items: flex-end;
+      justify-content: space-between;
+      margin-bottom: 24px;
+      gap: 16px;
+    }
+
+    .sbc-sec-tag {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      margin-bottom: 6px;
+    }
+
+    .sbc-sec-tag__dash {
+      color: #22c55e;
+      font-size: 15px;
+      font-weight: 900;
+      line-height: 1;
+    }
+
+    .sbc-sec-tag__text {
+      font-size: 11.5px;
+      font-weight: 800;
+      letter-spacing: 1.2px;
+      color: #22c55e;
+      text-transform: uppercase;
+    }
+
+    .sbc-sec-title {
+      font-size: 26px;
+      font-weight: 800;
+      color: #071526;
+      margin: 0;
+      line-height: 1.2;
+      letter-spacing: -0.3px;
+    }
+
+    .sbc-sec-viewall {
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+      color: #0070ba;
+      font-size: 13.5px;
+      font-weight: 700;
+      text-decoration: none;
+      transition: all 0.2s cubic-bezier(0.16, 1, 0.3, 1);
+      white-space: nowrap;
+    }
+
+    .sbc-sec-viewall:hover {
+      color: #005a96;
+      transform: translateX(3px);
+    }
+
+    /* 1. Category Showcase Grid (4 Cards) */
+    .sbc-cat-cards-grid {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 20px;
+    }
+
+    .sbc-cat-card {
+      display: flex;
+      flex-direction: column;
+      background: #ffffff;
+      border: 1px solid #e2e8f0;
+      border-radius: 12px;
+      overflow: hidden;
+      text-decoration: none;
+      transition: all 0.25s cubic-bezier(0.16, 1, 0.3, 1);
+      box-shadow: 0 1px 3px rgba(0, 0, 0, 0.04);
+    }
+
+    .sbc-cat-card:hover {
+      transform: translateY(-4px);
+      border-color: #38bdf8;
+      box-shadow: 0 12px 24px -6px rgba(0, 112, 186, 0.15);
+    }
+
+    .sbc-cat-card__media {
+      height: 185px;
+      background: #f8fafc;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      padding: 16px;
+      overflow: hidden;
+      border-bottom: 1px solid #f1f5f9;
+    }
+
+    .sbc-cat-card__media img {
+      max-height: 100%;
+      max-width: 100%;
+      object-fit: contain;
+      transition: transform 0.3s cubic-bezier(0.16, 1, 0.3, 1);
+    }
+
+    .sbc-cat-card:hover .sbc-cat-card__media img {
+      transform: scale(1.04);
+    }
+
+    .sbc-cat-card__bar {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      padding: 13px 16px;
+      background: #ffffff;
+      gap: 12px;
+    }
+
+    .sbc-cat-card__icon {
+      width: 38px;
+      height: 38px;
+      border-radius: 8px;
+      background: #e0f2fe;
+      color: #0070ba;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      flex-shrink: 0;
+    }
+
+    .sbc-cat-card__info {
+      flex: 1;
+      min-width: 0;
+    }
+
+    .sbc-cat-card__title {
+      font-size: 14.5px;
+      font-weight: 700;
+      color: #071526;
+      margin: 0 0 2px 0;
+      white-space: nowrap;
+      overflow: hidden;
+      text-overflow: ellipsis;
+    }
+
+    .sbc-cat-card__desc {
+      font-size: 11.5px;
+      color: #64748b;
+      margin: 0;
+      display: block;
+      white-space: nowrap;
+      overflow: hidden;
+      text-overflow: ellipsis;
+    }
+
+    .sbc-cat-card__arrow {
+      width: 30px;
+      height: 30px;
+      border-radius: 50%;
+      border: 1.5px solid #bae6fd;
+      color: #0070ba;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      flex-shrink: 0;
+      transition: all 0.2s ease;
+    }
+
+    .sbc-cat-card:hover .sbc-cat-card__arrow {
+      background: #0070ba;
+      border-color: #0070ba;
+      color: #ffffff;
+    }
+
+    /* 2. Popular Products Grid (5 Cards) */
+    .sbc-popular-grid {
+      display: grid;
+      grid-template-columns: repeat(5, 1fr);
+      gap: 16px;
+    }
+
+    .sbc-showcase-pcard {
+      background: #ffffff;
+      border: 1px solid #e2e8f0;
+      border-radius: 10px;
+      padding: 14px;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+      transition: all 0.2s cubic-bezier(0.16, 1, 0.3, 1);
+      position: relative;
+      box-shadow: 0 1px 3px rgba(0, 0, 0, 0.03);
+    }
+
+    .sbc-showcase-pcard:hover {
+      transform: translateY(-3px);
+      box-shadow: 0 10px 22px -4px rgba(0, 0, 0, 0.08);
+      border-color: #cbd5e1;
+    }
+
+    .sbc-showcase-pcard__top {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      min-height: 24px;
+      margin-bottom: 8px;
+    }
+
+    .sbc-showcase-pcard__top--rightonly {
+      justify-content: flex-end;
+    }
+
+    .sbc-showcase-badge {
+      font-size: 10px;
+      font-weight: 700;
+      padding: 2.5px 8px;
+      border-radius: 4px;
+      text-transform: capitalize;
+    }
+
+    .sbc-showcase-badge--green {
+      background: #22c55e;
+      color: #ffffff;
+    }
+
+    .sbc-showcase-badge--blue {
+      background: #0070ba;
+      color: #ffffff;
+    }
+
+    .sbc-showcase-pcard__badge {
+      font-size: 10px;
+      font-weight: 700;
+      padding: 2.5px 8px;
+      border-radius: 4px;
+      text-transform: capitalize;
+      background: #0070ba;
+      color: #ffffff;
+    }
+
+    .sbc-showcase-pcard__badge--bestseller {
+      background: #22c55e;
+      color: #ffffff;
+    }
+
+    .sbc-showcase-pcard__badge--toprated {
+      background: #0070ba;
+      color: #ffffff;
+    }
+
+    .sbc-showcase-pcard__wishlist {
+      background: none;
+      border: none;
+      cursor: pointer;
+      color: #94a3b8;
+      padding: 4px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      transition: color 0.2s, transform 0.2s;
+    }
+
+    .sbc-showcase-pcard__wishlist:hover {
+      color: #ef4444;
+      transform: scale(1.15);
+    }
+
+    .sbc-showcase-pcard__wishlist.is-active {
+      color: #ef4444;
+      fill: #ef4444;
+    }
+
+    .sbc-showcase-pcard__imglink {
+      height: 135px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      margin-bottom: 12px;
+      text-decoration: none;
+    }
+
+    .sbc-showcase-pcard__imglink img {
+      max-height: 120px;
+      max-width: 100%;
+      object-fit: contain;
+      transition: transform 0.25s ease;
+    }
+
+    .sbc-showcase-pcard:hover .sbc-showcase-pcard__imglink img {
+      transform: scale(1.03);
+    }
+
+    .sbc-showcase-pcard__meta {
+      display: flex;
+      flex-direction: column;
+      margin-bottom: 12px;
+      flex: 1;
+    }
+
+    .sbc-showcase-pcard__brand {
+      font-size: 11px;
+      font-weight: 600;
+      color: #64748b;
+      margin-bottom: 3px;
+      display: block;
+      min-height: 16px;
+    }
+
+    .sbc-showcase-pcard__title {
+      font-size: 13px;
+      font-weight: 700;
+      color: #071526;
+      line-height: 1.35;
+      height: 35px;
+      overflow: hidden;
+      display: -webkit-box;
+      -webkit-line-clamp: 2;
+      -webkit-box-orient: vertical;
+      margin: 0 0 6px 0;
+    }
+
+    .sbc-showcase-pcard__title a {
+      color: inherit;
+      text-decoration: none;
+      transition: color 0.2s;
+    }
+
+    .sbc-showcase-pcard__title a:hover {
+      color: #0070ba;
+    }
+
+    .sbc-showcase-pcard__rating {
+      display: flex;
+      align-items: center;
+      gap: 4px;
+      font-size: 11.5px;
+      margin-bottom: 6px;
+    }
+
+    .sbc-stars {
+      color: #f59e0b;
+      letter-spacing: 0.5px;
+      font-size: 12px;
+    }
+
+    .sbc-rating-count {
+      color: #64748b;
+      font-size: 11px;
+    }
+
+    .sbc-showcase-pcard__price {
+      font-size: 17px;
+      font-weight: 800;
+      color: #071526;
+      margin-bottom: 2px;
+    }
+
+    .sbc-showcase-pcard__cartbtn {
+      height: 38px;
+      width: 100%;
+      background: #0070ba;
+      color: #ffffff !important;
+      border: none;
+      border-radius: 6px;
+      font-size: 13px;
+      font-weight: 700;
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      gap: 6px;
+      cursor: pointer;
+      transition: all 0.2s ease;
+      box-shadow: 0 2px 6px rgba(0, 112, 186, 0.25);
+    }
+
+    .sbc-showcase-pcard__cartbtn:hover {
+      background: #005a96;
+      transform: translateY(-1px);
+      box-shadow: 0 4px 10px rgba(0, 112, 186, 0.35);
+    }
+
+    /* 3. Build Your Network Plan Banner (High Contrast + Purple Accent) */
+    .sbc-plan-section {
+      padding: 30px 0;
+    }
+
+    .sbc-plan-banner {
+      background: radial-gradient(circle at 90% 15%, rgba(0, 149, 255, 0.18) 0%, transparent 60%),
+                  radial-gradient(circle at 10% 80%, rgba(34, 197, 94, 0.08) 0%, transparent 50%),
+                  linear-gradient(135deg, #050d18 0%, #091729 60%, #0c2038 100%);
+      border: 1px solid rgba(0, 149, 255, 0.35);
+      border-radius: 16px;
+      padding: 44px 50px;
+      color: #ffffff;
+      position: relative;
+      overflow: hidden;
+      display: grid;
+      grid-template-columns: 340px 1fr;
+      gap: 48px;
+      align-items: center;
+      box-shadow: 0 16px 40px rgba(5, 13, 24, 0.5), 0 0 24px rgba(0, 149, 255, 0.1);
+    }
+
+    .sbc-plan-banner__bg-art {
+      position: absolute;
+      left: -60px;
+      top: -60px;
+      width: 380px;
+      height: 380px;
+      pointer-events: none;
+      opacity: 0.6;
+      z-index: 1;
+    }
+
+    .sbc-plan-banner__left {
+      position: relative;
+      z-index: 2;
+    }
+
+    .sbc-plan-banner__title {
+      font-size: 32px;
+      font-weight: 800;
+      color: #ffffff;
+      line-height: 1.18;
+      margin: 0 0 12px 0;
+      letter-spacing: -0.5px;
+      text-shadow: 0 2px 8px rgba(0, 0, 0, 0.4);
+    }
+
+    .sbc-plan-banner__title-accent {
+      color: #0095ff;
+      text-shadow: 0 0 20px rgba(0, 149, 255, 0.4);
+    }
+
+    .sbc-plan-banner__desc {
+      font-size: 14.5px;
+      color: #cbd5e1;
+      line-height: 1.6;
+      margin: 0 0 24px 0;
+      font-weight: 400;
+    }
+
+    .sbc-plan-banner__btn {
+      display: inline-flex;
+      align-items: center;
+      gap: 10px;
+      background: #0095ff;
+      color: #ffffff !important;
+      padding: 13px 28px;
+      border-radius: 8px;
+      font-size: 14.5px;
+      font-weight: 700;
+      text-decoration: none;
+      border: 1px solid #0095ff;
+      transition: all 0.25s cubic-bezier(0.16, 1, 0.3, 1);
+      box-shadow: 0 4px 18px rgba(0, 149, 255, 0.45);
+    }
+
+    .sbc-plan-banner__btn:hover {
+      background: #0080db;
+      border-color: #0080db;
+      transform: translateY(-2px);
+      box-shadow: 0 8px 26px rgba(0, 149, 255, 0.6);
+    }
+
+    .sbc-plan-banner__right {
+      position: relative;
+      z-index: 2;
+    }
+
+    .sbc-plan-steps {
+      display: flex;
+      align-items: flex-start;
+      justify-content: space-between;
+      gap: 8px;
+      position: relative;
+    }
+
+    .sbc-plan-step {
+      display: flex;
+      flex-direction: column;
+      align-items: flex-start;
+      max-width: 135px;
+    }
+
+    .sbc-plan-step__badge {
+      width: 24px;
+      height: 24px;
+      border-radius: 50%;
+      background: #0070ba;
+      color: #ffffff;
+      font-size: 11.5px;
+      font-weight: 800;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      margin-bottom: 12px;
+      box-shadow: 0 2px 10px rgba(0, 112, 186, 0.4);
+    }
+
+    .sbc-plan-step__icon {
+      width: 48px;
+      height: 48px;
+      border-radius: 12px;
+      background: rgba(255, 255, 255, 0.08);
+      border: 1.5px solid rgba(0, 149, 255, 0.35);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      color: #0095ff;
+      margin-bottom: 12px;
+      transition: all 0.2s ease;
+    }
+
+    .sbc-plan-step:hover .sbc-plan-step__icon {
+      border-color: #0095ff;
+      background: rgba(0, 149, 255, 0.15);
+      transform: scale(1.05);
+    }
+
+    .sbc-plan-step__title {
+      font-size: 14px;
+      font-weight: 700;
+      color: #ffffff;
+      margin: 0 0 4px 0;
+      line-height: 1.3;
+    }
+
+    .sbc-plan-step__desc {
+      font-size: 11.5px;
+      color: #cbd5e1;
+      line-height: 1.45;
+      margin: 0;
+    }
+
+    .sbc-plan-steps__arrow {
+      color: rgba(0, 149, 255, 0.45);
+      display: flex;
+      align-items: center;
+      margin-top: 50px;
+      flex-shrink: 0;
+    }
+
+    /* 4. Authorized Brands */
+    .sbc-auth-brands-section {
+      padding: 38px 0;
+    }
+
+    .sbc-auth-brands-row {
+      display: grid;
+      grid-template-columns: 1fr 1.3fr;
+      gap: 40px;
+      align-items: center;
+    }
+
+    .sbc-auth-brands-title {
+      font-size: 26px;
+      font-weight: 800;
+      color: #071526;
+      line-height: 1.25;
+      margin: 0 0 8px 0;
+    }
+
+    .sbc-auth-brands-desc {
+      font-size: 13.5px;
+      color: #64748b;
+      line-height: 1.6;
+      margin: 0;
+      max-width: 440px;
+    }
+
+    .sbc-auth-brands-cards {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 16px;
+    }
+
+    .sbc-auth-brand-box {
+      background: #ffffff;
+      border: 1px solid #e2e8f0;
+      border-radius: 8px;
+      height: 108px;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      text-decoration: none;
+      padding: 12px;
+      transition: all 0.2s cubic-bezier(0.16, 1, 0.3, 1);
+    }
+
+    .sbc-auth-brand-box:hover {
+      border-color: #0070ba;
+      transform: translateY(-2px);
+      box-shadow: 0 8px 18px rgba(0, 0, 0, 0.06);
+    }
+
+    .sbc-auth-brand-box__logo {
+      height: 40px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+
+    .sbc-auth-brand-box__logo img {
+      max-height: 38px;
+      max-width: 120px;
+      object-fit: contain;
+    }
+
+    .sbc-brand-cisco-logo {
+      font-size: 20px;
+      font-weight: 900;
+      letter-spacing: 2px;
+      color: #0070ba;
+    }
+
+    .sbc-auth-brand-box__label {
+      font-size: 11px;
+      font-weight: 600;
+      color: #64748b;
+      margin-top: 8px;
+      text-align: center;
+    }
+
+    /* 5. Trust / Value Proposition Strip */
+    .sbc-trust-strip-section {
+      padding: 10px 0 30px 0;
+    }
+
+    .sbc-trust-strip {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      background: #f8fafc;
+      border: 1px solid #e2e8f0;
+      border-radius: 12px;
+      padding: 22px 36px;
+    }
+
+    .sbc-trust-col {
+      display: flex;
+      align-items: center;
+      gap: 16px;
+      flex: 1;
+    }
+
+    .sbc-trust-col__icon {
+      width: 48px;
+      height: 48px;
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      flex-shrink: 0;
+    }
+
+    .sbc-trust-col__icon--green {
+      border: 2px solid #86efac;
+      color: #16a34a;
+      background: #f0fdf4;
+    }
+
+    .sbc-trust-col__icon--navy {
+      border: 2px solid #cbd5e1;
+      color: #071526;
+      background: #f1f5f9;
+    }
+
+    .sbc-trust-col__title {
+      font-size: 14.5px;
+      font-weight: 700;
+      color: #071526;
+      margin: 0 0 2px 0;
+    }
+
+    .sbc-trust-col__desc {
+      font-size: 12px;
+      color: #64748b;
+      margin: 0;
+    }
+
+    .sbc-trust-divider {
+      width: 1px;
+      height: 42px;
+      background: #e2e8f0;
+      margin: 0 24px;
+      flex-shrink: 0;
+    }
+
+    /* 6. B2B Dealer Network Banner */
+    .sbc-dealer-banner-section {
+      padding: 10px 0 34px 0;
+    }
+
+    .sbc-dealer-banner {
+      background: #071526;
+      border-radius: 10px;
+      overflow: hidden;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      box-shadow: 0 8px 24px rgba(7, 21, 38, 0.12);
+    }
+
+    .sbc-dealer-banner__media {
+      width: 220px;
+      height: 115px;
+      flex-shrink: 0;
+      overflow: hidden;
+    }
+
+    .sbc-dealer-banner__media img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+    }
+
+    .sbc-dealer-banner__content {
+      flex: 1;
+      padding: 16px 28px;
+    }
+
+    .sbc-dealer-banner__badge {
+      font-size: 10.5px;
+      font-weight: 800;
+      letter-spacing: 1.2px;
+      color: #22c55e;
+      display: inline-block;
+      margin-bottom: 4px;
+      text-transform: uppercase;
+    }
+
+    .sbc-dealer-banner__title {
+      font-size: 21px;
+      font-weight: 800;
+      color: #ffffff;
+      margin: 0 0 4px 0;
+      line-height: 1.2;
+    }
+
+    .sbc-dealer-banner__desc {
+      font-size: 12.5px;
+      color: #94a3b8;
+      margin: 0;
+      line-height: 1.45;
+      max-width: 580px;
+    }
+
+    .sbc-dealer-banner__action {
+      padding-right: 32px;
+      flex-shrink: 0;
+    }
+
+    .sbc-dealer-banner__btn {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      background: #22c55e;
+      color: #ffffff !important;
+      padding: 11px 22px;
+      border-radius: 6px;
+      font-size: 13.5px;
+      font-weight: 700;
+      text-decoration: none;
+      white-space: nowrap;
+      transition: all 0.2s cubic-bezier(0.16, 1, 0.3, 1);
+      box-shadow: 0 4px 12px rgba(34, 197, 94, 0.35);
+    }
+
+    .sbc-dealer-banner__btn:hover {
+      background: #16a34a;
+      transform: translateY(-1px);
+      box-shadow: 0 6px 16px rgba(34, 197, 94, 0.45);
+    }
+
+    /* 7. Technical Guides Grid */
+    .sbc-guides-grid {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 16px;
+    }
+
+    .sbc-guide-card {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+      background: #ffffff;
+      border: 1px solid #e2e8f0;
+      border-radius: 10px;
+      padding: 10px 12px;
+      text-decoration: none;
+      transition: all 0.2s cubic-bezier(0.16, 1, 0.3, 1);
+      box-shadow: 0 1px 3px rgba(0, 0, 0, 0.03);
+    }
+
+    .sbc-guide-card:hover {
+      transform: translateY(-2px);
+      border-color: #0070ba;
+      box-shadow: 0 8px 18px rgba(0, 112, 186, 0.1);
+    }
+
+    .sbc-guide-card__thumb {
+      width: 72px;
+      height: 56px;
+      border-radius: 6px;
+      overflow: hidden;
+      background: #f8fafc;
+      flex-shrink: 0;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+
+    .sbc-guide-card__thumb img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+    }
+
+    .sbc-guide-card__body {
+      flex: 1;
+      min-width: 0;
+    }
+
+    .sbc-guide-card__title {
+      font-size: 12.5px;
+      font-weight: 700;
+      color: #071526;
+      line-height: 1.35;
+      margin: 0 0 6px 0;
+      display: -webkit-box;
+      -webkit-line-clamp: 2;
+      -webkit-box-orient: vertical;
+      overflow: hidden;
+      transition: color 0.2s;
+    }
+
+    .sbc-guide-card:hover .sbc-guide-card__title {
+      color: #0070ba;
+    }
+
+    .sbc-guide-card__date {
+      display: flex;
+      align-items: center;
+      gap: 5px;
+      font-size: 11px;
+      color: #64748b;
+    }
+
+    /* Responsive Adjustments */
+    @media (max-width: 1024px) {
+      .sbc-popular-grid { grid-template-columns: repeat(3, 1fr); }
+      .sbc-guides-grid { grid-template-columns: repeat(2, 1fr); }
+      .sbc-plan-banner { grid-template-columns: 1fr; gap: 32px; padding: 32px 24px; }
+      .sbc-auth-brands-row { grid-template-columns: 1fr; gap: 24px; }
+    }
+
+    @media (max-width: 860px) {
+      .sbc-cat-cards-grid { grid-template-columns: repeat(2, 1fr); }
+      .sbc-trust-strip { flex-direction: column; gap: 16px; align-items: flex-start; }
+      .sbc-trust-divider { display: none; }
+      .sbc-dealer-banner { flex-direction: column; align-items: flex-start; }
+      .sbc-dealer-banner__media { width: 100%; height: 140px; }
+      .sbc-dealer-banner__action { padding: 0 28px 20px 28px; width: 100%; }
+      .sbc-dealer-banner__btn { width: 100%; justify-content: center; }
+      .sbc-plan-steps { flex-wrap: wrap; gap: 20px; }
+      .sbc-plan-steps__arrow { display: none; }
+      .sbc-plan-step { max-width: 45%; }
+    }
+
+    @media (max-width: 640px) {
+      .sbc-cat-cards-grid { grid-template-columns: 1fr; }
+      .sbc-popular-grid { grid-template-columns: repeat(2, 1fr); }
+      .sbc-guides-grid { grid-template-columns: 1fr; }
+      .sbc-auth-brands-cards { grid-template-columns: 1fr; }
+    }
+
+    @media (max-width: 480px) {
+      .sbc-popular-grid { grid-template-columns: 1fr; }
+      .sbc-auth-brands-row { grid-template-columns: 1fr; }
+    }
+  </style>
+</head>
+
+<body data-root="" data-page="home">
+  <a class="sbc-skip" href="#main">Skip to main content</a>
+  <!-- Inline SVG Sprite for immediate icon rendering -->
+  <div id="sbc-svg-sprite" style="display:none;">
+    <svg xmlns="http://www.w3.org/2000/svg" style="display:none;">
+      <defs>
+        <symbol id="icon-shopping-cart" viewBox="0 0 24 24"><circle cx="9" cy="21" r="1"/><circle cx="20" cy="21" r="1"/><path d="M1 1h4l2.68 13.39a2 2 0 0 0 2 1.61h9.72a2 2 0 0 0 2-1.61L23 6H6"/></symbol>
+        <symbol id="icon-heart" viewBox="0 0 24 24"><path d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z"/></symbol>
+        <symbol id="icon-shield" viewBox="0 0 24 24"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></symbol>
+        <symbol id="icon-shuffle" viewBox="0 0 24 24"><polyline points="16 3 21 3 21 8"/><line x1="4" y1="20" x2="21" y2="3"/><polyline points="21 16 21 21 16 21"/><line x1="15" y1="15" x2="21" y2="21"/><line x1="4" y1="4" x2="9" y2="9"/></symbol>
+        <symbol id="icon-search" viewBox="0 0 24 24"><circle cx="11" cy="11" r="8"/><line x1="21" y1="21" x2="16.65" y2="16.65"/></symbol>
+        <symbol id="icon-user" viewBox="0 0 24 24"><path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"/><circle cx="12" cy="7" r="4"/></symbol>
+        <symbol id="icon-menu" viewBox="0 0 24 24"><line x1="3" y1="12" x2="21" y2="12"/><line x1="3" y1="6" x2="21" y2="6"/><line x1="3" y1="18" x2="21" y2="18"/></symbol>
+        <symbol id="icon-x" viewBox="0 0 24 24"><line x1="18" y1="6" x2="6" y2="18"/><line x1="6" y1="6" x2="18" y2="18"/></symbol>
+        <symbol id="icon-wifi" viewBox="0 0 24 24"><path d="M5 12.55a11 11 0 0 1 14.08 0"/><path d="M1.42 9a16 16 0 0 1 21.16 0"/><path d="M8.53 16.11a6 6 0 0 1 6.95 0"/><line x1="12" y1="20" x2="12.01" y2="20"/></symbol>
+        <symbol id="icon-layers" viewBox="0 0 24 24"><polygon points="12 2 2 7 12 12 22 7 12 2"/><polyline points="2 17 12 22 22 17"/><polyline points="2 12 12 17 22 12"/></symbol>
+        <symbol id="icon-share-2" viewBox="0 0 24 24"><circle cx="18" cy="5" r="3"/><circle cx="6" cy="12" r="3"/><circle cx="18" cy="19" r="3"/><line x1="8.59" y1="13.51" x2="15.42" y2="17.49"/><line x1="15.41" y1="6.51" x2="8.59" y2="10.49"/></symbol>
+        <symbol id="icon-radio" viewBox="0 0 24 24"><circle cx="12" cy="12" r="2"/><path d="M16.24 7.76a6 6 0 0 1 0 8.49m-8.48-.01a6 6 0 0 1 0-8.49m11.31-2.82a10 10 0 0 1 0 14.14m-14.14 0a10 10 0 0 1 0-14.14"/></symbol>
+        <symbol id="icon-video" viewBox="0 0 24 24"><polygon points="23 7 16 12 23 17 23 7"/><rect x="1" y="5" width="15" height="14" rx="2" ry="2"/></symbol>
+        <symbol id="icon-zap" viewBox="0 0 24 24"><polygon points="13 2 3 14 12 14 11 22 21 10 12 10 13 2"/></symbol>
+        <symbol id="icon-server" viewBox="0 0 24 24"><rect x="2" y="2" width="20" height="8" rx="2" ry="2"/><rect x="2" y="14" width="20" height="8" rx="2" ry="2"/><line x1="6" y1="6" x2="6.01" y2="6"/><line x1="6" y1="18" x2="6.01" y2="18"/></symbol>
+        <symbol id="icon-tool" viewBox="0 0 24 24"><path d="M14.7 6.3a1 1 0 0 0 0 1.4l1.6 1.6a1 1 0 0 0 1.4 0l3.77-3.77a6 6 0 0 1-7.94 7.94l-6.91 6.91a2.12 2.12 0 0 1-3-3l6.91-6.91a6 6 0 0 1 7.94-7.94l-3.76 3.76z"/></symbol>
+        <symbol id="icon-headphones" viewBox="0 0 24 24"><path d="M3 18v-6a9 9 0 0 1 18 0v6"/><path d="M21 19a2 2 0 0 1-2 2h-1a2 2 0 0 1-2-2v-3a2 2 0 0 1 2-2h3zM3 19a2 2 0 0 0 2 2h1a2 2 0 0 0 2-2v-3a2 2 0 0 0-2-2H3z"/></symbol>
+        <symbol id="icon-monitor" viewBox="0 0 24 24"><rect x="2" y="3" width="20" height="14" rx="2" ry="2"/><line x1="8" y1="21" x2="16" y2="21"/><line x1="12" y1="17" x2="12" y2="21"/></symbol>
+        <symbol id="icon-box" viewBox="0 0 24 24"><path d="M21 16V8a2 2 0 0 0-1-1.73l-7-4a2 2 0 0 0-2 0l-7 4A2 2 0 0 0 3 8v8a2 2 0 0 0 1 1.73l7 4a2 2 0 0 0 2 0l7-4A2 2 0 0 0 21 16z"/><polyline points="3.27 6.96 12 12.01 20.73 6.96"/><line x1="12" y1="22.08" x2="12" y2="12"/></symbol>
+        <symbol id="icon-phone" viewBox="0 0 24 24"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"/></symbol>
+        <symbol id="icon-mail" viewBox="0 0 24 24"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,13 2,6"/></symbol>
+        <symbol id="icon-map-pin" viewBox="0 0 24 24"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/><circle cx="12" cy="10" r="3"/></symbol>
+        <symbol id="icon-check" viewBox="0 0 24 24"><polyline points="20 6 9 17 4 12"/></symbol>
+        <symbol id="icon-check-circle" viewBox="0 0 24 24"><path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"/><polyline points="22 4 12 14.01 9 11.01"/></symbol>
+        <symbol id="icon-alert-circle" viewBox="0 0 24 24"><circle cx="12" cy="12" r="10"/><line x1="12" y1="8" x2="12" y2="12"/><line x1="12" y1="16" x2="12.01" y2="16"/></symbol>
+        <symbol id="icon-alert-triangle" viewBox="0 0 24 24"><path d="M10.29 3.86L1.82 18a2 2 0 0 0 1.71 3h16.94a2 2 0 0 0 1.71-3L13.71 3.86a2 2 0 0 0-3.42 0z"/><line x1="12" y1="9" x2="12" y2="13"/><line x1="12" y1="17" x2="12.01" y2="17"/></symbol>
+        <symbol id="icon-info" viewBox="0 0 24 24"><circle cx="12" cy="12" r="10"/><line x1="12" y1="16" x2="12" y2="12"/><line x1="12" y1="8" x2="12.01" y2="8"/></symbol>
+        <symbol id="icon-copy" viewBox="0 0 24 24"><rect x="9" y="9" width="13" height="13" rx="2" ry="2"/><path d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1"/></symbol>
+        <symbol id="icon-file-text" viewBox="0 0 24 24"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><polyline points="14 2 14 8 20 8"/><line x1="16" y1="13" x2="8" y2="13"/><line x1="16" y1="17" x2="8" y2="17"/><polyline points="10 9 9 9 8 9"/></symbol>
+        <symbol id="icon-bell" viewBox="0 0 24 24"><path d="M18 8A6 6 0 0 0 6 8c0 7-3 9-3 9h18s-3-2-3-9"/><path d="M13.73 21a2 2 0 0 1-3.46 0"/></symbol>
+        <symbol id="icon-chevron-right" viewBox="0 0 24 24"><polyline points="9 18 15 12 9 6"/></symbol>
+        <symbol id="icon-chevron-down" viewBox="0 0 24 24"><polyline points="6 9 12 15 18 9"/></symbol>
+        <symbol id="icon-chevron-left" viewBox="0 0 24 24"><polyline points="15 18 9 12 15 6"/></symbol>
+        <symbol id="icon-chevron-up" viewBox="0 0 24 24"><polyline points="18 15 12 9 6 15"/></symbol>
+        <symbol id="icon-arrow-right" viewBox="0 0 24 24"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></symbol>
+        <symbol id="icon-sliders" viewBox="0 0 24 24"><line x1="4" y1="21" x2="4" y2="14"/><line x1="4" y1="10" x2="4" y2="3"/><line x1="12" y1="21" x2="12" y2="12"/><line x1="12" y1="8" x2="12" y2="3"/><line x1="20" y1="21" x2="20" y2="16"/><line x1="20" y1="12" x2="20" y2="3"/><line x1="1" y1="14" x2="7" y2="14"/><line x1="9" y1="8" x2="15" y2="8"/><line x1="17" y1="16" x2="23" y2="16"/></symbol>
+        <symbol id="icon-download" viewBox="0 0 24 24"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/><polyline points="7 10 12 15 17 10"/><line x1="12" y1="15" x2="12" y2="3"/></symbol>
+        <symbol id="icon-plus" viewBox="0 0 24 24"><line x1="12" y1="5" x2="12" y2="19"/><line x1="5" y1="12" x2="19" y2="12"/></symbol>
+        <symbol id="icon-minus" viewBox="0 0 24 24"><line x1="5" y1="12" x2="19" y2="12"/></symbol>
+        <symbol id="icon-trash-2" viewBox="0 0 24 24"><polyline points="3 6 5 6 21 6"/><path d="M19 6v14a2 2 0 0 1-2 2H7a2 2 0 0 1-2-2V6m3 0V4a2 2 0 0 1 2-2h4a2 2 0 0 1 2 2v2"/><line x1="10" y1="11" x2="10" y2="17"/><line x1="14" y1="11" x2="14" y2="17"/></symbol>
+        <symbol id="icon-printer" viewBox="0 0 24 24"><polyline points="6 9 6 2 18 2 18 9"/><path d="M6 18H4a2 2 0 0 1-2-2v-5a2 2 0 0 1 2-2h16a2 2 0 0 1 2 2v5a2 2 0 0 1-2 2h-2"/><rect x="6" y="14" width="12" height="8"/></symbol>
+        <symbol id="icon-facebook" viewBox="0 0 24 24"><path d="M18 2h-3a5 5 0 0 0-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 0 1 1-1h3z"/></symbol>
+        <symbol id="icon-youtube" viewBox="0 0 24 24"><path d="M22.54 6.42a2.78 2.78 0 0 0-1.94-2C18.88 4 12 4 12 4s-6.88 0-8.6.46a2.78 2.78 0 0 0-1.94 2A29 29 0 0 0 1 11.75a29 29 0 0 0 .46 5.33A2.78 2.78 0 0 0 3.4 19c1.72.46 8.6.46 8.6.46s6.88 0 8.6-.46a2.78 2.78 0 0 0 1.94-2 29 29 0 0 0 .46-5.25 29 29 0 0 0-.46-5.33z"/><polygon points="9.75 15.02 15.5 11.75 9.75 8.48 9.75 15.02"/></symbol>
+        <symbol id="icon-linkedin" viewBox="0 0 24 24"><path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z"/><rect x="2" y="9" width="4" height="12"/><circle cx="4" cy="4" r="2"/></symbol>
+        <symbol id="icon-activity" viewBox="0 0 24 24"><polyline points="22 12 18 12 15 21 9 3 6 12 2 12"/></symbol>
+        <symbol id="icon-cpu" viewBox="0 0 24 24"><rect x="4" y="4" width="16" height="16" rx="2"/><rect x="9" y="9" width="6" height="6"/><line x1="9" y1="1" x2="9" y2="4"/><line x1="15" y1="1" x2="15" y2="4"/><line x1="9" y1="20" x2="9" y2="23"/><line x1="15" y1="20" x2="15" y2="23"/><line x1="20" y1="9" x2="23" y2="9"/><line x1="20" y1="14" x2="23" y2="14"/><line x1="1" y1="9" x2="4" y2="9"/><line x1="1" y1="14" x2="4" y2="14"/></symbol>
+        <symbol id="icon-message-square" viewBox="0 0 24 24"><path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"/></symbol>
+        <symbol id="icon-clipboard-check" viewBox="0 0 24 24"><path d="M16 4h2a2 2 0 0 1 2 2v14a2 2 0 0 1-2 2H6a2 2 0 0 1-2-2V6a2 2 0 0 1 2-2h2"/><rect x="8" y="2" width="8" height="4" rx="1" ry="1"/><polyline points="9 14 11 16 15 12"/></symbol>
+        <symbol id="icon-truck" viewBox="0 0 24 24"><rect x="1" y="3" width="15" height="13" rx="1"/><polygon points="16 8 20 8 23 11 23 16 16 16 16 8"/><circle cx="5.5" cy="18.5" r="2.5"/><circle cx="18.5" cy="18.5" r="2.5"/></symbol>
+        <symbol id="icon-calendar" viewBox="0 0 24 24"><rect x="3" y="4" width="18" height="18" rx="2" ry="2"/><line x1="16" y1="2" x2="16" y2="6"/><line x1="8" y1="2" x2="8" y2="6"/><line x1="3" y1="10" x2="21" y2="10"/></symbol>
+        <symbol id="icon-star" viewBox="0 0 24 24"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></symbol>
+        <symbol id="icon-award" viewBox="0 0 24 24"><circle cx="12" cy="8" r="7"/><polyline points="8.21 13.89 7 23 12 20 17 23 15.79 13.88"/></symbol>
+        <symbol id="icon-external-link" viewBox="0 0 24 24"><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"/><polyline points="15 3 21 3 21 9"/><line x1="10" y1="14" x2="21" y2="3"/></symbol>
+      </defs>
+    </svg>
+  </div>
+
+  <div id="sbc-header">
+    <header class="sbc-header">
+      <!-- TIER 1: Top Bar (Navy #071526) -->
+      <div class="sbc-topbar">
+        <div class="l-container sbc-topbar__inner">
+          <div class="sbc-topbar__left">
+            <a href="tel:+8801711234567" class="sbc-topbar__link">
+              <svg class="sbc-icon sbc-icon--xs" aria-hidden="true"><use href="#icon-phone"></use></svg>
+              <span>+880 1711 234567</span>
+            </a>
+            <a href="mailto:info@southbanglacomputer.com" class="sbc-topbar__link">
+              <svg class="sbc-icon sbc-icon--xs" aria-hidden="true"><use href="#icon-mail"></use></svg>
+              <span>info@southbanglacomputer.com</span>
+            </a>
+            <span class="sbc-topbar__item">
+              <svg class="sbc-icon sbc-icon--xs" aria-hidden="true"><use href="#icon-map-pin"></use></svg>
+              <span>Dhaka, Bangladesh</span>
+            </span>
+          </div>
+          <div class="sbc-topbar__right">
+            <a href="branches.html" class="sbc-topbar__link">Track Order</a>
+            <span class="sbc-topbar__divider">|</span>
+            <a href="support.html" class="sbc-topbar__link">Support</a>
+            <span class="sbc-topbar__divider">|</span>
+            <a href="faq.html" class="sbc-topbar__link">FAQ</a>
+            <span class="sbc-topbar__divider">|</span>
+            <div class="sbc-topbar__lang" title="Select Language">
+              <span>English</span>
+              <svg class="sbc-icon sbc-icon--xs" aria-hidden="true"><use href="#icon-chevron-down"></use></svg>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- TIER 2: Main Header Bar (White #FFFFFF) -->
+      <div class="sbc-main-header">
+        <div class="l-container sbc-main-header__inner">
+          <!-- Brand Logo -->
+          <a href="index.html" class="sbc-main-header__logo" aria-label="South Bangla Computer">
+            <img src="assets/img/logo.png" alt="South Bangla Computer" onerror="this.src='sbc-logo-24-style.png'">
+          </a>
+
+          <!-- Search Form -->
+          <div class="sbc-main-header__search" id="sbc-desktop-search-wrap">
+            <form action="shop.html" method="GET" class="sbc-main-search-form" id="sbc-search-form">
+              <input type="search" name="q" class="sbc-main-search-form__input" placeholder="Search products, brands and models..." autocomplete="off" id="sbc-global-search">
+              <button type="submit" class="sbc-main-search-form__submit" aria-label="Search">
+                <svg class="sbc-icon sbc-icon--sm" aria-hidden="true"><use href="#icon-search"></use></svg>
+              </button>
+            </form>
+            <div id="sbc-search-suggestions" class="sbc-search-dropdown" style="display:none;"></div>
+          </div>
+
+          <!-- Action Badges (My Account, Wishlist, Cart) -->
+          <div class="sbc-main-header__actions">
+            <!-- Account -->
+            <a href="login.html" class="sbc-header-action sbc-header-action--account" title="Customer / Dealer Account">
+              <div class="sbc-header-action__icon sbc-header-action__icon--user">
+                <svg class="sbc-icon sbc-icon--md" aria-hidden="true"><use href="#icon-user"></use></svg>
+              </div>
+              <div class="sbc-header-action__text">
+                <span class="sbc-header-action__title">My Account</span>
+                <span class="sbc-header-action__subtitle">Login / Register</span>
+              </div>
+            </a>
+
+            <!-- Wishlist -->
+            <a href="wishlist.html" class="sbc-header-action sbc-header-action--wishlist" title="Saved Wishlist">
+              <div class="sbc-header-action__icon">
+                <svg class="sbc-icon sbc-icon--md" aria-hidden="true"><use href="#icon-heart"></use></svg>
+              </div>
+              <div class="sbc-header-action__text">
+                <span class="sbc-header-action__title">Wishlist <span class="sbc-header-action__count js-wishlist-badge">(0)</span></span>
+              </div>
+            </a>
+
+            <!-- Cart -->
+            <a href="cart.html" class="sbc-header-action sbc-header-action--cart js-open-mini-cart" title="Shopping Cart">
+              <div class="sbc-header-action__icon">
+                <svg class="sbc-icon sbc-icon--md" aria-hidden="true"><use href="#icon-shopping-cart"></use></svg>
+              </div>
+              <div class="sbc-header-action__text">
+                <span class="sbc-header-action__title">Cart <span class="sbc-header-action__count js-cart-badge">(0)</span></span>
+              </div>
+            </a>
+          </div>
+        </div>
+      </div>
+
+      <!-- TIER 3: Primary Navigation Bar (Navy #071526) -->
+      <nav class="sbc-navbar" aria-label="Main Navigation">
+        <div class="l-container sbc-navbar__inner">
+          <div class="sbc-navbar__menu">
+            <!-- Home -->
+            <div class="sbc-nav-item">
+              <a href="index.html" class="sbc-nav-link is-active">Home</a>
+            </div>
+
+            <!-- Shop + Mega Menu -->
+            <div class="sbc-nav-item sbc-nav-item--has-megamenu">
+              <a href="shop.html" class="sbc-nav-link" aria-haspopup="true" aria-expanded="false" id="nav-shop-btn">
+                Shop <svg class="sbc-icon sbc-icon--xs" aria-hidden="true"><use href="#icon-chevron-down"></use></svg>
+              </a>
+              <div class="sbc-megamenu sbc-megamenu--shop" id="shop-megamenu" role="region" aria-labelledby="nav-shop-btn">
+                <div class="sbc-megamenu__header">
+                  <div>
+                    <div class="sbc-megamenu__header-title">Hardware Catalogue &amp; Equipment</div>
+                    <div class="sbc-megamenu__header-sub">Authentic ICT devices, passive optical equipment &amp; enterprise power backup</div>
+                  </div>
+                  <a href="shop.html#shop-catalog" style="color:var(--c-primary);font-weight:700;font-size:12px;text-decoration:none;">
+                    All 500+ Catalog SKUs &rarr;
+                  </a>
+                </div>
+                <div class="sbc-megamenu__inner">
+                  <!-- Column 1: Hardware Categories -->
+                  <div class="sbc-megamenu__col">
+                    <div class="sbc-megamenu__heading">Networking Categories</div>
+                    <ul class="sbc-megamenu__list">
+                      <li><a href="shop.html?c=routers-wifi#shop-catalog"><svg class="sbc-icon sbc-icon--sm" aria-hidden="true"><use href="#icon-wifi"></use></svg> Routers &amp; Wi-Fi</a></li>
+                      <li><a href="shop.html?c=switches#shop-catalog"><svg class="sbc-icon sbc-icon--sm" aria-hidden="true"><use href="#icon-server"></use></svg> Switches &amp; PoE</a></li>
+                      <li><a href="shop.html?c=fiber-pon#shop-catalog"><svg class="sbc-icon sbc-icon--sm" aria-hidden="true"><use href="#icon-activity"></use></svg> Fiber, PON &amp; ONU</a></li>
+                      <li><a href="shop.html?c=wireless-outdoor#shop-catalog"><svg class="sbc-icon sbc-icon--sm" aria-hidden="true"><use href="#icon-radio"></use></svg> Access Points &amp; Outdoor</a></li>
+                      <li><a href="shop.html?c=security-cctv#shop-catalog"><svg class="sbc-icon sbc-icon--sm" aria-hidden="true"><use href="#icon-shield"></use></svg> CCTV &amp; Surveillance</a></li>
+                    </ul>
+                  </div>
+
+                  <!-- Column 2: Infrastructure & Power -->
+                  <div class="sbc-megamenu__col">
+                    <div class="sbc-megamenu__heading">Power &amp; Infrastructure</div>
+                    <ul class="sbc-megamenu__list">
+                      <li><a href="shop.html?c=power-backup#shop-catalog"><svg class="sbc-icon sbc-icon--sm" aria-hidden="true"><use href="#icon-zap"></use></svg> Power &amp; Online UPS</a></li>
+                      <li><a href="shop.html?c=cabling-racks#shop-catalog"><svg class="sbc-icon sbc-icon--sm" aria-hidden="true"><use href="#icon-layers"></use></svg> Cabling &amp; Server Racks</a></li>
+                      <li><a href="shop.html?c=fiber-tools#shop-catalog"><svg class="sbc-icon sbc-icon--sm" aria-hidden="true"><use href="#icon-tool"></use></svg> Fiber Tools &amp; Splicers</a></li>
+                      <li><a href="shop.html?c=peripherals-audio#shop-catalog"><svg class="sbc-icon sbc-icon--sm" aria-hidden="true"><use href="#icon-headphones"></use></svg> Peripherals &amp; Audio</a></li>
+                      <li><a href="shop.html?c=computer-accessories#shop-catalog"><svg class="sbc-icon sbc-icon--sm" aria-hidden="true"><use href="#icon-cpu"></use></svg> Computer Accessories</a></li>
+                    </ul>
+                  </div>
+
+                  <!-- Column 3: Featured Brands -->
+                  <div class="sbc-megamenu__col">
+                    <div class="sbc-megamenu__heading">Top Partner Brands</div>
+                    <ul class="sbc-megamenu__list">
+                      <li><a href="shop.html?b=tenda#shop-catalog"><strong>Tenda</strong> &mdash; Networking</a></li>
+                      <li><a href="shop.html?b=cisco#shop-catalog"><strong>Cisco</strong> &mdash; Enterprise</a></li>
+                      <li><a href="shop.html?b=hsgq#shop-catalog"><strong>HSGQ</strong> &mdash; FTTH &amp; PON</a></li>
+                      <li><a href="shop.html?b=must#shop-catalog"><strong>Must</strong> &mdash; Energy &amp; UPS</a></li>
+                      <li><a href="shop.html?b=solitine#shop-catalog"><strong>Solitine</strong> &mdash; Cabling</a></li>
+                    </ul>
+                    <a href="shop.html#shop-catalog" class="sbc-megamenu__viewall">
+                      View All 14 Brands &rarr;
+                    </a>
+                  </div>
+
+                  <!-- Column 4: Solutions & Commercial -->
+                  <div class="sbc-megamenu__col sbc-megamenu__col--featured">
+                    <div class="sbc-megamenu__heading" style="border:none;margin-bottom:8px;">Enterprise Solutions</div>
+                    <div class="sbc-megamenu__cards">
+                      <a href="configurator.html" class="sbc-megamenu-card">
+                        <div class="sbc-megamenu-card__icon"><svg class="sbc-icon sbc-icon--md" aria-hidden="true"><use href="#icon-sliders"></use></svg></div>
+                        <div class="sbc-megamenu-card__body">
+                          <strong>Network Configurator</strong>
+                          <span>Step-by-step equipment matching</span>
+                        </div>
+                      </a>
+                      <a href="quote.html" class="sbc-megamenu-card">
+                        <div class="sbc-megamenu-card__icon"><svg class="sbc-icon sbc-icon--md" aria-hidden="true"><use href="#icon-file-text"></use></svg></div>
+                        <div class="sbc-megamenu-card__body">
+                          <strong>Request a Quote</strong>
+                          <span>Instant B2B pricing &amp; tender RFP</span>
+                        </div>
+                      </a>
+                      <a href="shop.html#shop-catalog" class="sbc-btn sbc-btn--primary sbc-btn--sm sbc-btn--full" style="text-align:center;margin-top:4px;">
+                        Explore Shop Catalog &rarr;
+                      </a>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <!-- Solutions Dropdown -->
+            <div class="sbc-nav-item sbc-nav-item--has-dropdown">
+              <a href="configurator.html" class="sbc-nav-link" aria-haspopup="true" aria-expanded="false" id="nav-solutions-btn">
+                Solutions <svg class="sbc-icon sbc-icon--xs" aria-hidden="true"><use href="#icon-chevron-down"></use></svg>
+              </a>
+              <div class="sbc-dropdown-menu" id="solutions-dropdown" role="menu" aria-labelledby="nav-solutions-btn">
+                <a href="configurator.html" class="sbc-dropdown-link" role="menuitem">Network Solution Configurator</a>
+                <a href="quote.html" class="sbc-dropdown-link" role="menuitem">Commercial Tender &amp; RFP Quote</a>
+                <a href="dealer/index.html" class="sbc-dropdown-link" role="menuitem">Dealer &amp; Reseller Program</a>
+                <a href="dealer/login.html" class="sbc-dropdown-link" role="menuitem">Dealer Portal Login</a>
+              </div>
+            </div>
+
+            <!-- Support Dropdown -->
+            <div class="sbc-nav-item sbc-nav-item--has-dropdown">
+              <a href="support.html" class="sbc-nav-link" aria-haspopup="true" aria-expanded="false" id="nav-support-btn">
+                Support <svg class="sbc-icon sbc-icon--xs" aria-hidden="true"><use href="#icon-chevron-down"></use></svg>
+              </a>
+              <div class="sbc-dropdown-menu" id="support-dropdown" role="menu" aria-labelledby="nav-support-btn">
+                <a href="support.html" class="sbc-dropdown-link" role="menuitem">Support Helpdesk</a>
+                <a href="branches.html" class="sbc-dropdown-link" role="menuitem" style="font-weight:600;color:var(--c-primary);">Service Centers &amp; Branches (12)</a>
+                <a href="downloads.html" class="sbc-dropdown-link" role="menuitem">Firmware &amp; Drivers</a>
+                <a href="tutorials.html" class="sbc-dropdown-link" role="menuitem">Video Tutorials</a>
+                <a href="warranty.html" class="sbc-dropdown-link" role="menuitem">Warranty Policy</a>
+                <a href="faq.html" class="sbc-dropdown-link" role="menuitem">Frequently Asked Questions</a>
+              </div>
+            </div>
+
+            <!-- About Us -->
+            <div class="sbc-nav-item">
+              <a href="about.html" class="sbc-nav-link">About Us</a>
+            </div>
+
+            <!-- Contact -->
+            <div class="sbc-nav-item">
+              <a href="contact.html" class="sbc-nav-link">Contact</a>
+            </div>
+          </div>
+        </div>
+      </nav>
+
+      <!-- MOBILE HEADER (< 1024px) -->
+      <div class="sbc-header__mobile">
+        <div class="sbc-header__mobile-top">
+          <button class="sbc-header__hamburger js-open-mobile-nav" aria-label="Open mobile menu" type="button">
+            <svg class="sbc-icon sbc-icon--lg" aria-hidden="true"><use href="#icon-menu"></use></svg>
+          </button>
+
+          <a href="index.html" class="sbc-header__mobile-logo" aria-label="South Bangla Computer">
+            <img src="assets/img/logo.png" alt="South Bangla Computer" onerror="this.src='sbc-logo-24-style.png'">
+          </a>
+
+          <div class="sbc-header__mobile-actions">
+            <a href="login.html" class="sbc-header__mobile-action" title="Account" aria-label="Account">
+              <svg class="sbc-icon sbc-icon--sm" aria-hidden="true"><use href="#icon-user"></use></svg>
+            </a>
+            <a href="wishlist.html" class="sbc-header__mobile-action" title="Wishlist" aria-label="Wishlist">
+              <svg class="sbc-icon sbc-icon--sm" aria-hidden="true"><use href="#icon-heart"></use></svg>
+              <span class="sbc-header__mobile-badge js-wishlist-badge" style="display:none;">0</span>
+            </a>
+            <a href="cart.html" class="sbc-header__mobile-action js-open-mini-cart" title="Shopping Cart" aria-label="Cart">
+              <svg class="sbc-icon sbc-icon--sm" aria-hidden="true"><use href="#icon-shopping-cart"></use></svg>
+              <span class="sbc-header__mobile-badge js-cart-badge">0</span>
+            </a>
+          </div>
+        </div>
+
+        <div class="sbc-header__mobile-search">
+          <form action="shop.html" method="GET" class="sbc-main-search-form" id="sbc-mobile-search-form">
+            <input type="search" name="q" class="sbc-main-search-form__input" placeholder="Search products, brands and models..." autocomplete="off" id="sbc-mobile-search">
+            <button type="submit" class="sbc-main-search-form__submit" aria-label="Search">
+              <svg class="sbc-icon sbc-icon--sm" aria-hidden="true"><use href="#icon-search"></use></svg>
+            </button>
+          </form>
+          <div id="sbc-mobile-search-suggestions" class="sbc-search-dropdown" style="display:none;"></div>
+        </div>
+      </div>
+    </header>
+  </div>
+
+  <main id="main" tabindex="-1">
+    <!-- H2: Hero Section with Ambient Background Video (Preserving Video, Content Matched to Screenshot) -->
+    <section class="sbc-hero" aria-labelledby="hero-heading">
+      <!-- Background Video & Dark Overlay (Untouched Video Asset) -->
+      <div class="sbc-hero__video-wrap" aria-hidden="true">
+        <video class="sbc-hero__video" autoplay muted loop playsinline webkit-playsinline preload="auto">
+          <source src="assets/video/home_banner_video.mp4" type="video/mp4">
+        </video>
+        <div class="sbc-hero__video-overlay"></div>
+      </div>
+
+      <div class="l-container sbc-hero__container">
+        <!-- Handwritten Glowing Script Tagline in Top-Right Corner (from screenshot) -->
+        <div class="sbc-hero__script-badge" aria-hidden="true">
+          <span>Better Network</span>
+          <span>Brighter Future</span>
+        </div>
+
+        <!-- Left-Aligned Content Matching Screenshot -->
+        <div class="sbc-hero__content">
+          <div class="sbc-hero__tag">
+            <span class="sbc-hero__tag-dash">―</span>
+            <span class="sbc-hero__tag-text">NETWORKING &amp; IT EQUIPMENT DISTRIBUTOR</span>
+          </div>
+          <h1 id="hero-heading" class="sbc-hero__title">
+            South Bangla Computer<br>
+            <span class="sbc-hero__title-accent">Your Trusted IT Partner</span>
+          </h1>
+          <p class="sbc-hero__desc">
+            We provide high-quality networking solutions, computer accessories and IT equipment for businesses, institutions and individuals across Bangladesh.
+          </p>
+          <div class="sbc-hero__btn-group">
+            <a href="shop.html" class="sbc-hero-btn sbc-hero-btn--primary">
+              Shop Now &rarr;
+            </a>
+            <a href="configurator.html" class="sbc-hero-btn sbc-hero-btn--secondary">
+              Explore Solutions &rarr;
+            </a>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Brand Infinite Marquee Slider with "Trusted Brands" Badge (Matching Screenshot) -->
+    <section class="sbc-brand-slider-section" aria-label="Authorized Brand Partners">
+      <div class="l-container sbc-brand-slider-container">
+        <div class="sbc-brand-slider-badge">
+          <svg class="sbc-icon sbc-icon--sm" aria-hidden="true"><use href="#icon-shield"></use></svg>
+          <span>Trusted Brands</span>
+        </div>
+        <div class="sbc-brand-slider-wrap">
+          <div class="sbc-brand-slider" id="home-brand-slider">
+            <div class="sbc-brand-slider__fade sbc-brand-slider__fade--left" aria-hidden="true"></div>
+            <div class="sbc-brand-slider__track" id="home-brand-slider-track">
+              <!-- Group 1 -->
+              <div class="sbc-brand-slider__group">
+                <a href="shop.html?b=tenda#shop-catalog" class="sbc-brand-slider__item" title="Tenda">
+                  <img src="assets/brand image/292026613.png" alt="Tenda" loading="lazy" onerror="if('https://www.southbanglabd.com/backend/brand/logo/292026613.png') { this.onerror=null; this.src='https://www.southbanglabd.com/backend/brand/logo/292026613.png'; } else { this.style.display='none'; this.nextElementSibling.style.display='inline'; }">
+                  <span class="sbc-brand-slider__fallback" style="display:none;">Tenda</span>
+                </a>
+                <a href="shop.html?b=cisco#shop-catalog" class="sbc-brand-slider__item" title="Cisco">
+                  <img src="assets/brand image/1202929252.png" alt="Cisco" loading="lazy" onerror="if('https://www.southbanglabd.com/backend/brand/logo/1202929252.png') { this.onerror=null; this.src='https://www.southbanglabd.com/backend/brand/logo/1202929252.png'; } else { this.style.display='none'; this.nextElementSibling.style.display='inline'; }">
+                  <span class="sbc-brand-slider__fallback" style="display:none;">Cisco</span>
+                </a>
+                <a href="shop.html?b=hsgq#shop-catalog" class="sbc-brand-slider__item" title="HSGQ">
+                  <img src="assets/brand image/1261830325.png" alt="HSGQ" loading="lazy" onerror="if('https://www.southbanglabd.com/backend/brand/logo/1261830325.png') { this.onerror=null; this.src='https://www.southbanglabd.com/backend/brand/logo/1261830325.png'; } else { this.style.display='none'; this.nextElementSibling.style.display='inline'; }">
+                  <span class="sbc-brand-slider__fallback" style="display:none;">HSGQ</span>
+                </a>
+                <a href="shop.html?b=tumtec#shop-catalog" class="sbc-brand-slider__item" title="Tumtec">
+                  <img src="assets/brand image/533885831.png" alt="Tumtec" loading="lazy" onerror="if('https://www.southbanglabd.com/backend/brand/logo/533885831.png') { this.onerror=null; this.src='https://www.southbanglabd.com/backend/brand/logo/533885831.png'; } else { this.style.display='none'; this.nextElementSibling.style.display='inline'; }">
+                  <span class="sbc-brand-slider__fallback" style="display:none;">Tumtec</span>
+                </a>
+                <a href="shop.html?b=meetion#shop-catalog" class="sbc-brand-slider__item" title="Meetion">
+                  <img src="assets/brand image/924112071.png" alt="Meetion" loading="lazy" onerror="if('https://www.southbanglabd.com/backend/brand/logo/924112071.png') { this.onerror=null; this.src='https://www.southbanglabd.com/backend/brand/logo/924112071.png'; } else { this.style.display='none'; this.nextElementSibling.style.display='inline'; }">
+                  <span class="sbc-brand-slider__fallback" style="display:none;">Meetion</span>
+                </a>
+                <a href="shop.html?b=must#shop-catalog" class="sbc-brand-slider__item" title="Must">
+                  <img src="assets/brand image/1525673256.png" alt="Must" loading="lazy" onerror="if('https://www.southbanglabd.com/backend/brand/logo/1525673256.png') { this.onerror=null; this.src='https://www.southbanglabd.com/backend/brand/logo/1525673256.png'; } else { this.style.display='none'; this.nextElementSibling.style.display='inline'; }">
+                  <span class="sbc-brand-slider__fallback" style="display:none;">Must</span>
+                </a>
+                <a href="shop.html?b=solitine#shop-catalog" class="sbc-brand-slider__item" title="Solitine">
+                  <img src="assets/brand image/1773848880.png" alt="Solitine" loading="lazy" onerror="if('https://www.southbanglabd.com/backend/brand/logo/1773848880.png') { this.onerror=null; this.src='https://www.southbanglabd.com/backend/brand/logo/1773848880.png'; } else { this.style.display='none'; this.nextElementSibling.style.display='inline'; }">
+                  <span class="sbc-brand-slider__fallback" style="display:none;">Solitine</span>
+                </a>
+                <a href="shop.html?b=ubiquiti#shop-catalog" class="sbc-brand-slider__item" title="Ubiquiti">
+                  <img src="assets/brand image/580336898.png" alt="Ubiquiti" loading="lazy" onerror="if('https://www.southbanglabd.com/backend/brand/logo/580336898.png') { this.onerror=null; this.src='https://www.southbanglabd.com/backend/brand/logo/580336898.png'; } else { this.style.display='none'; this.nextElementSibling.style.display='inline'; }">
+                  <span class="sbc-brand-slider__fallback" style="display:none;">Ubiquiti</span>
+                </a>
+                <a href="shop.html?b=rosenberger#shop-catalog" class="sbc-brand-slider__item" title="Rosenberger">
+                  <img src="assets/brand image/1461064408.png" alt="Rosenberger" loading="lazy" onerror="if('https://www.southbanglabd.com/backend/brand/logo/1461064408.png') { this.onerror=null; this.src='https://www.southbanglabd.com/backend/brand/logo/1461064408.png'; } else { this.style.display='none'; this.nextElementSibling.style.display='inline'; }">
+                  <span class="sbc-brand-slider__fallback" style="display:none;">Rosenberger</span>
+                </a>
+                <a href="shop.html?b=marsriva#shop-catalog" class="sbc-brand-slider__item" title="Marsriva">
+                  <img src="assets/brand image/1619816335.png" alt="Marsriva" loading="lazy" onerror="if('https://www.southbanglabd.com/backend/brand/logo/1619816335.png') { this.onerror=null; this.src='https://www.southbanglabd.com/backend/brand/logo/1619816335.png'; } else { this.style.display='none'; this.nextElementSibling.style.display='inline'; }">
+                  <span class="sbc-brand-slider__fallback" style="display:none;">Marsriva</span>
+                </a>
+                <a href="shop.html?b=ip-com#shop-catalog" class="sbc-brand-slider__item" title="IP-Com">
+                  <img src="assets/brand image/425038089.png" alt="IP-Com" loading="lazy" onerror="if('https://www.southbanglabd.com/backend/brand/logo/425038089.png') { this.onerror=null; this.src='https://www.southbanglabd.com/backend/brand/logo/425038089.png'; } else { this.style.display='none'; this.nextElementSibling.style.display='inline'; }">
+                  <span class="sbc-brand-slider__fallback" style="display:none;">IP-Com</span>
+                </a>
+                <a href="shop.html?b=ewin#shop-catalog" class="sbc-brand-slider__item" title="Ewin">
+                  <img src="assets/brand image/256242652.png" alt="Ewin" loading="lazy" onerror="if('https://www.southbanglabd.com/backend/brand/logo/256242652.png') { this.onerror=null; this.src='https://www.southbanglabd.com/backend/brand/logo/256242652.png'; } else { this.style.display='none'; this.nextElementSibling.style.display='inline'; }">
+                  <span class="sbc-brand-slider__fallback" style="display:none;">Ewin</span>
+                </a>
+                <a href="shop.html?b=hkc#shop-catalog" class="sbc-brand-slider__item" title="HKC">
+                  <img src="assets/brand image/1314348991.png" alt="HKC" loading="lazy" onerror="if('https://www.southbanglabd.com/backend/brand/logo/1314348991.png') { this.onerror=null; this.src='https://www.southbanglabd.com/backend/brand/logo/1314348991.png'; } else { this.style.display='none'; this.nextElementSibling.style.display='inline'; }">
+                  <span class="sbc-brand-slider__fallback" style="display:none;">HKC</span>
+                </a>
+                <a href="shop.html?b=phyhome#shop-catalog" class="sbc-brand-slider__item" title="Phyhome">
+                  <img src="assets/brand image/331461559.png" alt="Phyhome" loading="lazy" onerror="if('https://www.southbanglabd.com/backend/brand/logo/331461559.png') { this.onerror=null; this.src='https://www.southbanglabd.com/backend/brand/logo/331461559.png'; } else { this.style.display='none'; this.nextElementSibling.style.display='inline'; }">
+                  <span class="sbc-brand-slider__fallback" style="display:none;">Phyhome</span>
+                </a>
+              </div>
+              <!-- Group 2 (Identical Clone for Seamless Infinite Loop) -->
+              <div class="sbc-brand-slider__group" aria-hidden="true">
+                <a href="shop.html?b=tenda#shop-catalog" class="sbc-brand-slider__item" tabindex="-1" title="Tenda">
+                  <img src="assets/brand image/292026613.png" alt="Tenda" loading="lazy" onerror="if('https://www.southbanglabd.com/backend/brand/logo/292026613.png') { this.onerror=null; this.src='https://www.southbanglabd.com/backend/brand/logo/292026613.png'; } else { this.style.display='none'; this.nextElementSibling.style.display='inline'; }">
+                  <span class="sbc-brand-slider__fallback" style="display:none;">Tenda</span>
+                </a>
+                <a href="shop.html?b=cisco#shop-catalog" class="sbc-brand-slider__item" tabindex="-1" title="Cisco">
+                  <img src="assets/brand image/1202929252.png" alt="Cisco" loading="lazy" onerror="if('https://www.southbanglabd.com/backend/brand/logo/1202929252.png') { this.onerror=null; this.src='https://www.southbanglabd.com/backend/brand/logo/1202929252.png'; } else { this.style.display='none'; this.nextElementSibling.style.display='inline'; }">
+                  <span class="sbc-brand-slider__fallback" style="display:none;">Cisco</span>
+                </a>
+                <a href="shop.html?b=hsgq#shop-catalog" class="sbc-brand-slider__item" tabindex="-1" title="HSGQ">
+                  <img src="assets/brand image/1261830325.png" alt="HSGQ" loading="lazy" onerror="if('https://www.southbanglabd.com/backend/brand/logo/1261830325.png') { this.onerror=null; this.src='https://www.southbanglabd.com/backend/brand/logo/1261830325.png'; } else { this.style.display='none'; this.nextElementSibling.style.display='inline'; }">
+                  <span class="sbc-brand-slider__fallback" style="display:none;">HSGQ</span>
+                </a>
+                <a href="shop.html?b=tumtec#shop-catalog" class="sbc-brand-slider__item" tabindex="-1" title="Tumtec">
+                  <img src="assets/brand image/533885831.png" alt="Tumtec" loading="lazy" onerror="if('https://www.southbanglabd.com/backend/brand/logo/533885831.png') { this.onerror=null; this.src='https://www.southbanglabd.com/backend/brand/logo/533885831.png'; } else { this.style.display='none'; this.nextElementSibling.style.display='inline'; }">
+                  <span class="sbc-brand-slider__fallback" style="display:none;">Tumtec</span>
+                </a>
+                <a href="shop.html?b=meetion#shop-catalog" class="sbc-brand-slider__item" tabindex="-1" title="Meetion">
+                  <img src="assets/brand image/924112071.png" alt="Meetion" loading="lazy" onerror="if('https://www.southbanglabd.com/backend/brand/logo/924112071.png') { this.onerror=null; this.src='https://www.southbanglabd.com/backend/brand/logo/924112071.png'; } else { this.style.display='none'; this.nextElementSibling.style.display='inline'; }">
+                  <span class="sbc-brand-slider__fallback" style="display:none;">Meetion</span>
+                </a>
+                <a href="shop.html?b=must#shop-catalog" class="sbc-brand-slider__item" tabindex="-1" title="Must">
+                  <img src="assets/brand image/1525673256.png" alt="Must" loading="lazy" onerror="if('https://www.southbanglabd.com/backend/brand/logo/1525673256.png') { this.onerror=null; this.src='https://www.southbanglabd.com/backend/brand/logo/1525673256.png'; } else { this.style.display='none'; this.nextElementSibling.style.display='inline'; }">
+                  <span class="sbc-brand-slider__fallback" style="display:none;">Must</span>
+                </a>
+                <a href="shop.html?b=solitine#shop-catalog" class="sbc-brand-slider__item" tabindex="-1" title="Solitine">
+                  <img src="assets/brand image/1773848880.png" alt="Solitine" loading="lazy" onerror="if('https://www.southbanglabd.com/backend/brand/logo/1773848880.png') { this.onerror=null; this.src='https://www.southbanglabd.com/backend/brand/logo/1773848880.png'; } else { this.style.display='none'; this.nextElementSibling.style.display='inline'; }">
+                  <span class="sbc-brand-slider__fallback" style="display:none;">Solitine</span>
+                </a>
+                <a href="shop.html?b=ubiquiti#shop-catalog" class="sbc-brand-slider__item" tabindex="-1" title="Ubiquiti">
+                  <img src="assets/brand image/580336898.png" alt="Ubiquiti" loading="lazy" onerror="if('https://www.southbanglabd.com/backend/brand/logo/580336898.png') { this.onerror=null; this.src='https://www.southbanglabd.com/backend/brand/logo/580336898.png'; } else { this.style.display='none'; this.nextElementSibling.style.display='inline'; }">
+                  <span class="sbc-brand-slider__fallback" style="display:none;">Ubiquiti</span>
+                </a>
+                <a href="shop.html?b=rosenberger#shop-catalog" class="sbc-brand-slider__item" tabindex="-1" title="Rosenberger">
+                  <img src="assets/brand image/1461064408.png" alt="Rosenberger" loading="lazy" onerror="if('https://www.southbanglabd.com/backend/brand/logo/1461064408.png') { this.onerror=null; this.src='https://www.southbanglabd.com/backend/brand/logo/1461064408.png'; } else { this.style.display='none'; this.nextElementSibling.style.display='inline'; }">
+                  <span class="sbc-brand-slider__fallback" style="display:none;">Rosenberger</span>
+                </a>
+                <a href="shop.html?b=marsriva#shop-catalog" class="sbc-brand-slider__item" tabindex="-1" title="Marsriva">
+                  <img src="assets/brand image/1619816335.png" alt="Marsriva" loading="lazy" onerror="if('https://www.southbanglabd.com/backend/brand/logo/1619816335.png') { this.onerror=null; this.src='https://www.southbanglabd.com/backend/brand/logo/1619816335.png'; } else { this.style.display='none'; this.nextElementSibling.style.display='inline'; }">
+                  <span class="sbc-brand-slider__fallback" style="display:none;">Marsriva</span>
+                </a>
+                <a href="shop.html?b=ip-com#shop-catalog" class="sbc-brand-slider__item" tabindex="-1" title="IP-Com">
+                  <img src="assets/brand image/425038089.png" alt="IP-Com" loading="lazy" onerror="if('https://www.southbanglabd.com/backend/brand/logo/425038089.png') { this.onerror=null; this.src='https://www.southbanglabd.com/backend/brand/logo/425038089.png'; } else { this.style.display='none'; this.nextElementSibling.style.display='inline'; }">
+                  <span class="sbc-brand-slider__fallback" style="display:none;">IP-Com</span>
+                </a>
+                <a href="shop.html?b=ewin#shop-catalog" class="sbc-brand-slider__item" tabindex="-1" title="Ewin">
+                  <img src="assets/brand image/256242652.png" alt="Ewin" loading="lazy" onerror="if('https://www.southbanglabd.com/backend/brand/logo/256242652.png') { this.onerror=null; this.src='https://www.southbanglabd.com/backend/brand/logo/256242652.png'; } else { this.style.display='none'; this.nextElementSibling.style.display='inline'; }">
+                  <span class="sbc-brand-slider__fallback" style="display:none;">Ewin</span>
+                </a>
+                <a href="shop.html?b=hkc#shop-catalog" class="sbc-brand-slider__item" tabindex="-1" title="HKC">
+                  <img src="assets/brand image/1314348991.png" alt="HKC" loading="lazy" onerror="if('https://www.southbanglabd.com/backend/brand/logo/1314348991.png') { this.onerror=null; this.src='https://www.southbanglabd.com/backend/brand/logo/1314348991.png'; } else { this.style.display='none'; this.nextElementSibling.style.display='inline'; }">
+                  <span class="sbc-brand-slider__fallback" style="display:none;">HKC</span>
+                </a>
+                <a href="shop.html?b=phyhome#shop-catalog" class="sbc-brand-slider__item" tabindex="-1" title="Phyhome">
+                  <img src="assets/brand image/331461559.png" alt="Phyhome" loading="lazy" onerror="if('https://www.southbanglabd.com/backend/brand/logo/331461559.png') { this.onerror=null; this.src='https://www.southbanglabd.com/backend/brand/logo/331461559.png'; } else { this.style.display='none'; this.nextElementSibling.style.display='inline'; }">
+                  <span class="sbc-brand-slider__fallback" style="display:none;">Phyhome</span>
+                </a>
+              </div>
+            </div>
+            <div class="sbc-brand-slider__fade sbc-brand-slider__fade--right" aria-hidden="true"></div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- =====================================================================
+         SECTION 1: EXPLORE OUR PRODUCT CATEGORIES (Matching Screenshot)
+         ===================================================================== -->
+    <section class="sbc-home-section" aria-labelledby="cat-heading">
+      <div class="l-container">
+        <div class="sbc-sec-header">
+          <div>
+            <div class="sbc-sec-tag">
+              <span class="sbc-sec-tag__dash">―</span>
+              <span class="sbc-sec-tag__text">SHOP BY CATEGORY</span>
+            </div>
+            <h2 id="cat-heading" class="sbc-sec-title">Explore Our Product Categories</h2>
+          </div>
+          <a href="shop.html" class="sbc-sec-viewall">
+            <span>View All Categories</span>
+            <svg class="sbc-icon sbc-icon--xs" aria-hidden="true"><use href="#icon-arrow-right"></use></svg>
+          </a>
+        </div>
+
+        <div class="sbc-cat-cards-grid">
+          <!-- Card 1: Wi-Fi Routers -->
+          <a href="category.html?c=routers-wifi" class="sbc-cat-card">
+            <div class="sbc-cat-card__media">
+              <img src="assets/img/home/cat_wifi_routers.jpg" alt="Wi-Fi Routers" loading="lazy">
+            </div>
+            <div class="sbc-cat-card__bar">
+              <div class="sbc-cat-card__icon">
+                <svg class="sbc-icon sbc-icon--sm" aria-hidden="true"><use href="#icon-wifi"></use></svg>
+              </div>
+              <div class="sbc-cat-card__info">
+                <h3 class="sbc-cat-card__title">Wi-Fi Routers</h3>
+                <span class="sbc-cat-card__desc">Home &amp; Business Routers</span>
+              </div>
+              <div class="sbc-cat-card__arrow" aria-hidden="true">
+                <svg class="sbc-icon sbc-icon--xs"><use href="#icon-arrow-right"></use></svg>
+              </div>
+            </div>
+          </a>
+
+          <!-- Card 2: Network Switches -->
+          <a href="category.html?c=switches" class="sbc-cat-card">
+            <div class="sbc-cat-card__media">
+              <img src="assets/img/home/cat_network_switches.jpg" alt="Network Switches" loading="lazy">
+            </div>
+            <div class="sbc-cat-card__bar">
+              <div class="sbc-cat-card__icon">
+                <svg class="sbc-icon sbc-icon--sm" aria-hidden="true"><use href="#icon-server"></use></svg>
+              </div>
+              <div class="sbc-cat-card__info">
+                <h3 class="sbc-cat-card__title">Network Switches</h3>
+                <span class="sbc-cat-card__desc">Managed &amp; Unmanaged Switches</span>
+              </div>
+              <div class="sbc-cat-card__arrow" aria-hidden="true">
+                <svg class="sbc-icon sbc-icon--xs"><use href="#icon-arrow-right"></use></svg>
+              </div>
+            </div>
+          </a>
+
+          <!-- Card 3: Fiber Optic -->
+          <a href="category.html?c=fiber-pon" class="sbc-cat-card">
+            <div class="sbc-cat-card__media">
+              <img src="assets/img/home/cat_fiber_optic.jpg" alt="Fiber Optic" loading="lazy">
+            </div>
+            <div class="sbc-cat-card__bar">
+              <div class="sbc-cat-card__icon">
+                <svg class="sbc-icon sbc-icon--sm" aria-hidden="true"><use href="#icon-tool"></use></svg>
+              </div>
+              <div class="sbc-cat-card__info">
+                <h3 class="sbc-cat-card__title">Fiber Optic</h3>
+                <span class="sbc-cat-card__desc">Fiber Cable &amp; Accessories</span>
+              </div>
+              <div class="sbc-cat-card__arrow" aria-hidden="true">
+                <svg class="sbc-icon sbc-icon--xs"><use href="#icon-arrow-right"></use></svg>
+              </div>
+            </div>
+          </a>
+
+          <!-- Card 4: UPS & Power -->
+          <a href="category.html?c=power-backup" class="sbc-cat-card">
+            <div class="sbc-cat-card__media">
+              <img src="assets/img/home/cat_ups_power.jpg" alt="UPS & Power" loading="lazy">
+            </div>
+            <div class="sbc-cat-card__bar">
+              <div class="sbc-cat-card__icon">
+                <svg class="sbc-icon sbc-icon--sm" aria-hidden="true"><use href="#icon-zap"></use></svg>
+              </div>
+              <div class="sbc-cat-card__info">
+                <h3 class="sbc-cat-card__title">UPS &amp; Power</h3>
+                <span class="sbc-cat-card__desc">Backup Power Solutions</span>
+              </div>
+              <div class="sbc-cat-card__arrow" aria-hidden="true">
+                <svg class="sbc-icon sbc-icon--xs"><use href="#icon-arrow-right"></use></svg>
+              </div>
+            </div>
+          </a>
+        </div>
+      </div>
+    </section>
+
+    <!-- =====================================================================
+         SECTION 2: POPULAR PRODUCTS (10 Products in 2 Rows)
+         ===================================================================== -->
+    <section class="sbc-home-section" aria-labelledby="popular-heading">
+      <div class="l-container">
+        <div class="sbc-sec-header">
+          <div>
+            <div class="sbc-sec-tag">
+              <span class="sbc-sec-tag__dash">―</span>
+              <span class="sbc-sec-tag__text">BEST SELLING PRODUCTS</span>
+            </div>
+            <h2 id="popular-heading" class="sbc-sec-title">Popular Products</h2>
+          </div>
+          <a href="shop.html" class="sbc-sec-viewall">
+            <span>View All Products</span>
+            <svg class="sbc-icon sbc-icon--xs" aria-hidden="true"><use href="#icon-arrow-right"></use></svg>
+          </a>
+        </div>
+
+        <div class="sbc-popular-grid">
+          <!-- Product 1: Tenda AC10 AC1200 -->
+          <div class="sbc-showcase-pcard">
+            <div class="sbc-showcase-pcard__top">
+              <span class="sbc-showcase-badge sbc-showcase-badge--green">Best Seller</span>
+              <button type="button" class="sbc-showcase-pcard__wishlist js-toggle-wishlist" data-id="tenda-ac10" aria-label="Add to Wishlist">
+                <svg class="sbc-icon sbc-icon--sm" aria-hidden="true"><use href="#icon-heart"></use></svg>
+              </button>
+            </div>
+            <a href="product.html?id=tenda-ac10" class="sbc-showcase-pcard__imglink">
+              <img src="assets/img/home/prod_tenda_f9.jpg" alt="Tenda AC10 AC1200 Dual Band Gigabit Wi-Fi Router" loading="lazy">
+            </a>
+            <div class="sbc-showcase-pcard__meta">
+              <span class="sbc-showcase-pcard__brand">Tenda</span>
+              <h3 class="sbc-showcase-pcard__title">
+                <a href="product.html?id=tenda-ac10">Tenda AC10 AC1200 Dual Band Gigabit Wi-Fi Router</a>
+              </h3>
+              <div class="sbc-showcase-pcard__rating">
+                <span class="sbc-stars">★★★★★</span>
+                <span class="sbc-rating-count">(124)</span>
+              </div>
+              <div class="sbc-showcase-pcard__price">৳ 2,750</div>
+            </div>
+            <button type="button" class="sbc-showcase-pcard__cartbtn js-add-cart" data-id="tenda-ac10">
+              <svg class="sbc-icon sbc-icon--sm" aria-hidden="true"><use href="#icon-shopping-cart"></use></svg>
+              <span>Add to Cart</span>
+            </button>
+          </div>
+
+          <!-- Product 2: Tenda TEG1024D -->
+          <div class="sbc-showcase-pcard">
+            <div class="sbc-showcase-pcard__top">
+              <span class="sbc-showcase-badge sbc-showcase-badge--green">Top Rated</span>
+              <button type="button" class="sbc-showcase-pcard__wishlist js-toggle-wishlist" data-id="tenda-teg1024d" aria-label="Add to Wishlist">
+                <svg class="sbc-icon sbc-icon--sm" aria-hidden="true"><use href="#icon-heart"></use></svg>
+              </button>
+            </div>
+            <a href="product.html?id=tenda-teg1024d" class="sbc-showcase-pcard__imglink">
+              <img src="assets/img/home/prod_tenda_switch.jpg" alt="Tenda TEG1024D 24-Port Gigabit Switch" loading="lazy">
+            </a>
+            <div class="sbc-showcase-pcard__meta">
+              <span class="sbc-showcase-pcard__brand">Tenda</span>
+              <h3 class="sbc-showcase-pcard__title">
+                <a href="product.html?id=tenda-teg1024d">Tenda TEG1024D 24-Port Gigabit Switch</a>
+              </h3>
+              <div class="sbc-showcase-pcard__rating">
+                <span class="sbc-stars">★★★★★</span>
+                <span class="sbc-rating-count">(98)</span>
+              </div>
+              <div class="sbc-showcase-pcard__price">৳ 8,200</div>
+            </div>
+            <button type="button" class="sbc-showcase-pcard__cartbtn js-add-cart" data-id="tenda-teg1024d">
+              <svg class="sbc-icon sbc-icon--sm" aria-hidden="true"><use href="#icon-shopping-cart"></use></svg>
+              <span>Add to Cart</span>
+            </button>
+          </div>
+
+          <!-- Product 3: Fiber Optic Patch Cord -->
+          <div class="sbc-showcase-pcard">
+            <div class="sbc-showcase-pcard__top sbc-showcase-pcard__top--rightonly">
+              <button type="button" class="sbc-showcase-pcard__wishlist js-toggle-wishlist" data-id="solitine-patch-sc" aria-label="Add to Wishlist">
+                <svg class="sbc-icon sbc-icon--sm" aria-hidden="true"><use href="#icon-heart"></use></svg>
+              </button>
+            </div>
+            <a href="shop.html?c=fiber-pon" class="sbc-showcase-pcard__imglink">
+              <img src="assets/img/home/prod_fiber_patch_cord.jpg" alt="SC/APC Fiber Optic Patch Cord (1m)" loading="lazy">
+            </a>
+            <div class="sbc-showcase-pcard__meta">
+              <span class="sbc-showcase-pcard__brand">Solitine</span>
+              <h3 class="sbc-showcase-pcard__title">
+                <a href="shop.html?c=fiber-pon">SC/APC Fiber Optic Patch Cord (1m)</a>
+              </h3>
+              <div class="sbc-showcase-pcard__rating">
+                <span class="sbc-stars">★★★★★</span>
+                <span class="sbc-rating-count">(312)</span>
+              </div>
+              <div class="sbc-showcase-pcard__price">৳ 280</div>
+            </div>
+            <button type="button" class="sbc-showcase-pcard__cartbtn js-add-cart" data-id="solitine-patch-sc">
+              <svg class="sbc-icon sbc-icon--sm" aria-hidden="true"><use href="#icon-shopping-cart"></use></svg>
+              <span>Add to Cart</span>
+            </button>
+          </div>
+
+          <!-- Product 4: APC Back-UPS -->
+          <div class="sbc-showcase-pcard">
+            <div class="sbc-showcase-pcard__top sbc-showcase-pcard__top--rightonly">
+              <button type="button" class="sbc-showcase-pcard__wishlist js-toggle-wishlist" data-id="must-v2000" aria-label="Add to Wishlist">
+                <svg class="sbc-icon sbc-icon--sm" aria-hidden="true"><use href="#icon-heart"></use></svg>
+              </button>
+            </div>
+            <a href="shop.html?c=power-backup" class="sbc-showcase-pcard__imglink">
+              <img src="assets/img/home/prod_apc_ups.jpg" alt="APC Back-UPS 1200VA (650W)" loading="lazy">
+            </a>
+            <div class="sbc-showcase-pcard__meta">
+              <span class="sbc-showcase-pcard__brand">APC</span>
+              <h3 class="sbc-showcase-pcard__title">
+                <a href="shop.html?c=power-backup">APC Back-UPS 1200VA (650W)</a>
+              </h3>
+              <div class="sbc-showcase-pcard__rating">
+                <span class="sbc-stars">★★★★★</span>
+                <span class="sbc-rating-count">(76)</span>
+              </div>
+              <div class="sbc-showcase-pcard__price">৳ 13,000</div>
+            </div>
+            <button type="button" class="sbc-showcase-pcard__cartbtn js-add-cart" data-id="must-v2000">
+              <svg class="sbc-icon sbc-icon--sm" aria-hidden="true"><use href="#icon-shopping-cart"></use></svg>
+              <span>Add to Cart</span>
+            </button>
+          </div>
+
+          <!-- Product 5: Tenda O9 Outdoor CPE -->
+          <div class="sbc-showcase-pcard">
+            <div class="sbc-showcase-pcard__top sbc-showcase-pcard__top--rightonly">
+              <button type="button" class="sbc-showcase-pcard__wishlist js-toggle-wishlist" data-id="tenda-o9" aria-label="Add to Wishlist">
+                <svg class="sbc-icon sbc-icon--sm" aria-hidden="true"><use href="#icon-heart"></use></svg>
+              </button>
+            </div>
+            <a href="product.html?id=tenda-o9" class="sbc-showcase-pcard__imglink">
+              <img src="assets/img/home/prod_tplink_cpe.jpg" alt="Tenda O9 5GHz 23dBi Gigabit Outdoor CPE" loading="lazy">
+            </a>
+            <div class="sbc-showcase-pcard__meta">
+              <span class="sbc-showcase-pcard__brand">Tenda</span>
+              <h3 class="sbc-showcase-pcard__title">
+                <a href="product.html?id=tenda-o9">Tenda O9 5GHz 23dBi Gigabit Outdoor CPE</a>
+              </h3>
+              <div class="sbc-showcase-pcard__rating">
+                <span class="sbc-stars">★★★★★</span>
+                <span class="sbc-rating-count">(63)</span>
+              </div>
+              <div class="sbc-showcase-pcard__price">৳ 7,450</div>
+            </div>
+            <button type="button" class="sbc-showcase-pcard__cartbtn js-add-cart" data-id="tenda-o9">
+              <svg class="sbc-icon sbc-icon--sm" aria-hidden="true"><use href="#icon-shopping-cart"></use></svg>
+              <span>Add to Cart</span>
+            </button>
+          </div>
+
+          <!-- Product 6: Tenda AX12 Pro AX3000 Wi-Fi 6 Router -->
+          <div class="sbc-showcase-pcard">
+            <div class="sbc-showcase-pcard__top">
+              <span class="sbc-showcase-badge sbc-showcase-badge--green">Wi-Fi 6</span>
+              <button type="button" class="sbc-showcase-pcard__wishlist js-toggle-wishlist" data-id="tenda-ax12-pro" aria-label="Add to Wishlist">
+                <svg class="sbc-icon sbc-icon--sm" aria-hidden="true"><use href="#icon-heart"></use></svg>
+              </button>
+            </div>
+            <a href="product.html?id=tenda-ax12-pro" class="sbc-showcase-pcard__imglink">
+              <img src="https://www.southbanglabd.com/backend/products/image/962631605.jpg" alt="Tenda AX12 Pro AX3000 Dual-Band Gigabit Wi-Fi 6 Router" loading="lazy" onerror="this.onerror=null; this.src='assets/img/products/tenda-router.svg';">
+            </a>
+            <div class="sbc-showcase-pcard__meta">
+              <span class="sbc-showcase-pcard__brand">Tenda</span>
+              <h3 class="sbc-showcase-pcard__title">
+                <a href="product.html?id=tenda-ax12-pro">Tenda AX12 Pro AX3000 Dual-Band Gigabit Wi-Fi 6 Router</a>
+              </h3>
+              <div class="sbc-showcase-pcard__rating">
+                <span class="sbc-stars">★★★★★</span>
+                <span class="sbc-rating-count">(142)</span>
+              </div>
+              <div class="sbc-showcase-pcard__price">৳ 4,850</div>
+            </div>
+            <button type="button" class="sbc-showcase-pcard__cartbtn js-add-cart" data-id="tenda-ax12-pro">
+              <svg class="sbc-icon sbc-icon--sm" aria-hidden="true"><use href="#icon-shopping-cart"></use></svg>
+              <span>Add to Cart</span>
+            </button>
+          </div>
+
+          <!-- Product 7: V-SOL V2801SG 1GE XPON ONT -->
+          <div class="sbc-showcase-pcard">
+            <div class="sbc-showcase-pcard__top">
+              <span class="sbc-showcase-badge sbc-showcase-badge--green">Best Seller</span>
+              <button type="button" class="sbc-showcase-pcard__wishlist js-toggle-wishlist" data-id="vsol-v2801sg" aria-label="Add to Wishlist">
+                <svg class="sbc-icon sbc-icon--sm" aria-hidden="true"><use href="#icon-heart"></use></svg>
+              </button>
+            </div>
+            <a href="product.html?id=vsol-v2801sg" class="sbc-showcase-pcard__imglink">
+              <img src="https://www.southbanglabd.com/backend/products/image/1440784407.jpg" alt="V-SOL V2801SG 1GE Realtek Chipset XPON ONT / ONU" loading="lazy" onerror="this.onerror=null; this.src='assets/img/placeholder-product.svg';">
+            </a>
+            <div class="sbc-showcase-pcard__meta">
+              <span class="sbc-showcase-pcard__brand">V-SOL</span>
+              <h3 class="sbc-showcase-pcard__title">
+                <a href="product.html?id=vsol-v2801sg">V-SOL V2801SG 1GE Realtek Chipset XPON ONT / ONU</a>
+              </h3>
+              <div class="sbc-showcase-pcard__rating">
+                <span class="sbc-stars">★★★★★</span>
+                <span class="sbc-rating-count">(234)</span>
+              </div>
+              <div class="sbc-showcase-pcard__price">৳ 1,250</div>
+            </div>
+            <button type="button" class="sbc-showcase-pcard__cartbtn js-add-cart" data-id="vsol-v2801sg">
+              <svg class="sbc-icon sbc-icon--sm" aria-hidden="true"><use href="#icon-shopping-cart"></use></svg>
+              <span>Add to Cart</span>
+            </button>
+          </div>
+
+          <!-- Product 8: Solitine 24-Port 1U Cat6 Patch Panel -->
+          <div class="sbc-showcase-pcard">
+            <div class="sbc-showcase-pcard__top">
+              <span class="sbc-showcase-badge sbc-showcase-badge--blue">Rackmount</span>
+              <button type="button" class="sbc-showcase-pcard__wishlist js-toggle-wishlist" data-id="solitine-panel-24p" aria-label="Add to Wishlist">
+                <svg class="sbc-icon sbc-icon--sm" aria-hidden="true"><use href="#icon-heart"></use></svg>
+              </button>
+            </div>
+            <a href="shop.html?c=cabling-racks" class="sbc-showcase-pcard__imglink">
+              <img src="https://www.southbanglabd.com/backend/products/image/855190478.jpg" alt="Solitine 24-Port 1U Cat6 Loaded Rackmount Patch Panel" loading="lazy" onerror="this.onerror=null; this.src='assets/img/placeholder-product.svg';">
+            </a>
+            <div class="sbc-showcase-pcard__meta">
+              <span class="sbc-showcase-pcard__brand">Solitine</span>
+              <h3 class="sbc-showcase-pcard__title">
+                <a href="shop.html?c=cabling-racks">Solitine 24-Port 1U Cat6 Loaded Rackmount Patch Panel</a>
+              </h3>
+              <div class="sbc-showcase-pcard__rating">
+                <span class="sbc-stars">★★★★★</span>
+                <span class="sbc-rating-count">(89)</span>
+              </div>
+              <div class="sbc-showcase-pcard__price">৳ 3,200</div>
+            </div>
+            <button type="button" class="sbc-showcase-pcard__cartbtn js-add-cart" data-id="solitine-panel-24p">
+              <svg class="sbc-icon sbc-icon--sm" aria-hidden="true"><use href="#icon-shopping-cart"></use></svg>
+              <span>Add to Cart</span>
+            </button>
+          </div>
+
+          <!-- Product 9: TP-Link Omada ER605 Multi-WAN Gigabit Router -->
+          <div class="sbc-showcase-pcard">
+            <div class="sbc-showcase-pcard__top">
+              <span class="sbc-showcase-badge sbc-showcase-badge--blue">Multi-WAN</span>
+              <button type="button" class="sbc-showcase-pcard__wishlist js-toggle-wishlist" data-id="tp-link-er605" aria-label="Add to Wishlist">
+                <svg class="sbc-icon sbc-icon--sm" aria-hidden="true"><use href="#icon-heart"></use></svg>
+              </button>
+            </div>
+            <a href="shop.html?b=tp-link" class="sbc-showcase-pcard__imglink">
+              <img src="https://www.southbanglabd.com/backend/products/image/1079547444.png" alt="TP-Link Omada ER605 Multi-WAN Gigabit VPN Router" loading="lazy" onerror="this.onerror=null; this.src='assets/img/placeholder-product.svg';">
+            </a>
+            <div class="sbc-showcase-pcard__meta">
+              <span class="sbc-showcase-pcard__brand">TP-Link</span>
+              <h3 class="sbc-showcase-pcard__title">
+                <a href="shop.html?b=tp-link">TP-Link Omada ER605 Multi-WAN Gigabit VPN Router</a>
+              </h3>
+              <div class="sbc-showcase-pcard__rating">
+                <span class="sbc-stars">★★★★★</span>
+                <span class="sbc-rating-count">(96)</span>
+              </div>
+              <div class="sbc-showcase-pcard__price">৳ 5,800</div>
+            </div>
+            <button type="button" class="sbc-showcase-pcard__cartbtn js-add-cart" data-id="tp-link-er605">
+              <svg class="sbc-icon sbc-icon--sm" aria-hidden="true"><use href="#icon-shopping-cart"></use></svg>
+              <span>Add to Cart</span>
+            </button>
+          </div>
+
+          <!-- Product 10: Tenda TEG2210P-8-102W Gigabit Smart PoE Switch -->
+          <div class="sbc-showcase-pcard">
+            <div class="sbc-showcase-pcard__top">
+              <span class="sbc-showcase-badge sbc-showcase-badge--green">PoE+ Switch</span>
+              <button type="button" class="sbc-showcase-pcard__wishlist js-toggle-wishlist" data-id="tenda-teg2210p" aria-label="Add to Wishlist">
+                <svg class="sbc-icon sbc-icon--sm" aria-hidden="true"><use href="#icon-heart"></use></svg>
+              </button>
+            </div>
+            <a href="product.html?id=tenda-teg2210p" class="sbc-showcase-pcard__imglink">
+              <img src="https://www.southbanglabd.com/backend/products/image/1470565362.jpg" alt="Tenda TEG2210P-8-102W 10-Port Gigabit Smart PoE Switch" loading="lazy" onerror="this.onerror=null; this.src='assets/img/home/prod_tenda_switch.jpg';">
+            </a>
+            <div class="sbc-showcase-pcard__meta">
+              <span class="sbc-showcase-pcard__brand">Tenda</span>
+              <h3 class="sbc-showcase-pcard__title">
+                <a href="product.html?id=tenda-teg2210p">Tenda TEG2210P-8-102W 10-Port Gigabit Smart PoE Switch</a>
+              </h3>
+              <div class="sbc-showcase-pcard__rating">
+                <span class="sbc-stars">★★★★★</span>
+                <span class="sbc-rating-count">(74)</span>
+              </div>
+              <div class="sbc-showcase-pcard__price">৳ 6,800</div>
+            </div>
+            <button type="button" class="sbc-showcase-pcard__cartbtn js-add-cart" data-id="tenda-teg2210p">
+              <svg class="sbc-icon sbc-icon--sm" aria-hidden="true"><use href="#icon-shopping-cart"></use></svg>
+              <span>Add to Cart</span>
+            </button>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- =====================================================================
+         MEETION BRAND PRODUCTS (AUTHORIZED NATIONAL DISTRIBUTOR)
+         ===================================================================== -->
+    <section class="sbc-home-section sbc-meetion-section" aria-labelledby="meetion-heading" style="padding: 44px 0; background: #f8fafc; border-top: 1px solid #e2e8f0; border-bottom: 1px solid #e2e8f0;">
+      <div class="l-container">
+        <!-- Section Heading Bar (Consistent with Popular Products) -->
+        <div class="sbc-sec-header" style="display:flex; justify-content:space-between; align-items:flex-end; margin-bottom:24px; flex-wrap:wrap; gap:16px;">
+          <div>
+            <div class="sbc-sec-tag" style="display:inline-flex; align-items:center; gap:6px; color:#0070ba; font-size:11.5px; font-weight:800; letter-spacing:1px; text-transform:uppercase; margin-bottom:4px;">
+              <span>―</span>
+              <span>AUTHORIZED NATIONAL DISTRIBUTOR</span>
+            </div>
+            <h2 id="meetion-heading" style="font-size:26px; font-weight:800; color:#071526; margin:0 0 6px 0;">
+              Meetion Gaming &amp; Office Peripherals
+            </h2>
+            <p style="font-size:14px; color:#64748b; margin:0;">
+              Official distributor warranty, genuine optical switches, and ergonomic computer accessories across Bangladesh.
+            </p>
+          </div>
+          <div style="display:flex; align-items:center; gap:16px;">
+            <div style="height:36px; padding:4px 10px; background:#fff; border:1px solid #e2e8f0; border-radius:6px; display:flex; align-items:center;">
+              <img src="assets/brand image/924112071.png" alt="Meetion Bangladesh" style="height:22px; width:auto; object-fit:contain;">
+            </div>
+            <a href="shop.html?b=meetion#shop-catalog" class="sbc-sec-link" style="color:#0070ba; font-weight:700; font-size:14px; text-decoration:none; display:inline-flex; align-items:center; gap:4px;">
+              <span>View All Meetion Products</span>
+              <svg class="sbc-icon sbc-icon--xs" aria-hidden="true"><use href="#icon-arrow-right"></use></svg>
+            </a>
+          </div>
+        </div>
+
+        <!-- 10-Product Grid (2 Rows of 5 Cards) Using Standard SBC Showcase Cards -->
+        <div class="sbc-popular-grid">
+          <!-- Product 1: MK008 Pro -->
+          <div class="sbc-showcase-pcard">
+            <div class="sbc-showcase-pcard__top">
+              <span class="sbc-showcase-pcard__badge sbc-showcase-pcard__badge--bestseller">Flagship</span>
+              <button type="button" class="sbc-showcase-pcard__wishlist js-toggle-wishlist" data-id="meetion-mk008-pro" aria-label="Add to Wishlist">
+                <svg class="sbc-icon sbc-icon--sm" aria-hidden="true"><use href="#icon-heart"></use></svg>
+              </button>
+            </div>
+            <a href="product.html?id=meetion-mk008-pro" class="sbc-showcase-pcard__imglink">
+              <img src="https://www.southbanglabd.com/backend/products/image/36742764.png" alt="Meetion MT-MK008 Pro Optical RGB Hot-Swap Keyboard" loading="lazy" onerror="this.onerror=null; this.src='assets/img/placeholder-product.svg';">
+            </a>
+            <div class="sbc-showcase-pcard__meta">
+              <span class="sbc-showcase-pcard__brand">MEETION</span>
+              <h3 class="sbc-showcase-pcard__title">
+                <a href="product.html?id=meetion-mk008-pro">Meetion MT-MK008 Pro Optical RGB Hot-Swap Keyboard</a>
+              </h3>
+              <div class="sbc-showcase-pcard__rating">
+                <span class="sbc-stars">★★★★★</span>
+                <span class="sbc-rating-count">(94)</span>
+              </div>
+              <div class="sbc-showcase-pcard__price">৳ 2,850</div>
+            </div>
+            <button type="button" class="sbc-showcase-pcard__cartbtn js-add-cart" data-id="meetion-mk008-pro">
+              <svg class="sbc-icon sbc-icon--sm" aria-hidden="true"><use href="#icon-shopping-cart"></use></svg>
+              <span>Add to Cart</span>
+            </button>
+          </div>
+
+          <!-- Product 2: BTM032R -->
+          <div class="sbc-showcase-pcard">
+            <div class="sbc-showcase-pcard__top">
+              <span class="sbc-showcase-pcard__badge sbc-showcase-pcard__badge--toprated">Rechargeable</span>
+              <button type="button" class="sbc-showcase-pcard__wishlist js-toggle-wishlist" data-id="meetion-btm032r" aria-label="Add to Wishlist">
+                <svg class="sbc-icon sbc-icon--sm" aria-hidden="true"><use href="#icon-heart"></use></svg>
+              </button>
+            </div>
+            <a href="product.html?id=meetion-btm032r" class="sbc-showcase-pcard__imglink">
+              <img src="https://www.southbanglabd.com/backend/products/image/544478617.jpg" alt="Meetion BTM032R Dual-Mode Silent Wireless Mouse" loading="lazy" onerror="this.onerror=null; this.src='assets/img/placeholder-product.svg';">
+            </a>
+            <div class="sbc-showcase-pcard__meta">
+              <span class="sbc-showcase-pcard__brand">MEETION</span>
+              <h3 class="sbc-showcase-pcard__title">
+                <a href="product.html?id=meetion-btm032r">Meetion BTM032R Dual-Mode Silent Wireless Mouse</a>
+              </h3>
+              <div class="sbc-showcase-pcard__rating">
+                <span class="sbc-stars">★★★★★</span>
+                <span class="sbc-rating-count">(82)</span>
+              </div>
+              <div class="sbc-showcase-pcard__price">৳ 1,190</div>
+            </div>
+            <button type="button" class="sbc-showcase-pcard__cartbtn js-add-cart" data-id="meetion-btm032r">
+              <svg class="sbc-icon sbc-icon--sm" aria-hidden="true"><use href="#icon-shopping-cart"></use></svg>
+              <span>Add to Cart</span>
+            </button>
+          </div>
+
+          <!-- Product 3: Vibekey B68 -->
+          <div class="sbc-showcase-pcard">
+            <div class="sbc-showcase-pcard__top">
+              <span class="sbc-showcase-pcard__badge sbc-showcase-pcard__badge--toprated">Tri-Mode</span>
+              <button type="button" class="sbc-showcase-pcard__wishlist js-toggle-wishlist" data-id="meetion-vibekey-b68" aria-label="Add to Wishlist">
+                <svg class="sbc-icon sbc-icon--sm" aria-hidden="true"><use href="#icon-heart"></use></svg>
+              </button>
+            </div>
+            <a href="product.html?id=meetion-vibekey-b68" class="sbc-showcase-pcard__imglink">
+              <img src="https://www.southbanglabd.com/backend/products/image/954485121.png" alt="Meetion Vibekey B68 68% Wireless Keyboard" loading="lazy" onerror="this.onerror=null; this.src='assets/img/placeholder-product.svg';">
+            </a>
+            <div class="sbc-showcase-pcard__meta">
+              <span class="sbc-showcase-pcard__brand">MEETION</span>
+              <h3 class="sbc-showcase-pcard__title">
+                <a href="product.html?id=meetion-vibekey-b68">Meetion Vibekey B68 68% Wireless Gasket Keyboard</a>
+              </h3>
+              <div class="sbc-showcase-pcard__rating">
+                <span class="sbc-stars">★★★★★</span>
+                <span class="sbc-rating-count">(47)</span>
+              </div>
+              <div class="sbc-showcase-pcard__price">৳ 3,450</div>
+            </div>
+            <button type="button" class="sbc-showcase-pcard__cartbtn js-add-cart" data-id="meetion-vibekey-b68">
+              <svg class="sbc-icon sbc-icon--sm" aria-hidden="true"><use href="#icon-shopping-cart"></use></svg>
+              <span>Add to Cart</span>
+            </button>
+          </div>
+
+          <!-- Product 4: iKey C210 -->
+          <div class="sbc-showcase-pcard">
+            <div class="sbc-showcase-pcard__top sbc-showcase-pcard__top--rightonly">
+              <button type="button" class="sbc-showcase-pcard__wishlist js-toggle-wishlist" data-id="meetion-ikey-c210" aria-label="Add to Wishlist">
+                <svg class="sbc-icon sbc-icon--sm" aria-hidden="true"><use href="#icon-heart"></use></svg>
+              </button>
+            </div>
+            <a href="product.html?id=meetion-ikey-c210" class="sbc-showcase-pcard__imglink">
+              <img src="https://www.southbanglabd.com/backend/products/image/1694178577.png" alt="Meetion iKey C210 Ultra-Thin Wireless Combo" loading="lazy" onerror="this.onerror=null; this.src='assets/img/placeholder-product.svg';">
+            </a>
+            <div class="sbc-showcase-pcard__meta">
+              <span class="sbc-showcase-pcard__brand">MEETION</span>
+              <h3 class="sbc-showcase-pcard__title">
+                <a href="product.html?id=meetion-ikey-c210">Meetion iKey C210 Ultra-Thin Wireless Combo</a>
+              </h3>
+              <div class="sbc-showcase-pcard__rating">
+                <span class="sbc-stars">★★★★★</span>
+                <span class="sbc-rating-count">(61)</span>
+              </div>
+              <div class="sbc-showcase-pcard__price">৳ 1,250</div>
+            </div>
+            <button type="button" class="sbc-showcase-pcard__cartbtn js-add-cart" data-id="meetion-ikey-c210">
+              <svg class="sbc-icon sbc-icon--sm" aria-hidden="true"><use href="#icon-shopping-cart"></use></svg>
+              <span>Add to Cart</span>
+            </button>
+          </div>
+
+          <!-- Product 5: HP022 -->
+          <div class="sbc-showcase-pcard">
+            <div class="sbc-showcase-pcard__top">
+              <span class="sbc-showcase-pcard__badge sbc-showcase-pcard__badge--toprated">7.1 Audio</span>
+              <button type="button" class="sbc-showcase-pcard__wishlist js-toggle-wishlist" data-id="meetion-hp022" aria-label="Add to Wishlist">
+                <svg class="sbc-icon sbc-icon--sm" aria-hidden="true"><use href="#icon-heart"></use></svg>
+              </button>
+            </div>
+            <a href="product.html?id=meetion-hp022" class="sbc-showcase-pcard__imglink">
+              <img src="https://www.southbanglabd.com/backend/products/image/836755513.png" alt="Meetion MT-HP022 7.1 Noise-Cancelling Headset" loading="lazy" onerror="this.onerror=null; this.src='assets/img/placeholder-product.svg';">
+            </a>
+            <div class="sbc-showcase-pcard__meta">
+              <span class="sbc-showcase-pcard__brand">MEETION</span>
+              <h3 class="sbc-showcase-pcard__title">
+                <a href="product.html?id=meetion-hp022">Meetion MT-HP022 7.1 Noise-Cancelling Headset</a>
+              </h3>
+              <div class="sbc-showcase-pcard__rating">
+                <span class="sbc-stars">★★★★★</span>
+                <span class="sbc-rating-count">(53)</span>
+              </div>
+              <div class="sbc-showcase-pcard__price">৳ 2,150</div>
+            </div>
+            <button type="button" class="sbc-showcase-pcard__cartbtn js-add-cart" data-id="meetion-hp022">
+              <svg class="sbc-icon sbc-icon--sm" aria-hidden="true"><use href="#icon-shopping-cart"></use></svg>
+              <span>Add to Cart</span>
+            </button>
+          </div>
+
+          <!-- Product 6: BTM012 Dual-Mode Wireless Mouse -->
+          <div class="sbc-showcase-pcard">
+            <div class="sbc-showcase-pcard__top">
+              <span class="sbc-showcase-pcard__badge sbc-showcase-pcard__badge--toprated">Ergonomic</span>
+              <button type="button" class="sbc-showcase-pcard__wishlist js-toggle-wishlist" data-id="meetion-btm012" aria-label="Add to Wishlist">
+                <svg class="sbc-icon sbc-icon--sm" aria-hidden="true"><use href="#icon-heart"></use></svg>
+              </button>
+            </div>
+            <a href="product.html?id=meetion-btm012" class="sbc-showcase-pcard__imglink">
+              <img src="https://www.southbanglabd.com/backend/products/image/1202424832.jpg" alt="Meetion BTM012 Dual-Mode Ergonomic Wireless Mouse" loading="lazy" onerror="this.onerror=null; this.src='assets/img/placeholder-product.svg';">
+            </a>
+            <div class="sbc-showcase-pcard__meta">
+              <span class="sbc-showcase-pcard__brand">MEETION</span>
+              <h3 class="sbc-showcase-pcard__title">
+                <a href="product.html?id=meetion-btm012">Meetion BTM012 Dual-Mode Ergonomic Wireless Mouse</a>
+              </h3>
+              <div class="sbc-showcase-pcard__rating">
+                <span class="sbc-stars">★★★★★</span>
+                <span class="sbc-rating-count">(78)</span>
+              </div>
+              <div class="sbc-showcase-pcard__price">৳ 1,450</div>
+            </div>
+            <button type="button" class="sbc-showcase-pcard__cartbtn js-add-cart" data-id="meetion-btm012">
+              <svg class="sbc-icon sbc-icon--sm" aria-hidden="true"><use href="#icon-shopping-cart"></use></svg>
+              <span>Add to Cart</span>
+            </button>
+          </div>
+
+          <!-- Product 7: MT-SP2011 RGB Gaming Speakers -->
+          <div class="sbc-showcase-pcard">
+            <div class="sbc-showcase-pcard__top">
+              <span class="sbc-showcase-pcard__badge sbc-showcase-pcard__badge--bestseller">RGB Rainbow</span>
+              <button type="button" class="sbc-showcase-pcard__wishlist js-toggle-wishlist" data-id="meetion-sp2011" aria-label="Add to Wishlist">
+                <svg class="sbc-icon sbc-icon--sm" aria-hidden="true"><use href="#icon-heart"></use></svg>
+              </button>
+            </div>
+            <a href="product.html?id=meetion-sp2011" class="sbc-showcase-pcard__imglink">
+              <img src="https://www.southbanglabd.com/backend/products/image/1455351586.png" alt="Meetion MT-SP2011 Gaming Stereo Desktop Speakers" loading="lazy" onerror="this.onerror=null; this.src='assets/img/placeholder-product.svg';">
+            </a>
+            <div class="sbc-showcase-pcard__meta">
+              <span class="sbc-showcase-pcard__brand">MEETION</span>
+              <h3 class="sbc-showcase-pcard__title">
+                <a href="product.html?id=meetion-sp2011">Meetion MT-SP2011 Gaming Stereo Desktop Speakers</a>
+              </h3>
+              <div class="sbc-showcase-pcard__rating">
+                <span class="sbc-stars">★★★★★</span>
+                <span class="sbc-rating-count">(65)</span>
+              </div>
+              <div class="sbc-showcase-pcard__price">৳ 1,450</div>
+            </div>
+            <button type="button" class="sbc-showcase-pcard__cartbtn js-add-cart" data-id="meetion-sp2011">
+              <svg class="sbc-icon sbc-icon--sm" aria-hidden="true"><use href="#icon-shopping-cart"></use></svg>
+              <span>Add to Cart</span>
+            </button>
+          </div>
+
+          <!-- Product 8: SP2010 Multimedia Desktop Speakers -->
+          <div class="sbc-showcase-pcard">
+            <div class="sbc-showcase-pcard__top">
+              <span class="sbc-showcase-pcard__badge sbc-showcase-pcard__badge--toprated">2.0 Stereo</span>
+              <button type="button" class="sbc-showcase-pcard__wishlist js-toggle-wishlist" data-id="meetion-sp2010" aria-label="Add to Wishlist">
+                <svg class="sbc-icon sbc-icon--sm" aria-hidden="true"><use href="#icon-heart"></use></svg>
+              </button>
+            </div>
+            <a href="product.html?id=meetion-sp2010" class="sbc-showcase-pcard__imglink">
+              <img src="https://www.southbanglabd.com/backend/products/image/1928379151.png" alt="Meetion SP2010 2.0 Office Desktop Multimedia Speakers" loading="lazy" onerror="this.onerror=null; this.src='assets/img/placeholder-product.svg';">
+            </a>
+            <div class="sbc-showcase-pcard__meta">
+              <span class="sbc-showcase-pcard__brand">MEETION</span>
+              <h3 class="sbc-showcase-pcard__title">
+                <a href="product.html?id=meetion-sp2010">Meetion SP2010 2.0 Office Desktop Multimedia Speakers</a>
+              </h3>
+              <div class="sbc-showcase-pcard__rating">
+                <span class="sbc-stars">★★★★★</span>
+                <span class="sbc-rating-count">(84)</span>
+              </div>
+              <div class="sbc-showcase-pcard__price">৳ 1,150</div>
+            </div>
+            <button type="button" class="sbc-showcase-pcard__cartbtn js-add-cart" data-id="meetion-sp2010">
+              <svg class="sbc-icon sbc-icon--sm" aria-hidden="true"><use href="#icon-shopping-cart"></use></svg>
+              <span>Add to Cart</span>
+            </button>
+          </div>
+
+          <!-- Product 9: MT-U002 RGB Headset Stand -->
+          <div class="sbc-showcase-pcard">
+            <div class="sbc-showcase-pcard__top">
+              <span class="sbc-showcase-pcard__badge sbc-showcase-pcard__badge--toprated">RGB Stand</span>
+              <button type="button" class="sbc-showcase-pcard__wishlist js-toggle-wishlist" data-id="meetion-u002" aria-label="Add to Wishlist">
+                <svg class="sbc-icon sbc-icon--sm" aria-hidden="true"><use href="#icon-heart"></use></svg>
+              </button>
+            </div>
+            <a href="product.html?id=meetion-u002" class="sbc-showcase-pcard__imglink">
+              <img src="https://www.southbanglabd.com/backend/products/image/466215169.png" alt="Meetion MT-U002 RGB Stand for Gaming Headsets" loading="lazy" onerror="this.onerror=null; this.src='assets/img/placeholder-product.svg';">
+            </a>
+            <div class="sbc-showcase-pcard__meta">
+              <span class="sbc-showcase-pcard__brand">MEETION</span>
+              <h3 class="sbc-showcase-pcard__title">
+                <a href="product.html?id=meetion-u002">Meetion MT-U002 RGB Stand for Gaming Headsets</a>
+              </h3>
+              <div class="sbc-showcase-pcard__rating">
+                <span class="sbc-stars">★★★★★</span>
+                <span class="sbc-rating-count">(52)</span>
+              </div>
+              <div class="sbc-showcase-pcard__price">৳ 1,250</div>
+            </div>
+            <button type="button" class="sbc-showcase-pcard__cartbtn js-add-cart" data-id="meetion-u002">
+              <svg class="sbc-icon sbc-icon--sm" aria-hidden="true"><use href="#icon-shopping-cart"></use></svg>
+              <span>Add to Cart</span>
+            </button>
+          </div>
+
+          <!-- Product 10: MT-H390 Flexible Conference Microphone -->
+          <div class="sbc-showcase-pcard">
+            <div class="sbc-showcase-pcard__top">
+              <span class="sbc-showcase-pcard__badge sbc-showcase-pcard__badge--toprated">HD Voice</span>
+              <button type="button" class="sbc-showcase-pcard__wishlist js-toggle-wishlist" data-id="meetion-h390" aria-label="Add to Wishlist">
+                <svg class="sbc-icon sbc-icon--sm" aria-hidden="true"><use href="#icon-heart"></use></svg>
+              </button>
+            </div>
+            <a href="product.html?id=meetion-h390" class="sbc-showcase-pcard__imglink">
+              <img src="https://www.southbanglabd.com/backend/products/image/2116031251.png" alt="Meetion MT-H390 High-Sensitivity Flexible Microphone" loading="lazy" onerror="this.onerror=null; this.src='assets/img/placeholder-product.svg';">
+            </a>
+            <div class="sbc-showcase-pcard__meta">
+              <span class="sbc-showcase-pcard__brand">MEETION</span>
+              <h3 class="sbc-showcase-pcard__title">
+                <a href="product.html?id=meetion-h390">Meetion MT-H390 High-Sensitivity Flexible Microphone</a>
+              </h3>
+              <div class="sbc-showcase-pcard__rating">
+                <span class="sbc-stars">★★★★★</span>
+                <span class="sbc-rating-count">(71)</span>
+              </div>
+              <div class="sbc-showcase-pcard__price">৳ 850</div>
+            </div>
+            <button type="button" class="sbc-showcase-pcard__cartbtn js-add-cart" data-id="meetion-h390">
+              <svg class="sbc-icon sbc-icon--sm" aria-hidden="true"><use href="#icon-shopping-cart"></use></svg>
+              <span>Add to Cart</span>
+            </button>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- =====================================================================
+         SECTION 3: BUILD YOUR NETWORK PLAN (Dark Planning Banner with 4 Steps)
+         ===================================================================== -->
+    <section class="sbc-plan-section" aria-labelledby="plan-heading">
+      <div class="l-container">
+        <div class="sbc-plan-banner">
+          <!-- Background Cyber Mesh Effect -->
+          <div class="sbc-plan-banner__bg-art" aria-hidden="true">
+            <svg viewBox="0 0 400 400" fill="none" xmlns="http://www.w3.org/2000/svg">
+              <circle cx="200" cy="200" r="180" stroke="rgba(14, 165, 233, 0.15)" stroke-width="1.5" stroke-dasharray="4 6"/>
+              <circle cx="200" cy="200" r="130" stroke="rgba(14, 165, 233, 0.2)" stroke-width="1.5"/>
+              <circle cx="200" cy="200" r="80" stroke="rgba(14, 165, 233, 0.25)" stroke-width="1.5"/>
+              <path d="M20 200 H380 M200 20 V380 M72 72 L328 328 M72 328 L328 72" stroke="rgba(14, 165, 233, 0.12)" stroke-width="1"/>
+            </svg>
+          </div>
+
+          <div class="sbc-plan-banner__left">
+            <div class="sbc-sec-tag">
+              <span class="sbc-sec-tag__dash" style="color:#22c55e;">―</span>
+              <span class="sbc-sec-tag__text" style="color:#22c55e;">FREE NETWORK PLANNING</span>
+            </div>
+            <h2 id="plan-heading" class="sbc-plan-banner__title">
+              Build Your Network <span class="sbc-plan-banner__title-accent">Plan</span>
+            </h2>
+            <p class="sbc-plan-banner__desc">
+              Get the right products and solution for your business or home network. Our experts are here to help.
+            </p>
+            <a href="configurator.html" class="sbc-plan-banner__btn">
+              <span>Start Planning</span>
+              <svg class="sbc-icon sbc-icon--xs" aria-hidden="true"><use href="#icon-arrow-right"></use></svg>
+            </a>
+          </div>
+
+          <div class="sbc-plan-banner__right">
+            <div class="sbc-plan-steps">
+              <!-- Step 1 -->
+              <div class="sbc-plan-step">
+                <div class="sbc-plan-step__badge">1</div>
+                <div class="sbc-plan-step__icon">
+                  <svg class="sbc-icon sbc-icon--md" aria-hidden="true"><use href="#icon-message-square"></use></svg>
+                </div>
+                <h4 class="sbc-plan-step__title">Tell Us Your Needs</h4>
+                <p class="sbc-plan-step__desc">Share your requirements with our experts.</p>
+              </div>
+
+              <div class="sbc-plan-steps__arrow" aria-hidden="true">
+                <svg class="sbc-icon sbc-icon--sm"><use href="#icon-chevron-right"></use></svg>
+              </div>
+
+              <!-- Step 2 -->
+              <div class="sbc-plan-step">
+                <div class="sbc-plan-step__badge">2</div>
+                <div class="sbc-plan-step__icon">
+                  <svg class="sbc-icon sbc-icon--md" aria-hidden="true"><use href="#icon-clipboard-check"></use></svg>
+                </div>
+                <h4 class="sbc-plan-step__title">Get Expert Advice</h4>
+                <p class="sbc-plan-step__desc">Receive the best solution for your setup.</p>
+              </div>
+
+              <div class="sbc-plan-steps__arrow" aria-hidden="true">
+                <svg class="sbc-icon sbc-icon--sm"><use href="#icon-chevron-right"></use></svg>
+              </div>
+
+              <!-- Step 3 -->
+              <div class="sbc-plan-step">
+                <div class="sbc-plan-step__badge">3</div>
+                <div class="sbc-plan-step__icon">
+                  <svg class="sbc-icon sbc-icon--md" aria-hidden="true"><use href="#icon-box"></use></svg>
+                </div>
+                <h4 class="sbc-plan-step__title">Choose Products</h4>
+                <p class="sbc-plan-step__desc">Pick from top brands &amp; best prices.</p>
+              </div>
+
+              <div class="sbc-plan-steps__arrow" aria-hidden="true">
+                <svg class="sbc-icon sbc-icon--sm"><use href="#icon-chevron-right"></use></svg>
+              </div>
+
+              <!-- Step 4 -->
+              <div class="sbc-plan-step">
+                <div class="sbc-plan-step__badge">4</div>
+                <div class="sbc-plan-step__icon">
+                  <svg class="sbc-icon sbc-icon--md" aria-hidden="true"><use href="#icon-truck"></use></svg>
+                </div>
+                <h4 class="sbc-plan-step__title">We Deliver</h4>
+                <p class="sbc-plan-step__desc">Fast &amp; reliable delivery across Bangladesh.</p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- =====================================================================
+         SECTION 4: AUTHORIZED BRANDS
+         ===================================================================== -->
+    <section class="sbc-home-section sbc-auth-brands-section" aria-labelledby="auth-brands-heading">
+      <div class="l-container">
+        <div class="sbc-auth-brands-row">
+          <div class="sbc-auth-brands-info">
+            <div class="sbc-sec-tag">
+              <span class="sbc-sec-tag__dash">―</span>
+              <span class="sbc-sec-tag__text">AUTHORIZED BRANDS</span>
+            </div>
+            <h2 id="auth-brands-heading" class="sbc-auth-brands-title">
+              Trusted Brands. Genuine Products.
+            </h2>
+            <p class="sbc-auth-brands-desc">
+              We are authorized distributor of leading networking and IT brands in Bangladesh.
+            </p>
+          </div>
+
+          <div class="sbc-auth-brands-cards">
+            <!-- Tenda -->
+            <a href="brand.html?b=tenda" class="sbc-auth-brand-box">
+              <div class="sbc-auth-brand-box__logo">
+                <img src="assets/brand image/292026613.png" alt="Tenda" loading="lazy">
+              </div>
+              <span class="sbc-auth-brand-box__label">Authorized Distributor</span>
+            </a>
+
+            <!-- Meetion -->
+            <a href="brand.html?b=meetion" class="sbc-auth-brand-box">
+              <div class="sbc-auth-brand-box__logo">
+                <img src="assets/brand image/924112071.png" alt="Meetion" loading="lazy">
+              </div>
+              <span class="sbc-auth-brand-box__label">Authorized Distributor</span>
+            </a>
+
+            <!-- Cisco -->
+            <a href="brand.html?b=cisco" class="sbc-auth-brand-box">
+              <div class="sbc-auth-brand-box__logo">
+                <img src="assets/brand image/1202929252.png" alt="Cisco" loading="lazy">
+              </div>
+              <span class="sbc-auth-brand-box__label">Enterprise Hardware Partner</span>
+            </a>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- =====================================================================
+         SECTION 5: VALUE / TRUST PILLARS
+         ===================================================================== -->
+    <section class="sbc-trust-strip-section" aria-label="Customer Commitments">
+      <div class="l-container">
+        <div class="sbc-trust-strip">
+          <!-- Pillar 1 -->
+          <div class="sbc-trust-col">
+            <div class="sbc-trust-col__icon sbc-trust-col__icon--green">
+              <svg class="sbc-icon sbc-icon--md" aria-hidden="true"><use href="#icon-shield"></use></svg>
+            </div>
+            <div class="sbc-trust-col__content">
+              <h4 class="sbc-trust-col__title">100% Authorized Products</h4>
+              <p class="sbc-trust-col__desc">Get original products with official warranty and support.</p>
+            </div>
+          </div>
+
+          <!-- Divider -->
+          <div class="sbc-trust-divider" aria-hidden="true"></div>
+
+          <!-- Pillar 2 -->
+          <div class="sbc-trust-col">
+            <div class="sbc-trust-col__icon sbc-trust-col__icon--navy">
+              <svg class="sbc-icon sbc-icon--md" aria-hidden="true"><use href="#icon-headphones"></use></svg>
+            </div>
+            <div class="sbc-trust-col__content">
+              <h4 class="sbc-trust-col__title">Expert Technical Support</h4>
+              <p class="sbc-trust-col__desc">Our team is always ready to help you with the right solution.</p>
+            </div>
+          </div>
+
+          <!-- Divider -->
+          <div class="sbc-trust-divider" aria-hidden="true"></div>
+
+          <!-- Pillar 3 -->
+          <div class="sbc-trust-col">
+            <div class="sbc-trust-col__icon sbc-trust-col__icon--green">
+              <svg class="sbc-icon sbc-icon--md" aria-hidden="true"><use href="#icon-truck"></use></svg>
+            </div>
+            <div class="sbc-trust-col__content">
+              <h4 class="sbc-trust-col__title">Nationwide Delivery</h4>
+              <p class="sbc-trust-col__desc">Fast, safe and reliable delivery across Bangladesh.</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- =====================================================================
+         SECTION 6: B2B DEALER NETWORK BANNER
+         ===================================================================== -->
+    <section class="sbc-dealer-banner-section" aria-label="B2B Dealer Network">
+      <div class="l-container">
+        <div class="sbc-dealer-banner">
+          <div class="sbc-dealer-banner__media">
+            <img src="assets/img/home/b2b_handshake.jpg" alt="B2B Dealer Partnership Handshake" loading="lazy">
+          </div>
+          <div class="sbc-dealer-banner__content">
+            <span class="sbc-dealer-banner__badge">B2B DEALER NETWORK</span>
+            <h3 class="sbc-dealer-banner__title">Grow Together with SBC</h3>
+            <p class="sbc-dealer-banner__desc">
+              Become our dealer and get exclusive benefits, best pricing and dedicated support for your business.
+            </p>
+          </div>
+          <div class="sbc-dealer-banner__action">
+            <a href="dealer/register.html" class="sbc-dealer-banner__btn">
+              <span>Join Dealer Program</span>
+              <svg class="sbc-icon sbc-icon--xs" aria-hidden="true"><use href="#icon-arrow-right"></use></svg>
+            </a>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- =====================================================================
+         SECTION 7: TECHNICAL GUIDES / LEARN & GROW
+         ===================================================================== -->
+    <section class="sbc-home-section" aria-labelledby="guides-heading">
+      <div class="l-container">
+        <div class="sbc-sec-header">
+          <div>
+            <div class="sbc-sec-tag">
+              <span class="sbc-sec-tag__dash">―</span>
+              <span class="sbc-sec-tag__text">TECHNICAL GUIDES</span>
+            </div>
+            <h2 id="guides-heading" class="sbc-sec-title">Learn &amp; Grow</h2>
+          </div>
+          <a href="news.html" class="sbc-sec-viewall">
+            <span>View All Guides</span>
+            <svg class="sbc-icon sbc-icon--xs" aria-hidden="true"><use href="#icon-arrow-right"></use></svg>
+          </a>
+        </div>
+
+        <div class="sbc-guides-grid">
+          <!-- Guide 1 -->
+          <a href="article.html?id=how-to-setup-tp-link-router" class="sbc-guide-card">
+            <div class="sbc-guide-card__thumb">
+              <img src="assets/img/home/cat_wifi_routers.jpg" alt="How to Setup a TP-Link Router" loading="lazy">
+            </div>
+            <div class="sbc-guide-card__body">
+              <h4 class="sbc-guide-card__title">How to Setup a TP-Link Router (Complete Guide)</h4>
+              <div class="sbc-guide-card__date">
+                <svg class="sbc-icon sbc-icon--xs" aria-hidden="true"><use href="#icon-calendar"></use></svg>
+                <span>May 12, 2025</span>
+              </div>
+            </div>
+          </a>
+
+          <!-- Guide 2 -->
+          <a href="article.html?id=network-switch-configuration-basics" class="sbc-guide-card">
+            <div class="sbc-guide-card__thumb">
+              <img src="assets/img/home/prod_tenda_switch.jpg" alt="Network Switch Configuration Basics" loading="lazy">
+            </div>
+            <div class="sbc-guide-card__body">
+              <h4 class="sbc-guide-card__title">Network Switch Configuration Basics</h4>
+              <div class="sbc-guide-card__date">
+                <svg class="sbc-icon sbc-icon--xs" aria-hidden="true"><use href="#icon-calendar"></use></svg>
+                <span>Apr 28, 2025</span>
+              </div>
+            </div>
+          </a>
+
+          <!-- Guide 3 -->
+          <a href="article.html?id=fiber-optic-installation-step-by-step" class="sbc-guide-card">
+            <div class="sbc-guide-card__thumb">
+              <img src="assets/img/home/cat_fiber_optic.jpg" alt="Fiber Optic Installation Step by Step" loading="lazy">
+            </div>
+            <div class="sbc-guide-card__body">
+              <h4 class="sbc-guide-card__title">Fiber Optic Installation Step by Step</h4>
+              <div class="sbc-guide-card__date">
+                <svg class="sbc-icon sbc-icon--xs" aria-hidden="true"><use href="#icon-calendar"></use></svg>
+                <span>Apr 15, 2025</span>
+              </div>
+            </div>
+          </a>
+
+          <!-- Guide 4 -->
+          <a href="article.html?id=ups-buying-guide-for-home-and-office" class="sbc-guide-card">
+            <div class="sbc-guide-card__thumb">
+              <img src="assets/img/home/cat_ups_power.jpg" alt="UPS Buying Guide for Home & Office" loading="lazy">
+            </div>
+            <div class="sbc-guide-card__body">
+              <h4 class="sbc-guide-card__title">UPS Buying Guide for Home &amp; Office</h4>
+              <div class="sbc-guide-card__date">
+                <svg class="sbc-icon sbc-icon--xs" aria-hidden="true"><use href="#icon-calendar"></use></svg>
+                <span>Apr 02, 2025</span>
+              </div>
+            </div>
+          </a>
+        </div>
+      </div>
+    </section>
+
+    <!-- =====================================================================
+         FINAL HOMEPAGE CONCLUSION CALL-TO-ACTION (Verified SBC Brand Palette)
+         ===================================================================== -->
+    <!-- =====================================================================
+         FINAL HOMEPAGE CONCLUSION CALL-TO-ACTION (Clean & Professional)
+         ===================================================================== -->
+    <section class="sbc-home-conclusion-cta" aria-labelledby="conclusion-cta-title">
+      <div class="sbc-home-conclusion-cta__inner">
+        <div class="sbc-home-conclusion-cta__content">
+          <span class="sbc-home-conclusion-cta__tag">BANGLADESH'S TRUSTED COMPUTER &amp; NETWORKING DISTRIBUTOR</span>
+          <h2 id="conclusion-cta-title" class="sbc-home-conclusion-cta__title">
+            Need Bulk Hardware Procurement or Technical Assistance?
+          </h2>
+          <p class="sbc-home-conclusion-cta__desc">
+            South Bangla Computer delivers 100% genuine ICT hardware, volume wholesale tiers for computer retailers and ISPs, and authorized manufacturer warranties across all 64 districts.
+          </p>
+        </div>
+        <div class="sbc-home-conclusion-cta__actions">
+          <a href="shop.html" class="sbc-banner-btn sbc-banner-btn--primary">
+            Explore All Products &rarr;
+          </a>
+          <a href="quote.html" class="sbc-banner-btn sbc-banner-btn--secondary-blue">
+            Request Commercial Quote
+          </a>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <div id="sbc-footer">
+    <footer class="sbc-footer-v2">
+      <div class="l-container">
+        <div class="sbc-footer-v2__grid">
+          <!-- Col 1: Brand & Contacts -->
+          <div class="sbc-footer-v2__col sbc-footer-v2__col--brand">
+            <div class="sbc-footer-v2__logo-wrap">
+              <img src="assets/img/logo.png" alt="South Bangla Computer" class="sbc-footer-v2__logo" onerror="this.src='sbc-logo-24-style.png'">
+            </div>
+            <p class="sbc-footer-v2__tagline">Networking | IT Equipment | Computer Accessories</p>
+            <div class="sbc-footer-v2__contact-list">
+              <a href="tel:+8801711234567" class="sbc-footer-v2__contact-item">
+                <svg class="sbc-icon sbc-icon--sm" aria-hidden="true"><use href="#icon-phone"></use></svg>
+                <span>+880 1711 234567</span>
+              </a>
+              <a href="mailto:info@southbanglacomputer.com" class="sbc-footer-v2__contact-item">
+                <svg class="sbc-icon sbc-icon--sm" aria-hidden="true"><use href="#icon-mail"></use></svg>
+                <span>info@southbanglacomputer.com</span>
+              </a>
+              <div class="sbc-footer-v2__contact-item">
+                <svg class="sbc-icon sbc-icon--sm" aria-hidden="true"><use href="#icon-map-pin"></use></svg>
+                <span>Dhaka, Bangladesh</span>
+              </div>
+            </div>
+          </div>
+
+          <!-- Col 2: Quick Links -->
+          <div class="sbc-footer-v2__col">
+            <h4 class="sbc-footer-v2__title">Quick Links</h4>
+            <ul class="sbc-footer-v2__list">
+              <li><a href="index.html">Home</a></li>
+              <li><a href="shop.html">Shop</a></li>
+              <li><a href="shop.html#shop-catalog">Brands</a></li>
+              <li><a href="configurator.html">Solutions</a></li>
+              <li><a href="about.html">About Us</a></li>
+              <li><a href="contact.html">Contact</a></li>
+            </ul>
+          </div>
+
+          <!-- Col 3: Customer Service -->
+          <div class="sbc-footer-v2__col">
+            <h4 class="sbc-footer-v2__title">Customer Service</h4>
+            <ul class="sbc-footer-v2__list">
+              <li><a href="support.html">Support</a></li>
+              <li><a href="faq.html">FAQ</a></li>
+              <li><a href="warranty.html">Warranty Claim</a></li>
+              <li><a href="returns.html">Return &amp; Refund</a></li>
+              <li><a href="shipping.html">Shipping Policy</a></li>
+              <li><a href="privacy.html">Privacy Policy</a></li>
+            </ul>
+          </div>
+
+          <!-- Col 4: Top Brands -->
+          <div class="sbc-footer-v2__col">
+            <h4 class="sbc-footer-v2__title">Top Brands</h4>
+            <ul class="sbc-footer-v2__list">
+              <li><a href="shop.html?b=tp-link#shop-catalog">TP-Link</a></li>
+              <li><a href="shop.html?b=tenda#shop-catalog">Tenda</a></li>
+              <li><a href="shop.html?b=mikrotik#shop-catalog">MikroTik</a></li>
+              <li><a href="shop.html?b=d-link#shop-catalog">D-Link</a></li>
+              <li><a href="shop.html?b=hikvision#shop-catalog">Hikvision</a></li>
+              <li><a href="shop.html?b=apc#shop-catalog">APC</a></li>
+            </ul>
+          </div>
+
+          <!-- Col 5: Follow Us -->
+          <div class="sbc-footer-v2__col sbc-footer-v2__col--social">
+            <h4 class="sbc-footer-v2__title">Follow Us</h4>
+            <div class="sbc-footer-v2__socials">
+              <a href="https://facebook.com" target="_blank" rel="noopener noreferrer" class="sbc-footer-v2__social-btn" aria-label="Facebook">
+                <svg class="sbc-icon sbc-icon--sm" aria-hidden="true"><use href="#icon-facebook"></use></svg>
+              </a>
+              <a href="https://youtube.com" target="_blank" rel="noopener noreferrer" class="sbc-footer-v2__social-btn" aria-label="YouTube">
+                <svg class="sbc-icon sbc-icon--sm" aria-hidden="true"><use href="#icon-youtube"></use></svg>
+              </a>
+              <a href="https://linkedin.com" target="_blank" rel="noopener noreferrer" class="sbc-footer-v2__social-btn" aria-label="LinkedIn">
+                <svg class="sbc-icon sbc-icon--sm" aria-hidden="true"><use href="#icon-linkedin"></use></svg>
+              </a>
+            </div>
+            <div class="sbc-footer-v2__motto">
+              <span>Better Network</span>
+              <span>Brighter Future</span>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Bottom Copyright Bar -->
+      <div class="sbc-footer-v2__bottom">
+        <div class="l-container sbc-footer-v2__bottom-inner">
+          <p class="sbc-footer-v2__copy">
+            &copy; 2025 South Bangla Computer. All rights reserved.
+          </p>
+          <div class="sbc-footer-v2__legal">
+            <a href="privacy.html">Privacy</a>
+            <a href="terms.html">Terms</a>
+            <a href="returns.html">Return &amp; Refund</a>
+            <a href="sitemap.html">Sitemap</a>
+            <a href="tests/smoke.html" style="opacity:0.3;font-size:10px;">Smoke Tests</a>
+            <a href="#" class="js-open-disclosure" style="opacity:0.3;font-size:10px;">Demo</a>
+          </div>
+        </div>
+      </div>
+    </footer>
+  </div>
+  <div id="sbc-toast" role="status" aria-live="polite"></div>
+
+  <!-- Standard Prototype Scripts -->
+  <script defer src="js/config.js"></script>
+  <script defer src="js/i18n/en.js"></script>
+  <script defer src="js/core/util.js"></script>
+  <script defer src="js/core/storage.js"></script>
+  <script defer src="data/categories.js"></script>
+  <script defer src="data/brands.js"></script>
+  <script defer src="data/branches.js"></script>
+  <script defer src="data/news.js"></script>
+  <script defer src="data/faq.js"></script>
+  <script defer src="data/downloads.js"></script>
+  <script defer src="data/districts.js"></script>
+  <script defer src="data/configurator-rules.js"></script>
+  <script defer src="data/site-claims.js"></script>
+  <script defer src="data/users.js"></script>
+  <script defer src="data/products.js"></script>
+  <script defer src="js/core/store.js"></script>
+  <script defer src="js/core/validate.js"></script>
+  <script defer src="js/core/ui.js"></script>
+  <script defer src="js/layout.js"></script>
+  <script defer src="js/search.js"></script>
+  <script defer src="js/cards.js"></script>
+  <script defer src="js/demo.js"></script>
+
+  <!-- Homepage Controller -->
+  <script defer>
+    function initHome() {
+      const D = window.SBC_DATA || {};
+      const prods = D.products || [];
+      const cats = D.categories || [];
+      const brands = D.brands || [];
+      const news = D.news || [];
+      const branches = D.branches || [];
+
+      // Render Categories Grid (H4)
+      const catGrid = document.getElementById("home-category-grid");
+      if (catGrid && cats.length) {
+        catGrid.innerHTML = cats.map(c => {
+          const count = prods.filter(p => p.category === c.slug).length;
+          return window.SBC.cards.categoryTile(c, count);
+        }).join("");
+      }
+
+      // Render Featured Products (H5)
+      const featuredGrid = document.getElementById("home-featured-grid");
+      if (featuredGrid) {
+        function renderFeaturedTab(tabType) {
+          let filtered = [];
+          if (tabType === "bestSeller") {
+            filtered = prods.filter(p => p.flags && p.flags.bestSeller).slice(0, 8);
+          } else if (tabType === "new") {
+            filtered = prods.filter(p => p.isNew && p.status !== 'discontinued').slice(0, 8);
+          } else {
+            filtered = prods.filter(p => p.flags && p.flags.recommended).slice(0, 8);
+          }
+          if (filtered.length === 0) filtered = prods.slice(0, 8);
+          featuredGrid.innerHTML = filtered.map(p => window.SBC.cards.productCard(p)).join("");
+        }
+        renderFeaturedTab("bestSeller");
+
+        document.querySelectorAll("#home-featured-tabs .sbc-tab-btn").forEach(btn => {
+          btn.addEventListener("click", () => {
+            document.querySelectorAll("#home-featured-tabs .sbc-tab-btn").forEach(b => b.classList.remove("is-active"));
+            btn.classList.add("is-active");
+            renderFeaturedTab(btn.dataset.tab);
+          });
+        });
+      }
+
+      // Dynamic sync for Brand Slider (Infinite Marquee)
+      const brandSliderTrack = document.getElementById("home-brand-slider-track");
+      if (brandSliderTrack && brands && brands.length) {
+        const renderGroup = (isClone) => {
+          return `<div class="sbc-brand-slider__group" ${isClone ? 'aria-hidden="true"' : ''}>` +
+            brands.map(b => {
+              const root = window.SBC && window.SBC.util ? window.SBC.util.getRoot() : "";
+              const src = b.logo ? (b.logo.startsWith("http") ? b.logo : root + b.logo) : "";
+              const remote = b.remoteLogo || "";
+              const url = window.SBC && window.SBC.util ? window.SBC.util.U('brand.html', { b: b.slug }) : `brand.html?b=${b.slug}`;
+              const fallbackName = window.SBC && window.SBC.util ? window.SBC.util.esc(b.name) : b.name;
+              return `<a href="${url}" class="sbc-brand-slider__item" ${isClone ? 'tabindex="-1"' : ''} title="${fallbackName}">
+                ${src ? `<img src="${src}" alt="${fallbackName}" loading="lazy" onerror="if('${remote}') { this.onerror=null; this.src='${remote}'; } else { this.style.display='none'; this.nextElementSibling.style.display='inline'; }"><span class="sbc-brand-slider__fallback" style="display:none;">${fallbackName}</span>` : `<span class="sbc-brand-slider__fallback">${fallbackName}</span>`}
+              </a>`;
+            }).join("") +
+          `</div>`;
+        };
+        brandSliderTrack.innerHTML = renderGroup(false) + renderGroup(true);
+      }
+
+      // Render Brands Grid (H7)
+      const brandsGrid = document.getElementById("home-brands-grid");
+      if (brandsGrid) {
+        const nonHeroBrands = brands.filter(b => !b.hero);
+        brandsGrid.innerHTML = nonHeroBrands.map(b => window.SBC.cards.brandTile(b)).join("");
+      }
+
+      // Render News Grid (H10)
+      const newsGrid = document.getElementById("home-news-grid");
+      if (newsGrid) {
+        newsGrid.innerHTML = news.slice(0, 3).map(n => window.SBC.cards.newsCard(n)).join("");
+      }
+
+      // Render Branches Strip (H11)
+      const branchesStrip = document.getElementById("home-branches-strip");
+      if (branchesStrip) {
+        const keyShowrooms = branches.filter(b => b.type === "showroom" || b.id === "head-office").slice(0, 3);
+      }
+    }
+
+    if (window.SBC && window.SBC.isReady) {
+      initHome();
+    } else {
+      window.addEventListener("SBC:ready", initHome);
+      document.addEventListener("DOMContentLoaded", () => setTimeout(initHome, 50));
+    }
+  </script>
+</body>
+
+</html>

@@ -1,0 +1,166 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Frequently Asked Questions (FAQ) | South Bangla Computers</title>
+  <meta name="description" content="Answers to common questions regarding South Bangla Computers hardware ordering, warranty claims, delivery fees, and dealer registration.">
+  <link rel="stylesheet" href="css/tokens.css">
+  <link rel="stylesheet" href="css/base.css">
+  <link rel="stylesheet" href="css/layout.css">
+  <link rel="stylesheet" href="css/components.css">
+  <link rel="stylesheet" href="css/print.css" media="print">
+</head>
+<body data-root="" data-page="faq">
+  <a href="#main-content" class="sbc-skip-link">Skip to main content</a>
+  <div id="sbc-header"></div>
+
+  <main id="main-content" class="l-container" style="padding-top: var(--sp-6); padding-bottom: var(--sp-12);">
+    <!-- Breadcrumbs -->
+    <nav aria-label="Breadcrumb" class="sbc-breadcrumbs" style="margin-bottom: var(--sp-6);">
+      <ol style="display:flex;gap:var(--sp-2);list-style:none;padding:0;margin:0;font-size:var(--fs-xs);color:var(--c-text-muted);">
+        <li><a href="index.html">Home</a> <span aria-hidden="true">&rsaquo;</span></li>
+        <li><a href="support.html">Support</a> <span aria-hidden="true">&rsaquo;</span></li>
+        <li style="color:var(--navy-900);font-weight:600;" aria-current="page">FAQ</li>
+      </ol>
+    </nav>
+
+    <!-- Header Section -->
+    <div style="text-align:center;max-width:680px;margin:0 auto var(--sp-8);">
+      <h1 style="font-size:var(--fs-h1);color:var(--navy-900);margin:0 0 8px;">Frequently Asked Questions</h1>
+      <p style="color:var(--c-text-muted);font-size:var(--fs-base);margin:0 0 20px;">
+        Find fast answers to questions regarding ordering, nationwide courier transit, official warranty repairs, and trade dealership.
+      </p>
+
+      <!-- Instant Filter Search -->
+      <div style="position:relative;">
+        <input type="text" id="faq-search" class="sbc-input" placeholder="Search keywords (e.g. warranty, delivery, credit, ONU)..." style="height:44px;font-size:14px;">
+      </div>
+    </div>
+
+    <!-- Category Filter Chips -->
+    <div style="display:flex;justify-content:center;gap:8px;flex-wrap:wrap;margin-bottom:var(--sp-8);" id="faq-category-chips">
+      <button class="sbc-chip is-active js-faq-cat" data-cat="all">All Topics (20)</button>
+      <button class="sbc-chip js-faq-cat" data-cat="General">General</button>
+      <button class="sbc-chip js-faq-cat" data-cat="Ordering & Delivery">Ordering & Delivery</button>
+      <button class="sbc-chip js-faq-cat" data-cat="Warranty & Service">Warranty & Service</button>
+      <button class="sbc-chip js-faq-cat" data-cat="Dealer Network">Dealer Network</button>
+      <button class="sbc-chip js-faq-cat" data-cat="Technical & Networking">Technical & Networking</button>
+    </div>
+
+    <!-- Accordion List Container -->
+    <div id="faq-list-container" style="max-width:800px;margin:0 auto;display:flex;flex-direction:column;gap:12px;"></div>
+  </main>
+
+  <div id="sbc-footer"></div>
+  <div id="sbc-toast" role="status" aria-live="polite"></div>
+
+  <!-- Standard Prototype Scripts -->
+  <script defer src="js/config.js"></script>
+  <script defer src="js/i18n/en.js"></script>
+  <script defer src="js/core/util.js"></script>
+  <script defer src="js/core/storage.js"></script>
+  <script defer src="data/categories.js"></script>
+  <script defer src="data/brands.js"></script>
+  <script defer src="data/branches.js"></script>
+  <script defer src="data/news.js"></script>
+  <script defer src="data/faq.js"></script>
+  <script defer src="data/downloads.js"></script>
+  <script defer src="data/districts.js"></script>
+  <script defer src="data/configurator-rules.js"></script>
+  <script defer src="data/site-claims.js"></script>
+  <script defer src="data/users.js"></script>
+  <script defer src="data/products.js"></script>
+  <script defer src="js/core/store.js"></script>
+  <script defer src="js/core/validate.js"></script>
+  <script defer src="js/core/ui.js"></script>
+  <script defer src="js/layout.js"></script>
+  <script defer src="js/search.js"></script>
+  <script defer src="js/cards.js"></script>
+  <script defer src="js/demo.js"></script>
+
+  <script defer>
+    function initFaq() {
+      const util = window.SBC ? window.SBC.util : null;
+      const allFaqs = (window.SBC_DATA && window.SBC_DATA.faqs) || [];
+
+      let currentCat = "all";
+      let searchQuery = "";
+
+      const container = document.getElementById("faq-list-container");
+      const searchInput = document.getElementById("faq-search");
+
+      function renderFaqs() {
+        const filtered = allFaqs.filter(f => {
+          if (currentCat !== "all" && f.category !== currentCat) return false;
+          if (searchQuery) {
+            const match = f.q.toLowerCase().includes(searchQuery) || f.a.toLowerCase().includes(searchQuery);
+            if (!match) return false;
+          }
+          return true;
+        });
+
+        if (filtered.length === 0) {
+          container.innerHTML = `
+            <div style="text-align:center;padding:48px 16px;background:#fff;border-radius:var(--r-md);border:1px solid var(--gray-200);">
+              <p style="color:var(--c-text-muted);font-size:14px;margin:0 0 12px;">No questions matched your search term.</p>
+              <button class="sbc-btn sbc-btn--sm sbc-btn--outline" onclick="document.getElementById('faq-search').value='';window.dispatchEvent(new Event('input'));">Clear Search</button>
+            </div>
+          `;
+          return;
+        }
+
+        container.innerHTML = filtered.map((f, idx) => `
+          <div class="sbc-faq-item" style="background:#fff;border:1px solid var(--gray-200);border-radius:var(--r-md);overflow:hidden;">
+            <button class="sbc-faq-trigger" style="width:100%;text-align:left;padding:16px 20px;background:none;border:none;cursor:pointer;display:flex;justify-content:space-between;align-items:center;font-size:15px;font-weight:700;color:var(--navy-900);">
+              <span>${util.esc(f.q)}</span>
+              <span class="faq-icon" style="font-size:18px;color:var(--gray-400);transition:transform 0.2s;">+</span>
+            </button>
+            <div class="sbc-faq-answer" style="display:none;padding:0 20px 16px;font-size:14px;color:var(--c-text-secondary);line-height:1.6;border-top:1px solid var(--gray-100);padding-top:12px;">
+              ${util.esc(f.a)}
+              <div style="margin-top:8px;">
+                <span class="sbc-badge" style="font-size:10px;">${util.esc(f.category)}</span>
+              </div>
+            </div>
+          </div>
+        `).join("");
+
+        container.querySelectorAll(".sbc-faq-trigger").forEach(btn => {
+          btn.addEventListener("click", () => {
+            const answer = btn.nextElementSibling;
+            const icon = btn.querySelector(".faq-icon");
+            const isOpen = answer.style.display === "block";
+
+            answer.style.display = isOpen ? "none" : "block";
+            icon.textContent = isOpen ? "+" : "−";
+            icon.style.transform = isOpen ? "rotate(0deg)" : "rotate(180deg)";
+          });
+        });
+      }
+
+      document.querySelectorAll(".js-faq-cat").forEach(btn => {
+        btn.addEventListener("click", () => {
+          document.querySelectorAll(".js-faq-cat").forEach(b => b.classList.remove("is-active"));
+          btn.classList.add("is-active");
+          currentCat = btn.dataset.cat;
+          renderFaqs();
+        });
+      });
+
+      searchInput.addEventListener("input", (e) => {
+        searchQuery = e.target.value.trim().toLowerCase();
+        renderFaqs();
+      });
+
+      renderFaqs();
+    }
+
+    if (document.readyState !== "loading" && window.SBC && window.SBC.isReady) {
+      initFaq();
+    } else {
+      window.addEventListener("SBC:ready", initFaq);
+      document.addEventListener("DOMContentLoaded", () => setTimeout(initFaq, 50));
+    }
+  </script>
+</body>
+</html>

@@ -1,0 +1,78 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Dealer Application Form | South Bangla Computers</title>
+  <meta name="description" content="5-step online dealer registration form for Bangladeshi IT retailers, ISPs, and network contractors.">
+  <link rel="stylesheet" href="../css/tokens.css">
+  <link rel="stylesheet" href="../css/base.css">
+  <link rel="stylesheet" href="../css/layout.css">
+  <link rel="stylesheet" href="../css/components.css">
+  <link rel="stylesheet" href="../css/print.css" media="print">
+</head>
+<body data-root="../" data-page="dealer">
+  <a href="#main-content" class="sbc-skip-link">Skip to main content</a>
+  <div id="sbc-header"></div>
+
+  <main id="main-content" class="l-container" style="padding-top: var(--sp-6); padding-bottom: var(--sp-12);">
+    <!-- Breadcrumbs -->
+    <nav aria-label="Breadcrumb" class="sbc-breadcrumbs" style="margin-bottom: var(--sp-6);">
+      <ol style="display:flex;gap:var(--sp-2);list-style:none;padding:0;margin:0;font-size:var(--fs-xs);color:var(--c-text-muted);">
+        <li><a href="../index.html">Home</a> <span aria-hidden="true">&rsaquo;</span></li>
+        <li><a href="index.html">Dealer Network</a> <span aria-hidden="true">&rsaquo;</span></li>
+        <li style="color:var(--navy-900);font-weight:600;" aria-current="page">Dealer Registration</li>
+      </ol>
+    </nav>
+
+    <!-- Page Header -->
+    <div style="text-align:center;margin-bottom:var(--sp-8);">
+      <span class="sbc-badge sbc-badge--tag" style="margin-bottom:8px;">B2B Channel Onboarding</span>
+      <h1 style="font-size:var(--fs-h1);color:var(--navy-900);margin:0 0 8px;">Authorized Dealer Application</h1>
+      <p style="color:var(--c-text-muted);font-size:var(--fs-base);max-width:580px;margin:0 auto;">
+        Complete the 5 steps below to submit your business credentials. All drafts are automatically saved to your browser.
+      </p>
+    </div>
+
+    <!-- Dealer Registration Mount Point (Handled by js/dealer.js) -->
+    <div id="dealer-register-container" style="max-width:760px;margin:0 auto;background:#fff;border:1px solid var(--gray-200);border-radius:var(--r-lg);padding:var(--sp-8);box-shadow:var(--sh-sm);"></div>
+  </main>
+
+  <div id="sbc-footer"></div>
+  <div id="sbc-toast" role="status" aria-live="polite"></div>
+
+  <!-- Standard Prototype Scripts -->
+  <script defer src="../js/config.js"></script>
+  <script defer src="../js/i18n/en.js"></script>
+  <script defer src="../js/core/util.js"></script>
+  <script defer src="../js/core/storage.js"></script>
+  <script defer src="../data/categories.js"></script>
+  <script defer src="../data/brands.js"></script>
+  <script defer src="../data/branches.js"></script>
+  <script defer src="../data/news.js"></script>
+  <script defer src="../data/faq.js"></script>
+  <script defer src="../data/downloads.js"></script>
+  <script defer src="../data/districts.js"></script>
+  <script defer src="../data/configurator-rules.js"></script>
+  <script defer src="../data/site-claims.js"></script>
+  <script defer src="../data/users.js"></script>
+  <script defer src="../data/products.js"></script>
+  <script defer src="../js/core/store.js"></script>
+  <script defer src="../js/core/validate.js"></script>
+  <script defer src="../js/core/ui.js"></script>
+  <script defer src="../js/layout.js"></script>
+  <script defer src="../js/search.js"></script>
+  <script defer src="../js/cards.js"></script>
+  <script defer src="../js/dealer.js"></script>
+  <script defer src="../js/demo.js"></script>
+
+  <script defer>
+    window.addEventListener("SBC:ready", function () {
+      const containerEl = document.getElementById("dealer-register-container");
+      if (window.SBC && window.SBC.dealer) {
+        window.SBC.dealer.initRegister(containerEl);
+      }
+    });
+  </script>
+</body>
+</html>

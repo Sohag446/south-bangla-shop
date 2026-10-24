@@ -1,0 +1,491 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Partner Brands & Authorized Distributorships | South Bangla Computers</title>
+  <meta name="description" content="Explore South Bangla Computers authorized partner brands: Meetion (Official BD Distributor), Tenda, Cisco, HSGQ, Must, Solitine, Tumtec, BDCOM, and more.">
+  <link rel="canonical" href="https://www.southbanglabd.com/brands">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="css/tokens.css">
+  <link rel="stylesheet" href="css/base.css">
+  <link rel="stylesheet" href="css/layout.css">
+  <link rel="stylesheet" href="css/components.css">
+  <link rel="stylesheet" href="css/print.css" media="print">
+  <style>
+    /* Brands Directory Custom Styles */
+    .brand-dir-toolbar {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      flex-wrap: wrap;
+      gap: 16px;
+      margin-bottom: 28px;
+      background: #ffffff;
+      padding: 16px 20px;
+      border-radius: 12px;
+      border: 1px solid var(--gray-200);
+      box-shadow: 0 2px 8px rgba(0,0,0,0.02);
+    }
+    .brand-tabs-wrap {
+      display: flex;
+      gap: 8px;
+      flex-wrap: wrap;
+    }
+    .brand-tab-btn {
+      padding: 8px 16px;
+      border-radius: 9999px;
+      font-size: 13px;
+      font-weight: 600;
+      border: 1px solid var(--gray-200);
+      background: #ffffff;
+      color: var(--navy-900);
+      cursor: pointer;
+      transition: all 0.2s ease;
+    }
+    .brand-tab-btn:hover {
+      background: var(--gray-100);
+      border-color: var(--gray-300);
+    }
+    .brand-tab-btn.is-active {
+      background: var(--navy-900);
+      color: #ffffff;
+      border-color: var(--navy-900);
+    }
+    .brand-search-box {
+      position: relative;
+      min-width: 260px;
+    }
+    .brand-search-input {
+      width: 100%;
+      height: 40px;
+      border-radius: 8px;
+      border: 1px solid var(--gray-200);
+      padding: 0 14px 0 38px;
+      font-size: 13px;
+      color: var(--navy-900);
+      outline: none;
+      transition: border-color 0.2s;
+    }
+    .brand-search-input:focus {
+      border-color: var(--blue-600);
+      box-shadow: 0 0 0 3px rgba(0, 112, 186, 0.15);
+    }
+    .brand-search-icon {
+      position: absolute;
+      left: 12px;
+      top: 50%;
+      transform: translateY(-50%);
+      color: var(--c-text-muted);
+      pointer-events: none;
+    }
+    .brand-card-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(310px, 1fr));
+      gap: 24px;
+    }
+    .sbc-brand-fullcard {
+      background: #ffffff;
+      border: 1px solid var(--gray-200);
+      border-radius: 14px;
+      padding: 24px;
+      display: flex;
+      flex-direction: column;
+      transition: all 0.25s ease;
+      position: relative;
+      box-shadow: 0 2px 8px rgba(0,0,0,0.02);
+    }
+    .sbc-brand-fullcard:hover {
+      transform: translateY(-4px);
+      border-color: var(--blue-600);
+      box-shadow: 0 12px 28px rgba(0, 31, 63, 0.08);
+    }
+    .sbc-brand-fullcard--featured {
+      border: 2px solid #0070ba;
+      background: linear-gradient(180deg, #f0f7ff 0%, #ffffff 100%);
+    }
+    .sbc-brand-fullcard__top {
+      display: flex;
+      justify-content: space-between;
+      align-items: flex-start;
+      margin-bottom: 18px;
+    }
+    .sbc-brand-fullcard__logo-wrap {
+      height: 56px;
+      max-width: 160px;
+      display: flex;
+      align-items: center;
+      background: #ffffff;
+      padding: 6px 12px;
+      border-radius: 8px;
+      border: 1px solid var(--gray-100);
+    }
+    .sbc-brand-fullcard__logo-wrap img {
+      max-height: 42px;
+      max-width: 136px;
+      object-fit: contain;
+    }
+    .sbc-brand-fullcard__badge {
+      font-size: 11px;
+      font-weight: 700;
+      padding: 4px 10px;
+      border-radius: 9999px;
+      background: #f1f5f9;
+      color: #475569;
+    }
+    .sbc-brand-fullcard__badge--featured {
+      background: #0070ba;
+      color: #ffffff;
+      box-shadow: 0 2px 8px rgba(0, 112, 186, 0.3);
+    }
+    .sbc-brand-fullcard__name {
+      font-size: 18px;
+      font-weight: 700;
+      color: var(--navy-900);
+      margin: 0 0 6px 0;
+    }
+    .sbc-brand-fullcard__desc {
+      font-size: 13px;
+      color: var(--c-text-secondary);
+      line-height: 1.6;
+      margin: 0 0 18px 0;
+      flex: 1;
+    }
+    .sbc-brand-fullcard__footer {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      border-top: 1px solid var(--gray-100);
+      padding-top: 14px;
+      margin-top: auto;
+    }
+    .sbc-brand-fullcard__btn {
+      font-size: 13px;
+      font-weight: 700;
+      color: var(--blue-600);
+      text-decoration: none;
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+      transition: gap 0.2s;
+    }
+    .sbc-brand-fullcard__btn:hover {
+      gap: 9px;
+      color: var(--navy-900);
+    }
+  </style>
+</head>
+<body data-root="" data-page="brand">
+  <a href="#main-content" class="sbc-skip-link">Skip to main content</a>
+  <div id="sbc-header"></div>
+
+  <!-- ========================================================================
+       CONSISTENT GLOBAL FULL-WIDTH BANNER DESIGN (Brand Partnerships Theme)
+       ======================================================================== -->
+  <section class="sbc-page-banner sbc-page-banner--brands" aria-label="Brands Directory Banner">
+    <div class="sbc-page-banner__inner l-container">
+      <div class="sbc-page-banner__content">
+        <nav class="sbc-page-banner__crumb" aria-label="Breadcrumb">
+          <a href="index.html">Home</a>
+          <span class="sbc-page-banner__crumb-sep">/</span>
+          <span class="sbc-page-banner__crumb-current" id="brand-crumb-text">Partner Brands</span>
+        </nav>
+        <h1 class="sbc-page-banner__title">
+          <span class="sbc-page-banner__title-line1">Official Partner</span>
+          <span class="sbc-page-banner__title-line2">Brands &amp; Distributorships</span>
+        </h1>
+        <p class="sbc-page-banner__desc">
+          South Bangla Computers is the authorized national partner for 14+ global technology leaders including Meetion, Tenda, Cisco, HSGQ, Must, and Solitine — guaranteeing 100% genuine equipment and official manufacturer warranty.
+        </p>
+        <div class="sbc-page-banner__actions">
+          <a href="shop.html" class="sbc-banner-btn sbc-banner-btn--primary">
+            Explore All Products
+          </a>
+          <a href="dealer/index.html" class="sbc-banner-btn sbc-banner-btn--secondary">
+            Dealer Distributorship Program
+          </a>
+        </div>
+      </div>
+          <h3 class="sbc-banner-tech-card__title">Global Brand Partnerships</h3>
+          <ul class="sbc-banner-tech-card__list">
+            <li class="sbc-banner-tech-card__item">
+              <svg class="sbc-icon sbc-icon--xs" aria-hidden="true"><use href="#icon-check"></use></svg>
+              <span><strong>Meetion:</strong> Official Bangladesh Distributor</span>
+            </li>
+            <li class="sbc-banner-tech-card__item">
+              <svg class="sbc-icon sbc-icon--xs" aria-hidden="true"><use href="#icon-check"></use></svg>
+              <span><strong>Tenda:</strong> Next-Gen Wi-Fi 7 &amp; Wi-Fi 6 Mesh</span>
+            </li>
+            <li class="sbc-banner-tech-card__item">
+              <svg class="sbc-icon sbc-icon--xs" aria-hidden="true"><use href="#icon-check"></use></svg>
+              <span><strong>Cisco:</strong> Business &amp; Catalyst Switching</span>
+            </li>
+            <li class="sbc-banner-tech-card__item">
+              <svg class="sbc-icon sbc-icon--xs" aria-hidden="true"><use href="#icon-check"></use></svg>
+              <span><strong>HSGQ &amp; Solitine:</strong> FTTH Optical &amp; Cabling</span>
+            </li>
+          </ul>
+          <div class="sbc-banner-tech-card__metric-grid">
+            <div class="sbc-banner-tech-card__metric">
+              <span class="sbc-banner-tech-card__metric-val">14</span>
+              <span class="sbc-banner-tech-card__metric-lbl">Global Brands</span>
+            </div>
+            <div class="sbc-banner-tech-card__metric">
+              <span class="sbc-banner-tech-card__metric-val">100%</span>
+              <span class="sbc-banner-tech-card__metric-lbl">Genuine Warranty</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ========================================================================
+       BRANDS DIRECTORY CONTENT
+       ======================================================================== -->
+  <main id="main-content" class="l-container" style="padding-bottom: var(--sp-12);">
+    
+    <!-- Directory Toolbar: Search & Category Tabs -->
+    <div class="brand-dir-toolbar" id="brand-dir-toolbar">
+      <div class="brand-tabs-wrap" id="brand-category-tabs">
+        <button type="button" class="brand-tab-btn is-active" data-cat="all">All Brands (14)</button>
+        <button type="button" class="brand-tab-btn" data-cat="gaming">Gaming &amp; Peripherals</button>
+        <button type="button" class="brand-tab-btn" data-cat="networking">Networking &amp; Wi-Fi</button>
+        <button type="button" class="brand-tab-btn" data-cat="fiber">Fiber &amp; FTTH Access</button>
+        <button type="button" class="brand-tab-btn" data-cat="power">Power &amp; Cabling</button>
+      </div>
+
+      <div class="brand-search-box">
+        <svg class="brand-search-icon" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="11" cy="11" r="8"></circle><line x1="21" y1="21" x2="16.65" y2="16.65"></line></svg>
+        <input type="text" id="brand-search-input" class="brand-search-input" placeholder="Search brands by name...">
+      </div>
+    </div>
+
+    <!-- Active Single Brand Header (Displayed only when ?b=brand is active) -->
+    <div id="single-brand-header" style="display:none;background:#ffffff;border:1px solid var(--gray-200);border-radius:14px;padding:28px;margin-bottom:28px;">
+      <div style="display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:20px;">
+        <div style="display:flex;align-items:center;gap:20px;">
+          <div id="single-brand-logo-wrap" style="height:64px;max-width:180px;background:#fff;padding:8px 16px;border:1px solid var(--gray-200);border-radius:8px;display:flex;align-items:center;">
+            <img id="single-brand-logo" src="" alt="Brand Logo" style="max-height:48px;max-width:150px;object-fit:contain;">
+          </div>
+          <div>
+            <h2 id="single-brand-name" style="font-size:24px;color:var(--navy-900);margin:0 0 4px;font-weight:800;">Brand Name</h2>
+            <p id="single-brand-desc" style="font-size:13.5px;color:var(--c-text-muted);margin:0;">Brand Description</p>
+          </div>
+        </div>
+        <div>
+          <a href="brand.html" class="sbc-btn sbc-btn--outline sbc-btn--sm">&larr; Back to All Brands</a>
+        </div>
+      </div>
+    </div>
+
+    <!-- Brands Directory Cards Grid -->
+    <div id="brand-cards-container" class="brand-card-grid">
+      <!-- Dynamically Populated via JS -->
+    </div>
+
+    <!-- Brand Specific Products Grid (when filtered) -->
+    <div id="brand-products-section" style="display:none;margin-top:20px;">
+      <h3 id="brand-products-heading" style="font-size:20px;color:var(--navy-900);margin:0 0 20px;font-weight:700;">Products Available</h3>
+      <div id="brand-products-grid" style="display:grid;grid-template-columns:repeat(auto-fill, minmax(260px, 1fr));gap:20px;">
+        <!-- Populated via JS -->
+      </div>
+    </div>
+
+  </main>
+
+  <div id="sbc-footer"></div>
+  <div id="sbc-toast" role="status" aria-live="polite"></div>
+
+  <!-- Standard Prototype Scripts -->
+  <script defer src="js/config.js"></script>
+  <script defer src="js/i18n/en.js"></script>
+  <script defer src="js/core/util.js"></script>
+  <script defer src="js/core/storage.js"></script>
+  <script defer src="data/categories.js"></script>
+  <script defer src="data/brands.js"></script>
+  <script defer src="data/branches.js"></script>
+  <script defer src="data/news.js"></script>
+  <script defer src="data/faq.js"></script>
+  <script defer src="data/downloads.js"></script>
+  <script defer src="data/districts.js"></script>
+  <script defer src="data/configurator-rules.js"></script>
+  <script defer src="data/site-claims.js"></script>
+  <script defer src="data/users.js"></script>
+  <script defer src="data/products.js"></script>
+  <script defer src="js/core/store.js"></script>
+  <script defer src="js/core/validate.js"></script>
+  <script defer src="js/core/ui.js"></script>
+  <script defer src="js/layout.js"></script>
+  <script defer src="js/search.js"></script>
+  <script defer src="js/cards.js"></script>
+  <script defer src="js/demo.js"></script>
+
+  <!-- Brands Page Controller with Robust Immediate Rendering -->
+  <script defer>
+    function initBrandsPage() {
+      const util = window.SBC ? window.SBC.util : null;
+      const D = window.SBC_DATA || {};
+      const prods = D.products || [];
+      const brands = D.brands || [];
+
+      // Category classification mapping for verified brands
+      const brandCategories = {
+        meetion: "gaming",
+        tenda: "networking",
+        cisco: "networking",
+        hsgq: "fiber",
+        tumtec: "fiber",
+        must: "power",
+        solitine: "power",
+        ubiquiti: "networking",
+        rosenberger: "fiber",
+        marsriva: "power",
+        "ip-com": "networking",
+        ewin: "networking",
+        hkc: "power",
+        phyhome: "fiber"
+      };
+
+      const params = new URLSearchParams(window.location.search);
+      const brandSlug = params.get("b");
+
+      const cardsContainer = document.getElementById("brand-cards-container");
+      const searchInput = document.getElementById("brand-search-input");
+      const toolbar = document.getElementById("brand-dir-toolbar");
+      const singleHeader = document.getElementById("single-brand-header");
+      const productsSec = document.getElementById("brand-products-section");
+      const productsGrid = document.getElementById("brand-products-grid");
+      const crumbText = document.getElementById("brand-crumb-text");
+
+      let activeCategory = "all";
+      let searchQuery = "";
+
+      // Render brand directory cards
+      function renderBrandCards() {
+        if (!cardsContainer) return;
+
+        let filtered = brands.filter(b => {
+          const cat = brandCategories[b.slug] || "networking";
+          const matchCat = activeCategory === "all" || cat === activeCategory;
+          const matchQuery = !searchQuery || 
+            b.name.toLowerCase().includes(searchQuery) || 
+            (b.description && b.description.toLowerCase().includes(searchQuery));
+          return matchCat && matchQuery;
+        });
+
+        if (filtered.length === 0) {
+          cardsContainer.innerHTML = `
+            <div style="grid-column:1/-1;text-align:center;padding:48px 20px;background:#fff;border-radius:12px;border:1px solid var(--gray-200);">
+              <p style="color:var(--c-text-muted);font-size:15px;margin:0 0 12px;">No partner brands match your search criteria.</p>
+              <button class="sbc-btn sbc-btn--primary sbc-btn--sm" onclick="document.getElementById('brand-search-input').value='';document.querySelectorAll('.brand-tab-btn')[0].click();">Reset Filters</button>
+            </div>
+          `;
+          return;
+        }
+
+        cardsContainer.innerHTML = filtered.map(b => {
+          const isMeetion = b.slug === "meetion";
+          const badgeText = isMeetion ? "Official BD Distributor" : "Authorized Partner";
+          const badgeClass = isMeetion ? "sbc-brand-fullcard__badge--featured" : "";
+          const cardClass = isMeetion ? "sbc-brand-fullcard sbc-brand-fullcard--featured" : "sbc-brand-fullcard";
+          
+          // Image handling: Try remote logo with fallback
+          const root = util ? util.getRoot() : "";
+          const imgSrc = b.remoteLogo || (b.logo ? (b.logo.startsWith("http") ? b.logo : root + b.logo) : "");
+          const fallbackName = util ? util.esc(b.name) : b.name;
+          const brandUrl = `shop.html?b=${b.slug}#shop-catalog`;
+
+          return `
+            <article class="${cardClass}">
+              <div class="sbc-brand-fullcard__top">
+                <div class="sbc-brand-fullcard__logo-wrap">
+                  <img src="${imgSrc}" alt="${fallbackName}" loading="lazy" onerror="this.onerror=null; this.src='assets/img/placeholder-product.svg';">
+                </div>
+                <span class="sbc-brand-fullcard__badge ${badgeClass}">${badgeText}</span>
+              </div>
+              <h3 class="sbc-brand-fullcard__name">${fallbackName}</h3>
+              <p class="sbc-brand-fullcard__desc">${b.description || 'Certified genuine hardware distribution with factory warranty in Bangladesh.'}</p>
+              <div class="sbc-brand-fullcard__footer">
+                <span style="font-size:12px;color:var(--c-text-muted);font-weight:500;">Authorized Channel</span>
+                <a href="${brandUrl}" class="sbc-brand-fullcard__btn">Browse Products &rarr;</a>
+              </div>
+            </article>
+          `;
+        }).join("");
+      }
+
+      // If user came with a specific brand query ?b=tenda or ?b=meetion
+      if (brandSlug) {
+        const currentBrand = brands.find(b => b.slug.toLowerCase() === brandSlug.toLowerCase() || b.name.toLowerCase() === brandSlug.toLowerCase());
+        if (currentBrand) {
+          document.title = `${currentBrand.name} Products & Distributorship | South Bangla Computers`;
+          if (crumbText) crumbText.innerHTML = `<a href="brand.html">Brands</a> <span class="sbc-page-banner__crumb-sep">/</span> <span class="sbc-page-banner__crumb-current">${currentBrand.name}</span>`;
+          if (toolbar) toolbar.style.display = "none";
+          if (cardsContainer) cardsContainer.style.display = "none";
+
+          if (singleHeader) {
+            singleHeader.style.display = "block";
+            document.getElementById("single-brand-name").textContent = currentBrand.name;
+            document.getElementById("single-brand-desc").textContent = currentBrand.description || "Authorized South Bangla Computers distribution lineup in Bangladesh.";
+            const logoEl = document.getElementById("single-brand-logo");
+            if (logoEl) {
+              logoEl.src = currentBrand.remoteLogo || currentBrand.logo;
+              logoEl.alt = currentBrand.name;
+            }
+          }
+
+          if (productsSec && productsGrid) {
+            productsSec.style.display = "block";
+            const brandProds = prods.filter(p => p.brand && (p.brand.toLowerCase() === currentBrand.slug.toLowerCase() || p.brand.toLowerCase() === currentBrand.name.toLowerCase()));
+            document.getElementById("brand-products-heading").textContent = `${currentBrand.name} Catalog (${brandProds.length} Products)`;
+            
+            if (brandProds.length > 0) {
+              productsGrid.innerHTML = brandProds.map(p => window.SBC.cards.productCard(p)).join("");
+            } else {
+              productsGrid.innerHTML = `
+                <div style="grid-column:1/-1;text-align:center;padding:48px 16px;background:#fff;border-radius:12px;border:1px solid var(--gray-200);">
+                  <p style="color:var(--c-text-muted);margin-bottom:12px;">Full catalog for ${currentBrand.name} is available in our online store.</p>
+                  <a href="shop.html?b=${currentBrand.slug}#shop-catalog" class="sbc-btn sbc-btn--primary sbc-btn--sm">View All in Shop &rarr;</a>
+                </div>
+              `;
+            }
+          }
+          return;
+        }
+      }
+
+      // Default: Render all brands directory immediately
+      renderBrandCards();
+
+      // Category Tabs Switching
+      document.querySelectorAll("#brand-category-tabs .brand-tab-btn").forEach(btn => {
+        btn.addEventListener("click", () => {
+          document.querySelectorAll("#brand-category-tabs .brand-tab-btn").forEach(b => b.classList.remove("is-active"));
+          btn.classList.add("is-active");
+          activeCategory = btn.dataset.cat;
+          renderBrandCards();
+        });
+      });
+
+      // Search Filter
+      if (searchInput) {
+        searchInput.addEventListener("input", (e) => {
+          searchQuery = e.target.value.toLowerCase().trim();
+          renderBrandCards();
+        });
+      }
+    }
+
+    // Immediate DOM Ready Initialization (Resolves Task 6 Tab Bug)
+    if (document.readyState !== "loading" && window.SBC && window.SBC.isReady) {
+      initBrandsPage();
+    } else {
+      window.addEventListener("SBC:ready", initBrandsPage);
+      document.addEventListener("DOMContentLoaded", () => setTimeout(initBrandsPage, 50));
+    }
+  </script>
+</body>
+</html>

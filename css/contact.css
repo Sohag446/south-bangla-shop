@@ -1,0 +1,1029 @@
+/* ==========================================================================
+   South Bangla Computers — Contact Us Page Styles
+   Brand tokens: Ocean Blue (#005883), Navy, Amber, and Modern Luxury theme.
+   ========================================================================== */
+
+:root {
+  --contact-primary: #005883;
+  --contact-primary-hover: #004566;
+  --contact-primary-soft: #E1EFF5;
+  --contact-accent: #E65100;
+  --contact-text: #111827;
+  --contact-text-muted: #5b6471;
+  --contact-text-light: #94a3b8;
+  --contact-border: #E8ECEF;
+  --contact-border-subtle: #F1F4F6;
+  --contact-card-bg: #FFFFFF;
+  --contact-radius-lg: 20px;
+  --contact-radius-md: 12px;
+  --contact-radius-pill: 9999px;
+  --contact-font: 'Poppins', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+}
+
+body.contact-page {
+  background-color: #FAFAF8;
+  color: var(--contact-text);
+  font-family: var(--contact-font);
+  margin: 0;
+  padding: 0;
+  -webkit-font-smoothing: antialiased;
+}
+
+.contact-container {
+  max-width: 1320px;
+  margin: 0 auto;
+  padding: 0 20px;
+  width: 100%;
+  box-sizing: border-box;
+}
+
+/* ── Breadcrumb ── */
+.contact-breadcrumb {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  padding: 16px 0 24px;
+  font-size: 13px;
+  color: var(--contact-text-muted);
+}
+
+.contact-breadcrumb a {
+  color: var(--contact-text-muted);
+  text-decoration: none;
+  transition: color 0.15s;
+}
+
+.contact-breadcrumb a:hover {
+  color: var(--contact-primary);
+}
+
+.contact-breadcrumb strong {
+  color: var(--contact-text);
+  font-weight: 600;
+}
+
+/* ==========================================================================
+   SECTION 1: HERO PROMO BANNER (ROUNDED LUXURY DESIGN)
+   ========================================================================== */
+.contact-hero-banner {
+  background: linear-gradient(135deg, #09233b 0%, #005883 100%);
+  border-radius: var(--contact-radius-lg);
+  padding: 44px 48px;
+  color: #ffffff;
+  margin-bottom: 48px;
+  position: relative;
+  overflow: hidden;
+  box-shadow: 0 12px 36px rgba(0, 88, 131, 0.16);
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.contact-hero-banner::after {
+  content: "";
+  position: absolute;
+  right: -60px;
+  bottom: -80px;
+  width: 320px;
+  height: 320px;
+  border-radius: 50%;
+  background: radial-gradient(circle, rgba(255, 255, 255, 0.12) 0%, transparent 70%);
+  pointer-events: none;
+}
+
+.contact-hero-banner__tag {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  background: rgba(255, 255, 255, 0.16);
+  backdrop-filter: blur(8px);
+  padding: 4px 12px;
+  border-radius: var(--contact-radius-pill);
+  font-size: 11px;
+  font-weight: 700;
+  letter-spacing: 0.5px;
+  text-transform: uppercase;
+  margin-bottom: 12px;
+}
+
+.contact-hero-banner__title {
+  font-size: clamp(28px, 3.2vw, 50px);
+  font-weight: 800;
+  line-height: 1.2;
+  margin: 0 0 10px;
+  letter-spacing: -0.5px;
+}
+
+.contact-hero-banner__desc {
+  font-size: 14px;
+  line-height: 1.6;
+  color: rgba(255, 255, 255, 0.88);
+  max-width: 580px;
+  margin: 0;
+}
+
+.contact-hero-banner__stats {
+  display: flex;
+  gap: 28px;
+  flex-shrink: 0;
+}
+
+.contact-hero-stat-box {
+  background: rgba(255, 255, 255, 0.1);
+  backdrop-filter: blur(8px);
+  border: 1px solid rgba(255, 255, 255, 0.18);
+  padding: 16px 20px;
+  border-radius: 14px;
+  text-align: center;
+  min-width: 100px;
+}
+
+.contact-hero-stat-num {
+  font-size: 24px;
+  font-weight: 800;
+  display: block;
+}
+
+.contact-hero-stat-label {
+  font-size: 11px;
+  color: rgba(255, 255, 255, 0.8);
+  text-transform: uppercase;
+  letter-spacing: 0.3px;
+}
+
+/* ==========================================================================
+   SECTION 2: CONTENT & FORM GRID (1fr / 2fr or 1/3 SPLIT)
+   ========================================================================== */
+.contact-main-grid {
+  display: grid;
+  grid-template-columns: 1fr 2fr;
+  gap: 36px;
+  align-items: start;
+  margin-bottom: 64px;
+}
+
+/* Left: Info Cards */
+.contact-info-col {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+
+.contact-info-card {
+  background: #ffffff;
+  border: 1px solid var(--contact-border);
+  border-radius: var(--contact-radius-md);
+  padding: 20px;
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.02);
+  transition: transform 0.2s, box-shadow 0.2s;
+}
+
+.contact-info-card:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.04);
+}
+
+.contact-info-card__header {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  margin-bottom: 12px;
+}
+
+.contact-info-card__icon {
+  width: 40px;
+  height: 40px;
+  border-radius: 10px;
+  background: var(--contact-primary-soft);
+  color: var(--contact-primary);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+}
+
+.contact-info-card__title {
+  font-size: 15px;
+  font-weight: 700;
+  color: var(--contact-text);
+  margin: 0;
+}
+
+.contact-info-card__text {
+  font-size: 13px;
+  line-height: 1.6;
+  color: var(--contact-text-muted);
+  margin: 0 0 8px;
+}
+
+.contact-info-card__link {
+  font-size: 13px;
+  font-weight: 700;
+  color: var(--contact-primary);
+  text-decoration: none;
+  display: inline-flex;
+  align-items: center;
+  gap: 4px;
+}
+
+.contact-info-card__link:hover {
+  text-decoration: underline;
+}
+
+/* Right: Form Card */
+.contact-form-card {
+  background: #ffffff;
+  border: 1px solid var(--contact-border);
+  border-radius: var(--contact-radius-lg);
+  padding: 36px 32px;
+  box-shadow: 0 8px 28px rgba(0, 0, 0, 0.03);
+}
+
+.contact-form-header {
+  margin-bottom: 24px;
+  padding-bottom: 16px;
+  border-bottom: 1px solid var(--contact-border-subtle);
+}
+
+.contact-form-title {
+  font-size: 20px;
+  font-weight: 800;
+  color: var(--contact-text);
+  margin: 0 0 4px;
+  letter-spacing: -0.2px;
+}
+
+.contact-form-subtitle {
+  font-size: 13px;
+  color: var(--contact-text-muted);
+  margin: 0;
+}
+
+.contact-form-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 18px;
+  margin-bottom: 18px;
+}
+
+.contact-field-group {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+}
+
+.contact-field-group.is-full {
+  grid-column: 1 / -1;
+}
+
+.contact-label {
+  font-size: 12.5px;
+  font-weight: 700;
+  color: var(--contact-text);
+}
+
+.contact-label span {
+  color: #ef4444;
+}
+
+.contact-input,
+.contact-select,
+.contact-textarea {
+  width: 100%;
+  box-sizing: border-box;
+  height: 44px;
+  border-radius: 8px;
+  border: 1.5px solid var(--contact-border);
+  background: #ffffff;
+  padding: 0 14px;
+  font-family: inherit;
+  font-size: 13.5px;
+  color: var(--contact-text);
+  outline: none;
+  transition: all 0.18s;
+}
+
+.contact-textarea {
+  height: 110px;
+  padding: 12px 14px;
+  resize: vertical;
+}
+
+.contact-input:focus,
+.contact-select:focus,
+.contact-textarea:focus {
+  border-color: var(--contact-primary);
+  box-shadow: 0 0 0 3px rgba(0, 88, 131, 0.12);
+}
+
+.contact-submit-btn {
+  height: 48px;
+  background: var(--contact-primary);
+  color: #ffffff;
+  font-size: 14px;
+  font-weight: 700;
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+  padding: 0 28px;
+  transition: all 0.2s cubic-bezier(0.16, 1, 0.3, 1);
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  box-shadow: 0 4px 14px rgba(0, 88, 131, 0.2);
+}
+
+.contact-submit-btn:hover {
+  background: var(--contact-primary-hover);
+  transform: translateY(-1px);
+  box-shadow: 0 6px 18px rgba(0, 88, 131, 0.28);
+}
+
+/* ==========================================================================
+   SECTION 3: BANGLADESH MAP & INTERACTIVE GOOGLE MAPS SECTION
+   ========================================================================== */
+.contact-map-section {
+  margin-bottom: 72px;
+}
+
+.contact-map-section__header {
+  margin-bottom: 24px;
+  text-align: center;
+}
+
+.contact-map-section__title {
+  font-size: 22px;
+  font-weight: 800;
+  color: var(--contact-text);
+  margin: 0 0 6px;
+  text-transform: uppercase;
+  letter-spacing: -0.2px;
+}
+
+.contact-map-section__subtitle {
+  font-size: 13.5px;
+  color: var(--contact-text-muted);
+  max-width: 620px;
+  margin: 0 auto;
+}
+
+/* ==========================================================================
+   GOOGLE MAPS INTERACTIVE CARD & CONTROLS
+   ========================================================================== */
+.contact-map-badge {
+  display: inline-block;
+  background: rgba(0, 88, 131, 0.1);
+  color: var(--contact-primary);
+  font-size: 11px;
+  font-weight: 800;
+  letter-spacing: 1.2px;
+  text-transform: uppercase;
+  padding: 4px 12px;
+  border-radius: var(--contact-radius-pill);
+  margin-bottom: 8px;
+}
+
+.gmap-card {
+  background: #ffffff;
+  border: 1px solid var(--contact-border);
+  border-radius: var(--contact-radius-lg);
+  overflow: hidden;
+  box-shadow: 0 12px 35px rgba(0, 0, 0, 0.05);
+  margin-bottom: 36px;
+}
+
+/* Floating Interactive Top Bar */
+.gmap-toolbar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 16px;
+  padding: 14px 20px;
+  background: #ffffff;
+  border-bottom: 1px solid var(--contact-border-subtle);
+  flex-wrap: wrap;
+}
+
+.gmap-city-pills {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 6px;
+  align-items: center;
+}
+
+.gmap-city-pill {
+  background: #f3f4f6;
+  border: 1px solid #e5e7eb;
+  padding: 6px 14px;
+  border-radius: var(--contact-radius-pill);
+  font-size: 12px;
+  font-weight: 600;
+  color: #374151;
+  cursor: pointer;
+  transition: all 0.18s cubic-bezier(0.16, 1, 0.3, 1);
+  display: inline-flex;
+  align-items: center;
+  gap: 5px;
+}
+
+.gmap-city-pill:hover {
+  background: #e5e7eb;
+  color: #111827;
+  transform: translateY(-1px);
+}
+
+.gmap-city-pill.is-active {
+  background: var(--contact-primary);
+  color: #ffffff;
+  border-color: var(--contact-primary);
+  box-shadow: 0 3px 10px rgba(0, 88, 131, 0.3);
+}
+
+.gmap-city-pill .pill-dot {
+  width: 6px;
+  height: 6px;
+  border-radius: 50%;
+  background: #ef4444;
+}
+
+.gmap-city-pill.is-active .pill-dot {
+  background: #ffffff;
+}
+
+.gmap-controls {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+/* Segmented Map Layer Switcher */
+.gmap-view-switcher {
+  display: inline-flex;
+  background: #f3f4f6;
+  padding: 3px;
+  border-radius: 8px;
+  border: 1px solid #e5e7eb;
+}
+
+.gmap-layer-btn {
+  background: transparent;
+  border: none;
+  padding: 5px 12px;
+  border-radius: 6px;
+  font-size: 11.5px;
+  font-weight: 600;
+  color: #6b7280;
+  cursor: pointer;
+  transition: all 0.15s;
+}
+
+.gmap-layer-btn.is-active {
+  background: #ffffff;
+  color: #111827;
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
+}
+
+.gmap-reset-btn {
+  background: #ffffff;
+  border: 1px solid #d1d5db;
+  padding: 6px 12px;
+  border-radius: 8px;
+  font-size: 11.5px;
+  font-weight: 600;
+  color: #374151;
+  cursor: pointer;
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  transition: all 0.15s;
+}
+
+.gmap-reset-btn:hover {
+  background: #f9fafb;
+  border-color: var(--contact-primary);
+  color: var(--contact-primary);
+}
+
+/* Map Canvas Container */
+.gmap-canvas-wrap {
+  position: relative;
+  width: 100%;
+  height: 580px;
+  background: #e5edf0;
+}
+
+.gmap-canvas {
+  width: 100%;
+  height: 100%;
+  z-index: 1;
+}
+
+/* Custom Red Google Maps Pin Styles */
+.gmap-marker-pin {
+  position: relative;
+  width: 34px;
+  height: 46px;
+  cursor: pointer;
+  filter: drop-shadow(0 4px 6px rgba(0, 0, 0, 0.3));
+  transition: transform 0.2s cubic-bezier(0.16, 1, 0.3, 1);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.gmap-marker-pin:hover,
+.gmap-marker-pin.is-active {
+  transform: translateY(-6px) scale(1.12);
+  z-index: 9999 !important;
+}
+
+.gmap-marker-pin svg {
+  width: 34px;
+  height: 46px;
+  display: block;
+}
+
+.gmap-pin-pulse {
+  position: absolute;
+  bottom: 0;
+  left: 50%;
+  width: 14px;
+  height: 6px;
+  background: rgba(234, 67, 53, 0.4);
+  border-radius: 50%;
+  transform: translateX(-50%);
+  animation: gmapPinPulse 2s infinite ease-out;
+  pointer-events: none;
+}
+
+@keyframes gmapPinPulse {
+  0% { transform: translateX(-50%) scale(1); opacity: 0.8; }
+  100% { transform: translateX(-50%) scale(3.5); opacity: 0; }
+}
+
+.gmap-pin-badge {
+  position: absolute;
+  top: -24px;
+  left: 50%;
+  transform: translateX(-50%);
+  background: rgba(17, 24, 39, 0.92);
+  color: #ffffff;
+  font-size: 11px;
+  font-weight: 700;
+  padding: 2px 8px;
+  border-radius: 4px;
+  white-space: nowrap;
+  pointer-events: none;
+  box-shadow: 0 2px 6px rgba(0,0,0,0.25);
+  display: none;
+}
+
+.gmap-marker-pin:hover .gmap-pin-badge,
+.gmap-marker-pin.is-active .gmap-pin-badge {
+  display: block;
+}
+
+/* Floating Active Branch Details Panel */
+.gmap-active-panel {
+  position: absolute;
+  top: 16px;
+  left: 16px;
+  z-index: 1000;
+  background: rgba(255, 255, 255, 0.97);
+  backdrop-filter: blur(10px);
+  border: 1px solid rgba(0, 0, 0, 0.1);
+  border-radius: 14px;
+  padding: 20px 22px;
+  max-width: 360px;
+  box-shadow: 0 12px 30px rgba(0, 0, 0, 0.15);
+  transition: all 0.25s ease;
+}
+
+.gmap-active-panel.is-hidden {
+  opacity: 0;
+  transform: translateY(-10px);
+  pointer-events: none;
+}
+
+.gmap-active-panel__header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 8px;
+}
+
+.gmap-active-badge {
+  background: var(--contact-primary-soft);
+  color: var(--contact-primary);
+  font-size: 11px;
+  font-weight: 700;
+  text-transform: uppercase;
+  padding: 3px 9px;
+  border-radius: var(--contact-radius-pill);
+}
+
+.gmap-active-close {
+  background: transparent;
+  border: none;
+  font-size: 20px;
+  line-height: 1;
+  color: #9ca3af;
+  cursor: pointer;
+  padding: 0 4px;
+}
+
+.gmap-active-close:hover {
+  color: #111827;
+}
+
+.gmap-active-name {
+  font-size: 16px;
+  font-weight: 800;
+  color: var(--contact-text);
+  margin: 0 0 2px;
+}
+
+.gmap-active-city {
+  font-size: 12.5px;
+  font-weight: 600;
+  color: var(--contact-primary);
+  margin-bottom: 8px;
+}
+
+.gmap-active-address {
+  font-size: 12.5px;
+  line-height: 1.5;
+  color: var(--contact-text-muted);
+  margin: 0 0 12px;
+}
+
+.gmap-active-row {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  font-size: 12px;
+  color: #374151;
+  margin-bottom: 6px;
+}
+
+.gmap-active-row svg {
+  color: var(--contact-primary);
+  flex-shrink: 0;
+}
+
+.gmap-active-actions {
+  display: flex;
+  gap: 8px;
+  margin-top: 14px;
+  padding-top: 12px;
+  border-top: 1px solid var(--contact-border-subtle);
+}
+
+.gmap-btn-call,
+.gmap-btn-directions {
+  flex: 1;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 6px;
+  font-size: 12px;
+  font-weight: 700;
+  padding: 8px 12px;
+  border-radius: 8px;
+  text-decoration: none;
+  transition: all 0.15s;
+}
+
+.gmap-btn-call {
+  background: var(--contact-primary-soft);
+  color: var(--contact-primary);
+}
+
+.gmap-btn-call:hover {
+  background: #e0f2fe;
+}
+
+.gmap-btn-directions {
+  background: var(--contact-primary);
+  color: #ffffff;
+}
+
+.gmap-btn-directions:hover {
+  background: var(--contact-accent);
+}
+
+/* Authentic Google Maps Watermark */
+.gmap-watermark {
+  position: absolute;
+  bottom: 12px;
+  left: 14px;
+  z-index: 1000;
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  background: rgba(255, 255, 255, 0.85);
+  backdrop-filter: blur(4px);
+  padding: 4px 10px;
+  border-radius: 4px;
+  box-shadow: 0 1px 4px rgba(0, 0, 0, 0.15);
+  pointer-events: auto;
+}
+
+.gmap-logo {
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Arial, sans-serif;
+  font-size: 15px;
+  font-weight: 700;
+  letter-spacing: -0.5px;
+  color: #4285F4;
+}
+
+.gmap-legal {
+  font-size: 10px;
+  color: #5f6368;
+  display: flex;
+  align-items: center;
+  gap: 6px;
+}
+
+.gmap-legal a {
+  color: #5f6368;
+  text-decoration: none;
+}
+
+.gmap-legal a:hover {
+  text-decoration: underline;
+}
+
+/* Leaflet Popup Customization to match Google Maps InfoWindow */
+.leaflet-popup-content-wrapper {
+  border-radius: 12px !important;
+  box-shadow: 0 10px 28px rgba(0, 0, 0, 0.18) !important;
+  padding: 0 !important;
+  overflow: hidden;
+  border: 1px solid rgba(0, 0, 0, 0.08);
+}
+
+.leaflet-popup-content {
+  margin: 0 !important;
+  line-height: 1.4 !important;
+  min-width: 260px;
+  max-width: 320px;
+}
+
+.gmap-popup-body {
+  padding: 16px 18px;
+}
+
+.gmap-popup-badge {
+  display: inline-block;
+  background: #f0fdf4;
+  color: #166534;
+  font-size: 10px;
+  font-weight: 700;
+  text-transform: uppercase;
+  padding: 2px 7px;
+  border-radius: 4px;
+  margin-bottom: 6px;
+}
+
+.gmap-popup-title {
+  font-size: 15px;
+  font-weight: 800;
+  color: #111827;
+  margin: 0 0 3px;
+}
+
+.gmap-popup-city {
+  font-size: 12px;
+  font-weight: 600;
+  color: var(--contact-primary);
+  margin-bottom: 8px;
+}
+
+.gmap-popup-address {
+  font-size: 12px;
+  color: #6b7280;
+  margin: 0 0 10px;
+  line-height: 1.45;
+}
+
+.gmap-popup-meta {
+  font-size: 11.5px;
+  color: #374151;
+  margin-bottom: 12px;
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+}
+
+.gmap-popup-actions {
+  display: flex;
+  gap: 8px;
+  padding-top: 10px;
+  border-top: 1px solid #f3f4f6;
+}
+
+.gmap-popup-btn {
+  flex: 1;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  padding: 6px 10px;
+  font-size: 11.5px;
+  font-weight: 700;
+  border-radius: 6px;
+  text-decoration: none;
+  transition: all 0.15s;
+}
+
+.gmap-popup-btn--dir {
+  background: #005883;
+  color: #ffffff;
+}
+
+.gmap-popup-btn--dir:hover {
+  background: #003e5c;
+}
+
+.gmap-popup-btn--call {
+  background: #f3f4f6;
+  color: #374151;
+}
+
+.gmap-popup-btn--call:hover {
+  background: #e5e7eb;
+}
+
+/* ==========================================================================
+   OFFICE DIRECTORY GRID UNDER MAP
+   ========================================================================== */
+.contact-directory-section {
+  margin-top: 36px;
+}
+
+.contact-directory-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 20px;
+}
+
+.contact-directory-title {
+  font-size: 18px;
+  font-weight: 800;
+  color: var(--contact-text);
+  margin: 0;
+}
+
+.contact-directory-count {
+  font-size: 12px;
+  font-weight: 700;
+  color: var(--contact-primary);
+  background: var(--contact-primary-soft);
+  padding: 4px 10px;
+  border-radius: var(--contact-radius-pill);
+}
+
+.contact-directory-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+  gap: 18px;
+}
+
+.contact-directory-card {
+  background: #ffffff;
+  border: 1px solid var(--contact-border);
+  border-radius: var(--contact-radius-md);
+  padding: 20px;
+  box-shadow: 0 4px 14px rgba(0, 0, 0, 0.02);
+  transition: all 0.2s cubic-bezier(0.16, 1, 0.3, 1);
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+.contact-directory-card:hover {
+  transform: translateY(-3px);
+  border-color: var(--contact-primary);
+  box-shadow: 0 8px 22px rgba(0, 88, 131, 0.08);
+}
+
+.contact-directory-card.is-active {
+  border-color: var(--contact-primary);
+  background: #fdfefe;
+  box-shadow: 0 0 0 2px var(--contact-primary);
+}
+
+.contact-dir-top {
+  margin-bottom: 12px;
+}
+
+.contact-dir-badge {
+  display: inline-block;
+  font-size: 10.5px;
+  font-weight: 700;
+  text-transform: uppercase;
+  color: var(--contact-primary);
+  background: var(--contact-primary-soft);
+  padding: 2px 8px;
+  border-radius: 4px;
+  margin-bottom: 6px;
+}
+
+.contact-dir-name {
+  font-size: 15px;
+  font-weight: 700;
+  color: var(--contact-text);
+  margin: 0 0 4px;
+}
+
+.contact-dir-city {
+  font-size: 12px;
+  font-weight: 600;
+  color: var(--contact-accent);
+  margin-bottom: 8px;
+}
+
+.contact-dir-address {
+  font-size: 12px;
+  color: var(--contact-text-muted);
+  line-height: 1.5;
+  margin: 0 0 8px;
+}
+
+.contact-dir-phone {
+  font-size: 12px;
+  color: #374151;
+  font-weight: 600;
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  margin-bottom: 14px;
+}
+
+.contact-dir-btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 6px;
+  font-size: 12px;
+  font-weight: 700;
+  color: var(--contact-primary);
+  background: var(--contact-primary-soft);
+  border: none;
+  padding: 8px 12px;
+  border-radius: 6px;
+  cursor: pointer;
+  transition: all 0.15s;
+  width: 100%;
+}
+
+.contact-dir-btn:hover {
+  background: var(--contact-primary);
+  color: #ffffff;
+}
+
+/* ==========================================================================
+   RESPONSIVE QUERIES
+   ========================================================================== */
+@media (max-width: 960px) {
+  .contact-hero-banner {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 20px;
+    padding: 32px 24px;
+  }
+
+  .contact-hero-banner__stats {
+    width: 100%;
+    justify-content: flex-start;
+  }
+
+  .contact-main-grid {
+    grid-template-columns: 1fr;
+    gap: 28px;
+  }
+
+  .contact-map-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .contact-svg-wrapper {
+    height: 320px;
+  }
+}
+
+@media (max-width: 640px) {
+  .contact-hero-banner__title {
+    font-size: 22px;
+  }
+
+  .contact-form-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .contact-form-card {
+    padding: 24px 18px;
+  }
+}

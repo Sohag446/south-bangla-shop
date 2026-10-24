@@ -1,0 +1,106 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>News & Industry Insights | South Bangla Computers</title>
+  <meta name="description" content="Stay updated with networking hardware reviews, ISP technical buying guides, and South Bangla Computers company announcements.">
+  <link rel="stylesheet" href="css/tokens.css">
+  <link rel="stylesheet" href="css/base.css">
+  <link rel="stylesheet" href="css/layout.css">
+  <link rel="stylesheet" href="css/components.css">
+  <link rel="stylesheet" href="css/print.css" media="print">
+</head>
+<body data-root="" data-page="news">
+  <a href="#main-content" class="sbc-skip-link">Skip to main content</a>
+  <div id="sbc-header"></div>
+
+  <main id="main-content" class="l-container" style="padding-top: var(--sp-6); padding-bottom: var(--sp-12);">
+    <!-- Breadcrumbs -->
+    <nav aria-label="Breadcrumb" class="sbc-breadcrumbs" style="margin-bottom: var(--sp-6);">
+      <ol style="display:flex;gap:var(--sp-2);list-style:none;padding:0;margin:0;font-size:var(--fs-xs);color:var(--c-text-muted);">
+        <li><a href="index.html">Home</a> <span aria-hidden="true">&rsaquo;</span></li>
+        <li style="color:var(--navy-900);font-weight:600;" aria-current="page">News & Insights</li>
+      </ol>
+    </nav>
+
+    <!-- Header Section -->
+    <div style="margin-bottom:var(--sp-8);max-width:720px;">
+      <span class="sbc-badge sbc-badge--tag" style="margin-bottom:8px;">Industry Insights & Updates</span>
+      <h1 style="font-size:var(--fs-h1);color:var(--navy-900);margin:0 0 8px;">News, Buying Guides & Channel Updates</h1>
+      <p style="color:var(--c-text-muted);font-size:var(--fs-base);margin:0;">
+        Technical analysis, product launch announcements, and buying recommendations from South Bangla Computers.
+      </p>
+    </div>
+
+    <!-- Category Filter Chips -->
+    <div style="display:flex;gap:8px;flex-wrap:wrap;margin-bottom:var(--sp-8);">
+      <button class="sbc-chip is-active js-news-filter" data-cat="all">All Articles (6)</button>
+      <button class="sbc-chip js-news-filter" data-cat="Buying Guide">Buying Guides</button>
+      <button class="sbc-chip js-news-filter" data-cat="Company News">Company News</button>
+      <button class="sbc-chip js-news-filter" data-cat="Technical Analysis">Technical Analysis</button>
+    </div>
+
+    <!-- News Grid Container -->
+    <div id="news-articles-grid" style="display:grid;grid-template-columns:repeat(auto-fill, minmax(320px, 1fr));gap:var(--sp-6);"></div>
+  </main>
+
+  <div id="sbc-footer"></div>
+  <div id="sbc-toast" role="status" aria-live="polite"></div>
+
+  <!-- Standard Prototype Scripts -->
+  <script defer src="js/config.js"></script>
+  <script defer src="js/i18n/en.js"></script>
+  <script defer src="js/core/util.js"></script>
+  <script defer src="js/core/storage.js"></script>
+  <script defer src="data/categories.js"></script>
+  <script defer src="data/brands.js"></script>
+  <script defer src="data/branches.js"></script>
+  <script defer src="data/news.js"></script>
+  <script defer src="data/faq.js"></script>
+  <script defer src="data/downloads.js"></script>
+  <script defer src="data/districts.js"></script>
+  <script defer src="data/configurator-rules.js"></script>
+  <script defer src="data/site-claims.js"></script>
+  <script defer src="data/users.js"></script>
+  <script defer src="data/products.js"></script>
+  <script defer src="js/core/store.js"></script>
+  <script defer src="js/core/validate.js"></script>
+  <script defer src="js/core/ui.js"></script>
+  <script defer src="js/layout.js"></script>
+  <script defer src="js/search.js"></script>
+  <script defer src="js/cards.js"></script>
+  <script defer src="js/demo.js"></script>
+
+  <script defer>
+    function initNews() {
+      const D = window.SBC_DATA || {};
+      const news = D.news || [];
+      const grid = document.getElementById("news-articles-grid");
+      if (!grid) return;
+
+      function renderNews(cat = "all") {
+        const filtered = news.filter(n => cat === "all" || n.category === cat);
+        grid.innerHTML = filtered.map(n => window.SBC.cards.newsCard(n)).join("");
+      }
+
+      document.querySelectorAll(".js-news-filter").forEach(btn => {
+        btn.addEventListener("click", () => {
+          document.querySelectorAll(".js-news-filter").forEach(b => b.classList.remove("is-active"));
+          btn.classList.add("is-active");
+          renderNews(btn.dataset.cat);
+        });
+      });
+
+      renderNews("all");
+    }
+
+    if (document.readyState !== "loading" && window.SBC && window.SBC.isReady) {
+      initNews();
+    } else {
+      window.addEventListener("SBC:ready", initNews);
+      document.addEventListener("DOMContentLoaded", () => setTimeout(initNews, 50));
+    }
+  </script>
+</body>
+</html>

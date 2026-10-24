@@ -1,0 +1,310 @@
+﻿<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Request a B2B Quotation | South Bangla Computers</title>
+  <meta name="description" content="Submit formal tenders, enterprise network RFPs, or bulk hardware quotation requests to the South Bangla Computers commercial sales team.">
+  <link rel="stylesheet" href="css/tokens.css">
+  <link rel="stylesheet" href="css/base.css">
+  <link rel="stylesheet" href="css/layout.css">
+  <link rel="stylesheet" href="css/components.css">
+  <link rel="stylesheet" href="css/print.css" media="print">
+</head>
+<body data-root="" data-page="quote">
+  <a href="#main-content" class="sbc-skip-link">Skip to main content</a>
+  <div id="sbc-header"></div>
+
+  <!-- ========================================================================
+       CONSISTENT GLOBAL FULL-WIDTH BANNER DESIGN (Commercial Quotations Theme)
+       ======================================================================== -->
+  <section class="sbc-page-banner sbc-page-banner--quote" aria-label="Commercial Quotation Banner">
+    <div class="sbc-page-banner__inner l-container">
+      <div class="sbc-page-banner__content">
+        <nav class="sbc-page-banner__crumb" aria-label="Breadcrumb">
+          <a href="index.html">Home</a>
+          <span class="sbc-page-banner__crumb-sep">/</span>
+          <span class="sbc-page-banner__crumb-current">Request a Quote</span>
+        </nav>
+        <h1 class="sbc-page-banner__title">
+          <span class="sbc-page-banner__title-line1">Corporate Tender &amp;</span>
+          <span class="sbc-page-banner__title-line2">Commercial Quotations (RFQ)</span>
+        </h1>
+        <p class="sbc-page-banner__desc">
+          Submit your enterprise network bill of materials, tender specifications, or bulk dealer procurement requirements for authorized distributor pricing and official manufacturer warranties.
+        </p>
+        <div class="sbc-page-banner__actions">
+          <a href="#quote-form" class="sbc-banner-btn sbc-banner-btn--primary">
+            Fill RFQ Form &darr;
+          </a>
+          <a href="configurator.html" class="sbc-banner-btn sbc-banner-btn--secondary">
+            Use Network Configurator
+          </a>
+        </div>
+      </div>
+          <h3 class="sbc-banner-tech-card__title">Direct Tender &amp; Project Quotes</h3>
+          <ul class="sbc-banner-tech-card__list">
+            <li class="sbc-banner-tech-card__item">
+              <svg class="sbc-icon sbc-icon--xs" aria-hidden="true"><use href="#icon-check"></use></svg>
+              <span><strong>Official VAT/Challan:</strong> 100% Tax &amp; Customs compliant</span>
+            </li>
+            <li class="sbc-banner-tech-card__item">
+              <svg class="sbc-icon sbc-icon--xs" aria-hidden="true"><use href="#icon-check"></use></svg>
+              <span><strong>Manufacturer MAF:</strong> Manufacturer Authorization Letters</span>
+            </li>
+            <li class="sbc-banner-tech-card__item">
+              <svg class="sbc-icon sbc-icon--xs" aria-hidden="true"><use href="#icon-check"></use></svg>
+              <span><strong>Tier-1 Pricing:</strong> Tiered discounts for volume purchase</span>
+            </li>
+            <li class="sbc-banner-tech-card__item">
+              <svg class="sbc-icon sbc-icon--xs" aria-hidden="true"><use href="#icon-check"></use></svg>
+              <span><strong>Fast Turnaround:</strong> Verified quotation within 4 business hours</span>
+            </li>
+          </ul>
+          <div class="sbc-banner-tech-card__metric-grid">
+            <div class="sbc-banner-tech-card__metric">
+              <span class="sbc-banner-tech-card__metric-val">&lt; 4 hrs</span>
+              <span class="sbc-banner-tech-card__metric-lbl">Quote Delivery</span>
+            </div>
+            <div class="sbc-banner-tech-card__metric">
+              <span class="sbc-banner-tech-card__metric-val">100%</span>
+              <span class="sbc-banner-tech-card__metric-lbl">VAT &amp; Tax Challan</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <main id="main-content" class="l-container" style="padding-bottom: var(--sp-12);">
+    <div style="max-width: 840px; margin: 0 auto;">
+
+      <!-- Quote Form Box -->
+      <div style="background:#fff; border:1px solid var(--gray-200); border-radius:var(--r-lg); padding:var(--sp-8); box-shadow:var(--sh-sm);">
+        <form id="quote-form" novalidate>
+          <div style="display:grid; grid-template-columns:1fr 1fr; gap:var(--sp-4); margin-bottom:var(--sp-4);">
+            <div class="sbc-form-group">
+              <label for="q-org" class="sbc-label sbc-label--required">Organization / Company Name:</label>
+              <input type="text" id="q-org" class="sbc-input" required placeholder="e.g. Apex Fiber Network Ltd.">
+              <span class="sbc-input-error" id="q-org-err"></span>
+            </div>
+            <div class="sbc-form-group">
+              <label for="q-person" class="sbc-label sbc-label--required">Contact Person & Designation:</label>
+              <input type="text" id="q-person" class="sbc-input" required placeholder="e.g. Rafiqul Islam, IT Director">
+              <span class="sbc-input-error" id="q-person-err"></span>
+            </div>
+          </div>
+
+          <div style="display:grid; grid-template-columns:1fr 1fr; gap:var(--sp-4); margin-bottom:var(--sp-4);">
+            <div class="sbc-form-group">
+              <label for="q-phone" class="sbc-label sbc-label--required">Mobile Number (BD 11-digit):</label>
+              <input type="tel" id="q-phone" class="sbc-input" required placeholder="01XXXXXXXXX">
+              <span class="sbc-input-error" id="q-phone-err"></span>
+            </div>
+            <div class="sbc-form-group">
+              <label for="q-email" class="sbc-label sbc-label--required">Official Email Address:</label>
+              <input type="email" id="q-email" class="sbc-input" required placeholder="e.g. procurement@apexfiber.com">
+              <span class="sbc-input-error" id="q-email-err"></span>
+            </div>
+          </div>
+
+          <div style="display:grid; grid-template-columns:1fr 1fr; gap:var(--sp-4); margin-bottom:var(--sp-4);">
+            <div class="sbc-form-group">
+              <label for="q-district" class="sbc-label sbc-label--required">Project District / Location:</label>
+              <select id="q-district" class="sbc-select">
+                <option value="Dhaka">Dhaka</option>
+                <option value="Chattogram">Chattogram</option>
+                <option value="Khulna">Khulna</option>
+                <option value="Rajshahi">Rajshahi</option>
+                <option value="Sylhet">Sylhet</option>
+                <option value="Barishal">Barishal</option>
+                <option value="Rangpur">Rangpur</option>
+                <option value="Mymensingh">Mymensingh</option>
+              </select>
+            </div>
+            <div class="sbc-form-group">
+              <label for="q-timeline" class="sbc-label">Estimated Procurement Timeline:</label>
+              <select id="q-timeline" class="sbc-select">
+                <option value="Immediate (Within 7 Days)">Immediate (Within 7 Days)</option>
+                <option value="15 to 30 Days">15 to 30 Days</option>
+                <option value="Quarterly Budget Planning">Quarterly Budget Planning</option>
+              </select>
+            </div>
+          </div>
+
+          <div class="sbc-form-group" style="margin-bottom:var(--sp-4);">
+            <label class="sbc-label sbc-label--required">Hardware Categories Needed:</label>
+            <div style="display:grid; grid-template-columns:repeat(auto-fit, minmax(200px, 1fr)); gap:8px; margin-top:6px;">
+              <label class="sbc-checkbox-label">
+                <input type="checkbox" name="q-cats" value="Wi-Fi Routers & Access Points" checked>
+                <span>Wi-Fi Routers & Access Points</span>
+              </label>
+              <label class="sbc-checkbox-label">
+                <input type="checkbox" name="q-cats" value="PoE & Managed Switches" checked>
+                <span>PoE & Managed Switches</span>
+              </label>
+              <label class="sbc-checkbox-label">
+                <input type="checkbox" name="q-cats" value="GPON / EPON OLT & ONUs">
+                <span>GPON / EPON OLT & ONUs</span>
+              </label>
+              <label class="sbc-checkbox-label">
+                <input type="checkbox" name="q-cats" value="Online UPS & Inverters">
+                <span>Online UPS & Inverters</span>
+              </label>
+              <label class="sbc-checkbox-label">
+                <input type="checkbox" name="q-cats" value="Fiber Cables & Passive Accessories">
+                <span>Fiber Cables & Accessories</span>
+              </label>
+              <label class="sbc-checkbox-label">
+                <input type="checkbox" name="q-cats" value="CCTV & Surveillance">
+                <span>CCTV & Surveillance</span>
+              </label>
+            </div>
+          </div>
+
+          <div class="sbc-form-group" style="margin-bottom:var(--sp-6);">
+            <label for="q-details" class="sbc-label sbc-label--required">Product Models, Quantities, & Technical Specifications:</label>
+            <textarea id="q-details" class="sbc-textarea" rows="4" required placeholder="Please list specific model numbers (e.g., 20x Tenda TEG1116P, 5x BDCOM GPON OLT) or performance requirements..."></textarea>
+            <span class="sbc-input-error" id="q-details-err"></span>
+          </div>
+
+          <div style="background:var(--gray-50); border:1px dashed var(--gray-300); border-radius:var(--r-md); padding:16px; margin-bottom:var(--sp-6);">
+            <label class="sbc-label" style="margin-bottom:4px;">Attach Tender Document / Bill of Materials (Optional Simulation):</label>
+            <input type="file" id="q-file" style="font-size:12px; color:var(--c-text-muted);">
+            <div style="font-size:11px; color:var(--c-text-muted); margin-top:4px;">Accepted formats: PDF, XLSX, DOCX (Max 15MB)</div>
+          </div>
+
+          <button type="submit" class="sbc-btn sbc-btn--primary sbc-btn--lg sbc-btn--full">
+            Submit Quotation Request &rarr;
+          </button>
+        </form>
+      </div>
+
+      <!-- Enterprise Direct Assistance Strip -->
+      <div style="margin-top:var(--sp-8); text-align:center; padding:16px; background:#F8FAFC; border-radius:var(--r-md); border:1px solid var(--gray-200);">
+        <p style="margin:0; font-size:13px; color:var(--c-text-secondary);">
+          Need immediate urgent pricing for an ongoing government or banking tender? Call our B2B hotline:
+          <strong style="color:var(--navy-900); margin-left:4px;">01973009007 / 01973009017</strong>
+        </p>
+      </div>
+    </div>
+  </main>
+
+  <div id="sbc-footer"></div>
+  <div id="sbc-toast" role="status" aria-live="polite"></div>
+
+  <!-- Standard Prototype Scripts -->
+  <script defer src="js/config.js"></script>
+  <script defer src="js/i18n/en.js"></script>
+  <script defer src="js/core/util.js"></script>
+  <script defer src="js/core/storage.js"></script>
+  <script defer src="data/categories.js"></script>
+  <script defer src="data/brands.js"></script>
+  <script defer src="data/branches.js"></script>
+  <script defer src="data/news.js"></script>
+  <script defer src="data/faq.js"></script>
+  <script defer src="data/downloads.js"></script>
+  <script defer src="data/districts.js"></script>
+  <script defer src="data/configurator-rules.js"></script>
+  <script defer src="data/site-claims.js"></script>
+  <script defer src="data/users.js"></script>
+  <script defer src="data/products.js"></script>
+  <script defer src="js/core/store.js"></script>
+  <script defer src="js/core/validate.js"></script>
+  <script defer src="js/core/ui.js"></script>
+  <script defer src="js/layout.js"></script>
+  <script defer src="js/search.js"></script>
+  <script defer src="js/cards.js"></script>
+  <script defer src="js/demo.js"></script>
+
+  <script defer>
+    window.addEventListener("SBC:ready", function () {
+      const util = window.SBC.util;
+      const validate = window.SBC.validate;
+      const ui = window.SBC.ui;
+
+      const form = document.getElementById("quote-form");
+      if (!form) return;
+
+      form.addEventListener("submit", function (e) {
+        e.preventDefault();
+
+        const org = document.getElementById("q-org").value.trim();
+        const person = document.getElementById("q-person").value.trim();
+        const phone = document.getElementById("q-phone").value.trim();
+        const email = document.getElementById("q-email").value.trim();
+        const details = document.getElementById("q-details").value.trim();
+
+        let hasError = false;
+
+        if (!org) {
+          document.getElementById("q-org-err").textContent = "Organization name is required";
+          hasError = true;
+        } else {
+          document.getElementById("q-org-err").textContent = "";
+        }
+
+        if (!person) {
+          document.getElementById("q-person-err").textContent = "Contact person is required";
+          hasError = true;
+        } else {
+          document.getElementById("q-person-err").textContent = "";
+        }
+
+        if (!validate.isBdPhone(phone)) {
+          document.getElementById("q-phone-err").textContent = "Enter a valid 11-digit Bangladeshi mobile number (013–019)";
+          hasError = true;
+        } else {
+          document.getElementById("q-phone-err").textContent = "";
+        }
+
+        if (!validate.isEmail(email)) {
+          document.getElementById("q-email-err").textContent = "Enter a valid email address";
+          hasError = true;
+        } else {
+          document.getElementById("q-email-err").textContent = "";
+        }
+
+        if (!details) {
+          document.getElementById("q-details-err").textContent = "Please specify product requirements or models";
+          hasError = true;
+        } else {
+          document.getElementById("q-details-err").textContent = "";
+        }
+
+        if (hasError) return;
+
+        const refNo = `RFQ-${Math.floor(100000 + Math.random() * 900000)}`;
+
+        ui.modal({
+          title: "Quotation Request Submitted",
+          body: `
+            <div style="text-align:center;padding:16px 0;">
+              <div style="color:var(--green-700);margin-bottom:12px;">${ui.icon("check-circle", "xl")}</div>
+              <h3 style="font-size:18px;color:var(--navy-900);margin-bottom:8px;">Thank You, ${util.esc(person)}</h3>
+              <p style="font-size:14px;color:var(--c-text-secondary);margin-bottom:16px;">
+                Your corporate RFQ reference is <strong style="color:var(--navy-900);">${refNo}</strong>.
+              </p>
+              <div style="background:var(--gray-50);border:1px solid var(--gray-200);border-radius:var(--r-md);padding:14px;font-size:13px;text-align:left;margin-bottom:20px;">
+                <div><strong>Organization:</strong> ${util.esc(org)}</div>
+                <div><strong>Contact:</strong> ${util.esc(phone)} &bull; ${util.esc(email)}</div>
+                <div><strong>Status:</strong> Routed to South Bangla Computers Enterprise Sales Desk</div>
+              </div>
+              <p style="font-size:12px;color:var(--c-text-muted);">
+                Our account manager will review inventory availability and contact you with an official stamped quotation.
+              </p>
+            </div>
+          `,
+          footer: `
+            <button class="sbc-btn sbc-btn--primary sbc-btn--full" onclick="window.SBC.ui.closeModal();window.location.href='index.html';">
+              Done & Return Home
+            </button>
+          `
+        });
+
+        form.reset();
+      });
+    });
+  </script>
+</body>
+</html>

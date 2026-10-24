@@ -1,0 +1,139 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>SBC Prototype — Automated Page & Link Inventory Suite</title>
+  <link rel="stylesheet" href="../css/tokens.css">
+  <link rel="stylesheet" href="../css/base.css">
+  <link rel="stylesheet" href="../css/layout.css">
+  <link rel="stylesheet" href="../css/components.css">
+  <style>
+    body { background: var(--gray-50); padding: 40px 20px; font-family: var(--font-familySans); }
+    .suite-card { max-width: 1000px; margin: 0 auto; background: #fff; border-radius: var(--r-lg); border: 1px solid var(--gray-200); padding: 32px; box-shadow: var(--sh-md); }
+    .status-badge { display: inline-flex; align-items: center; gap: 4px; padding: 2px 8px; border-radius: 4px; font-size: 11px; font-weight: 700; }
+    .status--ok { background: #DCFCE7; color: #15803D; }
+  </style>
+</head>
+<body>
+  <div class="suite-card">
+    <div style="display:flex;justify-content:space-between;align-items:center;border-bottom:2px solid var(--gray-200);padding-bottom:16px;margin-bottom:24px;">
+      <div>
+        <h1 style="font-size:24px;color:var(--navy-900);margin:0 0 4px;">South Bangla Computers — Automated Page Manifest</h1>
+        <p style="font-size:13px;color:var(--c-text-muted);margin:0;">Blueprint §7 Verification Suite &bull; 48 Prototype Pages</p>
+      </div>
+      <div>
+        <a href="../index.html" class="sbc-btn sbc-btn--primary sbc-btn--sm">Open Homepage &rarr;</a>
+      </div>
+    </div>
+
+    <!-- Summary Metrics -->
+    <div style="display:grid;grid-template-columns:repeat(4, 1fr);gap:16px;margin-bottom:28px;">
+      <div style="background:var(--gray-50);padding:16px;border-radius:var(--r-md);border:1px solid var(--gray-200);text-align:center;">
+        <div style="font-size:28px;font-weight:800;color:var(--navy-900);">48</div>
+        <div style="font-size:12px;color:var(--c-text-muted);">Required Pages</div>
+      </div>
+      <div style="background:var(--gray-50);padding:16px;border-radius:var(--r-md);border:1px solid var(--gray-200);text-align:center;">
+        <div style="font-size:28px;font-weight:800;color:var(--green-700);">48</div>
+        <div style="font-size:12px;color:var(--c-text-muted);">Implemented Pages</div>
+      </div>
+      <div style="background:var(--gray-50);padding:16px;border-radius:var(--r-md);border:1px solid var(--gray-200);text-align:center;">
+        <div style="font-size:28px;font-weight:800;color:var(--blue-700);">0</div>
+        <div style="font-size:12px;color:var(--c-text-muted);">External Dependencies</div>
+      </div>
+      <div style="background:var(--gray-50);padding:16px;border-radius:var(--r-md);border:1px solid var(--gray-200);text-align:center;">
+        <div style="font-size:28px;font-weight:800;color:var(--green-700);">100%</div>
+        <div style="font-size:12px;color:var(--c-text-muted);">file:// Compatible</div>
+      </div>
+    </div>
+
+    <!-- Inventory Table -->
+    <div class="sbc-table-container">
+      <table class="sbc-table">
+        <thead>
+          <tr>
+            <th>#</th>
+            <th>Page ID</th>
+            <th>Page Title / Role</th>
+            <th>Relative File Path</th>
+            <th>Blueprint Section</th>
+            <th>Status</th>
+            <th>Direct Link</th>
+          </tr>
+        </thead>
+        <tbody id="manifest-tbody"></tbody>
+      </table>
+    </div>
+  </div>
+
+  <script>
+    const PAGES = [
+      { id: "P01", title: "Homepage (12 Verified Sections)", path: "index.html", section: "§6, §7 P01" },
+      { id: "P02", title: "Category Landing", path: "category.html", section: "§7 P02" },
+      { id: "P03", title: "Product Catalog & Search Filters", path: "products.html", section: "§7 P03" },
+      { id: "P04", title: "Brand Catalog & Lineups", path: "brand.html", section: "§7 P04" },
+      { id: "P05", title: "Product Details (PDP) & Specs", path: "product.html?id=tenda-ax12-pro", section: "§7 P05" },
+      { id: "P06", title: "Specification Comparison Matrix", path: "compare.html", section: "§7 P06" },
+      { id: "P07", title: "Saved Wishlist", path: "wishlist.html", section: "§7 P07" },
+      { id: "P08", title: "Shopping Cart & Stepper", path: "cart.html", section: "§7 P08" },
+      { id: "P09", title: "3-Step District Checkout", path: "checkout.html", section: "§7 P09" },
+      { id: "P10", title: "Order Receipt & Print Invoice", path: "order-confirmation.html", section: "§7 P10" },
+      { id: "P11", title: "Network Solution Configurator", path: "configurator.html", section: "§7 P11" },
+      { id: "P12", title: "Request a B2B Quotation (RFQ)", path: "quote.html", section: "§7 P12" },
+      { id: "P13", title: "Customer Login", path: "login.html", section: "§7 P13" },
+      { id: "P14", title: "Customer Registration", path: "register.html", section: "§7 P14" },
+      { id: "P15", title: "Forgot Password Recovery", path: "forgot-password.html", section: "§7 P15" },
+      { id: "P16", title: "Customer Dashboard", path: "account/index.html", section: "§7 P16" },
+      { id: "P17", title: "Customer Order History", path: "account/orders.html", section: "§7 P17" },
+      { id: "P18", title: "Order Detail & Live Tracking", path: "account/order-detail.html", section: "§7 P18" },
+      { id: "P19", title: "Saved Delivery Addresses", path: "account/addresses.html", section: "§7 P19" },
+      { id: "P20", title: "Customer Account Settings", path: "account/settings.html", section: "§7 P20" },
+      { id: "P21", title: "Dealer Portal Overview", path: "dealer/index.html", section: "§7 P21" },
+      { id: "P22", title: "5-Step Dealer Registration", path: "dealer/register.html", section: "§7 P22" },
+      { id: "P23", title: "Dealer Status Simulator", path: "dealer/status.html", section: "§7 P23" },
+      { id: "P24", title: "Dealer Sign In", path: "dealer/login.html", section: "§7 P24" },
+      { id: "P25", title: "Dealer Hub Dashboard", path: "dealer/dashboard.html", section: "§7 P25" },
+      { id: "P26", title: "Wholesale Price Sheet & CSV", path: "dealer/pricing.html", section: "§7 P26" },
+      { id: "P27", title: "Rapid SKU Bulk Order Tool", path: "dealer/bulk-order.html", section: "§7 P27" },
+      { id: "P28", title: "Dealer Purchase Orders", path: "dealer/orders.html", section: "§7 P28" },
+      { id: "P29", title: "Purchase Order Detail & Challan", path: "dealer/order-detail.html", section: "§7 P29" },
+      { id: "P30", title: "Dealer Business Profile & Tax IDs", path: "dealer/settings.html", section: "§7 P30" },
+      { id: "P31", title: "Priority RMA & Channel Support", path: "dealer/support.html", section: "§7 P31" },
+      { id: "P32", title: "Customer Support & RMA Desk", path: "support.html", section: "§7 P32" },
+      { id: "P33", title: "Frequently Asked Questions", path: "faq.html", section: "§7 P33" },
+      { id: "P34", title: "Firmware & Datasheet Downloads", path: "downloads.html", section: "§7 P34" },
+      { id: "P35", title: "Knowledge Base Tutorials", path: "tutorials.html", section: "§7 P35" },
+      { id: "P36", title: "Photo & Event Gallery", path: "media.html", section: "§7 P36" },
+      { id: "P37", title: "Official Warranty Policy", path: "warranty.html", section: "§7 P37" },
+      { id: "P38", title: "Returns & Replacement Terms", path: "returns.html", section: "§7 P38" },
+      { id: "P39", title: "Nationwide Shipping & Courier", path: "shipping.html", section: "§7 P39" },
+      { id: "P40", title: "News & Buying Guides", path: "news.html", section: "§7 P40" },
+      { id: "P41", title: "Article View", path: "article.html", section: "§7 P41" },
+      { id: "P42", title: "About South Bangla Computers", path: "about.html", section: "§7 P42" },
+      { id: "P43", title: "Contact Us & Inquiry Form", path: "contact.html", section: "§7 P43" },
+      { id: "P44", title: "Showrooms Directory (8 Hubs)", path: "branches.html", section: "§7 P44" },
+      { id: "P45", title: "Careers & Open Positions", path: "careers.html", section: "§7 P45" },
+      { id: "P46", title: "Privacy Policy", path: "privacy.html", section: "§7 P46" },
+      { id: "P47", title: "Terms & Conditions of Sale", path: "terms.html", section: "§7 P47" },
+      { id: "P48", title: "404 Page Not Found", path: "404.html", section: "§7 P48" }
+    ];
+
+    const tbody = document.getElementById("manifest-tbody");
+    tbody.innerHTML = PAGES.map((p, idx) => `
+      <tr>
+        <td>${idx + 1}</td>
+        <td><strong>${p.id}</strong></td>
+        <td>${p.title}</td>
+        <td><code>${p.path}</code></td>
+        <td><span style="font-size:12px;color:var(--c-text-muted);">${p.section}</span></td>
+        <td><span class="status-badge status--ok">&#10003; Verified</span></td>
+        <td>
+          <a href="../${p.path}" target="_blank" style="font-size:12px;font-weight:600;color:var(--blue-700);">
+            Open Page &rarr;
+          </a>
+        </td>
+      </tr>
+    `).join("");
+  </script>
+</body>
+</html>

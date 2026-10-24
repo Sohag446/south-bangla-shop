@@ -1,0 +1,133 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Bulk Order Rapid SKU Entry | South Bangla Computers</title>
+  <meta name="description" content="Paste model numbers and quantities or upload CSV file for rapid B2B wholesale order entry.">
+  <link rel="stylesheet" href="../css/tokens.css">
+  <link rel="stylesheet" href="../css/base.css">
+  <link rel="stylesheet" href="../css/layout.css">
+  <link rel="stylesheet" href="../css/components.css">
+  <link rel="stylesheet" href="../css/print.css" media="print">
+  <style>
+    .dealer-layout {
+      display: grid;
+      grid-template-columns: 260px 1fr;
+      gap: var(--sp-8);
+      align-items: start;
+    }
+    @media (max-width: 900px) {
+      .dealer-layout {
+        grid-template-columns: 1fr;
+      }
+    }
+    .dealer-nav-link {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+      padding: 10px 14px;
+      border-radius: var(--r-md);
+      color: var(--navy-800);
+      font-size: 14px;
+      font-weight: 500;
+      text-decoration: none;
+      transition: background var(--trans-fast);
+    }
+    .dealer-nav-link:hover {
+      background: var(--gray-100);
+    }
+    .dealer-nav-link.is-active {
+      background: #F0FDF4;
+      color: var(--green-800);
+      font-weight: 700;
+    }
+  </style>
+</head>
+<body data-root="../" data-page="dealer">
+  <a href="#main-content" class="sbc-skip-link">Skip to main content</a>
+  <div id="sbc-header"></div>
+
+  <main id="main-content" class="l-container" style="padding-top: var(--sp-6); padding-bottom: var(--sp-12);">
+    <!-- Breadcrumbs -->
+    <nav aria-label="Breadcrumb" class="sbc-breadcrumbs" style="margin-bottom: var(--sp-6);">
+      <ol style="display:flex;gap:var(--sp-2);list-style:none;padding:0;margin:0;font-size:var(--fs-xs);color:var(--c-text-muted);">
+        <li><a href="../index.html">Home</a> <span aria-hidden="true">&rsaquo;</span></li>
+        <li><a href="dashboard.html">Dealer Hub</a> <span aria-hidden="true">&rsaquo;</span></li>
+        <li style="color:var(--navy-900);font-weight:600;" aria-current="page">Bulk Order Tool</li>
+      </ol>
+    </nav>
+
+    <div class="dealer-layout">
+      <!-- Dealer Sidebar Nav -->
+      <aside style="background:#fff;border:1px solid var(--gray-200);border-radius:var(--r-lg);padding:var(--sp-4);">
+        <div style="padding:12px;border-bottom:1px solid var(--gray-200);margin-bottom:8px;">
+          <div class="sbc-badge sbc-badge--in-stock" style="margin-bottom:6px;font-size:10px;">TIER 1 PLATINUM</div>
+          <strong style="display:block;font-size:15px;color:var(--navy-900);">Delta Networks Ltd.</strong>
+          <span style="font-size:12px;color:var(--c-text-muted);">Dealer ID: SBC-DLR-0891</span>
+        </div>
+        <nav style="display:flex;flex-direction:column;gap:4px;">
+          <a href="dashboard.html" class="dealer-nav-link">Overview Dashboard</a>
+          <a href="pricing.html" class="dealer-nav-link">Wholesale Price Sheet</a>
+          <a href="bulk-order.html" class="dealer-nav-link is-active">Bulk Order Tool (SKU)</a>
+          <a href="orders.html" class="dealer-nav-link">Purchase Orders</a>
+          <a href="settings.html" class="dealer-nav-link">Business Profile</a>
+          <a href="support.html" class="dealer-nav-link">Priority RMA Support</a>
+          <div style="border-top:1px solid var(--gray-200);margin:8px 0;"></div>
+          <a href="../products.html" class="dealer-nav-link">Browse Full Catalog</a>
+          <a href="#" class="dealer-nav-link js-logout" style="color:var(--red-700);">Sign Out</a>
+        </nav>
+      </aside>
+
+      <!-- Bulk Order Content Mount (Managed by js/dealer.js) -->
+      <section>
+        <div style="margin-bottom:var(--sp-6);">
+          <h1 style="font-size:var(--fs-h2);color:var(--navy-900);margin:0 0 4px;">Rapid SKU Bulk Order Tool</h1>
+          <p style="color:var(--c-text-muted);font-size:var(--fs-sm);margin:0;">
+            Paste hardware model numbers with comma-separated quantities or upload a CSV purchase schedule.
+          </p>
+        </div>
+
+        <div id="dealer-bulk-order-container"></div>
+      </section>
+    </div>
+  </main>
+
+  <div id="sbc-footer"></div>
+  <div id="sbc-toast" role="status" aria-live="polite"></div>
+
+  <!-- Standard Prototype Scripts -->
+  <script defer src="../js/config.js"></script>
+  <script defer src="../js/i18n/en.js"></script>
+  <script defer src="../js/core/util.js"></script>
+  <script defer src="../js/core/storage.js"></script>
+  <script defer src="../data/categories.js"></script>
+  <script defer src="../data/brands.js"></script>
+  <script defer src="../data/branches.js"></script>
+  <script defer src="../data/news.js"></script>
+  <script defer src="../data/faq.js"></script>
+  <script defer src="../data/downloads.js"></script>
+  <script defer src="../data/districts.js"></script>
+  <script defer src="../data/configurator-rules.js"></script>
+  <script defer src="../data/site-claims.js"></script>
+  <script defer src="../data/users.js"></script>
+  <script defer src="../data/products.js"></script>
+  <script defer src="../js/core/store.js"></script>
+  <script defer src="../js/core/validate.js"></script>
+  <script defer src="../js/core/ui.js"></script>
+  <script defer src="../js/layout.js"></script>
+  <script defer src="../js/search.js"></script>
+  <script defer src="../js/cards.js"></script>
+  <script defer src="../js/dealer.js"></script>
+  <script defer src="../js/demo.js"></script>
+
+  <script defer>
+    window.addEventListener("SBC:ready", function () {
+      const containerEl = document.getElementById("dealer-bulk-order-container");
+      if (window.SBC && window.SBC.dealer) {
+        window.SBC.dealer.initBulkOrder(containerEl);
+      }
+    });
+  </script>
+</body>
+</html>

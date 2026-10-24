@@ -1,0 +1,236 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Product Details | South Bangla Computers</title>
+  <meta name="description" content="View specifications, warranty coverage, and retail pricing for genuine networking and computer peripherals at South Bangla Computers.">
+  <link rel="canonical" href="https://www.southbanglabd.com/products">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="css/tokens.css">
+  <link rel="stylesheet" href="css/base.css">
+  <link rel="stylesheet" href="css/components.css">
+  <link rel="stylesheet" href="css/layout.css">
+  <link rel="stylesheet" href="css/glamora-shop.css">
+  <link rel="stylesheet" href="css/product-detail.css">
+</head>
+<body class="pdp-page" data-root="" data-page="product">
+
+  <!-- Asymmetric Organic Background Curve (Dwella-inspired) -->
+  <div class="pdp-backdrop-curve" aria-hidden="true"></div>
+
+  <!-- ========================================================================
+       UNIFIED HEADER (SOUTH BANGLA COMPUTER GLOBAL DESIGN SYSTEM)
+       ======================================================================== -->
+  <div id="sbc-header"></div>
+
+
+
+  <main class="pdp-container">
+    <!-- Breadcrumb -->
+    <nav class="pdp-breadcrumb" aria-label="Breadcrumb">
+      <a href="index.html">Home</a>
+      <span>&rsaquo;</span>
+      <a href="shop.html">Shop</a>
+      <span>&rsaquo;</span>
+      <strong id="pdp-crumb-title">Loading Product...</strong>
+    </nav>
+
+    <!-- ========================================================================
+         HERO SHOWCASE SECTION: GALLERY (LEFT) + DETAILS & ACTIONS (RIGHT)
+         ======================================================================== -->
+    <section class="pdp-showcase" aria-label="Product Showcase">
+      <!-- ── Left Column: Interactive Gallery (5 Thumbnails + Main Canvas) ── -->
+      <div class="pdp-gallery">
+        <!-- 5 Vertical Thumbnails -->
+        <div class="pdp-gallery__thumbs" id="pdp-gallery-thumbs">
+          <!-- Dynamically populated with 5 interactive thumbnails -->
+        </div>
+
+        <!-- Main Preview Image Frame -->
+        <div class="pdp-gallery__main">
+          <span class="pdp-gallery__badge">Official Warranty</span>
+          <img id="pdp-main-img" src="assets/img/placeholder-product.svg" alt="Product Main Image" loading="eager">
+        </div>
+      </div>
+
+      <!-- ── Right Column: Product Purchase & Details Panel ── -->
+      <div class="pdp-details">
+        <div class="pdp-details__brand-row">
+          <span class="pdp-details__brand-pill" id="pdp-brand-pill">BRAND</span>
+          <span class="pdp-details__sku" id="pdp-sku">SKU: SBC-0000</span>
+        </div>
+
+        <h1 class="pdp-details__title" id="pdp-title">Loading Product Title...</h1>
+
+        <!-- Rating & Reviews -->
+        <div class="pdp-details__rating-row">
+          <div class="pdp-details__stars" aria-label="4.9 out of 5 stars">
+            &#9733;&#9733;&#9733;&#9733;&#9733;
+          </div>
+          <span class="pdp-details__review-count" id="pdp-review-count">3,345 verified ratings</span>
+        </div>
+
+        <!-- Price -->
+        <div class="pdp-details__price-row">
+          <span class="pdp-details__price" id="pdp-price">৳ 0</span>
+          <span class="pdp-details__compare-price" id="pdp-compare-price" style="display:none;">৳ 0</span>
+          <span class="pdp-details__savings-pill" id="pdp-savings" style="display:none;">SAVE ৳ 0</span>
+        </div>
+
+        <!-- Color / Finish Swatches -->
+        <div class="pdp-swatches-section">
+          <span class="pdp-swatches-label" id="pdp-swatches-label">Colors</span>
+          <div class="pdp-swatches-list" id="pdp-swatches-list">
+            <!-- Dynamically populated swatches -->
+          </div>
+        </div>
+
+        <!-- Quantity, Add to Cart, Wishlist, Buy Now -->
+        <div class="pdp-actions-wrap">
+          <div class="pdp-actions-top-row">
+            <!-- Quantity Stepper -->
+            <div class="pdp-qty-stepper" aria-label="Quantity Selector">
+              <button type="button" class="pdp-qty-btn" id="pdp-qty-minus" aria-label="Decrease Quantity">&minus;</button>
+              <input type="text" class="pdp-qty-input" id="pdp-qty-input" value="1" readonly aria-label="Selected Quantity">
+              <button type="button" class="pdp-qty-btn" id="pdp-qty-plus" aria-label="Increase Quantity">&plus;</button>
+            </div>
+
+            <!-- Add To Cart (Tinted Soft Button) -->
+            <button type="button" class="pdp-btn-add-cart" id="pdp-btn-add-cart">
+              <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M6 2L3 6v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2V6l-3-4z"></path><line x1="3" y1="6" x2="21" y2="6"></line><path d="M16 10a4 4 0 0 1-8 0"></path></svg>
+              Add To Cart
+            </button>
+
+            <!-- Wishlist Heart Button -->
+            <button type="button" class="pdp-btn-wishlist" id="pdp-btn-wishlist" aria-label="Save to Wishlist">
+              <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z"></path></svg>
+            </button>
+          </div>
+
+          <!-- Buy Now Button (Full Width Bold Primary) -->
+          <button type="button" class="pdp-btn-buy-now" id="pdp-btn-buy-now">
+            Buy Now
+          </button>
+        </div>
+
+        <!-- Service Perks -->
+        <div class="pdp-perks-row">
+          <div class="pdp-perk-item">
+            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"></path></svg>
+            <span>Genuine Authorized</span>
+          </div>
+          <div class="pdp-perk-item">
+            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"></circle><polyline points="12 6 12 12 16 14"></polyline></svg>
+            <span>Fast Hub Dispatch</span>
+          </div>
+          <div class="pdp-perk-item">
+            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="1" y="3" width="15" height="13"></rect><polygon points="16 8 20 8 23 11 23 16 16 16 16 8"></polygon><circle cx="5.5" cy="18.5" r="2.5"></circle><circle cx="18.5" cy="18.5" r="2.5"></circle></svg>
+            <span>Nationwide Delivery</span>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ========================================================================
+         DESCRIPTION & DETAILS (2-COLUMN DWELLA SECTION)
+         ======================================================================== -->
+    <section class="pdp-info-grid" aria-label="Product Description & Included Items">
+      <!-- Left Column: Description -->
+      <div class="pdp-desc-col">
+        <h2 class="pdp-desc-heading">Description</h2>
+        <div id="pdp-description-text">
+          <!-- Dynamically populated rich description -->
+        </div>
+      </div>
+
+      <!-- Right Column: What's Included & Collapsible Accordions -->
+      <div class="pdp-included-box">
+        <h3 class="pdp-included-title">What's Included?</h3>
+        <ul class="pdp-included-list" id="pdp-included-list">
+          <!-- Dynamically populated list -->
+        </ul>
+
+        <!-- Collapsible Accordions Group -->
+        <div class="pdp-accordion-group">
+          <!-- Features Accordion -->
+          <div class="pdp-accordion-item">
+            <button type="button" class="pdp-accordion-toggle" aria-expanded="false" aria-controls="pdp-features-content">
+              <span>Features</span>
+              <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="6 9 12 15 18 9"></polyline></svg>
+            </button>
+            <div class="pdp-accordion-content" id="pdp-features-content">
+              <!-- Dynamically populated key feature bullets -->
+            </div>
+          </div>
+
+          <!-- Technical Specifications Accordion -->
+          <div class="pdp-accordion-item">
+            <button type="button" class="pdp-accordion-toggle" aria-expanded="false" aria-controls="pdp-specs-content">
+              <span>Technical Specifications</span>
+              <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="6 9 12 15 18 9"></polyline></svg>
+            </button>
+            <div class="pdp-accordion-content" id="pdp-specs-content">
+              <!-- Dynamically populated specs table -->
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ========================================================================
+         RELATED PRODUCTS SECTION (EXACTLY 3 PRODUCTS AS REQUESTED)
+         ======================================================================== -->
+    <section class="pdp-related-section" aria-label="Related Products">
+      <div class="pdp-related-header">
+        <div>
+          <h2 class="pdp-related-title">RELATED PRODUCTS</h2>
+          <p class="pdp-related-subtitle">Carefully curated hardware and peripherals from our authorized catalogue</p>
+        </div>
+        <a href="shop.html" style="font-size:13px; font-weight:700; color:var(--pdp-primary); text-decoration:none; display:inline-flex; align-items:center; gap:4px;">
+          View All &rsaquo;
+        </a>
+      </div>
+
+      <!-- 3-Column Luxury Product Cards Grid -->
+      <div class="pdp-related-grid" id="pdp-related-grid">
+        <!-- Dynamically populated with exactly 3 products -->
+      </div>
+    </section>
+  </main>
+
+  <!-- ========================================================================
+       FOOTER (GLAMORA LUXURY MINIMALIST FOOTER WITH WATERMARK)
+       ======================================================================== -->
+  <!-- ========================================================================
+       UNIFIED FOOTER (SOUTH BANGLA COMPUTER GLOBAL DESIGN SYSTEM)
+       ======================================================================== -->
+  <div id="sbc-footer"></div>
+
+  <div id="sbc-toast" role="status" aria-live="polite"></div>
+
+  <!-- Core Scripts -->
+  <script defer src="js/config.js"></script>
+  <script defer src="js/i18n/en.js"></script>
+  <script defer src="js/core/util.js"></script>
+  <script defer src="js/core/storage.js"></script>
+  <script defer src="data/categories.js"></script>
+  <script defer src="data/brands.js"></script>
+  <script defer src="data/shop-products.js"></script>
+  <script defer src="data/products.js"></script>
+  <script defer src="js/core/store.js"></script>
+  <script defer src="js/core/ui.js"></script>
+  <script defer src="js/layout.js"></script>
+  <script defer src="js/product-detail-controller.js"></script>
+
+  <script defer>
+    window.addEventListener("DOMContentLoaded", function () {
+      if (window.SBC && window.SBC.pdp) {
+        window.SBC.pdp.init();
+      }
+    });
+  </script>
+</body>
+</html>

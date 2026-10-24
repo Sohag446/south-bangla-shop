@@ -1,0 +1,18 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 400 400" width="100%" height="100%">
+  <rect width="400" height="400" fill="#F3F5F8" rx="8"/>
+  <g transform="translate(140, 130)" stroke="#94A3B8" stroke-width="3" fill="none" stroke-linecap="round" stroke-linejoin="round">
+    <rect x="0" y="40" width="120" height="70" rx="6" fill="#E2E8F0"/>
+    <line x1="20" y1="40" x2="10" y2="10"/>
+    <circle cx="10" cy="10" r="3" fill="#94A3B8"/>
+    <line x1="60" y1="40" x2="60" y2="5"/>
+    <circle cx="60" cy="5" r="3" fill="#94A3B8"/>
+    <line x1="100" y1="40" x2="110" y2="10"/>
+    <circle cx="110" cy="10" r="3" fill="#94A3B8"/>
+    <circle cx="25" cy="75" r="4" fill="#0B7A52"/>
+    <circle cx="45" cy="75" r="4" fill="#1558D6"/>
+    <circle cx="65" cy="75" r="4" fill="#1558D6"/>
+    <circle cx="85" cy="75" r="4" fill="#1558D6"/>
+  </g>
+  <text x="200" y="260" text-anchor="middle" font-family="system-ui, sans-serif" font-size="14" font-weight="600" fill="#64748B">South Bangla Computers</text>
+  <text x="200" y="280" text-anchor="middle" font-family="system-ui, sans-serif" font-size="11" fill="#94A3B8">Equipment Demonstration Image</text>
+</svg>
