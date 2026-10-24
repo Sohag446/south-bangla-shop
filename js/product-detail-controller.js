@@ -291,7 +291,9 @@ window.SBC.pdp = (function () {
       return `
         <article class="glam-card" data-product-id="${util.esc(prod.id)}">
           <div class="glam-card__media">
-            <img src="${util.esc(resolvedImg)}" alt="${util.esc(prod.name)}" loading="lazy" onerror="this.onerror=null;this.src='assets/img/placeholder-product.svg';">
+            <a href="product.html?id=${encodeURIComponent(prod.id)}" class="glam-card__img-link" title="${util.esc(prod.name)}">
+              <img src="${util.esc(resolvedImg)}" alt="${util.esc(prod.name)}" loading="lazy" onerror="this.onerror=null;this.src='assets/img/placeholder-product.svg';">
+            </a>
             <div class="glam-card__overlay">
               <button type="button" class="glam-card__action-btn js-add-cart-related" data-id="${util.esc(prod.id)}">
                 Add to Cart

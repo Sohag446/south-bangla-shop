@@ -411,7 +411,9 @@ window.SBC.shop = (function () {
     return `
       <article class="glam-card" data-product-id="${util.esc(p.id)}">
         <div class="glam-card__media">
-          <img src="${util.esc(resolvedImg)}" alt="${util.esc(p.name)}" loading="lazy" onerror="this.onerror=null;this.src='assets/img/placeholder-product.svg';">
+          <a href="product.html?id=${encodeURIComponent(p.id)}" class="glam-card__img-link" title="${util.esc(p.name)}">
+            <img src="${util.esc(resolvedImg)}" alt="${util.esc(p.name)}" loading="lazy" onerror="this.onerror=null;this.src='assets/img/placeholder-product.svg';">
+          </a>
           <div class="glam-card__overlay">
             <button type="button" class="glam-card__action-btn js-add-cart-glam" data-id="${util.esc(p.id)}">
               Add to Cart

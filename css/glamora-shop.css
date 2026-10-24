@@ -1037,6 +1037,16 @@ body.glam-shop-page {
   margin-bottom: 14px;
 }
 
+.glam-card__img-link {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+  height: 100%;
+  text-decoration: none;
+  cursor: pointer;
+}
+
 .glam-card__media img {
   max-width: 82%;
   max-height: 82%;
@@ -1059,6 +1069,7 @@ body.glam-shop-page {
   gap: 10px;
   opacity: 0;
   transition: opacity 0.2s ease;
+  pointer-events: none;
 }
 
 .glam-card:hover .glam-card__overlay {
@@ -1066,6 +1077,7 @@ body.glam-shop-page {
 }
 
 .glam-card__action-btn {
+  pointer-events: auto;
   background: #ffffff;
   color: #111827;
   border: none;

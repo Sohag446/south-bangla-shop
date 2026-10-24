@@ -1,4 +1,4 @@
-﻿<!doctype html>
+<!doctype html>
 <html lang="en">
 <head>
   <meta charset="utf-8">
@@ -301,9 +301,9 @@
               return `
                 <div class="wish-card" data-id="${util.esc(p.id)}">
                   <div>
-                    <div class="wish-card__media">
+                    <a href="product.html?id=${encodeURIComponent(p.id)}" class="wish-card__media" style="display:block;">
                       <img src="${util.esc(resolvedImg)}" alt="${util.esc(p.name)}" onerror="this.onerror=null;this.src='assets/img/placeholder-product.svg';">
-                    </div>
+                    </a>
                     <span class="wish-card__brand">${util.esc(p.brand || '')}</span>
                     <h3 class="wish-card__title">
                       <a href="product.html?id=${encodeURIComponent(p.id)}">${util.esc(p.name)}</a>
