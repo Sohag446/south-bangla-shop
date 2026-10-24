@@ -648,166 +648,242 @@
       box-shadow: 0 4px 10px rgba(0, 112, 186, 0.35);
     }
 
-    /* 3. Build Your Network Plan Banner (High Contrast + Purple Accent) */
+    /* 3. Build Your Network Plan Banner (Executive Soothing Light Theme) */
     .sbc-plan-section {
-      padding: 30px 0;
+      padding: 36px 0;
     }
 
-    .sbc-plan-banner {
-      background: radial-gradient(circle at 90% 15%, rgba(0, 149, 255, 0.18) 0%, transparent 60%),
-                  radial-gradient(circle at 10% 80%, rgba(34, 197, 94, 0.08) 0%, transparent 50%),
-                  linear-gradient(135deg, #050d18 0%, #091729 60%, #0c2038 100%);
-      border: 1px solid rgba(0, 149, 255, 0.35);
-      border-radius: 16px;
-      padding: 44px 50px;
-      color: #ffffff;
+    .sbc-plan-box {
+      background: linear-gradient(135deg, #f0f7ff 0%, #ffffff 50%, #f8fafc 100%);
+      border: 1px solid #dbeafe;
+      border-radius: 20px;
+      padding: 44px 40px;
+      color: #071526;
       position: relative;
       overflow: hidden;
-      display: grid;
-      grid-template-columns: 340px 1fr;
-      gap: 48px;
-      align-items: center;
-      box-shadow: 0 16px 40px rgba(5, 13, 24, 0.5), 0 0 24px rgba(0, 149, 255, 0.1);
+      box-shadow: 0 4px 24px rgba(15, 23, 42, 0.05);
     }
 
-    .sbc-plan-banner__bg-art {
-      position: absolute;
-      left: -60px;
-      top: -60px;
-      width: 380px;
-      height: 380px;
-      pointer-events: none;
-      opacity: 0.6;
-      z-index: 1;
-    }
-
-    .sbc-plan-banner__left {
+    .sbc-plan-box__top {
       position: relative;
       z-index: 2;
+      display: grid;
+      grid-template-columns: 1.25fr 1fr;
+      gap: 40px;
+      align-items: center;
+      padding-bottom: 32px;
+      border-bottom: 1px solid #e2e8f0;
+      margin-bottom: 30px;
     }
 
-    .sbc-plan-banner__title {
-      font-size: 32px;
+    .sbc-plan-status-pill {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      background: #eff6ff;
+      border: 1px solid #bfdbfe;
+      color: #1d4ed8;
+      font-size: 11.5px;
+      font-weight: 700;
+      letter-spacing: 0.5px;
+      text-transform: uppercase;
+      padding: 5px 14px;
+      border-radius: 9999px;
+      margin-bottom: 14px;
+    }
+
+    .sbc-plan-status-pill__pulse {
+      width: 7px;
+      height: 7px;
+      border-radius: 50%;
+      background: #2563eb;
+    }
+
+    .sbc-plan-box__title {
+      font-size: clamp(26px, 2.8vw, 34px);
       font-weight: 800;
-      color: #ffffff;
-      line-height: 1.18;
-      margin: 0 0 12px 0;
+      color: #071526;
+      line-height: 1.25;
+      margin: 0 0 14px 0;
       letter-spacing: -0.5px;
-      text-shadow: 0 2px 8px rgba(0, 0, 0, 0.4);
     }
 
-    .sbc-plan-banner__title-accent {
-      color: #0095ff;
-      text-shadow: 0 0 20px rgba(0, 149, 255, 0.4);
+    .sbc-plan-box__title-accent {
+      color: #0070ba;
     }
 
-    .sbc-plan-banner__desc {
+    .sbc-plan-box__desc {
       font-size: 14.5px;
-      color: #cbd5e1;
-      line-height: 1.6;
-      margin: 0 0 24px 0;
-      font-weight: 400;
+      color: #475569;
+      line-height: 1.65;
+      margin: 0;
+      max-width: 620px;
     }
 
-    .sbc-plan-banner__btn {
+    .sbc-plan-box__actions-wrap {
+      display: flex;
+      flex-direction: column;
+      gap: 18px;
+      align-items: flex-start;
+    }
+
+    .sbc-plan-box__actions {
+      display: flex;
+      align-items: center;
+      gap: 14px;
+      flex-wrap: wrap;
+    }
+
+    .sbc-plan-btn {
       display: inline-flex;
       align-items: center;
       gap: 10px;
-      background: #0095ff;
-      color: #ffffff !important;
-      padding: 13px 28px;
+      padding: 12px 24px;
       border-radius: 8px;
-      font-size: 14.5px;
+      font-size: 14px;
       font-weight: 700;
       text-decoration: none;
-      border: 1px solid #0095ff;
       transition: all 0.25s cubic-bezier(0.16, 1, 0.3, 1);
-      box-shadow: 0 4px 18px rgba(0, 149, 255, 0.45);
+      cursor: pointer;
+      line-height: 1;
     }
 
-    .sbc-plan-banner__btn:hover {
-      background: #0080db;
-      border-color: #0080db;
+    .sbc-plan-btn--primary {
+      background: #0070ba;
+      color: #ffffff !important;
+      border: 1px solid #0070ba;
+      box-shadow: 0 3px 12px rgba(0, 112, 186, 0.25);
+    }
+
+    .sbc-plan-btn--primary:hover {
+      background: #005a96;
+      border-color: #005a96;
       transform: translateY(-2px);
-      box-shadow: 0 8px 26px rgba(0, 149, 255, 0.6);
+      box-shadow: 0 6px 18px rgba(0, 112, 186, 0.35);
     }
 
-    .sbc-plan-banner__right {
-      position: relative;
-      z-index: 2;
+    .sbc-plan-btn--secondary {
+      background: #ffffff;
+      color: #071526 !important;
+      border: 1px solid #cbd5e1;
+      box-shadow: 0 1px 3px rgba(0, 0, 0, 0.04);
     }
 
-    .sbc-plan-steps {
-      display: flex;
-      align-items: flex-start;
-      justify-content: space-between;
-      gap: 8px;
-      position: relative;
+    .sbc-plan-btn--secondary:hover {
+      background: #f8fafc;
+      border-color: #94a3b8;
+      transform: translateY(-2px);
     }
 
-    .sbc-plan-step {
+    .sbc-plan-trust-pills {
       display: flex;
       flex-direction: column;
-      align-items: flex-start;
-      max-width: 135px;
+      gap: 8px;
     }
 
-    .sbc-plan-step__badge {
-      width: 24px;
-      height: 24px;
+    .sbc-plan-trust-item {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      font-size: 12.5px;
+      color: #475569;
+      font-weight: 500;
+    }
+
+    /* 4-Step Flow Grid */
+    .sbc-plan-flow {
+      position: relative;
+      z-index: 2;
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 18px;
+    }
+
+    .sbc-plan-card {
+      background: #ffffff;
+      border: 1px solid #e2e8f0;
+      border-radius: 14px;
+      padding: 22px 18px;
+      display: flex;
+      flex-direction: column;
+      transition: all 0.25s cubic-bezier(0.16, 1, 0.3, 1);
+      position: relative;
+      box-shadow: 0 2px 6px rgba(15, 23, 42, 0.03);
+    }
+
+    .sbc-plan-card:hover {
+      background: #ffffff;
+      border-color: #0070ba;
+      transform: translateY(-4px);
+      box-shadow: 0 10px 24px rgba(0, 112, 186, 0.08), 0 2px 6px rgba(15, 23, 42, 0.04);
+    }
+
+    .sbc-plan-card__header {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      margin-bottom: 16px;
+    }
+
+    .sbc-plan-card__num {
+      width: 30px;
+      height: 30px;
       border-radius: 50%;
       background: #0070ba;
       color: #ffffff;
-      font-size: 11.5px;
-      font-weight: 800;
+      font-size: 12.5px;
+      font-weight: 700;
       display: flex;
       align-items: center;
       justify-content: center;
-      margin-bottom: 12px;
-      box-shadow: 0 2px 10px rgba(0, 112, 186, 0.4);
     }
 
-    .sbc-plan-step__icon {
-      width: 48px;
-      height: 48px;
-      border-radius: 12px;
-      background: rgba(255, 255, 255, 0.08);
-      border: 1.5px solid rgba(0, 149, 255, 0.35);
+    .sbc-plan-card__icon-wrap {
+      width: 40px;
+      height: 40px;
+      border-radius: 10px;
+      background: #eff6ff;
+      border: 1px solid #bfdbfe;
       display: flex;
       align-items: center;
       justify-content: center;
-      color: #0095ff;
-      margin-bottom: 12px;
+      color: #0284c7;
       transition: all 0.2s ease;
     }
 
-    .sbc-plan-step:hover .sbc-plan-step__icon {
-      border-color: #0095ff;
-      background: rgba(0, 149, 255, 0.15);
+    .sbc-plan-card:hover .sbc-plan-card__icon-wrap {
+      background: #0070ba;
+      border-color: #0070ba;
+      color: #ffffff;
       transform: scale(1.05);
     }
 
-    .sbc-plan-step__title {
-      font-size: 14px;
+    .sbc-plan-card__title {
+      font-size: 15.5px;
       font-weight: 700;
-      color: #ffffff;
-      margin: 0 0 4px 0;
-      line-height: 1.3;
+      color: #071526;
+      margin: 0 0 8px 0;
+      line-height: 1.35;
     }
 
-    .sbc-plan-step__desc {
-      font-size: 11.5px;
-      color: #cbd5e1;
-      line-height: 1.45;
-      margin: 0;
+    .sbc-plan-card__desc {
+      font-size: 12.5px;
+      color: #64748b;
+      line-height: 1.55;
+      margin: 0 0 16px 0;
+      flex: 1;
     }
 
-    .sbc-plan-steps__arrow {
-      color: rgba(0, 149, 255, 0.45);
-      display: flex;
-      align-items: center;
-      margin-top: 50px;
-      flex-shrink: 0;
+    .sbc-plan-card__tag {
+      display: inline-block;
+      font-size: 11px;
+      font-weight: 600;
+      color: #0369a1;
+      background: #f0f9ff;
+      border: 1px solid #e0f2fe;
+      padding: 4px 10px;
+      border-radius: 6px;
+      width: fit-content;
     }
 
     /* 4. Authorized Brands */
@@ -1121,7 +1197,9 @@
     @media (max-width: 1024px) {
       .sbc-popular-grid { grid-template-columns: repeat(3, 1fr); }
       .sbc-guides-grid { grid-template-columns: repeat(2, 1fr); }
-      .sbc-plan-banner { grid-template-columns: 1fr; gap: 32px; padding: 32px 24px; }
+      .sbc-plan-box { padding: 36px 28px; }
+      .sbc-plan-box__top { grid-template-columns: 1fr; gap: 28px; }
+      .sbc-plan-flow { grid-template-columns: repeat(2, 1fr); gap: 16px; }
       .sbc-auth-brands-row { grid-template-columns: 1fr; gap: 24px; }
     }
 
@@ -1133,9 +1211,6 @@
       .sbc-dealer-banner__media { width: 100%; height: 140px; }
       .sbc-dealer-banner__action { padding: 0 28px 20px 28px; width: 100%; }
       .sbc-dealer-banner__btn { width: 100%; justify-content: center; }
-      .sbc-plan-steps { flex-wrap: wrap; gap: 20px; }
-      .sbc-plan-steps__arrow { display: none; }
-      .sbc-plan-step { max-width: 45%; }
     }
 
     @media (max-width: 640px) {
@@ -1143,6 +1218,11 @@
       .sbc-popular-grid { grid-template-columns: repeat(2, 1fr); }
       .sbc-guides-grid { grid-template-columns: 1fr; }
       .sbc-auth-brands-cards { grid-template-columns: 1fr; }
+      .sbc-plan-box { padding: 26px 18px; border-radius: 16px; }
+      .sbc-plan-flow { grid-template-columns: 1fr; gap: 14px; }
+      .sbc-plan-box__actions { flex-direction: column; width: 100%; }
+      .sbc-plan-btn { width: 100%; justify-content: center; }
+      .sbc-plan-box__title { font-size: 24px; }
     }
 
     @media (max-width: 480px) {
@@ -1221,17 +1301,17 @@
       <div class="sbc-topbar">
         <div class="l-container sbc-topbar__inner">
           <div class="sbc-topbar__left">
-            <a href="tel:+8801711234567" class="sbc-topbar__link">
+            <a href="tel:+8809639257121" class="sbc-topbar__link">
               <svg class="sbc-icon sbc-icon--xs" aria-hidden="true"><use href="#icon-phone"></use></svg>
-              <span>+880 1711 234567</span>
+              <span>+88 09639 257 121</span>
             </a>
-            <a href="mailto:info@southbanglacomputer.com" class="sbc-topbar__link">
+            <a href="mailto:info@southbanglabd.com" class="sbc-topbar__link">
               <svg class="sbc-icon sbc-icon--xs" aria-hidden="true"><use href="#icon-mail"></use></svg>
-              <span>info@southbanglacomputer.com</span>
+              <span>info@southbanglabd.com</span>
             </a>
             <span class="sbc-topbar__item">
               <svg class="sbc-icon sbc-icon--xs" aria-hidden="true"><use href="#icon-map-pin"></use></svg>
-              <span>Dhaka, Bangladesh</span>
+              <span>Elephant Road, Dhaka</span>
             </span>
           </div>
           <div class="sbc-topbar__right">
@@ -1253,8 +1333,8 @@
       <div class="sbc-main-header">
         <div class="l-container sbc-main-header__inner">
           <!-- Brand Logo -->
-          <a href="index.html" class="sbc-main-header__logo" aria-label="South Bangla Computer">
-            <img src="assets/img/logo.png" alt="South Bangla Computer" onerror="this.src='sbc-logo-24-style.png'">
+          <a href="index.html" class="sbc-main-header__logo" aria-label="South Bangla Computers">
+            <img src="assets/img/logo.png" alt="South Bangla Computers" onerror="this.src='sbc-logo-24-style.png'">
           </a>
 
           <!-- Search Form -->
@@ -1443,8 +1523,8 @@
             <svg class="sbc-icon sbc-icon--lg" aria-hidden="true"><use href="#icon-menu"></use></svg>
           </button>
 
-          <a href="index.html" class="sbc-header__mobile-logo" aria-label="South Bangla Computer">
-            <img src="assets/img/logo.png" alt="South Bangla Computer" onerror="this.src='sbc-logo-24-style.png'">
+          <a href="index.html" class="sbc-header__mobile-logo" aria-label="South Bangla Computers">
+            <img src="assets/img/logo.png" alt="South Bangla Computers" onerror="this.src='sbc-logo-24-style.png'">
           </a>
 
           <div class="sbc-header__mobile-actions">
@@ -1500,7 +1580,7 @@
             <span class="sbc-hero__tag-text">NETWORKING &amp; IT EQUIPMENT DISTRIBUTOR</span>
           </div>
           <h1 id="hero-heading" class="sbc-hero__title">
-            South Bangla Computer<br>
+            South Bangla Computers<br>
             <span class="sbc-hero__title-accent">Your Trusted IT Partner</span>
           </h1>
           <p class="sbc-hero__desc">
@@ -1789,10 +1869,6 @@
               <h3 class="sbc-showcase-pcard__title">
                 <a href="product.html?id=tenda-ac10">Tenda AC10 AC1200 Dual Band Gigabit Wi-Fi Router</a>
               </h3>
-              <div class="sbc-showcase-pcard__rating">
-                <span class="sbc-stars">★★★★★</span>
-                <span class="sbc-rating-count">(124)</span>
-              </div>
               <div class="sbc-showcase-pcard__price">৳ 2,750</div>
             </div>
             <button type="button" class="sbc-showcase-pcard__cartbtn js-add-cart" data-id="tenda-ac10">
@@ -1817,10 +1893,6 @@
               <h3 class="sbc-showcase-pcard__title">
                 <a href="product.html?id=tenda-teg1024d">Tenda TEG1024D 24-Port Gigabit Switch</a>
               </h3>
-              <div class="sbc-showcase-pcard__rating">
-                <span class="sbc-stars">★★★★★</span>
-                <span class="sbc-rating-count">(98)</span>
-              </div>
               <div class="sbc-showcase-pcard__price">৳ 8,200</div>
             </div>
             <button type="button" class="sbc-showcase-pcard__cartbtn js-add-cart" data-id="tenda-teg1024d">
@@ -1832,52 +1904,44 @@
           <!-- Product 3: Fiber Optic Patch Cord -->
           <div class="sbc-showcase-pcard">
             <div class="sbc-showcase-pcard__top sbc-showcase-pcard__top--rightonly">
-              <button type="button" class="sbc-showcase-pcard__wishlist js-toggle-wishlist" data-id="solitine-patch-sc" aria-label="Add to Wishlist">
+              <button type="button" class="sbc-showcase-pcard__wishlist js-toggle-wishlist" data-id="solitine-fiber-patch" aria-label="Add to Wishlist">
                 <svg class="sbc-icon sbc-icon--sm" aria-hidden="true"><use href="#icon-heart"></use></svg>
               </button>
             </div>
-            <a href="shop.html?c=fiber-pon" class="sbc-showcase-pcard__imglink">
-              <img src="assets/img/home/prod_fiber_patch_cord.jpg" alt="SC/APC Fiber Optic Patch Cord (1m)" loading="lazy">
+            <a href="product.html?id=solitine-fiber-patch" class="sbc-showcase-pcard__imglink">
+              <img src="assets/img/home/prod_fiber_patch_cord.jpg" alt="Solitine SC-LC Duplex Single-Mode 3m Fiber Patch Cord" loading="lazy">
             </a>
             <div class="sbc-showcase-pcard__meta">
               <span class="sbc-showcase-pcard__brand">Solitine</span>
               <h3 class="sbc-showcase-pcard__title">
-                <a href="shop.html?c=fiber-pon">SC/APC Fiber Optic Patch Cord (1m)</a>
+                <a href="product.html?id=solitine-fiber-patch">Solitine SC-LC Duplex Single-Mode 3m Fiber Patch Cord</a>
               </h3>
-              <div class="sbc-showcase-pcard__rating">
-                <span class="sbc-stars">★★★★★</span>
-                <span class="sbc-rating-count">(312)</span>
-              </div>
               <div class="sbc-showcase-pcard__price">৳ 280</div>
             </div>
-            <button type="button" class="sbc-showcase-pcard__cartbtn js-add-cart" data-id="solitine-patch-sc">
+            <button type="button" class="sbc-showcase-pcard__cartbtn js-add-cart" data-id="solitine-fiber-patch">
               <svg class="sbc-icon sbc-icon--sm" aria-hidden="true"><use href="#icon-shopping-cart"></use></svg>
               <span>Add to Cart</span>
             </button>
           </div>
 
-          <!-- Product 4: APC Back-UPS -->
+          <!-- Product 4: Must Line Interactive UPS -->
           <div class="sbc-showcase-pcard">
             <div class="sbc-showcase-pcard__top sbc-showcase-pcard__top--rightonly">
-              <button type="button" class="sbc-showcase-pcard__wishlist js-toggle-wishlist" data-id="must-v2000" aria-label="Add to Wishlist">
+              <button type="button" class="sbc-showcase-pcard__wishlist js-toggle-wishlist" data-id="must-ew2110-800" aria-label="Add to Wishlist">
                 <svg class="sbc-icon sbc-icon--sm" aria-hidden="true"><use href="#icon-heart"></use></svg>
               </button>
             </div>
-            <a href="shop.html?c=power-backup" class="sbc-showcase-pcard__imglink">
-              <img src="assets/img/home/prod_apc_ups.jpg" alt="APC Back-UPS 1200VA (650W)" loading="lazy">
+            <a href="product.html?id=must-ew2110-800" class="sbc-showcase-pcard__imglink">
+              <img src="https://www.southbanglabd.com/backend/products/image/1966551378.jpg" alt="Must EW2110-800 800VA Line Interactive UPS" loading="lazy" onerror="this.onerror=null; this.src='assets/img/home/prod_apc_ups.jpg';">
             </a>
             <div class="sbc-showcase-pcard__meta">
-              <span class="sbc-showcase-pcard__brand">APC</span>
+              <span class="sbc-showcase-pcard__brand">Must</span>
               <h3 class="sbc-showcase-pcard__title">
-                <a href="shop.html?c=power-backup">APC Back-UPS 1200VA (650W)</a>
+                <a href="product.html?id=must-ew2110-800">Must EW2110-800 800VA Line Interactive UPS</a>
               </h3>
-              <div class="sbc-showcase-pcard__rating">
-                <span class="sbc-stars">★★★★★</span>
-                <span class="sbc-rating-count">(76)</span>
-              </div>
-              <div class="sbc-showcase-pcard__price">৳ 13,000</div>
+              <div class="sbc-showcase-pcard__price">৳ 4,650</div>
             </div>
-            <button type="button" class="sbc-showcase-pcard__cartbtn js-add-cart" data-id="must-v2000">
+            <button type="button" class="sbc-showcase-pcard__cartbtn js-add-cart" data-id="must-ew2110-800">
               <svg class="sbc-icon sbc-icon--sm" aria-hidden="true"><use href="#icon-shopping-cart"></use></svg>
               <span>Add to Cart</span>
             </button>
@@ -1891,17 +1955,13 @@
               </button>
             </div>
             <a href="product.html?id=tenda-o9" class="sbc-showcase-pcard__imglink">
-              <img src="assets/img/home/prod_tplink_cpe.jpg" alt="Tenda O9 5GHz 23dBi Gigabit Outdoor CPE" loading="lazy">
+              <img src="https://www.southbanglabd.com/backend/products/image/1230543292.jpg" alt="Tenda O9 5GHz 23dBi Gigabit Outdoor CPE" loading="lazy" onerror="this.onerror=null; this.src='assets/img/placeholder-product.svg';">
             </a>
             <div class="sbc-showcase-pcard__meta">
               <span class="sbc-showcase-pcard__brand">Tenda</span>
               <h3 class="sbc-showcase-pcard__title">
                 <a href="product.html?id=tenda-o9">Tenda O9 5GHz 23dBi Gigabit Outdoor CPE</a>
               </h3>
-              <div class="sbc-showcase-pcard__rating">
-                <span class="sbc-stars">★★★★★</span>
-                <span class="sbc-rating-count">(63)</span>
-              </div>
               <div class="sbc-showcase-pcard__price">৳ 7,450</div>
             </div>
             <button type="button" class="sbc-showcase-pcard__cartbtn js-add-cart" data-id="tenda-o9">
@@ -1926,10 +1986,6 @@
               <h3 class="sbc-showcase-pcard__title">
                 <a href="product.html?id=tenda-ax12-pro">Tenda AX12 Pro AX3000 Dual-Band Gigabit Wi-Fi 6 Router</a>
               </h3>
-              <div class="sbc-showcase-pcard__rating">
-                <span class="sbc-stars">★★★★★</span>
-                <span class="sbc-rating-count">(142)</span>
-              </div>
               <div class="sbc-showcase-pcard__price">৳ 4,850</div>
             </div>
             <button type="button" class="sbc-showcase-pcard__cartbtn js-add-cart" data-id="tenda-ax12-pro">
@@ -1954,10 +2010,6 @@
               <h3 class="sbc-showcase-pcard__title">
                 <a href="product.html?id=vsol-v2801sg">V-SOL V2801SG 1GE Realtek Chipset XPON ONT / ONU</a>
               </h3>
-              <div class="sbc-showcase-pcard__rating">
-                <span class="sbc-stars">★★★★★</span>
-                <span class="sbc-rating-count">(234)</span>
-              </div>
               <div class="sbc-showcase-pcard__price">৳ 1,250</div>
             </div>
             <button type="button" class="sbc-showcase-pcard__cartbtn js-add-cart" data-id="vsol-v2801sg">
@@ -1974,18 +2026,14 @@
                 <svg class="sbc-icon sbc-icon--sm" aria-hidden="true"><use href="#icon-heart"></use></svg>
               </button>
             </div>
-            <a href="shop.html?c=cabling-racks" class="sbc-showcase-pcard__imglink">
+            <a href="product.html?id=solitine-panel-24p" class="sbc-showcase-pcard__imglink">
               <img src="https://www.southbanglabd.com/backend/products/image/855190478.jpg" alt="Solitine 24-Port 1U Cat6 Loaded Rackmount Patch Panel" loading="lazy" onerror="this.onerror=null; this.src='assets/img/placeholder-product.svg';">
             </a>
             <div class="sbc-showcase-pcard__meta">
               <span class="sbc-showcase-pcard__brand">Solitine</span>
               <h3 class="sbc-showcase-pcard__title">
-                <a href="shop.html?c=cabling-racks">Solitine 24-Port 1U Cat6 Loaded Rackmount Patch Panel</a>
+                <a href="product.html?id=solitine-panel-24p">Solitine 24-Port 1U Cat6 Loaded Rackmount Patch Panel</a>
               </h3>
-              <div class="sbc-showcase-pcard__rating">
-                <span class="sbc-stars">★★★★★</span>
-                <span class="sbc-rating-count">(89)</span>
-              </div>
               <div class="sbc-showcase-pcard__price">৳ 3,200</div>
             </div>
             <button type="button" class="sbc-showcase-pcard__cartbtn js-add-cart" data-id="solitine-panel-24p">
@@ -1994,29 +2042,25 @@
             </button>
           </div>
 
-          <!-- Product 9: TP-Link Omada ER605 Multi-WAN Gigabit Router -->
+          <!-- Product 9: Tenda TX2L Pro AX1500 Wi-Fi 6 Router -->
           <div class="sbc-showcase-pcard">
             <div class="sbc-showcase-pcard__top">
-              <span class="sbc-showcase-badge sbc-showcase-badge--blue">Multi-WAN</span>
-              <button type="button" class="sbc-showcase-pcard__wishlist js-toggle-wishlist" data-id="tp-link-er605" aria-label="Add to Wishlist">
+              <span class="sbc-showcase-badge sbc-showcase-badge--blue">Wi-Fi 6</span>
+              <button type="button" class="sbc-showcase-pcard__wishlist js-toggle-wishlist" data-id="tenda-tx2l-pro" aria-label="Add to Wishlist">
                 <svg class="sbc-icon sbc-icon--sm" aria-hidden="true"><use href="#icon-heart"></use></svg>
               </button>
             </div>
-            <a href="shop.html?b=tp-link" class="sbc-showcase-pcard__imglink">
-              <img src="https://www.southbanglabd.com/backend/products/image/1079547444.png" alt="TP-Link Omada ER605 Multi-WAN Gigabit VPN Router" loading="lazy" onerror="this.onerror=null; this.src='assets/img/placeholder-product.svg';">
+            <a href="product.html?id=tenda-tx2l-pro" class="sbc-showcase-pcard__imglink">
+              <img src="https://www.southbanglabd.com/backend/products/image/618068149.webp" alt="Tenda TX2L Pro AX1500 Dual-Band Gigabit Wi-Fi 6 Router" loading="lazy" onerror="this.onerror=null; this.src='assets/img/placeholder-product.svg';">
             </a>
             <div class="sbc-showcase-pcard__meta">
-              <span class="sbc-showcase-pcard__brand">TP-Link</span>
+              <span class="sbc-showcase-pcard__brand">Tenda</span>
               <h3 class="sbc-showcase-pcard__title">
-                <a href="shop.html?b=tp-link">TP-Link Omada ER605 Multi-WAN Gigabit VPN Router</a>
+                <a href="product.html?id=tenda-tx2l-pro">Tenda TX2L Pro AX1500 Dual-Band Gigabit Wi-Fi 6 Router</a>
               </h3>
-              <div class="sbc-showcase-pcard__rating">
-                <span class="sbc-stars">★★★★★</span>
-                <span class="sbc-rating-count">(96)</span>
-              </div>
-              <div class="sbc-showcase-pcard__price">৳ 5,800</div>
+              <div class="sbc-showcase-pcard__price">৳ 2,900</div>
             </div>
-            <button type="button" class="sbc-showcase-pcard__cartbtn js-add-cart" data-id="tp-link-er605">
+            <button type="button" class="sbc-showcase-pcard__cartbtn js-add-cart" data-id="tenda-tx2l-pro">
               <svg class="sbc-icon sbc-icon--sm" aria-hidden="true"><use href="#icon-shopping-cart"></use></svg>
               <span>Add to Cart</span>
             </button>
@@ -2038,10 +2082,6 @@
               <h3 class="sbc-showcase-pcard__title">
                 <a href="product.html?id=tenda-teg2210p">Tenda TEG2210P-8-102W 10-Port Gigabit Smart PoE Switch</a>
               </h3>
-              <div class="sbc-showcase-pcard__rating">
-                <span class="sbc-stars">★★★★★</span>
-                <span class="sbc-rating-count">(74)</span>
-              </div>
               <div class="sbc-showcase-pcard__price">৳ 6,800</div>
             </div>
             <button type="button" class="sbc-showcase-pcard__cartbtn js-add-cart" data-id="tenda-teg2210p">
@@ -2054,7 +2094,7 @@
     </section>
 
     <!-- =====================================================================
-         MEETION BRAND PRODUCTS (AUTHORIZED NATIONAL DISTRIBUTOR)
+         MEETION BRAND PRODUCTS (AUTHORIZED PARTNER BRAND)
          ===================================================================== -->
     <section class="sbc-home-section sbc-meetion-section" aria-labelledby="meetion-heading" style="padding: 44px 0; background: #f8fafc; border-top: 1px solid #e2e8f0; border-bottom: 1px solid #e2e8f0;">
       <div class="l-container">
@@ -2063,13 +2103,13 @@
           <div>
             <div class="sbc-sec-tag" style="display:inline-flex; align-items:center; gap:6px; color:#0070ba; font-size:11.5px; font-weight:800; letter-spacing:1px; text-transform:uppercase; margin-bottom:4px;">
               <span>―</span>
-              <span>AUTHORIZED NATIONAL DISTRIBUTOR</span>
+              <span>FEATURED BRAND PARTNER</span>
             </div>
             <h2 id="meetion-heading" style="font-size:26px; font-weight:800; color:#071526; margin:0 0 6px 0;">
               Meetion Gaming &amp; Office Peripherals
             </h2>
             <p style="font-size:14px; color:#64748b; margin:0;">
-              Official distributor warranty, genuine optical switches, and ergonomic computer accessories across Bangladesh.
+              Genuine optical switches, manufacturer warranty, and ergonomic computer accessories across Bangladesh.
             </p>
           </div>
           <div style="display:flex; align-items:center; gap:16px;">
@@ -2101,10 +2141,6 @@
               <h3 class="sbc-showcase-pcard__title">
                 <a href="product.html?id=meetion-mk008-pro">Meetion MT-MK008 Pro Optical RGB Hot-Swap Keyboard</a>
               </h3>
-              <div class="sbc-showcase-pcard__rating">
-                <span class="sbc-stars">★★★★★</span>
-                <span class="sbc-rating-count">(94)</span>
-              </div>
               <div class="sbc-showcase-pcard__price">৳ 2,850</div>
             </div>
             <button type="button" class="sbc-showcase-pcard__cartbtn js-add-cart" data-id="meetion-mk008-pro">
@@ -2129,10 +2165,6 @@
               <h3 class="sbc-showcase-pcard__title">
                 <a href="product.html?id=meetion-btm032r">Meetion BTM032R Dual-Mode Silent Wireless Mouse</a>
               </h3>
-              <div class="sbc-showcase-pcard__rating">
-                <span class="sbc-stars">★★★★★</span>
-                <span class="sbc-rating-count">(82)</span>
-              </div>
               <div class="sbc-showcase-pcard__price">৳ 1,190</div>
             </div>
             <button type="button" class="sbc-showcase-pcard__cartbtn js-add-cart" data-id="meetion-btm032r">
@@ -2157,10 +2189,6 @@
               <h3 class="sbc-showcase-pcard__title">
                 <a href="product.html?id=meetion-vibekey-b68">Meetion Vibekey B68 68% Wireless Gasket Keyboard</a>
               </h3>
-              <div class="sbc-showcase-pcard__rating">
-                <span class="sbc-stars">★★★★★</span>
-                <span class="sbc-rating-count">(47)</span>
-              </div>
               <div class="sbc-showcase-pcard__price">৳ 3,450</div>
             </div>
             <button type="button" class="sbc-showcase-pcard__cartbtn js-add-cart" data-id="meetion-vibekey-b68">
@@ -2184,10 +2212,6 @@
               <h3 class="sbc-showcase-pcard__title">
                 <a href="product.html?id=meetion-ikey-c210">Meetion iKey C210 Ultra-Thin Wireless Combo</a>
               </h3>
-              <div class="sbc-showcase-pcard__rating">
-                <span class="sbc-stars">★★★★★</span>
-                <span class="sbc-rating-count">(61)</span>
-              </div>
               <div class="sbc-showcase-pcard__price">৳ 1,250</div>
             </div>
             <button type="button" class="sbc-showcase-pcard__cartbtn js-add-cart" data-id="meetion-ikey-c210">
@@ -2212,10 +2236,6 @@
               <h3 class="sbc-showcase-pcard__title">
                 <a href="product.html?id=meetion-hp022">Meetion MT-HP022 7.1 Noise-Cancelling Headset</a>
               </h3>
-              <div class="sbc-showcase-pcard__rating">
-                <span class="sbc-stars">★★★★★</span>
-                <span class="sbc-rating-count">(53)</span>
-              </div>
               <div class="sbc-showcase-pcard__price">৳ 2,150</div>
             </div>
             <button type="button" class="sbc-showcase-pcard__cartbtn js-add-cart" data-id="meetion-hp022">
@@ -2240,10 +2260,6 @@
               <h3 class="sbc-showcase-pcard__title">
                 <a href="product.html?id=meetion-btm012">Meetion BTM012 Dual-Mode Ergonomic Wireless Mouse</a>
               </h3>
-              <div class="sbc-showcase-pcard__rating">
-                <span class="sbc-stars">★★★★★</span>
-                <span class="sbc-rating-count">(78)</span>
-              </div>
               <div class="sbc-showcase-pcard__price">৳ 1,450</div>
             </div>
             <button type="button" class="sbc-showcase-pcard__cartbtn js-add-cart" data-id="meetion-btm012">
@@ -2268,10 +2284,6 @@
               <h3 class="sbc-showcase-pcard__title">
                 <a href="product.html?id=meetion-sp2011">Meetion MT-SP2011 Gaming Stereo Desktop Speakers</a>
               </h3>
-              <div class="sbc-showcase-pcard__rating">
-                <span class="sbc-stars">★★★★★</span>
-                <span class="sbc-rating-count">(65)</span>
-              </div>
               <div class="sbc-showcase-pcard__price">৳ 1,450</div>
             </div>
             <button type="button" class="sbc-showcase-pcard__cartbtn js-add-cart" data-id="meetion-sp2011">
@@ -2296,10 +2308,6 @@
               <h3 class="sbc-showcase-pcard__title">
                 <a href="product.html?id=meetion-sp2010">Meetion SP2010 2.0 Office Desktop Multimedia Speakers</a>
               </h3>
-              <div class="sbc-showcase-pcard__rating">
-                <span class="sbc-stars">★★★★★</span>
-                <span class="sbc-rating-count">(84)</span>
-              </div>
               <div class="sbc-showcase-pcard__price">৳ 1,150</div>
             </div>
             <button type="button" class="sbc-showcase-pcard__cartbtn js-add-cart" data-id="meetion-sp2010">
@@ -2324,10 +2332,6 @@
               <h3 class="sbc-showcase-pcard__title">
                 <a href="product.html?id=meetion-u002">Meetion MT-U002 RGB Stand for Gaming Headsets</a>
               </h3>
-              <div class="sbc-showcase-pcard__rating">
-                <span class="sbc-stars">★★★★★</span>
-                <span class="sbc-rating-count">(52)</span>
-              </div>
               <div class="sbc-showcase-pcard__price">৳ 1,250</div>
             </div>
             <button type="button" class="sbc-showcase-pcard__cartbtn js-add-cart" data-id="meetion-u002">
@@ -2352,10 +2356,6 @@
               <h3 class="sbc-showcase-pcard__title">
                 <a href="product.html?id=meetion-h390">Meetion MT-H390 High-Sensitivity Flexible Microphone</a>
               </h3>
-              <div class="sbc-showcase-pcard__rating">
-                <span class="sbc-stars">★★★★★</span>
-                <span class="sbc-rating-count">(71)</span>
-              </div>
               <div class="sbc-showcase-pcard__price">৳ 850</div>
             </div>
             <button type="button" class="sbc-showcase-pcard__cartbtn js-add-cart" data-id="meetion-h390">
@@ -2368,91 +2368,113 @@
     </section>
 
     <!-- =====================================================================
-         SECTION 3: BUILD YOUR NETWORK PLAN (Dark Planning Banner with 4 Steps)
+         SECTION 3: ENTERPRISE NETWORK PLANNING ARCHITECTURE (EXECUTIVE REDESIGN)
          ===================================================================== -->
     <section class="sbc-plan-section" aria-labelledby="plan-heading">
       <div class="l-container">
-        <div class="sbc-plan-banner">
-          <!-- Background Cyber Mesh Effect -->
-          <div class="sbc-plan-banner__bg-art" aria-hidden="true">
-            <svg viewBox="0 0 400 400" fill="none" xmlns="http://www.w3.org/2000/svg">
-              <circle cx="200" cy="200" r="180" stroke="rgba(14, 165, 233, 0.15)" stroke-width="1.5" stroke-dasharray="4 6"/>
-              <circle cx="200" cy="200" r="130" stroke="rgba(14, 165, 233, 0.2)" stroke-width="1.5"/>
-              <circle cx="200" cy="200" r="80" stroke="rgba(14, 165, 233, 0.25)" stroke-width="1.5"/>
-              <path d="M20 200 H380 M200 20 V380 M72 72 L328 328 M72 328 L328 72" stroke="rgba(14, 165, 233, 0.12)" stroke-width="1"/>
-            </svg>
-          </div>
-
-          <div class="sbc-plan-banner__left">
-            <div class="sbc-sec-tag">
-              <span class="sbc-sec-tag__dash" style="color:#22c55e;">―</span>
-              <span class="sbc-sec-tag__text" style="color:#22c55e;">FREE NETWORK PLANNING</span>
+        <div class="sbc-plan-box">
+          <div class="sbc-plan-box__top">
+            <div class="sbc-plan-box__header">
+              <div class="sbc-plan-status-pill">
+                <span class="sbc-plan-status-pill__pulse"></span>
+                <span>FREE TURNKEY ARCHITECTURE &amp; SIZING ADVICE</span>
+              </div>
+              <h2 id="plan-heading" class="sbc-plan-box__title">
+                Build Your Custom <span class="sbc-plan-box__title-accent">Enterprise Network Plan</span>
+              </h2>
+              <p class="sbc-plan-box__desc">
+                From high-density corporate Wi-Fi 7 to carrier-grade FTTH distribution and PoE security backbones, our certified Cisco &amp; Tenda engineers design turnkey solutions with verified equipment lists and tender-ready BOMs.
+              </p>
             </div>
-            <h2 id="plan-heading" class="sbc-plan-banner__title">
-              Build Your Network <span class="sbc-plan-banner__title-accent">Plan</span>
-            </h2>
-            <p class="sbc-plan-banner__desc">
-              Get the right products and solution for your business or home network. Our experts are here to help.
-            </p>
-            <a href="configurator.html" class="sbc-plan-banner__btn">
-              <span>Start Planning</span>
-              <svg class="sbc-icon sbc-icon--xs" aria-hidden="true"><use href="#icon-arrow-right"></use></svg>
-            </a>
+
+            <div class="sbc-plan-box__actions-wrap">
+              <div class="sbc-plan-box__actions">
+                <a href="configurator.html" class="sbc-plan-btn sbc-plan-btn--primary">
+                  <span>Start Network Configurator</span>
+                  <svg class="sbc-icon sbc-icon--xs" aria-hidden="true"><use href="#icon-arrow-right"></use></svg>
+                </a>
+                <a href="quote.html" class="sbc-plan-btn sbc-plan-btn--secondary">
+                  <span>Request Corporate RFQ</span>
+                  <svg class="sbc-icon sbc-icon--xs" aria-hidden="true"><use href="#icon-file-text"></use></svg>
+                </a>
+              </div>
+              <div class="sbc-plan-trust-pills">
+                <span class="sbc-plan-trust-item">
+                  <svg class="sbc-icon sbc-icon--xs" style="color:#22c55e;"><use href="#icon-check"></use></svg>
+                  <span>100% Cisco, Tenda &amp; HSGQ Compatibility</span>
+                </span>
+                <span class="sbc-plan-trust-item">
+                  <svg class="sbc-icon sbc-icon--xs" style="color:#22c55e;"><use href="#icon-check"></use></svg>
+                  <span>Instant PDF/Excel Bill of Materials</span>
+                </span>
+                <span class="sbc-plan-trust-item">
+                  <svg class="sbc-icon sbc-icon--xs" style="color:#22c55e;"><use href="#icon-check"></use></svg>
+                  <span>Same-Day 64-District Courier Dispatch</span>
+                </span>
+              </div>
+            </div>
           </div>
 
-          <div class="sbc-plan-banner__right">
-            <div class="sbc-plan-steps">
-              <!-- Step 1 -->
-              <div class="sbc-plan-step">
-                <div class="sbc-plan-step__badge">1</div>
-                <div class="sbc-plan-step__icon">
-                  <svg class="sbc-icon sbc-icon--md" aria-hidden="true"><use href="#icon-message-square"></use></svg>
+          <!-- 4-Step Interactive Architecture Flow -->
+          <div class="sbc-plan-flow">
+            <!-- Step 1 -->
+            <div class="sbc-plan-card">
+              <div class="sbc-plan-card__header">
+                <span class="sbc-plan-card__num">01</span>
+                <div class="sbc-plan-card__icon-wrap">
+                  <svg class="sbc-icon sbc-icon--md" aria-hidden="true"><use href="#icon-sliders"></use></svg>
                 </div>
-                <h4 class="sbc-plan-step__title">Tell Us Your Needs</h4>
-                <p class="sbc-plan-step__desc">Share your requirements with our experts.</p>
               </div>
+              <h3 class="sbc-plan-card__title">Define Scale &amp; Needs</h3>
+              <p class="sbc-plan-card__desc">
+                Select your deployment tier — SMB office, corporate campus, ISP substation, or surveillance topology.
+              </p>
+              <div class="sbc-plan-card__tag">User Capacity &amp; Bandwidth</div>
+            </div>
 
-              <div class="sbc-plan-steps__arrow" aria-hidden="true">
-                <svg class="sbc-icon sbc-icon--sm"><use href="#icon-chevron-right"></use></svg>
-              </div>
-
-              <!-- Step 2 -->
-              <div class="sbc-plan-step">
-                <div class="sbc-plan-step__badge">2</div>
-                <div class="sbc-plan-step__icon">
-                  <svg class="sbc-icon sbc-icon--md" aria-hidden="true"><use href="#icon-clipboard-check"></use></svg>
+            <!-- Step 2 -->
+            <div class="sbc-plan-card">
+              <div class="sbc-plan-card__header">
+                <span class="sbc-plan-card__num">02</span>
+                <div class="sbc-plan-card__icon-wrap">
+                  <svg class="sbc-icon sbc-icon--md" aria-hidden="true"><use href="#icon-cpu"></use></svg>
                 </div>
-                <h4 class="sbc-plan-step__title">Get Expert Advice</h4>
-                <p class="sbc-plan-step__desc">Receive the best solution for your setup.</p>
               </div>
+              <h3 class="sbc-plan-card__title">Automated Sizing</h3>
+              <p class="sbc-plan-card__desc">
+                Automated matching of core routers, PoE+ switch ports, and Wi-Fi 7 access points.
+              </p>
+              <div class="sbc-plan-card__tag">Zero Port Bottlenecks</div>
+            </div>
 
-              <div class="sbc-plan-steps__arrow" aria-hidden="true">
-                <svg class="sbc-icon sbc-icon--sm"><use href="#icon-chevron-right"></use></svg>
-              </div>
-
-              <!-- Step 3 -->
-              <div class="sbc-plan-step">
-                <div class="sbc-plan-step__badge">3</div>
-                <div class="sbc-plan-step__icon">
-                  <svg class="sbc-icon sbc-icon--md" aria-hidden="true"><use href="#icon-box"></use></svg>
+            <!-- Step 3 -->
+            <div class="sbc-plan-card">
+              <div class="sbc-plan-card__header">
+                <span class="sbc-plan-card__num">03</span>
+                <div class="sbc-plan-card__icon-wrap">
+                  <svg class="sbc-icon sbc-icon--md" aria-hidden="true"><use href="#icon-layers"></use></svg>
                 </div>
-                <h4 class="sbc-plan-step__title">Choose Products</h4>
-                <p class="sbc-plan-step__desc">Pick from top brands &amp; best prices.</p>
               </div>
+              <h3 class="sbc-plan-card__title">Topology &amp; Pricing</h3>
+              <p class="sbc-plan-card__desc">
+                Review dynamic SVG architecture diagram with transparent distributor bill of materials.
+              </p>
+              <div class="sbc-plan-card__tag">Tender-Ready Quotation</div>
+            </div>
 
-              <div class="sbc-plan-steps__arrow" aria-hidden="true">
-                <svg class="sbc-icon sbc-icon--sm"><use href="#icon-chevron-right"></use></svg>
-              </div>
-
-              <!-- Step 4 -->
-              <div class="sbc-plan-step">
-                <div class="sbc-plan-step__badge">4</div>
-                <div class="sbc-plan-step__icon">
+            <!-- Step 4 -->
+            <div class="sbc-plan-card">
+              <div class="sbc-plan-card__header">
+                <span class="sbc-plan-card__num">04</span>
+                <div class="sbc-plan-card__icon-wrap">
                   <svg class="sbc-icon sbc-icon--md" aria-hidden="true"><use href="#icon-truck"></use></svg>
                 </div>
-                <h4 class="sbc-plan-step__title">We Deliver</h4>
-                <p class="sbc-plan-step__desc">Fast &amp; reliable delivery across Bangladesh.</p>
               </div>
+              <h3 class="sbc-plan-card__title">Nationwide Delivery</h3>
+              <p class="sbc-plan-card__desc">
+                Direct dispatch from Multiplan Center central warehouse with official distributor warranty.
+              </p>
+              <div class="sbc-plan-card__tag">All 64 Districts Supported</div>
             </div>
           </div>
         </div>
@@ -2460,7 +2482,7 @@
     </section>
 
     <!-- =====================================================================
-         SECTION 4: AUTHORIZED BRANDS
+         SECTION 4: PARTNER BRANDS
          ===================================================================== -->
     <section class="sbc-home-section sbc-auth-brands-section" aria-labelledby="auth-brands-heading">
       <div class="l-container">
@@ -2468,13 +2490,13 @@
           <div class="sbc-auth-brands-info">
             <div class="sbc-sec-tag">
               <span class="sbc-sec-tag__dash">―</span>
-              <span class="sbc-sec-tag__text">AUTHORIZED BRANDS</span>
+              <span class="sbc-sec-tag__text">OFFICIAL BRAND PARTNERS</span>
             </div>
             <h2 id="auth-brands-heading" class="sbc-auth-brands-title">
-              Trusted Brands. Genuine Products.
+              Trusted Brands. Genuine Hardware.
             </h2>
             <p class="sbc-auth-brands-desc">
-              We are authorized distributor of leading networking and IT brands in Bangladesh.
+              Direct supplier and technology partner for leading networking and IT hardware brands in Bangladesh.
             </p>
           </div>
 
@@ -2484,7 +2506,7 @@
               <div class="sbc-auth-brand-box__logo">
                 <img src="assets/brand image/292026613.png" alt="Tenda" loading="lazy">
               </div>
-              <span class="sbc-auth-brand-box__label">Authorized Distributor</span>
+              <span class="sbc-auth-brand-box__label">Official Brand Partner</span>
             </a>
 
             <!-- Meetion -->
@@ -2492,7 +2514,7 @@
               <div class="sbc-auth-brand-box__logo">
                 <img src="assets/brand image/924112071.png" alt="Meetion" loading="lazy">
               </div>
-              <span class="sbc-auth-brand-box__label">Authorized Distributor</span>
+              <span class="sbc-auth-brand-box__label">Official Brand Partner</span>
             </a>
 
             <!-- Cisco -->
@@ -2519,8 +2541,8 @@
               <svg class="sbc-icon sbc-icon--md" aria-hidden="true"><use href="#icon-shield"></use></svg>
             </div>
             <div class="sbc-trust-col__content">
-              <h4 class="sbc-trust-col__title">100% Authorized Products</h4>
-              <p class="sbc-trust-col__desc">Get original products with official warranty and support.</p>
+              <h4 class="sbc-trust-col__title">100% Genuine Products</h4>
+              <p class="sbc-trust-col__desc">Get original hardware with verified warranty and technical support.</p>
             </div>
           </div>
 
@@ -2602,12 +2624,12 @@
 
         <div class="sbc-guides-grid">
           <!-- Guide 1 -->
-          <a href="article.html?id=how-to-setup-tp-link-router" class="sbc-guide-card">
+          <a href="article.html?id=how-to-setup-tenda-router" class="sbc-guide-card">
             <div class="sbc-guide-card__thumb">
-              <img src="assets/img/home/cat_wifi_routers.jpg" alt="How to Setup a TP-Link Router" loading="lazy">
+              <img src="assets/img/home/cat_wifi_routers.jpg" alt="How to Setup a Tenda Wi-Fi 6 Router" loading="lazy">
             </div>
             <div class="sbc-guide-card__body">
-              <h4 class="sbc-guide-card__title">How to Setup a TP-Link Router (Complete Guide)</h4>
+              <h4 class="sbc-guide-card__title">How to Setup a Tenda Wi-Fi 6 Router (Complete Guide)</h4>
               <div class="sbc-guide-card__date">
                 <svg class="sbc-icon sbc-icon--xs" aria-hidden="true"><use href="#icon-calendar"></use></svg>
                 <span>May 12, 2025</span>
@@ -2674,7 +2696,7 @@
             Need Bulk Hardware Procurement or Technical Assistance?
           </h2>
           <p class="sbc-home-conclusion-cta__desc">
-            South Bangla Computer delivers 100% genuine ICT hardware, volume wholesale tiers for computer retailers and ISPs, and authorized manufacturer warranties across all 64 districts.
+            South Bangla Computers delivers 100% genuine ICT hardware, volume wholesale tiers for computer retailers and ISPs, and authorized manufacturer warranties across all 64 districts.
           </p>
         </div>
         <div class="sbc-home-conclusion-cta__actions">
@@ -2696,21 +2718,21 @@
           <!-- Col 1: Brand & Contacts -->
           <div class="sbc-footer-v2__col sbc-footer-v2__col--brand">
             <div class="sbc-footer-v2__logo-wrap">
-              <img src="assets/img/logo.png" alt="South Bangla Computer" class="sbc-footer-v2__logo" onerror="this.src='sbc-logo-24-style.png'">
+              <img src="assets/img/logo.png" alt="South Bangla Computers" class="sbc-footer-v2__logo" onerror="this.src='sbc-logo-24-style.png'">
             </div>
             <p class="sbc-footer-v2__tagline">Networking | IT Equipment | Computer Accessories</p>
             <div class="sbc-footer-v2__contact-list">
-              <a href="tel:+8801711234567" class="sbc-footer-v2__contact-item">
+              <a href="tel:+8809639257121" class="sbc-footer-v2__contact-item">
                 <svg class="sbc-icon sbc-icon--sm" aria-hidden="true"><use href="#icon-phone"></use></svg>
-                <span>+880 1711 234567</span>
+                <span>+88 09639 257 121</span>
               </a>
-              <a href="mailto:info@southbanglacomputer.com" class="sbc-footer-v2__contact-item">
+              <a href="mailto:info@southbanglabd.com" class="sbc-footer-v2__contact-item">
                 <svg class="sbc-icon sbc-icon--sm" aria-hidden="true"><use href="#icon-mail"></use></svg>
-                <span>info@southbanglacomputer.com</span>
+                <span>info@southbanglabd.com</span>
               </a>
               <div class="sbc-footer-v2__contact-item">
                 <svg class="sbc-icon sbc-icon--sm" aria-hidden="true"><use href="#icon-map-pin"></use></svg>
-                <span>Dhaka, Bangladesh</span>
+                <span>323, Akram Serenity, Elephant Road, Dhaka-1205</span>
               </div>
             </div>
           </div>
@@ -2720,11 +2742,11 @@
             <h4 class="sbc-footer-v2__title">Quick Links</h4>
             <ul class="sbc-footer-v2__list">
               <li><a href="index.html">Home</a></li>
-              <li><a href="shop.html">Shop</a></li>
-              <li><a href="shop.html#shop-catalog">Brands</a></li>
+              <li><a href="shop.html">Shop Catalog</a></li>
+              <li><a href="brand.html">Partner Brands</a></li>
               <li><a href="configurator.html">Solutions</a></li>
               <li><a href="about.html">About Us</a></li>
-              <li><a href="contact.html">Contact</a></li>
+              <li><a href="contact.html">Contact Us</a></li>
             </ul>
           </div>
 
@@ -2732,39 +2754,39 @@
           <div class="sbc-footer-v2__col">
             <h4 class="sbc-footer-v2__title">Customer Service</h4>
             <ul class="sbc-footer-v2__list">
-              <li><a href="support.html">Support</a></li>
+              <li><a href="support.html">Technical Support</a></li>
               <li><a href="faq.html">FAQ</a></li>
-              <li><a href="warranty.html">Warranty Claim</a></li>
+              <li><a href="warranty.html">Warranty Policy</a></li>
               <li><a href="returns.html">Return &amp; Refund</a></li>
-              <li><a href="shipping.html">Shipping Policy</a></li>
+              <li><a href="shipping.html">Delivery &amp; Logistics</a></li>
               <li><a href="privacy.html">Privacy Policy</a></li>
             </ul>
           </div>
 
           <!-- Col 4: Top Brands -->
           <div class="sbc-footer-v2__col">
-            <h4 class="sbc-footer-v2__title">Top Brands</h4>
+            <h4 class="sbc-footer-v2__title">Partner Brands</h4>
             <ul class="sbc-footer-v2__list">
-              <li><a href="shop.html?b=tp-link#shop-catalog">TP-Link</a></li>
               <li><a href="shop.html?b=tenda#shop-catalog">Tenda</a></li>
-              <li><a href="shop.html?b=mikrotik#shop-catalog">MikroTik</a></li>
-              <li><a href="shop.html?b=d-link#shop-catalog">D-Link</a></li>
-              <li><a href="shop.html?b=hikvision#shop-catalog">Hikvision</a></li>
-              <li><a href="shop.html?b=apc#shop-catalog">APC</a></li>
+              <li><a href="shop.html?b=cisco#shop-catalog">Cisco</a></li>
+              <li><a href="shop.html?b=solitine#shop-catalog">Solitine</a></li>
+              <li><a href="shop.html?b=must#shop-catalog">Must</a></li>
+              <li><a href="shop.html?b=hsgq#shop-catalog">HSGQ</a></li>
+              <li><a href="shop.html?b=meetion#shop-catalog">Meetion</a></li>
             </ul>
           </div>
 
           <!-- Col 5: Follow Us -->
           <div class="sbc-footer-v2__col sbc-footer-v2__col--social">
-            <h4 class="sbc-footer-v2__title">Follow Us</h4>
+            <h4 class="sbc-footer-v2__title">Connect With Us</h4>
             <div class="sbc-footer-v2__socials">
-              <a href="https://facebook.com" target="_blank" rel="noopener noreferrer" class="sbc-footer-v2__social-btn" aria-label="Facebook">
+              <a href="https://www.facebook.com" target="_blank" rel="noopener noreferrer" class="sbc-footer-v2__social-btn" aria-label="Facebook">
                 <svg class="sbc-icon sbc-icon--sm" aria-hidden="true"><use href="#icon-facebook"></use></svg>
               </a>
-              <a href="https://youtube.com" target="_blank" rel="noopener noreferrer" class="sbc-footer-v2__social-btn" aria-label="YouTube">
+              <a href="https://www.youtube.com" target="_blank" rel="noopener noreferrer" class="sbc-footer-v2__social-btn" aria-label="YouTube">
                 <svg class="sbc-icon sbc-icon--sm" aria-hidden="true"><use href="#icon-youtube"></use></svg>
               </a>
-              <a href="https://linkedin.com" target="_blank" rel="noopener noreferrer" class="sbc-footer-v2__social-btn" aria-label="LinkedIn">
+              <a href="https://www.linkedin.com" target="_blank" rel="noopener noreferrer" class="sbc-footer-v2__social-btn" aria-label="LinkedIn">
                 <svg class="sbc-icon sbc-icon--sm" aria-hidden="true"><use href="#icon-linkedin"></use></svg>
               </a>
             </div>
@@ -2780,15 +2802,13 @@
       <div class="sbc-footer-v2__bottom">
         <div class="l-container sbc-footer-v2__bottom-inner">
           <p class="sbc-footer-v2__copy">
-            &copy; 2025 South Bangla Computer. All rights reserved.
+            &copy; 2026 South Bangla Computers. All rights reserved.
           </p>
           <div class="sbc-footer-v2__legal">
             <a href="privacy.html">Privacy</a>
             <a href="terms.html">Terms</a>
             <a href="returns.html">Return &amp; Refund</a>
-            <a href="sitemap.html">Sitemap</a>
-            <a href="tests/smoke.html" style="opacity:0.3;font-size:10px;">Smoke Tests</a>
-            <a href="#" class="js-open-disclosure" style="opacity:0.3;font-size:10px;">Demo</a>
+            <a href="sitemap.xml">Sitemap</a>
           </div>
         </div>
       </div>

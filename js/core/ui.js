@@ -103,11 +103,13 @@ window.SBC.ui = (function () {
     `;
 
     document.body.appendChild(backdrop);
+    document.body.classList.add("has-modal-open");
     // Trigger transition
     requestAnimationFrame(() => backdrop.classList.add("is-open"));
 
     function handleClose() {
       backdrop.classList.remove("is-open");
+      document.body.classList.remove("has-modal-open");
       document.removeEventListener("keydown", onKeyDown);
       setTimeout(() => {
         backdrop.remove();
@@ -161,10 +163,12 @@ window.SBC.ui = (function () {
     `;
 
     document.body.appendChild(backdrop);
+    document.body.classList.add("has-drawer-open");
     requestAnimationFrame(() => backdrop.classList.add("is-open"));
 
     function handleClose() {
       backdrop.classList.remove("is-open");
+      document.body.classList.remove("has-drawer-open");
       document.removeEventListener("keydown", onKeyDown);
       setTimeout(() => {
         backdrop.remove();

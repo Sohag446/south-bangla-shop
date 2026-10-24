@@ -101,7 +101,7 @@ window.SBC.configurator = (function () {
 
       if (currentStep === 1) {
         html += `
-          <div style="background:#fff;border:1px solid var(--gray-200);border-radius:var(--r-lg);padding:var(--sp-8);max-width:760px;margin:0 auto;">
+          <div class="sbc-config-card" style="max-width:760px;">
             <h2 style="font-size:var(--fs-h3);color:var(--navy-900);margin-bottom:8px;">Step 1: Define Your Infrastructure Requirements</h2>
             <p style="color:var(--c-text-muted);font-size:var(--fs-sm);margin-bottom:24px;">
               Select your deployment scenario to receive an automated bill of materials tailored to your bandwidth and device scale.
@@ -160,7 +160,7 @@ window.SBC.configurator = (function () {
         `;
       } else if (currentStep === 2) {
         html += `
-          <div style="background:#fff;border:1px solid var(--gray-200);border-radius:var(--r-lg);padding:var(--sp-8);max-width:880px;margin:0 auto;">
+          <div class="sbc-config-card" style="max-width:880px;">
             <div style="display:flex;align-items:center;justify-content:space-between;margin-bottom:20px;">
               <div>
                 <h2 style="font-size:var(--fs-h3);color:var(--navy-900);margin:0 0 4px;">Step 2: Recommended Equipment List</h2>
@@ -211,7 +211,7 @@ window.SBC.configurator = (function () {
         `;
       } else if (currentStep === 3) {
         html += `
-          <div style="background:#fff;border:1px solid var(--gray-200);border-radius:var(--r-lg);padding:var(--sp-8);max-width:880px;margin:0 auto;">
+          <div class="sbc-config-card" style="max-width:880px;">
             <h2 style="font-size:var(--fs-h3);color:var(--navy-900);margin-bottom:8px;">Step 3: Network Topology & Solution Summary</h2>
             <p style="color:var(--c-text-muted);font-size:var(--fs-sm);margin-bottom:20px;">
               Architectural diagram mapping connectivity between core gateways, switches, and client endpoints.
@@ -262,10 +262,10 @@ window.SBC.configurator = (function () {
         `;
       } else if (currentStep === 4) {
         html += `
-          <div style="background:#fff;border:1px solid var(--gray-200);border-radius:var(--r-lg);padding:var(--sp-8);max-width:760px;margin:0 auto;" class="sbc-proposal-sheet">
+          <div class="sbc-config-card sbc-proposal-sheet" style="max-width:760px;">
             <div style="border-bottom:2px solid var(--navy-900);padding-bottom:16px;margin-bottom:24px;display:flex;justify-content:space-between;align-items:flex-end;">
               <div>
-                <h1 style="font-size:22px;color:var(--navy-900);margin:0 0 4px;">SOUTH BANGLA COMPUTERS</h1>
+                <h1 style="font-size:22px;color:var(--navy-900);margin:0 0 4px;">SOUTH BANGLA COMPUTER</h1>
                 <div style="font-size:12px;color:var(--c-text-muted);">Network Solution Technical Proposal (Demo Edition)</div>
               </div>
               <div style="text-align:right;font-size:11px;color:var(--gray-500);">

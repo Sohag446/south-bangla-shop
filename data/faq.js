@@ -1,4 +1,4 @@
-/**
+﻿/**
  * FAQ Data (20 items grouped)
  * Blueprint §7 P33, §12.6
  */

@@ -1,4 +1,4 @@
-/**
+﻿/**
  * English String Dictionary
  * Blueprint §13.9
  */

@@ -12,7 +12,14 @@ html {
   font-size: 16px;
   scroll-behavior: smooth;
   -webkit-text-size-adjust: 100%;
-  overflow-x: hidden;
+  overflow-x: clip;
+  scroll-padding-top: 156px;
+}
+
+@media (max-width: 1023px) {
+  html {
+    scroll-padding-top: 108px;
+  }
 }
 
 body {
@@ -27,7 +34,7 @@ body {
   flex-direction: column;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
-  overflow-x: hidden;
+  overflow-x: clip;
 }
 
 /* Headings */
@@ -124,6 +131,18 @@ button {
 }
 
 /* Utilities */
+.sbc-skip-link {
+  position: absolute !important;
+  left: -9999px !important;
+  top: -9999px !important;
+  width: 1px !important;
+  height: 1px !important;
+  overflow: hidden !important;
+  clip: rect(0, 0, 0, 0) !important;
+  white-space: nowrap !important;
+  display: none !important;
+}
+
 .u-sr-only {
   position: absolute !important;
   width: 1px !important;

@@ -1,11 +1,10 @@
-<!doctype html>
+﻿<!doctype html>
 <html lang="en">
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>Partner Brands & Authorized Distributorships | South Bangla Computers</title>
-  <meta name="description" content="Explore South Bangla Computers authorized partner brands: Meetion (Official BD Distributor), Tenda, Cisco, HSGQ, Must, Solitine, Tumtec, BDCOM, and more.">
-  <link rel="canonical" href="https://www.southbanglabd.com/brands">
+  <title>Partner Brands & Hardware Distribution | South Bangla Computers</title>
+  <meta name="description" content="Explore South Bangla Computers partner brands: Tenda, Cisco, Solitine, Meetion, Must, HSGQ, Tumtec, and more with genuine manufacturer warranty.">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet">
@@ -171,14 +170,35 @@
       gap: 6px;
       transition: gap 0.2s;
     }
-    .sbc-brand-fullcard__btn:hover {
-      gap: 9px;
-      color: var(--navy-900);
+    .brand-main-content {
+      padding-top: 40px;
+      padding-bottom: 64px;
+    }
+    @media (max-width: 768px) {
+      .brand-main-content {
+        padding-top: 24px;
+        padding-bottom: 40px;
+      }
+      .brand-dir-toolbar {
+        padding: 14px 16px;
+        gap: 12px;
+        margin-bottom: 20px;
+      }
+      .brand-search-box {
+        min-width: 100%;
+        width: 100%;
+      }
+      .brand-card-grid {
+        grid-template-columns: 1fr;
+        gap: 16px;
+      }
+      .sbc-brand-fullcard {
+        padding: 20px 16px;
+      }
     }
   </style>
 </head>
 <body data-root="" data-page="brand">
-  <a href="#main-content" class="sbc-skip-link">Skip to main content</a>
   <div id="sbc-header"></div>
 
   <!-- ========================================================================
@@ -197,7 +217,7 @@
           <span class="sbc-page-banner__title-line2">Brands &amp; Distributorships</span>
         </h1>
         <p class="sbc-page-banner__desc">
-          South Bangla Computers is the authorized national partner for 14+ global technology leaders including Meetion, Tenda, Cisco, HSGQ, Must, and Solitine — guaranteeing 100% genuine equipment and official manufacturer warranty.
+          South Bangla Computers distributes leading global technology brands including Tenda, Cisco, Solitine, Must, HSGQ, Tumtec, and Meetion — supplying genuine equipment, official warranties, and dedicated technical support across Bangladesh.
         </p>
         <div class="sbc-page-banner__actions">
           <a href="shop.html" class="sbc-banner-btn sbc-banner-btn--primary">
@@ -208,44 +228,13 @@
           </a>
         </div>
       </div>
-          <h3 class="sbc-banner-tech-card__title">Global Brand Partnerships</h3>
-          <ul class="sbc-banner-tech-card__list">
-            <li class="sbc-banner-tech-card__item">
-              <svg class="sbc-icon sbc-icon--xs" aria-hidden="true"><use href="#icon-check"></use></svg>
-              <span><strong>Meetion:</strong> Official Bangladesh Distributor</span>
-            </li>
-            <li class="sbc-banner-tech-card__item">
-              <svg class="sbc-icon sbc-icon--xs" aria-hidden="true"><use href="#icon-check"></use></svg>
-              <span><strong>Tenda:</strong> Next-Gen Wi-Fi 7 &amp; Wi-Fi 6 Mesh</span>
-            </li>
-            <li class="sbc-banner-tech-card__item">
-              <svg class="sbc-icon sbc-icon--xs" aria-hidden="true"><use href="#icon-check"></use></svg>
-              <span><strong>Cisco:</strong> Business &amp; Catalyst Switching</span>
-            </li>
-            <li class="sbc-banner-tech-card__item">
-              <svg class="sbc-icon sbc-icon--xs" aria-hidden="true"><use href="#icon-check"></use></svg>
-              <span><strong>HSGQ &amp; Solitine:</strong> FTTH Optical &amp; Cabling</span>
-            </li>
-          </ul>
-          <div class="sbc-banner-tech-card__metric-grid">
-            <div class="sbc-banner-tech-card__metric">
-              <span class="sbc-banner-tech-card__metric-val">14</span>
-              <span class="sbc-banner-tech-card__metric-lbl">Global Brands</span>
-            </div>
-            <div class="sbc-banner-tech-card__metric">
-              <span class="sbc-banner-tech-card__metric-val">100%</span>
-              <span class="sbc-banner-tech-card__metric-lbl">Genuine Warranty</span>
-            </div>
-          </div>
-        </div>
-      </div>
     </div>
   </section>
 
   <!-- ========================================================================
        BRANDS DIRECTORY CONTENT
        ======================================================================== -->
-  <main id="main-content" class="l-container" style="padding-bottom: var(--sp-12);">
+  <main id="main-content" class="l-container brand-main-content">
     
     <!-- Directory Toolbar: Search & Category Tabs -->
     <div class="brand-dir-toolbar" id="brand-dir-toolbar">

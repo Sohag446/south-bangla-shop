@@ -1,4 +1,4 @@
-/**
+﻿/**
  * South Bangla Computers Seed Product Catalogue (53 SKUs)
  * Blueprint Â§12.3, Â§12.4, Â§12.5
  * Names, models, brands, and categories verified from live southbanglabd.com listing.

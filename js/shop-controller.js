@@ -53,15 +53,18 @@ window.SBC.shop = (function () {
         brandMap[p.brand] = (brandMap[p.brand] || 0) + 1;
       }
     });
-    // Meetion explicitly 1st, then other brands alphabetically
+    // Sort brands: Meetion and Tenda highlighted at top as featured partners, then alphabetical
     const sorted = Object.keys(brandMap).sort((a, b) => {
       if (a.toLowerCase() === "meetion") return -1;
       if (b.toLowerCase() === "meetion") return 1;
+      if (a.toLowerCase() === "tenda") return -1;
+      if (b.toLowerCase() === "tenda") return 1;
       return a.localeCompare(b);
     });
     return sorted.map(b => ({
       name: b,
-      count: brandMap[b]
+      count: brandMap[b],
+      isFeatured: b.toLowerCase() === "meetion"
     }));
   }
 
@@ -76,17 +79,19 @@ window.SBC.shop = (function () {
     const categories = getCategories();
     const brands = getBrands();
 
-    // 1. Render Brands (Meetion 1st, then others)
+    // 1. Render Brands
     if (brandListEl) {
       brandListEl.innerHTML = brands.map(b => {
         const isChecked = state.selectedBrands.some(sb => sb.toLowerCase() === b.name.toLowerCase());
+        const badge = b.isFeatured ? `<span style="margin-left:6px;font-size:9.5px;font-weight:800;color:#0070ba;background:#e0f2fe;padding:2px 6px;border-radius:4px;letter-spacing:0.5px;text-transform:uppercase;">★ Featured</span>` : "";
         return `
-          <li>
-            <label class="glam-checkbox-label">
+          <li ${b.isFeatured ? 'style="background:#f0f9ff;border-radius:6px;padding:2px 4px;margin-bottom:4px;"' : ''}>
+            <label class="glam-checkbox-label" ${b.isFeatured ? 'style="font-weight:700;color:#0070ba;"' : ''}>
               <span class="glam-checkbox-name">
                 <input type="checkbox" value="${util.esc(b.name)}" class="js-brand-checkbox" ${isChecked ? 'checked' : ''}>
                 <span class="glam-checkbox-custom"></span>
                 <span>${util.esc(b.name)}</span>
+                ${badge}
               </span>
               <span class="glam-checkbox-count">${b.count}</span>
             </label>
@@ -236,6 +241,77 @@ window.SBC.shop = (function () {
   }
 
   /**
+   * Render Horizontal Category Navigation Chips
+   */
+  function renderCategoryChips() {
+    const chipsEl = document.getElementById("sbc-shop-cat-chips");
+    if (!chipsEl) return;
+    const categories = getCategories();
+    const isAll = state.selectedCategories.length === 0;
+
+    let html = `
+      <button type="button" class="sbc-shop-chip ${isAll ? 'is-active' : ''}" data-cat="all">
+        All Products
+      </button>
+    `;
+
+    categories.forEach(cat => {
+      const active = state.selectedCategories.includes(cat.slug);
+      html += `
+        <button type="button" class="sbc-shop-chip ${active ? 'is-active' : ''}" data-cat="${util.esc(cat.slug)}">
+          ${util.esc(cat.name)}
+        </button>
+      `;
+    });
+
+    chipsEl.innerHTML = html;
+
+    chipsEl.querySelectorAll(".sbc-shop-chip").forEach(btn => {
+      btn.addEventListener("click", () => {
+        const cat = btn.dataset.cat;
+        if (cat === "all") {
+          state.selectedCategories = [];
+          try {
+            const url = new URL(window.location);
+            url.searchParams.delete("c");
+            url.searchParams.delete("category");
+            window.history.pushState({}, "", url.pathname + (url.search ? url.search : ""));
+          } catch (e) {}
+        } else {
+          state.selectedCategories = [cat];
+          try {
+            const url = new URL(window.location);
+            url.searchParams.set("c", cat);
+            window.history.pushState({}, "", url.pathname + "?" + url.searchParams.toString());
+          } catch (e) {}
+        }
+        state.currentPage = 1;
+        renderSidebarFilters();
+        renderCategoryChips();
+        renderListing();
+        updateMobileFilterBadge();
+        scrollToCatalog();
+      });
+    });
+  }
+
+  /**
+   * Update Mobile Filter Count Badge
+   */
+  function updateMobileFilterBadge() {
+    const badgeEl = document.getElementById("sbc-mobile-filter-badge");
+    if (!badgeEl) return;
+    let count = state.selectedCategories.length + state.selectedBrands.length + state.selectedWarranties.length;
+    if (state.minPrice > 0 || state.maxPrice < 250000) count++;
+    if (count > 0) {
+      badgeEl.textContent = count;
+      badgeEl.style.display = "inline-block";
+    } else {
+      badgeEl.style.display = "none";
+    }
+  }
+
+  /**
    * Filter and Sort Products
    */
   function getFilteredProducts() {
@@ -300,13 +376,15 @@ window.SBC.shop = (function () {
     if (state.sort === "name-asc") {
       return products.sort((a, b) => a.name.localeCompare(b.name));
     }
-    // Default / Popularity: Meetion products 1st, then other brands
+    // Default / Popularity: Prioritize Meetion products first, then top selling, then alphabetical
     return products.sort((a, b) => {
-      const aMeetion = (a.brand || "").toLowerCase() === "meetion";
-      const bMeetion = (b.brand || "").toLowerCase() === "meetion";
-      if (aMeetion && !bMeetion) return -1;
-      if (!aMeetion && bMeetion) return 1;
-      return (b.isTopSale ? 1 : 0) - (a.isTopSale ? 1 : 0);
+      const isMeetionA = ((a.brand || "").toLowerCase() === "meetion") ? 1 : 0;
+      const isMeetionB = ((b.brand || "").toLowerCase() === "meetion") ? 1 : 0;
+      if (isMeetionA !== isMeetionB) return isMeetionB - isMeetionA;
+
+      const topSaleDiff = (b.isTopSale ? 1 : 0) - (a.isTopSale ? 1 : 0);
+      if (topSaleDiff !== 0) return topSaleDiff;
+      return a.name.localeCompare(b.name);
     });
   }
 
@@ -355,6 +433,9 @@ window.SBC.shop = (function () {
           <div class="glam-card__dots">${dots}</div>
           <span class="glam-card__brand-badge">${util.esc(p.brand)}</span>
         </div>
+        <button type="button" class="glam-card__mobile-btn js-add-cart-glam" data-id="${util.esc(p.id)}" aria-label="Add ${util.esc(p.name)} to cart">
+          Add to Cart
+        </button>
       </article>
     `;
   }
@@ -580,6 +661,8 @@ window.SBC.shop = (function () {
     // Render Pagination
     renderPagination(totalCount, state.currentPage);
     updateHeaderCartBadge();
+    renderCategoryChips();
+    updateMobileFilterBadge();
   }
 
   function updateHeaderCartBadge() {
@@ -673,6 +756,65 @@ window.SBC.shop = (function () {
         renderListing();
       }, 200));
     }
+
+    // Mobile Filter Drawer Toggle
+    const openFilterBtn = document.getElementById("sbc-open-filter-btn");
+    const closeFilterBtn = document.getElementById("sbc-close-filter-btn");
+    const sidebarEl = document.getElementById("glam-sidebar");
+    const backdropEl = document.getElementById("glam-sidebar-backdrop");
+    const drawerClearBtn = document.getElementById("sbc-drawer-clear-btn");
+    const drawerApplyBtn = document.getElementById("sbc-drawer-apply-btn");
+
+    function openFilterDrawer() {
+      if (sidebarEl) sidebarEl.classList.add("is-open");
+      if (backdropEl) backdropEl.classList.add("is-open");
+      document.body.classList.add("has-drawer-open");
+    }
+
+    function closeFilterDrawer() {
+      if (sidebarEl) sidebarEl.classList.remove("is-open");
+      if (backdropEl) backdropEl.classList.remove("is-open");
+      document.body.classList.remove("has-drawer-open");
+    }
+
+    if (openFilterBtn) openFilterBtn.addEventListener("click", openFilterDrawer);
+    if (closeFilterBtn) closeFilterBtn.addEventListener("click", closeFilterDrawer);
+    if (backdropEl) backdropEl.addEventListener("click", closeFilterDrawer);
+
+    if (drawerClearBtn) {
+      drawerClearBtn.addEventListener("click", () => {
+        state.selectedCategories = [];
+        state.selectedBrands = [];
+        state.selectedWarranties = [];
+        state.minPrice = 0;
+        state.maxPrice = 250000;
+        state.searchQuery = "";
+        state.currentPage = 1;
+        const minInp = document.getElementById("glam-price-min");
+        const maxInp = document.getElementById("glam-price-max");
+        if (minInp) minInp.value = "500";
+        if (maxInp) maxInp.value = "250000";
+        renderSidebarFilters();
+        renderCategoryChips();
+        renderListing();
+        updateMobileFilterBadge();
+      });
+    }
+
+    if (drawerApplyBtn) {
+      drawerApplyBtn.addEventListener("click", () => {
+        closeFilterDrawer();
+        renderListing();
+        updateMobileFilterBadge();
+        scrollToCatalog();
+      });
+    }
+
+    document.addEventListener("keydown", (e) => {
+      if (e.key === "Escape" && sidebarEl && sidebarEl.classList.contains("is-open")) {
+        closeFilterDrawer();
+      }
+    });
 
     // Intercept category & brand links if already on shop page
     document.addEventListener("click", (e) => {

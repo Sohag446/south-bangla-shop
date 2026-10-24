@@ -2,7 +2,7 @@
 
 > **Official Existing Website:** [https://www.southbanglabd.com/](https://www.southbanglabd.com/)  
 > **Brand Slogan:** *Striving For ICT Excellence Since 1999*  
-> **Implementation Tech Stack:** Pure HTML5, CSS3, and Vanilla JavaScript (Zero npm dependencies, zero build steps, zero external CDNs, 100% `file://` compatible).
+> **Implementation Tech Stack:** Pure HTML5, CSS3, and Vanilla JavaScript (Zero npm dependencies, zero build steps, Google Fonts and official asset fallbacks, 100% `file://` compatible).
 
 ---
 
@@ -41,7 +41,7 @@ Then navigate to: `http://localhost:8080/index.html`
 
 ## 3. Demo Credentials & Test Roles
 
-The prototype includes an interactive **Demo Control Panel** accessible at any time via the blue floating tool button in the bottom-right corner, or via direct login on the authentication pages:
+The prototype includes an interactive **Demo Control Panel** accessible via adding `?demo=1` to the URL (or by clicking the role buttons on the login pages):
 
 | Role | Email | Password | Key Capabilities |
 | :--- | :--- | :--- | :--- |

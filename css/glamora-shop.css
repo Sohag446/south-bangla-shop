@@ -1,4 +1,4 @@
-﻿/* ==========================================================================
+/* ==========================================================================
    South Bangla Computers — Modern Luxury Shop Styling (Glamora-Inspired)
    Pixel-accurate translation of the reference layout into an ICT flagship store.
    ========================================================================== */
@@ -150,7 +150,141 @@ body.glam-shop-page {
   }
 }
 
+/* ==========================================================================
+   FEATURED BRAND SPOTLIGHT: MEETION
+   ========================================================================== */
+.sbc-meetion-shop-spotlight {
+  margin-top: 14px;
+  margin-bottom: 28px;
+  width: 100%;
+}
 
+.sbc-meetion-spotlight-card {
+  background: linear-gradient(135deg, #ffffff 0%, #f8fafc 100%);
+  border: 1.5px solid #e2e8f0;
+  border-radius: 16px;
+  padding: 24px 32px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 24px;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.03);
+  position: relative;
+  overflow: hidden;
+}
+
+.sbc-meetion-spotlight-card::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 5px;
+  height: 100%;
+  background: #0070ba;
+}
+
+.sbc-meetion-spotlight-card__info {
+  flex: 1;
+  max-width: 780px;
+}
+
+.sbc-spotlight-badge {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  background: #e0f2fe;
+  color: #0369a1;
+  font-size: 11px;
+  font-weight: 800;
+  letter-spacing: 1px;
+  text-transform: uppercase;
+  padding: 4px 10px;
+  border-radius: 9999px;
+  margin-bottom: 10px;
+}
+
+.sbc-spotlight-badge__dot {
+  width: 6px;
+  height: 6px;
+  border-radius: 50%;
+  background: #0284c7;
+  animation: sbcPulseDot 2s infinite ease-in-out;
+}
+
+@keyframes sbcPulseDot {
+  0%, 100% { opacity: 1; transform: scale(1); }
+  50% { opacity: 0.5; transform: scale(0.85); }
+}
+
+.sbc-meetion-spotlight-card__title {
+  font-size: 20px;
+  font-weight: 800;
+  color: #071526;
+  margin: 0 0 6px;
+  line-height: 1.25;
+}
+
+.sbc-meetion-spotlight-card__desc {
+  font-size: 13.5px;
+  color: #64748b;
+  line-height: 1.5;
+  margin: 0 0 16px;
+}
+
+.sbc-meetion-spotlight-card__actions {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+  flex-wrap: wrap;
+}
+
+.sbc-spotlight-action-btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  background: #071526;
+  color: #ffffff !important;
+  font-size: 12.5px;
+  font-weight: 700;
+  padding: 9px 20px;
+  border-radius: 8px;
+  text-decoration: none;
+  transition: all 0.2s ease;
+  cursor: pointer;
+  box-shadow: 0 2px 8px rgba(7, 21, 38, 0.2);
+}
+
+.sbc-spotlight-action-btn:hover {
+  background: #0070ba;
+  transform: translateY(-1px);
+}
+
+.sbc-spotlight-warranty-note {
+  font-size: 12.5px;
+  font-weight: 700;
+  color: #16a34a;
+  display: inline-flex;
+  align-items: center;
+  gap: 4px;
+}
+
+.sbc-meetion-spotlight-card__media {
+  background: #ffffff;
+  padding: 14px 24px;
+  border-radius: 12px;
+  border: 1px solid #e2e8f0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.04);
+}
+
+.sbc-meetion-spotlight-card__media img {
+  height: 42px;
+  width: auto;
+  object-fit: contain;
+}
 
 /* ── Top Bar & Header ── */
 .glam-header {
@@ -739,6 +873,115 @@ body.glam-shop-page {
   padding: 0;
 }
 
+/* ── Category Navigation Chips (Horizontal Scrollable Pills) ── */
+.sbc-shop-cat-chips-wrap {
+  width: 100%;
+  overflow: hidden;
+  margin-top: 6px;
+  margin-bottom: 22px;
+}
+
+.sbc-shop-cat-chips {
+  display: flex;
+  gap: 10px;
+  overflow-x: auto;
+  padding: 4px 2px 10px;
+  -webkit-overflow-scrolling: touch;
+  scrollbar-width: thin;
+}
+
+.sbc-shop-cat-chips::-webkit-scrollbar {
+  height: 4px;
+}
+
+.sbc-shop-cat-chips::-webkit-scrollbar-thumb {
+  background: #cbd5e1;
+  border-radius: 4px;
+}
+
+.sbc-shop-chip {
+  display: inline-flex;
+  align-items: center;
+  white-space: nowrap;
+  padding: 8px 16px;
+  border-radius: 9999px;
+  border: 1px solid #e2e8f0;
+  background: #ffffff;
+  color: #334155;
+  font-size: 13px;
+  font-weight: 600;
+  cursor: pointer;
+  text-decoration: none;
+  transition: all 0.2s cubic-bezier(0.16, 1, 0.3, 1);
+  user-select: none;
+  flex-shrink: 0;
+  box-shadow: 0 1px 2px rgba(0, 0, 0, 0.04);
+}
+
+.sbc-shop-chip:hover {
+  border-color: #005883;
+  color: #005883;
+  background: #f0f9ff;
+}
+
+.sbc-shop-chip.is-active {
+  background: #005883;
+  border-color: #005883;
+  color: #ffffff;
+  box-shadow: 0 3px 10px rgba(0, 88, 131, 0.25);
+}
+
+/* ── Mobile Filter Trigger Button & Badge (Desktop Default: Hidden) ── */
+.glam-toolbar-actions {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+
+.sbc-mobile-filter-btn {
+  display: none;
+  align-items: center;
+  gap: 8px;
+  background: #ffffff;
+  border: 1px solid #d1d5db;
+  border-radius: var(--glam-radius-sm);
+  padding: 7px 14px;
+  font-size: 13px;
+  font-weight: 600;
+  color: var(--glam-text);
+  cursor: pointer;
+  transition: all 0.2s ease;
+  min-height: 38px;
+  box-sizing: border-box;
+}
+
+.sbc-mobile-filter-btn:hover {
+  border-color: #005883;
+  color: #005883;
+}
+
+.sbc-filter-count-badge {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  min-width: 18px;
+  height: 18px;
+  padding: 0 5px;
+  background: #005883;
+  color: #ffffff;
+  border-radius: 9999px;
+  font-size: 11px;
+  font-weight: 700;
+  line-height: 1;
+}
+
+.glam-sidebar__mobile-header,
+.glam-sidebar__mobile-footer,
+.glam-sidebar-backdrop,
+.glam-card__mobile-btn {
+  display: none;
+}
+
 .glam-sort-wrap {
   display: flex;
   align-items: center;
@@ -1154,7 +1397,6 @@ body.glam-shop-page {
 .glam-bottom-banner__support strong {
   color: #38bdf8;
 }
-}
 
 /* ── Footer with Large Watermark ── */
 .glam-footer {
@@ -1239,16 +1481,495 @@ body.glam-shop-page {
   .glam-layout {
     grid-template-columns: 1fr;
   }
+
+  /* ── Mobile Filter Trigger Button ── */
+  .sbc-mobile-filter-btn {
+    display: inline-flex;
+  }
+
+  /* ── Off-Canvas Slide-out Filter Drawer ── */
   .glam-sidebar {
+    display: flex !important;
+    flex-direction: column;
+    position: fixed;
+    top: 0;
+    left: 0;
+    bottom: 0;
+    width: min(340px, 86vw);
+    background: #ffffff;
+    z-index: 9999;
+    box-shadow: 4px 0 24px rgba(0, 0, 0, 0.25);
+    overflow-y: auto;
+    padding: 16px 20px 24px;
+    box-sizing: border-box;
+    transform: translateX(-100%);
+    transition: transform 0.28s cubic-bezier(0.16, 1, 0.3, 1), visibility 0.28s ease;
+    visibility: hidden;
+    margin: 0 !important;
+    border-radius: 0;
+  }
+
+  .glam-sidebar.is-open {
+    transform: translateX(0);
+    visibility: visible;
+  }
+
+  .glam-sidebar-backdrop {
+    display: block;
+    position: fixed;
+    inset: 0;
+    background: rgba(7, 21, 38, 0.55);
+    backdrop-filter: blur(2px);
+    z-index: 9998;
+    opacity: 0;
+    visibility: hidden;
+    transition: opacity 0.25s ease, visibility 0.25s ease;
+  }
+
+  .glam-sidebar-backdrop.is-open {
+    opacity: 1;
+    visibility: visible;
+  }
+
+  .glam-sidebar__mobile-header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding-bottom: 14px;
+    margin-bottom: 14px;
+    border-bottom: 1px solid var(--glam-border);
+  }
+
+  .glam-sidebar__mobile-title {
+    font-size: 16px;
+    font-weight: 800;
+    color: var(--glam-text);
+  }
+
+  .glam-sidebar__close-btn {
+    background: transparent;
+    border: none;
+    color: var(--glam-text-muted);
+    cursor: pointer;
+    padding: 6px;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 6px;
+    transition: color 0.15s;
+  }
+
+  .glam-sidebar__close-btn:hover {
+    color: var(--glam-text);
+    background: #f1f5f9;
+  }
+
+  .glam-sidebar__heading {
     display: none;
   }
-  .glam-sidebar.is-open {
+
+  .glam-sidebar__mobile-footer {
+    display: flex;
+    gap: 10px;
+    padding-top: 18px;
+    margin-top: auto;
+    border-top: 1px solid var(--glam-border);
+  }
+
+  .glam-filter-btn {
+    flex: 1;
+    padding: 10px;
+    font-size: 13px;
+    font-weight: 700;
+    border-radius: var(--glam-radius-sm);
+    cursor: pointer;
+    text-align: center;
+    transition: all 0.15s ease;
+    border: none;
+  }
+
+  .glam-filter-btn--reset {
+    background: #f1f5f9;
+    color: var(--glam-text);
+    border: 1px solid #cbd5e1;
+  }
+
+  .glam-filter-btn--reset:hover {
+    background: #e2e8f0;
+  }
+
+  .glam-filter-btn--apply {
+    background: #005883;
+    color: #ffffff;
+  }
+
+  .glam-filter-btn--apply:hover {
+    background: #004366;
+  }
+
+  /* ── Dedicated 2-Column Mobile Grid & Touch-Friendly Cards ── */
+  .glam-grid {
+    grid-template-columns: repeat(2, 1fr) !important;
+    gap: 12px !important;
+    margin-bottom: 32px;
+  }
+
+  .glam-card {
+    background: #ffffff;
+    border: 1px solid #eef2f6;
+    border-radius: 12px;
+    padding: 10px;
+    box-sizing: border-box;
+    box-shadow: 0 1px 3px rgba(0, 0, 0, 0.03);
+  }
+
+  .glam-card__media {
+    border-radius: 8px;
+    margin-bottom: 8px;
+  }
+
+  .glam-card__overlay {
+    display: none !important;
+  }
+
+  .glam-card__info {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 4px;
+    margin-bottom: 6px;
+  }
+
+  .glam-card__title {
+    white-space: normal;
+    display: -webkit-box;
+    -webkit-line-clamp: 2;
+    -webkit-box-orient: vertical;
+    overflow: hidden;
+    line-height: 1.3;
+    height: 2.6em;
+    font-size: 12px;
+    font-weight: 700;
+  }
+
+  .glam-card__price {
+    font-size: 13px;
+    color: #005883;
+    font-weight: 800;
+  }
+
+  /* Accessible 1-Tap Mobile Add to Cart Button */
+  .glam-card__mobile-btn {
     display: block;
-    margin-bottom: 28px;
+    width: 100%;
+    margin-top: 10px;
+    padding: 9px 8px;
+    background: #005883;
+    color: #ffffff;
+    border: none;
+    border-radius: var(--glam-radius-sm);
+    font-size: 12px;
+    font-weight: 700;
+    text-align: center;
+    cursor: pointer;
+    transition: background 0.15s ease;
+    box-sizing: border-box;
+    min-height: 38px;
   }
+
+  .glam-card__mobile-btn:active {
+    background: #004366;
+  }
+
+  /* ── Featured Meetion Spotlight Mobile ── */
+  .sbc-meetion-shop-spotlight {
+    margin-top: 10px;
+    margin-bottom: 22px;
+  }
+
+  .sbc-meetion-spotlight-card {
+    flex-direction: column;
+    align-items: stretch;
+    padding: 18px 16px;
+    gap: 16px;
+    border-radius: 14px;
+  }
+
+  .sbc-meetion-spotlight-card__title {
+    font-size: 17px;
+    line-height: 1.3;
+  }
+
+  .sbc-meetion-spotlight-card__desc {
+    font-size: 12.5px;
+    line-height: 1.45;
+    margin-bottom: 14px;
+  }
+
+  .sbc-meetion-spotlight-card__actions {
+    flex-direction: column;
+    align-items: stretch;
+    gap: 10px;
+  }
+
+  .sbc-spotlight-action-btn {
+    width: 100%;
+    justify-content: center;
+    box-sizing: border-box;
+    padding: 11px 16px;
+    font-size: 13px;
+  }
+
+  .sbc-spotlight-warranty-note {
+    justify-content: center;
+    font-size: 12px;
+  }
+
+  .sbc-meetion-spotlight-card__media {
+    width: 100%;
+    box-sizing: border-box;
+    justify-content: center;
+    padding: 12px;
+    background: #ffffff;
+  }
+
+  .sbc-meetion-spotlight-card__media img {
+    height: 36px;
+  }
+
+  /* ── Product Listing Column Mobile Responsive ── */
+  .glam-main-listing {
+    width: 100%;
+    max-width: 100%;
+    box-sizing: border-box;
+    overflow: hidden;
+    min-width: 0;
+  }
+
+  .glam-products-header {
+    flex-direction: column;
+    align-items: stretch;
+    gap: 12px;
+    margin-bottom: 16px;
+    width: 100%;
+  }
+
+  .glam-products-count {
+    font-size: 12.5px;
+    line-height: 1.45;
+    color: var(--glam-text-muted);
+    width: 100%;
+  }
+
+  .glam-applied-filters {
+    margin-top: 8px;
+    gap: 6px;
+  }
+
+  .glam-filter-pill {
+    padding: 4px 10px;
+    font-size: 10.5px;
+  }
+
+  .glam-toolbar-actions {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    width: 100%;
+    gap: 10px;
+  }
+
+  .sbc-mobile-filter-btn {
+    display: inline-flex;
+    flex: 1;
+    min-height: 42px;
+    align-items: center;
+    justify-content: center;
+    gap: 8px;
+    border-radius: 8px;
+    font-size: 13px;
+    font-weight: 700;
+    box-sizing: border-box;
+    background: #ffffff;
+    border: 1.5px solid #cbd5e1;
+  }
+
+  .glam-sort-wrap {
+    flex: 1;
+    display: flex;
+    align-items: center;
+    gap: 6px;
+    min-width: 0;
+  }
+
+  .glam-sort-wrap span {
+    font-size: 12px;
+    white-space: nowrap;
+    color: var(--glam-text-muted);
+  }
+
+  .glam-sort-select {
+    width: 100%;
+    height: 42px;
+    border-radius: 8px;
+    font-size: 12.5px;
+    font-weight: 600;
+    padding: 0 8px;
+    border: 1.5px solid #cbd5e1;
+    box-sizing: border-box;
+    background-color: #ffffff;
+  }
+
+  /* ── Category Cards Mobile Responsive (Stacked & Scaled) ── */
+  .glam-category-section {
+    margin-top: 36px;
+    margin-bottom: 40px;
+    width: 100%;
+  }
+
+  .glam-category-header {
+    margin-bottom: 16px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+  }
+
+  .glam-category-title {
+    font-size: 16px;
+    letter-spacing: 0.8px;
+    font-weight: 800;
+  }
+
+  .glam-category-arrows {
+    display: none !important;
+  }
+
   .glam-category-cards {
-    grid-template-columns: 1fr;
+    grid-template-columns: 1fr !important;
+    gap: 18px !important;
+    width: 100%;
   }
+
+  .glam-category-card {
+    grid-template-columns: 1fr !important;
+    border-radius: 16px;
+    overflow: hidden;
+    box-shadow: 0 4px 16px rgba(0, 0, 0, 0.04);
+  }
+
+  .glam-category-card__right {
+    order: -1;
+    padding: 20px 16px;
+    height: 160px;
+    background: #f8fafc;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-bottom: 1px solid #f1f5f9;
+  }
+
+  .glam-category-card__right img {
+    max-height: 125px;
+    max-width: 80%;
+    object-fit: contain;
+  }
+
+  .glam-category-card__left {
+    padding: 20px 18px 24px !important;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+  }
+
+  .glam-category-card__title {
+    font-size: 18px !important;
+    margin: 0 0 6px !important;
+    font-weight: 800;
+    color: var(--glam-text);
+  }
+
+  .glam-category-card__desc {
+    font-size: 13px !important;
+    line-height: 1.5 !important;
+    margin: 0 0 16px !important;
+    color: var(--glam-text-muted);
+  }
+
+  .glam-category-card__btn {
+    padding: 9px 20px !important;
+    font-size: 11px !important;
+    font-weight: 800;
+    border-radius: 9999px;
+    width: fit-content;
+  }
+
+  /* ── Bottom Dark Procurement Banner Mobile Responsive ── */
+  .glam-bottom-banner {
+    padding: 32px 18px !important;
+    margin-bottom: 40px !important;
+    border-radius: 16px !important;
+    text-align: center;
+    box-sizing: border-box;
+    width: 100%;
+  }
+
+  .glam-bottom-banner__inner {
+    width: 100%;
+    max-width: 100%;
+  }
+
+  .glam-bottom-banner__tag {
+    font-size: 10px !important;
+    letter-spacing: 1px !important;
+    margin-bottom: 8px;
+    display: inline-block;
+  }
+
+  .glam-bottom-banner__title {
+    font-size: 20px !important;
+    line-height: 1.35 !important;
+    margin: 0 0 12px !important;
+    font-weight: 800;
+  }
+
+  .glam-bottom-banner__desc {
+    font-size: 13px !important;
+    line-height: 1.5 !important;
+    margin: 0 0 20px !important;
+    color: #cbd5e1;
+  }
+
+  .glam-bottom-banner__actions {
+    display: flex;
+    flex-direction: column !important;
+    gap: 10px !important;
+    width: 100%;
+    align-items: stretch !important;
+    margin-bottom: 18px !important;
+  }
+
+  .glam-bottom-banner__actions .sbc-banner-btn {
+    width: 100% !important;
+    max-width: 100% !important;
+    text-align: center;
+    justify-content: center;
+    padding: 12px 18px !important;
+    font-size: 13px !important;
+    box-sizing: border-box;
+  }
+
+  .glam-bottom-banner__support {
+    display: flex;
+    flex-direction: column !important;
+    gap: 6px !important;
+    font-size: 12px !important;
+    line-height: 1.4;
+    color: #94a3b8;
+  }
+
+  .glam-bottom-banner__support span:nth-child(2) {
+    display: none !important;
+  }
+
   .glam-footer__grid {
     grid-template-columns: repeat(2, 1fr);
     gap: 28px;
@@ -1256,9 +1977,6 @@ body.glam-shop-page {
 }
 
 @media (max-width: 540px) {
-  .glam-grid {
-    grid-template-columns: 1fr;
-  }
   .glam-header__inner {
     height: 60px;
   }
@@ -1267,5 +1985,25 @@ body.glam-shop-page {
   }
   .glam-footer__grid {
     grid-template-columns: 1fr;
+  }
+}
+
+@media (max-width: 360px) {
+  .glam-grid {
+    gap: 8px !important;
+  }
+  .glam-card {
+    padding: 8px;
+  }
+  .glam-card__title {
+    font-size: 11px;
+  }
+  .glam-card__price {
+    font-size: 12px;
+  }
+  .glam-card__mobile-btn {
+    padding: 7px 6px;
+    font-size: 11px;
+    min-height: 34px;
   }
 }

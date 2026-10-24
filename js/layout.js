@@ -128,23 +128,22 @@ window.SBC.layout = (function () {
     const accountSubText = session ? (session.type === "dealer" ? 'Dealer Portal' : 'Dashboard') : 'Login / Register';
 
     return `
-      ${renderAnnouncement()}
       <header class="sbc-header">
         <!-- TIER 1: Top Bar (Navy #071526) -->
         <div class="sbc-topbar">
           <div class="l-container sbc-topbar__inner">
             <div class="sbc-topbar__left">
-              <a href="tel:+8801711234567" class="sbc-topbar__link">
+              <a href="tel:+8809639257121" class="sbc-topbar__link">
                 ${ui.icon("phone", "xs")}
-                <span>+880 1711 234567</span>
+                <span>+88 09639 257 121</span>
               </a>
-              <a href="mailto:info@southbanglacomputer.com" class="sbc-topbar__link">
+              <a href="mailto:info@southbanglabd.com" class="sbc-topbar__link">
                 ${ui.icon("mail", "xs")}
-                <span>info@southbanglacomputer.com</span>
+                <span>info@southbanglabd.com</span>
               </a>
               <span class="sbc-topbar__item">
                 ${ui.icon("map-pin", "xs")}
-                <span>Dhaka, Bangladesh</span>
+                <span>Elephant Road, Dhaka</span>
               </span>
             </div>
             <div class="sbc-topbar__right">
@@ -166,8 +165,8 @@ window.SBC.layout = (function () {
         <div class="sbc-main-header">
           <div class="l-container sbc-main-header__inner">
             <!-- Brand Logo -->
-            <a href="${util.U('index.html')}" class="sbc-main-header__logo" aria-label="South Bangla Computer">
-              <img src="${util.getRoot()}assets/img/logo.png" alt="South Bangla Computer" onerror="this.src='${util.getRoot()}sbc-logo-24-style.png'">
+            <a href="${util.U('index.html')}" class="sbc-main-header__logo" aria-label="South Bangla Computers">
+              <img src="${util.getRoot()}assets/img/logo.png" alt="South Bangla Computers" onerror="this.src='${util.getRoot()}sbc-logo-24-style.png'">
             </a>
 
             <!-- Search Form -->
@@ -275,11 +274,11 @@ window.SBC.layout = (function () {
                     <div class="sbc-megamenu__col">
                       <div class="sbc-megamenu__heading">Top Partner Brands</div>
                       <ul class="sbc-megamenu__list">
-                        <li><a href="${util.U('shop.html', { b: 'meetion' })}#shop-catalog"><strong style="color:var(--c-primary);">Meetion</strong> &mdash; Gaming/Office</a></li>
-                        <li><a href="${util.U('shop.html', { b: 'tenda' })}#shop-catalog"><strong>Tenda</strong> &mdash; Networking</a></li>
-                        <li><a href="${util.U('shop.html', { b: 'cisco' })}#shop-catalog"><strong>Cisco</strong> &mdash; Enterprise</a></li>
-                        <li><a href="${util.U('shop.html', { b: 'hsgq' })}#shop-catalog"><strong>HSGQ</strong> &mdash; FTTH &amp; PON</a></li>
-                        <li><a href="${util.U('shop.html', { b: 'solitine' })}#shop-catalog"><strong>Solitine</strong> &mdash; Cabling</a></li>
+                        <li><a href="${util.U('shop.html', { b: 'tenda' })}#shop-catalog"><strong>Tenda</strong> &mdash; Wi-Fi &amp; Networking</a></li>
+                        <li><a href="${util.U('shop.html', { b: 'cisco' })}#shop-catalog"><strong>Cisco</strong> &mdash; Enterprise Switches</a></li>
+                        <li><a href="${util.U('shop.html', { b: 'solitine' })}#shop-catalog"><strong>Solitine</strong> &mdash; Cabling &amp; Fiber</a></li>
+                        <li><a href="${util.U('shop.html', { b: 'must' })}#shop-catalog"><strong>Must</strong> &mdash; Power &amp; UPS</a></li>
+                        <li><a href="${util.U('shop.html', { b: 'meetion' })}#shop-catalog"><strong>Meetion</strong> &mdash; Peripherals &amp; Audio</a></li>
                       </ul>
                       <a href="${util.U('brand.html')}" class="sbc-megamenu__viewall">
                         View All 14 Brands &rarr;
@@ -326,25 +325,6 @@ window.SBC.layout = (function () {
                     </div>
                     <a href="${util.U('brand.html')}" style="color:var(--c-primary);font-weight:700;font-size:12px;text-decoration:none;">
                       All 14 Brands &rarr;
-                    </a>
-                  </div>
-
-                  <!-- Meetion Spotlight Feature Banner -->
-                  <div class="sbc-megamenu-meetion-spotlight" style="background:linear-gradient(135deg, #071526 0%, #0f2b48 100%);border-radius:10px;padding:14px 18px;margin-bottom:14px;display:flex;align-items:center;justify-content:space-between;border:1px solid rgba(0,112,186,0.4);box-shadow:0 4px 16px rgba(0,0,0,0.12);">
-                    <div style="display:flex;align-items:center;gap:16px;">
-                      <div style="background:#ffffff;padding:6px 12px;border-radius:8px;display:flex;align-items:center;justify-content:center;height:42px;min-width:110px;">
-                        <img src="${util.getRoot()}assets/brand image/924112071.png" alt="Meetion" style="max-height:28px;max-width:96px;object-fit:contain;">
-                      </div>
-                      <div>
-                        <div style="display:flex;align-items:center;gap:8px;margin-bottom:3px;">
-                          <span style="background:#0070ba;color:#ffffff;font-size:9.5px;font-weight:800;letter-spacing:1px;padding:2px 7px;border-radius:4px;text-transform:uppercase;">OFFICIAL BANGLADESH DISTRIBUTOR</span>
-                          <span style="color:#38bdf8;font-size:11px;font-weight:700;">★ Featured Hero Brand</span>
-                        </div>
-                        <div style="color:#ffffff;font-size:12.5px;font-weight:600;">Meetion Pro Mechanical Keyboards, Ergonomic Wireless Mice, Headsets &amp; Accessories</div>
-                      </div>
-                    </div>
-                    <a href="${util.U('shop.html', { b: 'meetion' })}#shop-catalog" class="sbc-btn sbc-btn--primary sbc-btn--sm" style="background:#0070ba;border-color:#0070ba;color:#fff;font-weight:700;white-space:nowrap;padding:7px 16px;">
-                      Explore Meetion &rarr;
                     </a>
                   </div>
 
@@ -415,10 +395,10 @@ window.SBC.layout = (function () {
                       <span class="sbc-brand-card__name">Phyhome</span>
                       <span style="font-size:10px;color:var(--c-text-muted);margin-top:2px;">FTTH Active Transceivers</span>
                     </a>
-                    <a href="${util.U('shop.html', { b: 'meetion' })}#shop-catalog" class="sbc-brand-card" style="border-color:rgba(255,107,0,0.4);background:rgba(255,107,0,0.03);">
+                    <a href="${util.U('shop.html', { b: 'meetion' })}#shop-catalog" class="sbc-brand-card">
                       <div class="sbc-brand-card__logo"><img src="${util.getRoot()}assets/brand image/924112071.png" alt="Meetion" loading="lazy"></div>
-                      <span class="sbc-brand-card__name" style="color:#ea580c;">Meetion</span>
-                      <span style="font-size:10px;color:#c2410c;margin-top:2px;">Official BD Distributor</span>
+                      <span class="sbc-brand-card__name">Meetion</span>
+                      <span style="font-size:10px;color:var(--c-text-muted);margin-top:2px;">Peripherals &amp; Audio</span>
                     </a>
                   </div>
 
@@ -461,8 +441,8 @@ window.SBC.layout = (function () {
               ${ui.icon("menu", "lg")}
             </button>
 
-            <a href="${util.U('index.html')}" class="sbc-header__mobile-logo" aria-label="South Bangla Computer">
-              <img src="${util.getRoot()}assets/img/logo.png" alt="South Bangla Computer" onerror="this.src='${util.getRoot()}sbc-logo-24-style.png'">
+            <a href="${util.U('index.html')}" class="sbc-header__mobile-logo" aria-label="South Bangla Computers">
+              <img src="${util.getRoot()}assets/img/logo.png" alt="South Bangla Computers" onerror="this.src='${util.getRoot()}sbc-logo-24-style.png'">
             </a>
 
             <div class="sbc-header__mobile-actions">
@@ -505,21 +485,21 @@ window.SBC.layout = (function () {
             <!-- Col 1: Brand & Contacts -->
             <div class="sbc-footer-v2__col sbc-footer-v2__col--brand">
               <div class="sbc-footer-v2__logo-wrap">
-                <img src="${util.getRoot()}assets/img/logo.png" alt="South Bangla Computer" class="sbc-footer-v2__logo" onerror="this.src='${util.getRoot()}sbc-logo-24-style.png'">
+                <img src="${util.getRoot()}assets/img/logo.png" alt="South Bangla Computers" class="sbc-footer-v2__logo" onerror="this.src='${util.getRoot()}sbc-logo-24-style.png'">
               </div>
               <p class="sbc-footer-v2__tagline">Networking | IT Equipment | Computer Accessories</p>
               <div class="sbc-footer-v2__contact-list">
-                <a href="tel:+8801711234567" class="sbc-footer-v2__contact-item">
+                <a href="tel:+8809639257121" class="sbc-footer-v2__contact-item">
                   ${ui.icon("phone", "sm")}
-                  <span>+880 1711 234567</span>
+                  <span>+88 09639 257 121</span>
                 </a>
-                <a href="mailto:info@southbanglacomputer.com" class="sbc-footer-v2__contact-item">
+                <a href="mailto:info@southbanglabd.com" class="sbc-footer-v2__contact-item">
                   ${ui.icon("mail", "sm")}
-                  <span>info@southbanglacomputer.com</span>
+                  <span>info@southbanglabd.com</span>
                 </a>
                 <div class="sbc-footer-v2__contact-item">
                   ${ui.icon("map-pin", "sm")}
-                  <span>Dhaka, Bangladesh</span>
+                  <span>323, Akram Serenity, Elephant Road, Dhaka-1205</span>
                 </div>
               </div>
             </div>
@@ -529,11 +509,11 @@ window.SBC.layout = (function () {
               <h4 class="sbc-footer-v2__title">Quick Links</h4>
               <ul class="sbc-footer-v2__list">
                 <li><a href="${util.U('index.html')}">Home</a></li>
-                <li><a href="${util.U('shop.html')}">Shop</a></li>
-                <li><a href="${util.U('shop.html')}#shop-catalog">Brands</a></li>
+                <li><a href="${util.U('shop.html')}">Shop Catalog</a></li>
+                <li><a href="${util.U('brand.html')}">Partner Brands</a></li>
                 <li><a href="${util.U('configurator.html')}">Solutions</a></li>
                 <li><a href="${util.U('about.html')}">About Us</a></li>
-                <li><a href="${util.U('contact.html')}">Contact</a></li>
+                <li><a href="${util.U('contact.html')}">Contact Us</a></li>
               </ul>
             </div>
 
@@ -541,39 +521,39 @@ window.SBC.layout = (function () {
             <div class="sbc-footer-v2__col">
               <h4 class="sbc-footer-v2__title">Customer Service</h4>
               <ul class="sbc-footer-v2__list">
-                <li><a href="${util.U('support.html')}">Support</a></li>
+                <li><a href="${util.U('support.html')}">Technical Support</a></li>
                 <li><a href="${util.U('faq.html')}">FAQ</a></li>
-                <li><a href="${util.U('warranty.html')}">Warranty Claim</a></li>
+                <li><a href="${util.U('warranty.html')}">Warranty Policy</a></li>
                 <li><a href="${util.U('returns.html')}">Return &amp; Refund</a></li>
-                <li><a href="${util.U('shipping.html')}">Shipping Policy</a></li>
+                <li><a href="${util.U('shipping.html')}">Delivery &amp; Logistics</a></li>
                 <li><a href="${util.U('privacy.html')}">Privacy Policy</a></li>
               </ul>
             </div>
 
             <!-- Col 4: Top Brands -->
             <div class="sbc-footer-v2__col">
-              <h4 class="sbc-footer-v2__title">Top Brands</h4>
+              <h4 class="sbc-footer-v2__title">Partner Brands</h4>
               <ul class="sbc-footer-v2__list">
-                <li><a href="${util.U('shop.html', { b: 'meetion' })}#shop-catalog" style="font-weight:700;color:var(--c-primary);">Meetion (Authorized)</a></li>
-                <li><a href="${util.U('shop.html', { b: 'cisco' })}#shop-catalog">Cisco</a></li>
                 <li><a href="${util.U('shop.html', { b: 'tenda' })}#shop-catalog">Tenda</a></li>
-                <li><a href="${util.U('shop.html', { b: 'hsgq' })}#shop-catalog">HSGQ</a></li>
+                <li><a href="${util.U('shop.html', { b: 'cisco' })}#shop-catalog">Cisco</a></li>
                 <li><a href="${util.U('shop.html', { b: 'solitine' })}#shop-catalog">Solitine</a></li>
-                <li><a href="${util.U('shop.html', { b: 'must' })}#shop-catalog">Must Power</a></li>
+                <li><a href="${util.U('shop.html', { b: 'must' })}#shop-catalog">Must</a></li>
+                <li><a href="${util.U('shop.html', { b: 'hsgq' })}#shop-catalog">HSGQ</a></li>
+                <li><a href="${util.U('shop.html', { b: 'meetion' })}#shop-catalog">Meetion</a></li>
               </ul>
             </div>
 
             <!-- Col 5: Follow Us -->
             <div class="sbc-footer-v2__col sbc-footer-v2__col--social">
-              <h4 class="sbc-footer-v2__title">Follow Us</h4>
+              <h4 class="sbc-footer-v2__title">Connect With Us</h4>
               <div class="sbc-footer-v2__socials">
-                <a href="https://facebook.com" target="_blank" rel="noopener noreferrer" class="sbc-footer-v2__social-btn" aria-label="Facebook">
+                <a href="https://www.facebook.com" target="_blank" rel="noopener noreferrer" class="sbc-footer-v2__social-btn" aria-label="Facebook">
                   ${ui.icon("facebook", "sm")}
                 </a>
-                <a href="https://youtube.com" target="_blank" rel="noopener noreferrer" class="sbc-footer-v2__social-btn" aria-label="YouTube">
+                <a href="https://www.youtube.com" target="_blank" rel="noopener noreferrer" class="sbc-footer-v2__social-btn" aria-label="YouTube">
                   ${ui.icon("youtube", "sm")}
                 </a>
-                <a href="https://linkedin.com" target="_blank" rel="noopener noreferrer" class="sbc-footer-v2__social-btn" aria-label="LinkedIn">
+                <a href="https://www.linkedin.com" target="_blank" rel="noopener noreferrer" class="sbc-footer-v2__social-btn" aria-label="LinkedIn">
                   ${ui.icon("linkedin", "sm")}
                 </a>
               </div>
@@ -589,15 +569,13 @@ window.SBC.layout = (function () {
         <div class="sbc-footer-v2__bottom">
           <div class="l-container sbc-footer-v2__bottom-inner">
             <p class="sbc-footer-v2__copy">
-              &copy; 2025 South Bangla Computer. All rights reserved.
+              &copy; 2026 South Bangla Computers. All rights reserved.
             </p>
             <div class="sbc-footer-v2__legal">
               <a href="${util.U('privacy.html')}">Privacy</a>
               <a href="${util.U('terms.html')}">Terms</a>
               <a href="${util.U('returns.html')}">Return &amp; Refund</a>
-              <a href="${util.U('sitemap.html')}">Sitemap</a>
-              <a href="${util.U('tests/smoke.html')}" style="opacity:0.3;font-size:10px;">Smoke Tests</a>
-              <a href="#" class="js-open-disclosure" style="opacity:0.3;font-size:10px;">Demo</a>
+              <a href="${util.U('sitemap.xml')}">Sitemap</a>
             </div>
           </div>
         </div>
@@ -648,6 +626,8 @@ window.SBC.layout = (function () {
    * Render Floating Demo Control Button (§10.20)
    */
   function renderDemoButton() {
+    const isDev = new URLSearchParams(window.location.search).has("demo") || sessionStorage.getItem("sbc_demo_mode") === "1";
+    if (!isDev) return;
     if (document.getElementById("sbc-demo-btn")) return;
     const btn = document.createElement("button");
     btn.id = "sbc-demo-btn";
@@ -934,27 +914,13 @@ window.SBC.layout = (function () {
             </div>
           </div>
 
-          <!-- Brands Accordion (Highlighting Meetion First) -->
+          <!-- Brands Accordion -->
           <div class="sbc-accordion js-accordion">
             <button class="sbc-accordion__trigger js-accordion-trigger" type="button" aria-expanded="false">
               <span>Brands &amp; Partners (14)</span>
               ${ui.icon("chevron-down", "sm")}
             </button>
             <div class="sbc-accordion__content">
-              <!-- Meetion Highlight in Mobile Drawer -->
-              <a href="${util.U('shop.html', { b: 'meetion' })}#shop-catalog" style="display:flex;align-items:center;justify-content:space-between;background:linear-gradient(135deg, #071526, #0f2b48);border:1px solid #0070ba;border-radius:8px;padding:10px 12px;margin-bottom:10px;text-decoration:none;">
-                <div style="display:flex;align-items:center;gap:10px;">
-                  <div style="background:#fff;padding:4px 8px;border-radius:4px;height:28px;display:flex;align-items:center;">
-                    <img src="${util.getRoot()}assets/brand image/924112071.png" alt="Meetion" style="max-height:20px;max-width:70px;">
-                  </div>
-                  <div>
-                    <span style="display:block;color:#fff;font-size:12px;font-weight:700;">Meetion Bangladesh</span>
-                    <span style="display:block;color:#38bdf8;font-size:10px;font-weight:600;">Official Distributor &bull; Gaming &amp; Office</span>
-                  </div>
-                </div>
-                <span style="color:#0095ff;font-size:14px;font-weight:700;">&rarr;</span>
-              </a>
-
               <div class="sbc-mobile-brands-grid">
                 <a href="${util.U('shop.html', { b: 'cisco' })}#shop-catalog" class="sbc-brand-card" style="min-height:74px;padding:8px 4px;">
                   <div class="sbc-brand-card__logo" style="height:30px;"><img src="${util.getRoot()}assets/brand image/1202929252.png" alt="Cisco" style="max-height:26px;"></div>
@@ -1187,13 +1153,76 @@ window.SBC.layout = (function () {
   }
 
   /**
+   * Smart Sticky Header Controller
+   * - Hides header completely when scrolling down
+   * - Smoothly animates into view on scroll up (reverse scroll)
+   * - Sub-header (sbc-topbar & announcement) is excluded from sticky
+   * - sbc-main-header height is reduced by 10px
+   */
+  function initSmartStickyHeader() {
+    const headerEl = document.getElementById("sbc-header");
+    if (!headerEl) return;
+
+    let lastScrollY = window.scrollY;
+    let ticking = false;
+    const SCROLL_THRESHOLD = 150;
+    const SCROLL_DELTA = 5;
+
+    function handleScroll() {
+      const currentScrollY = window.scrollY;
+
+      // When back near the top, restore natural static flow
+      if (currentScrollY <= 60) {
+        headerEl.classList.remove("sbc-header--sticky", "sbc-header--hidden", "sbc-header--visible");
+        lastScrollY = currentScrollY;
+        ticking = false;
+        return;
+      }
+
+      // Past top threshold
+      if (currentScrollY > SCROLL_THRESHOLD) {
+        const diff = currentScrollY - lastScrollY;
+
+        // Scrolling down -> hide header smoothly
+        if (diff > SCROLL_DELTA) {
+          if (headerEl.classList.contains("sbc-header--sticky")) {
+            headerEl.classList.add("sbc-header--hidden");
+            headerEl.classList.remove("sbc-header--visible");
+          }
+        } 
+        // Scrolling up -> show sticky header with slide-down animation
+        else if (diff < -SCROLL_DELTA) {
+          headerEl.classList.add("sbc-header--sticky");
+          headerEl.classList.remove("sbc-header--hidden");
+          headerEl.classList.add("sbc-header--visible");
+        }
+      }
+
+      lastScrollY = currentScrollY;
+      ticking = false;
+    }
+
+    window.addEventListener("scroll", () => {
+      if (!ticking) {
+        window.requestAnimationFrame(handleScroll);
+        ticking = true;
+      }
+    }, { passive: true });
+  }
+
+  /**
    * Mount layout on DOMContentLoaded
    */
   function init() {
     injectSvgSprite();
 
     const headerEl = document.getElementById("sbc-header");
-    if (headerEl) headerEl.innerHTML = renderHeader();
+    if (headerEl) {
+      if (!document.getElementById("sbc-announcement")) {
+        headerEl.insertAdjacentHTML("beforebegin", renderAnnouncement());
+      }
+      headerEl.innerHTML = renderHeader();
+    }
 
     const footerEl = document.getElementById("sbc-footer");
     if (footerEl) footerEl.innerHTML = renderFooter();
@@ -1202,6 +1231,7 @@ window.SBC.layout = (function () {
     renderDemoButton();
     renderFloatingDock();
     setupDelegation();
+    initSmartStickyHeader();
 
     // Mark ready & trigger ready event
     window.SBC.isReady = true;

@@ -878,9 +878,16 @@
   box-shadow: var(--shadow-lg);
 }
 
+body.has-drawer-open,
+body.has-modal-open {
+  overflow: hidden !important;
+  touch-action: none;
+}
+
 .sbc-drawer--left {
   right: auto;
   left: 0;
+  max-width: min(var(--layout-mobileDrawerWidthMax, 320px), 86vw);
   transform: translateX(-100%);
 }
 

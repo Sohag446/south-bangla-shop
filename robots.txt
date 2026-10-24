@@ -1,0 +1,13 @@
+# robots.txt for South Bangla Computers Online Store Prototype
+# Disallow internal application, cart, and account management views
+
+User-agent: *
+Disallow: /admin/
+Disallow: /account/
+Disallow: /dealer/
+Disallow: /cart.html
+Disallow: /checkout.html
+Disallow: /order-confirmation.html
+
+# Sitemap location
+Sitemap: sitemap.xml

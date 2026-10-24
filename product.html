@@ -5,7 +5,6 @@
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <title>Product Details | South Bangla Computers</title>
   <meta name="description" content="View specifications, warranty coverage, and retail pricing for genuine networking and computer peripherals at South Bangla Computers.">
-  <link rel="canonical" href="https://www.southbanglabd.com/products">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet">
@@ -65,12 +64,16 @@
 
         <h1 class="pdp-details__title" id="pdp-title">Loading Product Title...</h1>
 
-        <!-- Rating & Reviews -->
-        <div class="pdp-details__rating-row">
-          <div class="pdp-details__stars" aria-label="4.9 out of 5 stars">
-            &#9733;&#9733;&#9733;&#9733;&#9733;
-          </div>
-          <span class="pdp-details__review-count" id="pdp-review-count">3,345 verified ratings</span>
+        <!-- Product Authenticity & Warranty Badge -->
+        <div class="pdp-details__trust-badge-row" style="display:flex;align-items:center;gap:10px;margin-bottom:14px;flex-wrap:wrap;">
+          <span class="pdp-trust-pill" style="display:inline-flex;align-items:center;gap:6px;font-size:12px;font-weight:700;color:#0070ba;background:#e0f2fe;padding:4px 10px;border-radius:9999px;">
+            <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"></path></svg>
+            <span>Genuine Hardware</span>
+          </span>
+          <span class="pdp-warranty-pill" id="pdp-warranty-pill" style="display:inline-flex;align-items:center;gap:6px;font-size:12px;font-weight:700;color:#15803d;background:#dcfce7;padding:4px 10px;border-radius:9999px;">
+            <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="20 6 9 17 4 12"></polyline></svg>
+            <span id="pdp-warranty-text">Official Warranty</span>
+          </span>
         </div>
 
         <!-- Price -->

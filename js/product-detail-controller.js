@@ -132,10 +132,10 @@ window.SBC.pdp = (function () {
     if (brandPillEl) brandPillEl.textContent = p.brand || "Official Brand";
     if (skuEl) skuEl.textContent = `SKU: ${p.sku || p.id}`;
 
-    // Rating (3,345 reviews)
-    const reviewCountEl = document.getElementById("pdp-review-count");
-    if (reviewCountEl) {
-      reviewCountEl.textContent = "3,345 verified ratings";
+    // Verified Warranty Pill
+    const warrantyTextEl = document.getElementById("pdp-warranty-text");
+    if (warrantyTextEl) {
+      warrantyTextEl.textContent = p.warranty || "Official Warranty";
     }
 
     // Price

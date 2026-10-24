@@ -32,9 +32,15 @@ body.contact-page {
 .contact-container {
   max-width: 1320px;
   margin: 0 auto;
-  padding: 0 20px;
+  padding: 40px 20px 60px;
   width: 100%;
   box-sizing: border-box;
+}
+
+@media (max-width: 768px) {
+  .contact-container {
+    padding: 24px 16px 40px;
+  }
 }
 
 /* ── Breadcrumb ── */
