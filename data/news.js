@@ -12,7 +12,7 @@ window.SBC_DATA.news = [
     author: "SBC Engineering Editorial",
     category: "Buying Guide",
     badge: "Buying Guide",
-    image: "https://www.southbanglabd.com/backend/news/6a7068a7b2693.png",
+    image: "assets/img/products/vsol-v2801sg.jpg",
     excerpt: "As Fiber-to-the-Home (FTTH) technology becomes the standard for high-speed broadband in Bangladesh, Optical Network Units (ONUs) serve as the essential bridge between optical distribution and customer premises.",
     readTime: "5 min read",
     content: `
@@ -42,7 +42,7 @@ window.SBC_DATA.news = [
     author: "SBC Engineering Editorial",
     category: "Buying Guide",
     badge: "Buying Guide",
-    image: "https://www.southbanglabd.com/backend/news/6a7067b746261.png",
+    image: "assets/img/home/cat_network_switches.jpg",
     excerpt: "As Fiber-to-the-Home (FTTH) and Fiber-to-the-Business (FTTB) deployments continue to expand, Optical Line Terminal (OLT) equipment anchors the central office distribution backbone.",
     readTime: "7 min read",
     content: `
@@ -65,7 +65,7 @@ window.SBC_DATA.news = [
     author: "SBC Engineering Editorial",
     category: "Buying Guide",
     badge: "Buying Guide",
-    image: "https://www.southbanglabd.com/backend/news/6a7042b033440.png",
+    image: "assets/img/home/cat_fiber_optic.jpg",
     excerpt: "Connecting legacy copper Ethernet infrastructure with modern long-distance fiber optic cabling requires reliable, low-latency optical media converters.",
     readTime: "4 min read",
     content: `
@@ -85,7 +85,7 @@ window.SBC_DATA.news = [
     author: "SBC Engineering Editorial",
     category: "Tech Analysis",
     badge: "Technology",
-    image: "https://www.southbanglabd.com/backend/products/image/1363865235.jpg",
+    image: "assets/img/slider/tenda-be12-pro-wifi7.png",
     excerpt: "With the arrival of Wi-Fi 7 routers like the Tenda BE12 Pro, IT leaders face a choice between mature Wi-Fi 6 infrastructure and ultra-wide 320 MHz Wi-Fi 7 channels.",
     readTime: "6 min read",
     content: `
@@ -105,7 +105,7 @@ window.SBC_DATA.news = [
     author: "SBC Technical Solutions",
     category: "Solutions",
     badge: "Power Solutions",
-    image: "https://www.southbanglabd.com/backend/products/image/1657485858.jpg",
+    image: "assets/img/home/cat_ups_power.jpg",
     excerpt: "Grid fluctuations and prolonged load shedding demand reliable online UPS and solar hybrid inverters paired with high-cycle LiFePO4 battery banks.",
     readTime: "6 min read",
     content: `
@@ -125,7 +125,7 @@ window.SBC_DATA.news = [
     author: "SBC Fiber Lab",
     category: "Tutorial",
     badge: "Field Engineering",
-    image: "https://www.southbanglabd.com/backend/products/image/935229729.jpg",
+    image: "assets/img/home/prod_fiber_patch_cord.jpg",
     excerpt: "Achieving splice losses below 0.02 dB requires rigorous cable preparation, dust-free V-groove maintenance, and high-precision automatic cleavers.",
     readTime: "5 min read",
     content: `

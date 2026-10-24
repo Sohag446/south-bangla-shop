@@ -1,0 +1,29 @@
+﻿<!DOCTYPE html>
+<html>
+<head><title>Image Exporter</title></head>
+<body>
+<img id="img" src="https://www.trende.com.bd/image/cache/catalog/Meetion/BTM012-01-250x250w.jpg">
+<script>
+window.imgLoaded = false;
+window.imgError = false;
+window.base64Data = null;
+const img = document.getElementById('img');
+img.onload = () => {
+    try {
+        const c = document.createElement('canvas');
+        c.width = img.naturalWidth;
+        c.height = img.naturalHeight;
+        const ctx = c.getContext('2d');
+        ctx.drawImage(img, 0, 0);
+        window.base64Data = c.toDataURL('image/png');
+        window.imgLoaded = true;
+    } catch (e) {
+        window.imgError = e.toString();
+    }
+};
+img.onerror = (e) => {
+    window.imgError = 'Image onerror triggered';
+};
+</script>
+</body>
+</html>

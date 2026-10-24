@@ -1,6 +1,6 @@
-﻿/**
+/**
  * South Bangla Computers Seed Product Catalogue (53 SKUs)
- * Blueprint Â§12.3, Â§12.4, Â§12.5
+ * Blueprint Ã‚Â§12.3, Ã‚Â§12.4, Ã‚Â§12.5
  * Names, models, brands, and categories verified from live southbanglabd.com listing.
  */
 window.SBC_DATA = window.SBC_DATA || {};
@@ -21,8 +21,8 @@ window.SBC_DATA.products = [
     summary: "High-performance dual-band Wi-Fi 6 router delivering up to 2976 Mbps aggregated speed with high-gain antennas and EasyMesh support.",
     features: [
       "Next-Gen Wi-Fi 6 speeds up to 2402 Mbps on 5 GHz and 574 Mbps on 2.4 GHz",
-      "4Ã— 6 dBi external antennas with independent signal enhancement modules",
-      "Full Gigabit ports: 1Ã— WAN + 3Ã— LAN for ultra-fast wired connectivity",
+      "4Ãƒâ€” 6 dBi external antennas with independent signal enhancement modules",
+      "Full Gigabit ports: 1Ãƒâ€” WAN + 3Ãƒâ€” LAN for ultra-fast wired connectivity",
       "EasyMesh networking support for seamless multi-room coverage"
     ],
     specs: [
@@ -31,11 +31,11 @@ window.SBC_DATA.products = [
         rows: [
           ["CPU", "Dual-Core 1.2 GHz High-Performance Processor"],
           ["RAM", "256 MB DDR3"],
-          ["Interfaces", "1Ã— 10/100/1000 Mbps WAN, 3Ã— 10/100/1000 Mbps LAN"],
-          ["Antenna", "4Ã— External 6 dBi High-Gain Antennas"],
-          ["Buttons", "1Ã— WPS / Reset Button"],
-          ["Power Input", "AC 100â€“240V ~ 50/60Hz, DC 12V 1A Output"],
-          ["Dimensions", "226 Ã— 144 Ã— 168 mm"]
+          ["Interfaces", "1Ãƒâ€” 10/100/1000 Mbps WAN, 3Ãƒâ€” 10/100/1000 Mbps LAN"],
+          ["Antenna", "4Ãƒâ€” External 6 dBi High-Gain Antennas"],
+          ["Buttons", "1Ãƒâ€” WPS / Reset Button"],
+          ["Power Input", "AC 100Ã¢â‚¬â€œ240V ~ 50/60Hz, DC 12V 1A Output"],
+          ["Dimensions", "226 Ãƒâ€” 144 Ãƒâ€” 168 mm"]
         ]
       },
       {
@@ -65,12 +65,12 @@ window.SBC_DATA.products = [
         ]
       }
     ],
-    images: ["962631605.jpg"],
+    images: ["assets/img/products/tenda-ax12-pro.jpg"],
     documents: [
       { type: "datasheet", label: "Tenda_AX12_Pro_Datasheet.pdf", size: "2.8 MB", url: "#", demo: true }
     ],
     warranty: "1 Year Official Warranty",
-    status: "discontinued", // Reference item for discontinued state (Â§12.4, Â§P05)
+    status: "discontinued", // Reference item for discontinued state (Ã‚Â§12.4, Ã‚Â§P05)
     stock: 0,
     isNew: false, // Suppressed when discontinued per Blueprint rule P3
     price: { retail: 4850, compareAt: 5000, dealer: 4250, moq: 5, pack: 1, quoteOnly: false, demo: true },
@@ -92,8 +92,8 @@ window.SBC_DATA.products = [
     features: [
       "Next-generation Wi-Fi 7 with ultra-low latency MLO technology",
       "Aggregated speeds up to 7200 Mbps for 8K streaming and cloud gaming",
-      "1Ã— 2.5G WAN/LAN port plus 4Ã— Gigabit ports",
-      "6Ã— High-gain beamforming antennas with wide-range signal amplifiers"
+      "1Ãƒâ€” 2.5G WAN/LAN port plus 4Ãƒâ€” Gigabit ports",
+      "6Ãƒâ€” High-gain beamforming antennas with wide-range signal amplifiers"
     ],
     specs: [
       {
@@ -101,8 +101,8 @@ window.SBC_DATA.products = [
         rows: [
           ["CPU", "Broadcom Quad-Core 2.0 GHz Processor"],
           ["RAM", "1 GB DDR4"],
-          ["Interfaces", "1Ã— 2.5G Port + 4Ã— Gigabit Ethernet Ports"],
-          ["Antennas", "6Ã— External High-Performance Antennas"]
+          ["Interfaces", "1Ãƒâ€” 2.5G Port + 4Ãƒâ€” Gigabit Ethernet Ports"],
+          ["Antennas", "6Ãƒâ€” External High-Performance Antennas"]
         ]
       },
       {
@@ -114,7 +114,7 @@ window.SBC_DATA.products = [
         ]
       }
     ],
-    images: ["1363865235.jpg"],
+    images: ["assets/img/slider/tenda-be12-pro-wifi7.png"],
     documents: [{ type: "datasheet", label: "Tenda_BE12_Pro_Specs.pdf", size: "3.4 MB", url: "#", demo: true }],
     warranty: "2 Years Official Warranty",
     status: "in-stock",
@@ -138,13 +138,13 @@ window.SBC_DATA.products = [
     summary: "Affordable dual-band Wi-Fi 6 router providing up to 1500 Mbps aggregated speed with robust coverage for modern smart homes.",
     features: [
       "Wi-Fi 6 speeds up to 1201 Mbps (5 GHz) + 300 Mbps (2.4 GHz)",
-      "5Ã— 6 dBi external antennas for penetrating walls",
+      "5Ãƒâ€” 6 dBi external antennas for penetrating walls",
       "Gigabit Ethernet ports for high-speed fiber broadband connections"
     ],
     specs: [
-      { group: "Hardware", rows: [["CPU", "High-Speed Dual Core 1 GHz"], ["Ports", "1Ã— GE WAN, 3Ã— GE LAN"], ["Antennas", "5Ã— 6dBi"]] }
+      { group: "Hardware", rows: [["CPU", "High-Speed Dual Core 1 GHz"], ["Ports", "1Ãƒâ€” GE WAN, 3Ãƒâ€” GE LAN"], ["Antennas", "5Ãƒâ€” 6dBi"]] }
     ],
-    images: ["618068149.webp"],
+    images: ["assets/img/products/tenda-tx2l-pro.jpg"],
     documents: [{ type: "datasheet", label: "TX2L_Pro_Brochure.pdf", size: "1.8 MB", url: "#", demo: true }],
     warranty: "1 Year Official Warranty",
     status: "in-stock",
@@ -168,11 +168,11 @@ window.SBC_DATA.products = [
     summary: "Dependable 1200 Mbps dual-band gigabit router powered by 1 GHz CPU with 4 external 5dBi antennas for stable multi-user home internet.",
     features: [
       "AC1200 dual-band 802.11ac wave2 technology",
-      "Strong signal through 4Ã— 5 dBi omnidirectional antennas",
+      "Strong signal through 4Ãƒâ€” 5 dBi omnidirectional antennas",
       "Beamforming+ and MU-MIMO support"
     ],
-    specs: [{ group: "Hardware", rows: [["Ports", "1Ã— GE WAN, 3Ã— GE LAN"], ["CPU", "1 GHz 28nm Processor"]] }],
-    images: ["1385946309.jpg"],
+    specs: [{ group: "Hardware", rows: [["Ports", "1Ãƒâ€” GE WAN, 3Ãƒâ€” GE LAN"], ["CPU", "1 GHz 28nm Processor"]] }],
+    images: ["assets/img/products/tenda-ac10.jpg"],
     documents: [{ type: "datasheet", label: "Tenda_AC10_Datasheet.pdf", size: "2.1 MB", url: "#", demo: true }],
     warranty: "1 Year Official Warranty",
     status: "in-stock",
@@ -199,8 +199,8 @@ window.SBC_DATA.products = [
       "Covers up to 3,500 sq ft with two node units",
       "Easy mobile app setup and parental controls"
     ],
-    specs: [{ group: "Hardware", rows: [["Ports per node", "2Ã— Gigabit RJ45"], ["Coverage", "Up to 3,500 sq ft"]] }],
-    images: ["1415854910.jpg"],
+    specs: [{ group: "Hardware", rows: [["Ports per node", "2Ãƒâ€” Gigabit RJ45"], ["Coverage", "Up to 3,500 sq ft"]] }],
+    images: ["assets/img/products/tenda-ax12-pro.jpg"],
     documents: [{ type: "datasheet", label: "Nova_MX3_Manual.pdf", size: "3.1 MB", url: "#", demo: true }],
     warranty: "1 Year Official Warranty",
     status: "in-stock",
@@ -227,8 +227,8 @@ window.SBC_DATA.products = [
       "AX3000 dual-band high-density capacity connecting 100+ devices",
       "Full gigabit backhaul support"
     ],
-    specs: [{ group: "Hardware", rows: [["Units", "3 Nodes"], ["Ports", "3Ã— Gigabit per node"]] }],
-    images: ["139367006.jpg"],
+    specs: [{ group: "Hardware", rows: [["Units", "3 Nodes"], ["Ports", "3Ãƒâ€” Gigabit per node"]] }],
+    images: ["assets/img/products/tenda-ax12-pro.jpg"],
     documents: [{ type: "datasheet", label: "MX12_Brochure.pdf", size: "2.4 MB", url: "#", demo: true }],
     warranty: "2 Years Official Warranty",
     status: "in-stock",
@@ -250,9 +250,9 @@ window.SBC_DATA.products = [
     tags: ["extender", "repeater", "ac1200", "tenda"],
     attrs: { wifiStandard: "Wi-Fi 5", speedClass: "AC1200", lanPorts: 1 },
     summary: "Wall-plug AC1200 dual-band range extender with smart signal LED indicator to eliminate Wi-Fi blind spots instantly.",
-    features: ["Plug-and-play setup with WPS button", "Smart signal LED to locate optimal socket placement", "1Ã— 10/100M Ethernet port"],
-    specs: [{ group: "Hardware", rows: [["Antenna", "2Ã— External 2dBi"], ["Speed", "300 + 867 Mbps"]] }],
-    images: ["1079547444.png"],
+    features: ["Plug-and-play setup with WPS button", "Smart signal LED to locate optimal socket placement", "1Ãƒâ€” 10/100M Ethernet port"],
+    specs: [{ group: "Hardware", rows: [["Antenna", "2Ãƒâ€” External 2dBi"], ["Speed", "300 + 867 Mbps"]] }],
+    images: ["assets/img/products/tenda-ax12-pro.jpg"],
     documents: [],
     warranty: "1 Year Official Warranty",
     status: "in-stock",
@@ -276,7 +276,7 @@ window.SBC_DATA.products = [
     summary: "Driver-free high-gain 6 dBi antenna wireless USB adapter bringing instant Wi-Fi 6 connectivity to desktop PCs and laptops.",
     features: ["6 dBi ultra-long high-gain rotatable antenna", "Plug and play on Windows 10/11", "Soft AP mode support"],
     specs: [{ group: "Hardware", rows: [["Interface", "USB 2.0"], ["Antenna", "6 dBi External"]] }],
-    images: ["540283080.png"],
+    images: ["assets/img/products/tenda-ax12-pro.jpg"],
     documents: [],
     warranty: "1 Year Official Warranty",
     status: "in-stock",
@@ -299,18 +299,18 @@ window.SBC_DATA.products = [
     attrs: { wanPorts: 4, sdwan: true, enterprise: true },
     summary: "Enterprise cloud-edge platform with built-in SD-WAN capabilities, hardware security acceleration, and 1Gbps IPsec throughput.",
     features: [
-      "1 NIM slot for WAN/voice modules plus 4Ã— 1G integrated WAN ports",
+      "1 NIM slot for WAN/voice modules plus 4Ãƒâ€” 1G integrated WAN ports",
       "Advanced hardware-based crypto acceleration with Trustworthy Solutions",
       "Native integration with Cisco SD-WAN and Catalyst Cloud Manager"
     ],
     specs: [{ group: "Enterprise", rows: [["Throughput", "Up to 1 Gbps IPsec"], ["Memory", "8 GB Default DDR4"]] }],
-    images: ["237440044.jpg"],
+    images: ["assets/img/products/cisco-c1000-24t.webp"],
     documents: [{ type: "datasheet", label: "Cisco_C8200_Datasheet.pdf", size: "4.8 MB", url: "#", demo: true }],
     warranty: "1 Year Official Cisco Warranty",
     status: "in-stock",
     stock: 4,
     isNew: false,
-    price: { retail: 145000, compareAt: null, dealer: 128000, moq: 1, pack: 1, quoteOnly: true, demo: true }, // Quote only Â§12.5
+    price: { retail: 145000, compareAt: null, dealer: 128000, moq: 1, pack: 1, quoteOnly: true, demo: true }, // Quote only Ã‚Â§12.5
     flags: { bestSeller: false, recommended: false },
     alternatives: []
   },
@@ -330,16 +330,16 @@ window.SBC_DATA.products = [
     attrs: { ports: 8, poe: true, poeBudget: "120W", managed: "Cloud Managed", speed: "1G" },
     summary: "Smart cloud-managed 8-port gigabit switch with 120W total PoE budget and 2 SFP uplink slots for surveillance and VoIP systems.",
     features: [
-      "8Ã— Gigabit PoE+ ports compliant with IEEE 802.3af/at",
-      "2Ã— Gigabit SFP fiber uplink slots",
+      "8Ãƒâ€” Gigabit PoE+ ports compliant with IEEE 802.3af/at",
+      "2Ãƒâ€” Gigabit SFP fiber uplink slots",
       "Tenda Cloud and Web GUI remote management with QVLAN support",
       "6 kV lightning protection on all ports"
     ],
     specs: [
-      { group: "Ports", rows: [["PoE Ports", "8Ã— GE RJ45"], ["SFP Uplinks", "2Ã— GE SFP"], ["PoE Budget", "120W (up to 30W/port)"]] },
+      { group: "Ports", rows: [["PoE Ports", "8Ãƒâ€” GE RJ45"], ["SFP Uplinks", "2Ãƒâ€” GE SFP"], ["PoE Budget", "120W (up to 30W/port)"]] },
       { group: "Performance", rows: [["Switching Capacity", "20 Gbps"], ["Packet Forwarding", "14.9 Mpps"]] }
     ],
-    images: ["1470565362.jpg"],
+    images: ["assets/img/products/tenda-ax12-pro.jpg"],
     documents: [{ type: "datasheet", label: "TEG2210P_Datasheet.pdf", size: "2.3 MB", url: "#", demo: true }],
     warranty: "1 Year Official Warranty",
     status: "in-stock",
@@ -361,9 +361,9 @@ window.SBC_DATA.products = [
     tags: ["gigabit", "24 port", "cloud managed", "sfp", "tenda"],
     attrs: { ports: 24, poe: false, managed: "Cloud Managed", speed: "1G" },
     summary: "Enterprise 24-port gigabit cloud-managed switch featuring 2 SFP slots, VLAN segregation, and loop prevention.",
-    features: ["24Ã— 10/100/1000M RJ45 ports + 2Ã— 1G SFP slots", "Centralized cloud management via Tenda App", "Rackmount metal casing"],
+    features: ["24Ãƒâ€” 10/100/1000M RJ45 ports + 2Ãƒâ€” 1G SFP slots", "Centralized cloud management via Tenda App", "Rackmount metal casing"],
     specs: [{ group: "Hardware", rows: [["Ports", "24 GE + 2 SFP"], ["Capacity", "52 Gbps"]] }],
-    images: ["289699330.jpg"],
+    images: ["assets/img/products/tenda-ax12-pro.jpg"],
     documents: [{ type: "datasheet", label: "TEG2226F_Datasheet.pdf", size: "1.9 MB", url: "#", demo: true }],
     warranty: "1 Year Official Warranty",
     status: "in-stock",
@@ -385,9 +385,9 @@ window.SBC_DATA.products = [
     tags: ["unmanaged", "24 port", "gigabit", "rackmount", "tenda"],
     attrs: { ports: 24, poe: false, managed: "Unmanaged", speed: "1G" },
     summary: "Plug-and-play unmanaged 24-port gigabit switch in a 13-inch steel shell, ideal for CCTV monitoring networks and small office racks.",
-    features: ["24Ã— auto-negotiation Gigabit ports", "Three operational modes: Standard, Flow Control, and VLAN", "Internal power supply"],
+    features: ["24Ãƒâ€” auto-negotiation Gigabit ports", "Three operational modes: Standard, Flow Control, and VLAN", "Internal power supply"],
     specs: [{ group: "Hardware", rows: [["Switching Capacity", "48 Gbps"], ["Enclosure", "13-inch Metal with 19-inch brackets"]] }],
-    images: ["394619675.jpg"],
+    images: ["assets/img/products/tenda-ax12-pro.jpg"],
     documents: [{ type: "datasheet", label: "TEG1024D_Specs.pdf", size: "1.7 MB", url: "#", demo: true }],
     warranty: "1 Year Official Warranty",
     status: "in-stock",
@@ -409,9 +409,9 @@ window.SBC_DATA.products = [
     tags: ["desktop switch", "8 port", "gigabit", "tenda"],
     attrs: { ports: 8, poe: false, managed: "Unmanaged", speed: "1G" },
     summary: "Compact 8-port gigabit desktop switch in a durable steel housing, perfect for study rooms, offices, and surveillance hubs.",
-    features: ["8Ã— 10/100/1000M ports with auto MDI/MDIX", "Durable metal housing with wall-mount slots", "Energy-efficient design"],
-    specs: [{ group: "Hardware", rows: [["Enclosure", "Steel Casing"], ["Ports", "8Ã— GE"]] }],
-    images: ["701101933.jpg"],
+    features: ["8Ãƒâ€” 10/100/1000M ports with auto MDI/MDIX", "Durable metal housing with wall-mount slots", "Energy-efficient design"],
+    specs: [{ group: "Hardware", rows: [["Enclosure", "Steel Casing"], ["Ports", "8Ãƒâ€” GE"]] }],
+    images: ["assets/img/products/tenda-ax12-pro.jpg"],
     documents: [],
     warranty: "1 Year Official Warranty",
     status: "in-stock",
@@ -434,12 +434,12 @@ window.SBC_DATA.products = [
     attrs: { ports: 24, poe: true, poeBudget: "230W", managed: "Unmanaged / Extended", speed: "1G" },
     summary: "Heavy-duty 24-port PoE switch delivering up to 230W power output with 2 SFP and 2 GE uplinks, engineered for high-density IP surveillance.",
     features: [
-      "24Ã— Gigabit PoE ports + 2Ã— Gigabit RJ45 + 2Ã— Gigabit SFP uplinks",
+      "24Ãƒâ€” Gigabit PoE ports + 2Ãƒâ€” Gigabit RJ45 + 2Ãƒâ€” Gigabit SFP uplinks",
       "One-key extension mode supporting up to 250m long-distance CCTV runs",
       "Integrated 6 kV surge protection"
     ],
     specs: [{ group: "Power", rows: [["PoE Budget", "230W"], ["Ports", "24 GE PoE + 2 GE + 2 SFP"]] }],
-    images: ["1468199935.jpg"],
+    images: ["assets/img/products/tenda-teg2210p.jpg"],
     documents: [{ type: "datasheet", label: "IPCOM_G1128P_Datasheet.pdf", size: "2.5 MB", url: "#", demo: true }],
     warranty: "1 Year Official Warranty",
     status: "in-stock",
@@ -460,13 +460,13 @@ window.SBC_DATA.products = [
     subcategory: "2.5G/10G",
     tags: ["solitine", "10g", "sfp+", "managed switch"],
     attrs: { ports: 12, poe: false, managed: "Managed L3", speed: "10G" },
-    summary: "Full 10-Gigabit core fiber switch equipped with 12Ã— 10G SFP+ optical slots for ISP distribution rings and data center backbones.",
-    features: ["12Ã— 10G SFP+ optical ports", "Layer 3 dynamic routing (OSPF, RIP, BGP support)", "Dual redundant power supplies"],
+    summary: "Full 10-Gigabit core fiber switch equipped with 12Ãƒâ€” 10G SFP+ optical slots for ISP distribution rings and data center backbones.",
+    features: ["12Ãƒâ€” 10G SFP+ optical ports", "Layer 3 dynamic routing (OSPF, RIP, BGP support)", "Dual redundant power supplies"],
     specs: [{ group: "Performance", rows: [["Throughput", "240 Gbps Switching Fabric"], ["Port Speed", "1G / 10G SFP+"]] }],
-    images: ["528237660.jpg"],
+    images: ["assets/img/products/solitine-panel-24p.jpg"],
     documents: [{ type: "datasheet", label: "SOL3012X_Datasheet.pdf", size: "3.0 MB", url: "#", demo: true }],
     warranty: "1 Year Official Warranty",
-    status: "low-stock", // low-stock requirement (Â§12.5)
+    status: "low-stock", // low-stock requirement (Ã‚Â§12.5)
     stock: 3,
     isNew: true,
     price: { retail: 42000, compareAt: null, dealer: 36960, moq: 1, pack: 1, quoteOnly: false, demo: true },
@@ -484,20 +484,20 @@ window.SBC_DATA.products = [
     subcategory: "Managed L3",
     tags: ["cisco", "catalyst", "c9200l", "poe+", "10g uplink"],
     attrs: { ports: 24, poe: true, poeBudget: "370W", managed: "Managed L3", speed: "1G + 10G Uplink" },
-    summary: "Enterprise-grade Catalyst 9200L switch with 24 PoE+ ports, 4Ã— 10G SFP+ uplinks, and Network Essentials enterprise software.",
+    summary: "Enterprise-grade Catalyst 9200L switch with 24 PoE+ ports, 4Ãƒâ€” 10G SFP+ uplinks, and Network Essentials enterprise software.",
     features: [
-      "24Ã— Full PoE+ 10/100/1000 ports with 370W power budget",
-      "4Ã— 10G SFP+ fixed uplinks",
+      "24Ãƒâ€” Full PoE+ 10/100/1000 ports with 370W power budget",
+      "4Ãƒâ€” 10G SFP+ fixed uplinks",
       "Full Layer 3 routing capabilities with Cisco DNA Center readiness"
     ],
-    specs: [{ group: "Enterprise", rows: [["Uplinks", "4Ã— 10G SFP+"], ["Stacking", "Up to 80 Gbps StackWise-80"]] }],
-    images: ["1615688001.jpg"],
+    specs: [{ group: "Enterprise", rows: [["Uplinks", "4Ãƒâ€” 10G SFP+"], ["Stacking", "Up to 80 Gbps StackWise-80"]] }],
+    images: ["assets/img/products/cisco-c1000-24t.webp"],
     documents: [{ type: "datasheet", label: "Catalyst_9200L_Datasheet.pdf", size: "5.1 MB", url: "#", demo: true }],
     warranty: "1 Year Official Cisco Warranty",
     status: "in-stock",
     stock: 5,
     isNew: false,
-    price: { retail: 245000, compareAt: 265000, dealer: 215000, moq: 1, pack: 1, quoteOnly: true, demo: true }, // Quote only Â§12.5
+    price: { retail: 245000, compareAt: 265000, dealer: 215000, moq: 1, pack: 1, quoteOnly: true, demo: true }, // Quote only Ã‚Â§12.5
     flags: { bestSeller: false, recommended: false },
     alternatives: []
   },
@@ -513,9 +513,9 @@ window.SBC_DATA.products = [
     tags: ["hsgq", "l3 managed", "isp switch"],
     attrs: { ports: 12, poe: false, managed: "Managed L3", speed: "10G/1G" },
     summary: "Carrier-class Layer 3 aggregation switch with Gigabit combo ports and 10G optical uplinks designed for ISP aggregation.",
-    features: ["12Ã— high-capacity optical ports", "Comprehensive L3 routing and ACL security", "Console and Web SNMP management"],
+    features: ["12Ãƒâ€” high-capacity optical ports", "Comprehensive L3 routing and ACL security", "Console and Web SNMP management"],
     specs: [{ group: "Hardware", rows: [["Type", "Rackmount Layer 3"], ["Management", "CLI/Web/SNMP"]] }],
-    images: ["453448830.jpg"],
+    images: ["assets/img/products/vsol-v2801sg.jpg"],
     documents: [],
     warranty: "1 Year Official Warranty",
     status: "in-stock",
@@ -537,9 +537,9 @@ window.SBC_DATA.products = [
     tags: ["hsgq", "poe", "cctv", "24 port"],
     attrs: { ports: 24, poe: true, poeBudget: "300W", managed: "Smart Managed", speed: "1G" },
     summary: "Dedicated 24-port IP surveillance PoE switch with 300W total budget, watchdog reboot, and 2 gigabit combo uplink ports.",
-    features: ["24Ã— PoE AF/AT ports for cameras", "AI watchdog auto-restarts frozen cameras", "300W high-power supply"],
+    features: ["24Ãƒâ€” PoE AF/AT ports for cameras", "AI watchdog auto-restarts frozen cameras", "300W high-power supply"],
     specs: [{ group: "Power", rows: [["PoE Budget", "300W"], ["Surge Protection", "6 kV"]] }],
-    images: ["1193082980.jpg"],
+    images: ["assets/img/products/vsol-v2801sg.jpg"],
     documents: [],
     warranty: "1 Year Official Warranty",
     status: "in-stock",
@@ -565,19 +565,19 @@ window.SBC_DATA.products = [
     attrs: { ponPorts: 4, type: "GPON OLT", splitRatio: "1:128" },
     summary: "1U rackmount 4-port GPON OLT supporting up to 512 subscriber ONUs with 10G SFP+ uplink ports and EMS centralized management.",
     features: [
-      "4Ã— GPON optical ports supporting 1:128 split ratio",
-      "2Ã— 10GE SFP+ and 4Ã— GE optical/electrical uplinks",
+      "4Ãƒâ€” GPON optical ports supporting 1:128 split ratio",
+      "2Ãƒâ€” 10GE SFP+ and 4Ãƒâ€” GE optical/electrical uplinks",
       "Comprehensive bandwidth control (DBA) and QoS guarantees",
       "Redundant dual AC/DC power options"
     ],
-    specs: [{ group: "PON Specs", rows: [["PON Standard", "ITU-T G.984.x"], ["Max ONUs", "512 Clients"], ["Uplinks", "2Ã— 10G SFP+ + 4Ã— GE"]] }],
-    images: ["1297470378.jpg"],
+    specs: [{ group: "PON Specs", rows: [["PON Standard", "ITU-T G.984.x"], ["Max ONUs", "512 Clients"], ["Uplinks", "2Ãƒâ€” 10G SFP+ + 4Ãƒâ€” GE"]] }],
+    images: ["assets/img/products/vsol-v2801sg.jpg"],
     documents: [{ type: "datasheet", label: "HSGQ_G04R_Datasheet.pdf", size: "3.2 MB", url: "#", demo: true }],
     warranty: "1 Year Official Warranty",
     status: "in-stock",
     stock: 6,
     isNew: true,
-    price: { retail: 58000, compareAt: 62000, dealer: 51000, moq: 1, pack: 1, quoteOnly: true, demo: true }, // Quote only Â§12.5
+    price: { retail: 58000, compareAt: 62000, dealer: 51000, moq: 1, pack: 1, quoteOnly: true, demo: true }, // Quote only Ã‚Â§12.5
     flags: { bestSeller: true, recommended: true },
     alternatives: ["hsgq-g08r"]
   },
@@ -593,15 +593,15 @@ window.SBC_DATA.products = [
     tags: ["hsgq", "olt", "8 port", "gpon", "ftth"],
     attrs: { ponPorts: 8, type: "GPON OLT", splitRatio: "1:128" },
     summary: "High-density 8-port GPON OLT capable of driving up to 1,024 optical subscribers with 10G uplinks for ISP distribution hubs.",
-    features: ["8Ã— GPON ports supporting 1,024 subscribers", "4Ã— 10G SFP+ uplinks", "Dual hot-swappable power supplies"],
-    specs: [{ group: "PON Specs", rows: [["Max Subscribers", "1,024 ONUs"], ["Uplink Fabric", "4Ã— 10GE SFP+"]] }],
-    images: ["986410889.jpg"],
+    features: ["8Ãƒâ€” GPON ports supporting 1,024 subscribers", "4Ãƒâ€” 10G SFP+ uplinks", "Dual hot-swappable power supplies"],
+    specs: [{ group: "PON Specs", rows: [["Max Subscribers", "1,024 ONUs"], ["Uplink Fabric", "4Ãƒâ€” 10GE SFP+"]] }],
+    images: ["assets/img/products/vsol-v2801sg.jpg"],
     documents: [{ type: "datasheet", label: "HSGQ_G08R_Manual.pdf", size: "4.1 MB", url: "#", demo: true }],
     warranty: "1 Year Official Warranty",
     status: "in-stock",
     stock: 4,
     isNew: true,
-    price: { retail: 92000, compareAt: 98000, dealer: 81000, moq: 1, pack: 1, quoteOnly: true, demo: true }, // Quote only Â§12.5
+    price: { retail: 92000, compareAt: 98000, dealer: 81000, moq: 1, pack: 1, quoteOnly: true, demo: true }, // Quote only Ã‚Â§12.5
     flags: { bestSeller: false, recommended: true },
     alternatives: ["hsgq-g04r"]
   },
@@ -619,12 +619,12 @@ window.SBC_DATA.products = [
     summary: "Dual-mode XPON optical terminal featuring 1200 Mbps concurrent dual-band Wi-Fi and 1 Gigabit LAN port for FTTH subscribers.",
     features: [
       "Dual-mode XPON automatic compatibility with GPON and EPON OLTs",
-      "AC1200 dual-band Wi-Fi with 2Ã— 5 dBi high-gain antennas",
-      "1Ã— Gigabit Ethernet LAN port + 1Ã— FE port",
+      "AC1200 dual-band Wi-Fi with 2Ãƒâ€” 5 dBi high-gain antennas",
+      "1Ãƒâ€” Gigabit Ethernet LAN port + 1Ãƒâ€” FE port",
       "OMCI and TR-069 remote configuration"
     ],
     specs: [{ group: "Optical", rows: [["Optical Interface", "SC/UPC or SC/APC"], ["Sensitivity", "-28 dBm"]] }],
-    images: ["1513048010.jpg"],
+    images: ["assets/img/products/vsol-v2801sg.jpg"],
     documents: [{ type: "datasheet", label: "HSGQ_X200DW_Specs.pdf", size: "1.6 MB", url: "#", demo: true }],
     warranty: "1 Year Official Warranty",
     status: "in-stock",
@@ -646,9 +646,9 @@ window.SBC_DATA.products = [
     tags: ["hsgq", "onu", "voip", "4ge", "pots"],
     attrs: { ponType: "XPON", wifiStandard: "Wi-Fi 5", lanPorts: 4, pots: 2 },
     summary: "Full-service triple-play optical gateway with 4 Gigabit LAN ports, 2 telephone POTS interfaces for VoIP, and dual-band Wi-Fi.",
-    features: ["4Ã— Full Gigabit LAN ports for IPTV and PCs", "2Ã— RJ11 POTS voice ports for telephone line integration", "XPON auto-sensing"],
-    specs: [{ group: "Hardware", rows: [["LAN", "4Ã— GE"], ["Voice", "2Ã— FXS POTS"]] }],
-    images: ["260653183.jpg"],
+    features: ["4Ãƒâ€” Full Gigabit LAN ports for IPTV and PCs", "2Ãƒâ€” RJ11 POTS voice ports for telephone line integration", "XPON auto-sensing"],
+    specs: [{ group: "Hardware", rows: [["LAN", "4Ãƒâ€” GE"], ["Voice", "2Ãƒâ€” FXS POTS"]] }],
+    images: ["assets/img/products/vsol-v2801sg.jpg"],
     documents: [],
     warranty: "1 Year Official Warranty",
     status: "in-stock",
@@ -670,9 +670,9 @@ window.SBC_DATA.products = [
     tags: ["tenda", "ont", "onu", "xpon", "ac1200"],
     attrs: { ponType: "XPON", wifiStandard: "Wi-Fi 5 AC1200", lanPorts: 1 },
     summary: "Tenda's flagship FTTH subscriber terminal pairing XPON compatibility with 1200 Mbps wireless speed and OMCI management.",
-    features: ["Dual-mode EPON/GPON auto-switching", "AC1200 high-speed wireless connectivity", "1Ã— GE + 1Ã— FE port"],
-    specs: [{ group: "Hardware", rows: [["Antennas", "2Ã— 5 dBi External"], ["Fiber Connector", "SC/UPC"]] }],
-    images: ["1329568244.jpg"],
+    features: ["Dual-mode EPON/GPON auto-switching", "AC1200 high-speed wireless connectivity", "1Ãƒâ€” GE + 1Ãƒâ€” FE port"],
+    specs: [{ group: "Hardware", rows: [["Antennas", "2Ãƒâ€” 5 dBi External"], ["Fiber Connector", "SC/UPC"]] }],
+    images: ["assets/img/products/tenda-ax12-pro.jpg"],
     documents: [{ type: "datasheet", label: "HG10C_Datasheet.pdf", size: "2.1 MB", url: "#", demo: true }],
     warranty: "1 Year Official Warranty",
     status: "in-stock",
@@ -688,7 +688,7 @@ window.SBC_DATA.products = [
     sku: "SBC-SLT-10GSR",
     brand: "solitine",
     model: "10G SR SFP+",
-    name: "Solitine 10G SR SFP+ Module â€“ 850nm, 300m, LC Duplex, MMF",
+    name: "Solitine 10G SR SFP+ Module Ã¢â‚¬â€œ 850nm, 300m, LC Duplex, MMF",
     category: "fiber-pon",
     subcategory: "SFP/QSFP Modules",
     tags: ["solitine", "10g", "sfp+", "transceiver", "fiber module"],
@@ -696,7 +696,7 @@ window.SBC_DATA.products = [
     summary: "Hot-pluggable 10G SFP+ multi-mode optical transceiver offering up to 300 meters transmission over OM3 duplex LC fiber.",
     features: ["10 Gbps serial optical interface", "850nm VCSEL transmitter with DDM digital diagnostics", "Standard LC duplex connector"],
     specs: [{ group: "Optical", rows: [["Wavelength", "850nm"], ["Max Distance", "300m on OM3"], ["Form Factor", "SFP+"]] }],
-    images: ["1725068842.jpg"],
+    images: ["assets/img/products/solitine-panel-24p.jpg"],
     documents: [{ type: "datasheet", label: "Solitine_10G_SR_Specs.pdf", size: "1.2 MB", url: "#", demo: true }],
     warranty: "1 Year Official Warranty",
     status: "in-stock",
@@ -727,8 +727,8 @@ window.SBC_DATA.products = [
       "Standard 802.3af/at PoE powered",
       "Centralized controller management support"
     ],
-    specs: [{ group: "Hardware", rows: [["Mounting", "86-type Junction Box"], ["Ports", "1Ã— Front GE, 1Ã— Rear PoE GE"]] }],
-    images: ["1321232892.jpg"],
+    specs: [{ group: "Hardware", rows: [["Mounting", "86-type Junction Box"], ["Ports", "1Ãƒâ€” Front GE, 1Ãƒâ€” Rear PoE GE"]] }],
+    images: ["assets/img/products/tenda-ax12-pro.jpg"],
     documents: [{ type: "datasheet", label: "W15_InWall_Brochure.pdf", size: "2.3 MB", url: "#", demo: true }],
     warranty: "1 Year Official Warranty",
     status: "in-stock",
@@ -751,8 +751,8 @@ window.SBC_DATA.products = [
     attrs: { wifiStandard: "Wi-Fi 5", weatherProof: "IP65", poe: true },
     summary: "Ruggedized IP65 weatherproof outdoor access point featuring dual detachable omni antennas for resort, campus, and park Wi-Fi coverage.",
     features: ["IP65 weatherproof housing resistant to heavy rain and dust", "Detachable external antennas for flexible coverage radius", "Gigabit PoE powered"],
-    specs: [{ group: "Environment", rows: [["Ingress Protection", "IP65"], ["Operating Temp", "-30Â°C to 60Â°C"]] }],
-    images: ["1668762128.jpg"],
+    specs: [{ group: "Environment", rows: [["Ingress Protection", "IP65"], ["Operating Temp", "-30Ã‚Â°C to 60Ã‚Â°C"]] }],
+    images: ["assets/img/products/tenda-ax12-pro.jpg"],
     documents: [{ type: "datasheet", label: "OAP1200_Datasheet.pdf", size: "2.2 MB", url: "#", demo: true }],
     warranty: "1 Year Official Warranty",
     status: "in-stock",
@@ -781,7 +781,7 @@ window.SBC_DATA.products = [
       "IP65 weather protection and 6 kV lightning surge tolerance"
     ],
     specs: [{ group: "Wireless", rows: [["Antenna Gain", "23 dBi Directional"], ["Distance", "Up to 25 km Link"]] }],
-    images: ["1230543292.jpg"],
+    images: ["assets/img/products/tenda-ax12-pro.jpg"],
     documents: [{ type: "datasheet", label: "Tenda_O9_Datasheet.pdf", size: "2.7 MB", url: "#", demo: true }],
     warranty: "1 Year Official Warranty",
     status: "in-stock",
@@ -804,8 +804,8 @@ window.SBC_DATA.products = [
     attrs: { wifiStandard: "Wi-Fi 5 AC1200", weatherProof: "IP65", poe: true },
     summary: "Versatile indoor/outdoor mesh access point with 2 omnidirectional antennas providing wide-angle coverage for shopping centers and schools.",
     features: ["IP65 waterproof and sunproof enclosure", "Mesh networking support without running network cables", "Gigabit PoE port"],
-    specs: [{ group: "Hardware", rows: [["Enclosure", "IP65 Outdoor"], ["Ports", "1Ã— GE PoE"]] }],
-    images: ["1045431164.jpg"],
+    specs: [{ group: "Hardware", rows: [["Enclosure", "IP65 Outdoor"], ["Ports", "1Ãƒâ€” GE PoE"]] }],
+    images: ["assets/img/products/mikrotik-cap-ac.webp"],
     documents: [{ type: "datasheet", label: "iUAP_AC_M_Specs.pdf", size: "2.0 MB", url: "#", demo: true }],
     warranty: "1 Year Official Warranty",
     status: "in-stock",
@@ -827,15 +827,15 @@ window.SBC_DATA.products = [
     tags: ["cisco", "catalyst", "wifi 6", "enterprise ap"],
     attrs: { wifiStandard: "Wi-Fi 6", enterprise: true, poe: true },
     summary: "High-density enterprise Wi-Fi 6 access point with internal antennas and embedded wireless controller (EWC) functionality.",
-    features: ["Wi-Fi 6 (802.11ax) 4Ã—4 MU-MIMO", "Embedded Wireless Controller for zero-hardware management", "Multigigabit 2.5G uplink"],
-    specs: [{ group: "Enterprise", rows: [["Radio", "4Ã—4:4 MU-MIMO"], ["Uplink", "2.5 mGig PoE+"]] }],
-    images: ["1834271858.jpg"],
+    features: ["Wi-Fi 6 (802.11ax) 4Ãƒâ€”4 MU-MIMO", "Embedded Wireless Controller for zero-hardware management", "Multigigabit 2.5G uplink"],
+    specs: [{ group: "Enterprise", rows: [["Radio", "4Ãƒâ€”4:4 MU-MIMO"], ["Uplink", "2.5 mGig PoE+"]] }],
+    images: ["assets/img/products/cisco-c1000-24t.webp"],
     documents: [{ type: "datasheet", label: "Cisco_Catalyst_9115_Datasheet.pdf", size: "4.2 MB", url: "#", demo: true }],
     warranty: "1 Year Official Cisco Warranty",
     status: "in-stock",
     stock: 6,
     isNew: false,
-    price: { retail: 95000, compareAt: null, dealer: 83600, moq: 1, pack: 1, quoteOnly: true, demo: true }, // Quote only Â§12.5
+    price: { retail: 95000, compareAt: null, dealer: 83600, moq: 1, pack: 1, quoteOnly: true, demo: true }, // Quote only Ã‚Â§12.5
     flags: { bestSeller: false, recommended: false },
     alternatives: ["tenda-w15"]
   },
@@ -855,16 +855,16 @@ window.SBC_DATA.products = [
     attrs: { channels: 8, resolution: "4K UHD (8MP)", poePorts: 8, hddSlots: 1 },
     summary: "8-channel 4K Ultra HD network video recorder with 8 integrated plug-and-play PoE ports and intelligent AI human detection support.",
     features: [
-      "8Ã— Built-in PoE ports for zero-configuration camera setup",
+      "8Ãƒâ€” Built-in PoE ports for zero-configuration camera setup",
       "Up to 4K / 8MP video decoding and HDMI output",
       "Smart H.265+ compression saving 50% storage space",
-      "Supports 1Ã— SATA HDD up to 10 TB"
+      "Supports 1Ãƒâ€” SATA HDD up to 10 TB"
     ],
     specs: [
-      { group: "Video & Audio", rows: [["IP Camera Input", "8 Channels"], ["Decoding", "4K / 5MP / 4MP / 1080p"], ["Video Out", "1Ã— HDMI, 1Ã— VGA"]] },
-      { group: "Storage", rows: [["HDD Interface", "1Ã— SATA (up to 10 TB)"], ["Compression", "H.265+, H.265, H.264"]] }
+      { group: "Video & Audio", rows: [["IP Camera Input", "8 Channels"], ["Decoding", "4K / 5MP / 4MP / 1080p"], ["Video Out", "1Ãƒâ€” HDMI, 1Ãƒâ€” VGA"]] },
+      { group: "Storage", rows: [["HDD Interface", "1Ãƒâ€” SATA (up to 10 TB)"], ["Compression", "H.265+, H.265, H.264"]] }
     ],
-    images: ["924485203.jpg"],
+    images: ["assets/img/products/tenda-ax12-pro.jpg"],
     documents: [{ type: "datasheet", label: "Tenda_TN3108_8P_Datasheet.pdf", size: "2.4 MB", url: "#", demo: true }],
     warranty: "1 Year Official Warranty",
     status: "in-stock",
@@ -884,7 +884,7 @@ window.SBC_DATA.products = [
     category: "security-cctv",
     subcategory: "IP Cameras",
     tags: ["ip camera", "4mp", "full color", "bullet", "poe", "tenda"],
-    attrs: { resolution: "4MP (2560Ã—1440)", nightVision: "Full-Color 30m", weatherProof: "IP67", poe: true },
+    attrs: { resolution: "4MP (2560Ãƒâ€”1440)", nightVision: "Full-Color 30m", weatherProof: "IP67", poe: true },
     summary: "High-resolution 4MP outdoor bullet camera with dual warm spotlights for vivid 24/7 full-color night vision and AI human vehicle recognition.",
     features: [
       "4MP crisp video resolution with wide dynamic range (WDR)",
@@ -893,7 +893,7 @@ window.SBC_DATA.products = [
       "Standard PoE (802.3af) and 12V DC power support"
     ],
     specs: [{ group: "Camera", rows: [["Sensor", "1/3\" CMOS 4MP"], ["Lens", "4.0mm @ F1.6"], ["Ingress", "IP67"]] }],
-    images: ["1524481572.jpg"],
+    images: ["assets/img/products/tenda-ax12-pro.jpg"],
     documents: [{ type: "datasheet", label: "TC3B24C_Brochure.pdf", size: "1.8 MB", url: "#", demo: true }],
     warranty: "1 Year Official Warranty",
     status: "in-stock",
@@ -913,7 +913,7 @@ window.SBC_DATA.products = [
     category: "security-cctv",
     subcategory: "Wi-Fi Cameras",
     tags: ["wifi camera", "pan tilt", "4mp", "outdoor", "tenda"],
-    attrs: { resolution: "4MP", ptz: "360Â° Pan / 90Â° Tilt", connectivity: "Wi-Fi + RJ45", weatherProof: "IP65" },
+    attrs: { resolution: "4MP", ptz: "360Ã‚Â° Pan / 90Ã‚Â° Tilt", connectivity: "Wi-Fi + RJ45", weatherProof: "IP65" },
     summary: "Motorized 360-degree pan/tilt outdoor Wi-Fi camera with two-way audio talk, sound/light alarm, and auto-tracking capabilities.",
     features: [
       "360-degree panoramic coverage with motorized pan and tilt",
@@ -921,8 +921,8 @@ window.SBC_DATA.products = [
       "Two-way clear audio communication with integrated speaker and mic",
       "MicroSD card slot supporting local recording up to 256 GB"
     ],
-    specs: [{ group: "Camera", rows: [["Pan/Tilt", "Horizontal 360Â°, Vertical 90Â°"], ["Storage", "MicroSD up to 256GB"]] }],
-    images: ["31711144.jpg"],
+    specs: [{ group: "Camera", rows: [["Pan/Tilt", "Horizontal 360Ã‚Â°, Vertical 90Ã‚Â°"], ["Storage", "MicroSD up to 256GB"]] }],
+    images: ["assets/img/products/tenda-ax12-pro.jpg"],
     documents: [{ type: "datasheet", label: "CH7_WCA_Datasheet.pdf", size: "2.1 MB", url: "#", demo: true }],
     warranty: "1 Year Official Warranty",
     status: "in-stock",
@@ -941,7 +941,7 @@ window.SBC_DATA.products = [
     sku: "SBC-MST-EH551K",
     brand: "must",
     model: "EH55-H1KSL",
-    name: "Must EH55-H1KSL (EH55-H1KS) Online UPS 1KVA/1KW â€“ High Frequency Long-Run Online UPS",
+    name: "Must EH55-H1KSL (EH55-H1KS) Online UPS 1KVA/1KW Ã¢â‚¬â€œ High Frequency Long-Run Online UPS",
     category: "power-backup",
     subcategory: "Online UPS",
     tags: ["must", "online ups", "1kva", "long run", "power backup"],
@@ -955,9 +955,9 @@ window.SBC_DATA.products = [
     ],
     specs: [
       { group: "Output", rows: [["Capacity", "1000VA / 1000W"], ["Voltage", "220 / 230 / 240 VAC"], ["Waveform", "Pure Sine Wave"]] },
-      { group: "Input & Battery", rows: [["Input Voltage Window", "110â€“300 VAC"], ["DC Bus", "24V / 36V External Battery"]] }
+      { group: "Input & Battery", rows: [["Input Voltage Window", "110Ã¢â‚¬â€œ300 VAC"], ["DC Bus", "24V / 36V External Battery"]] }
     ],
-    images: ["1657485858.jpg"],
+    images: ["assets/img/products/must-ew2110-800.jpg"],
     documents: [{ type: "datasheet", label: "Must_EH55_OnlineUPS.pdf", size: "3.5 MB", url: "#", demo: true }],
     warranty: "1 Year Official Warranty",
     status: "in-stock",
@@ -977,11 +977,11 @@ window.SBC_DATA.products = [
     category: "power-backup",
     subcategory: "Line-interactive UPS",
     tags: ["must", "ups", "800va", "line interactive"],
-    attrs: { capacity: "800VA / 480W", topology: "Line Interactive", internalBattery: "1Ã— 12V 9Ah" },
+    attrs: { capacity: "800VA / 480W", topology: "Line Interactive", internalBattery: "1Ãƒâ€” 12V 9Ah" },
     summary: "Compact 800VA line-interactive UPS with automatic voltage regulation (AVR) to protect desktop computers and Wi-Fi routers against blackouts.",
-    features: ["Built-in boost and buck AVR for voltage stabilization", "Internal 12V 9Ah battery providing 15â€“25 mins PC backup", "Surge and overload protection"],
-    specs: [{ group: "Electrical", rows: [["Capacity", "800VA / 480W"], ["Backup Time", "15â€“20 Mins Standard Load"]] }],
-    images: ["1966551378.jpg"],
+    features: ["Built-in boost and buck AVR for voltage stabilization", "Internal 12V 9Ah battery providing 15Ã¢â‚¬â€œ25 mins PC backup", "Surge and overload protection"],
+    specs: [{ group: "Electrical", rows: [["Capacity", "800VA / 480W"], ["Backup Time", "15Ã¢â‚¬â€œ20 Mins Standard Load"]] }],
+    images: ["assets/img/products/must-ew2110-800.jpg"],
     documents: [],
     warranty: "1 Year Official Warranty",
     status: "in-stock",
@@ -1005,7 +1005,7 @@ window.SBC_DATA.products = [
     summary: "Heavy-duty 3kVA/2700W online double-conversion UPS equipped with high-amp charger for heavy external battery banks at enterprise data hubs.",
     features: ["Zero millisecond transfer time protecting sensitive telecom gear", "Smart battery charger optimizing charge profiles for deep cycle batteries", "SNMP network card slot"],
     specs: [{ group: "Capacity", rows: [["Power Rating", "3000VA / 2700W"], ["DC Bus", "96V DC External"]] }],
-    images: ["1492913860.jpg"],
+    images: ["assets/img/home/cat_ups_power.jpg"],
     documents: [{ type: "datasheet", label: "Marsriva_MR_US3K_Brochure.pdf", size: "2.8 MB", url: "#", demo: true }],
     warranty: "1 Year Official Warranty",
     status: "in-stock",
@@ -1029,18 +1029,18 @@ window.SBC_DATA.products = [
     summary: "Commercial 5kW hybrid solar inverter featuring dual MPPT solar charge controllers and seamless AC grid/generator backup switching.",
     features: [
       "Pure sine wave output 5000W with surge handling up to 10000W",
-      "High PV input voltage range (120â€“450 VDC) supporting up to 6000W solar panels",
+      "High PV input voltage range (120Ã¢â‚¬â€œ450 VDC) supporting up to 6000W solar panels",
       "Compatible with Must LiFePO4 lithium batteries with BMS RS485 communication",
       "Wi-Fi monitoring dongle for smartphone energy tracking"
     ],
     specs: [{ group: "Solar", rows: [["Inverter Output", "5000W Continuous"], ["MPPT Tracker", "100A Solar Charger"], ["Battery", "48V DC"]] }],
-    images: ["799614444.jpg"],
+    images: ["assets/img/products/must-ew2110-800.jpg"],
     documents: [{ type: "datasheet", label: "Must_PH91_5kW_Manual.pdf", size: "4.5 MB", url: "#", demo: true }],
     warranty: "2 Years Official Warranty",
     status: "in-stock",
     stock: 7,
     isNew: true,
-    price: { retail: 92000, compareAt: 98000, dealer: 80960, moq: 1, pack: 1, quoteOnly: true, demo: true }, // Quote only Â§12.5
+    price: { retail: 92000, compareAt: 98000, dealer: 80960, moq: 1, pack: 1, quoteOnly: true, demo: true }, // Quote only Ã‚Â§12.5
     flags: { bestSeller: true, recommended: true },
     alternatives: ["must-lp16-48100"]
   },
@@ -1063,7 +1063,7 @@ window.SBC_DATA.products = [
       "Scalable up to 15 units in parallel for 76.8 kWh total capacity"
     ],
     specs: [{ group: "Battery", rows: [["Nominal Voltage", "51.2V"], ["Rated Capacity", "100Ah / 5.12 kWh"], ["Max Charge Current", "100A"]] }],
-    images: ["343403392.jpg"],
+    images: ["assets/img/products/must-ew2110-800.jpg"],
     documents: [{ type: "datasheet", label: "Must_LP16_LiFePO4_Brochure.pdf", size: "2.9 MB", url: "#", demo: true }],
     warranty: "5 Years Official Warranty",
     status: "in-stock",
@@ -1087,10 +1087,10 @@ window.SBC_DATA.products = [
     summary: "All-in-one 1000W portable solar generator with built-in 1024Wh lithium storage and AC/USB outlets for field engineers and emergency power.",
     features: ["1000W pure sine wave AC output with 1024Wh capacity", "Multiple outputs: AC sockets, USB-C PD 100W, car 12V port", "Fast solar and grid recharging"],
     specs: [{ group: "Outputs", rows: [["AC Inverter", "1000W"], ["Battery Capacity", "1024Wh LiFePO4"]] }],
-    images: ["696184355.jpg"],
+    images: ["assets/img/home/prod_apc_ups.jpg"],
     documents: [],
     warranty: "1 Year Official Warranty",
-    status: "low-stock", // low-stock requirement (Â§12.5)
+    status: "low-stock", // low-stock requirement (Ã‚Â§12.5)
     stock: 3,
     isNew: true,
     price: { retail: 48000, compareAt: null, dealer: 42240, moq: 1, pack: 1, quoteOnly: false, demo: true },
@@ -1108,14 +1108,14 @@ window.SBC_DATA.products = [
     subcategory: "Power Stations",
     tags: ["solitine", "mini ups", "dc ups", "router backup"],
     attrs: { capacity: "10,400 mAh", outputs: "5V USB / 9V DC / 12V DC / POE 15V/24V" },
-    summary: "Multi-output 10,400 mAh mini DC UPS keeping Wi-Fi routers, ONUs, and security cameras powered for up to 6â€“8 hours during power cuts.",
+    summary: "Multi-output 10,400 mAh mini DC UPS keeping Wi-Fi routers, ONUs, and security cameras powered for up to 6Ã¢â‚¬â€œ8 hours during power cuts.",
     features: [
       "Zero-transfer DC output preventing Wi-Fi router reboot during outages",
       "Dedicated 9V/12V DC jacks plus 15V/24V PoE output",
       "High-capacity 10,400 mAh lithium battery cells"
     ],
     specs: [{ group: "Outputs", rows: [["Battery", "10,400 mAh"], ["Voltage Modes", "5V USB, 9V DC, 12V DC, 15V/24V PoE"]] }],
-    images: ["2011178636.png"],
+    images: ["assets/img/products/solitine-panel-24p.jpg"],
     documents: [],
     warranty: "1 Year Official Warranty",
     status: "in-stock",
@@ -1147,7 +1147,7 @@ window.SBC_DATA.products = [
       "Flame-retardant high-visibility orange PVC jacket"
     ],
     specs: [{ group: "Conductor", rows: [["Wire Gauge", "23 AWG (0.57mm) Bare Copper"], ["Length", "305 Meters per Box"], ["Standard", "TIA/EIA 568-C.2"]] }],
-    images: ["764580136.png"],
+    images: ["assets/img/products/solitine-panel-24p.jpg"],
     documents: [{ type: "datasheet", label: "Solitine_Cat6_Cable_Datasheet.pdf", size: "1.4 MB", url: "#", demo: true }],
     warranty: "Manufacturer Performance Guarantee",
     status: "in-stock",
@@ -1169,9 +1169,9 @@ window.SBC_DATA.products = [
     tags: ["solitine", "patch panel", "cat6", "1u", "24 port"],
     attrs: { ports: 24, rackUnit: "1U", category: "Cat6", loaded: true },
     summary: "Standard 19-inch 1U 24-port Cat6 fully loaded patch panel with gold-plated RJ45 jacks and dual IDC punch-down termination blocks.",
-    features: ["24Ã— Cat6 gold-plated RJ45 sockets", "Numbered ports with label holders", "Rear cable management bar included"],
+    features: ["24Ãƒâ€” Cat6 gold-plated RJ45 sockets", "Numbered ports with label holders", "Rear cable management bar included"],
     specs: [{ group: "Mechanical", rows: [["Size", "19-inch 1U"], ["Wiring", "T568A / T568B Color Coded"]] }],
-    images: ["1029207040.jpg"],
+    images: ["assets/img/products/solitine-panel-24p.jpg"],
     documents: [],
     warranty: "1 Year Official Warranty",
     status: "in-stock",
@@ -1197,10 +1197,10 @@ window.SBC_DATA.products = [
       "9U standard 19-inch equipment mounting profile",
       "Sturdy 600mm depth accommodating deep rackmount switches and UPS",
       "Tempered toughened glass door with front key lock",
-      "Includes 1Ã— cooling fan and 6-socket PDU power strip"
+      "Includes 1Ãƒâ€” cooling fan and 6-socket PDU power strip"
     ],
-    specs: [{ group: "Dimensions", rows: [["Height", "9U (approx. 500mm)"], ["Width & Depth", "600 Ã— 600 mm"], ["Loading Capacity", "60 kg"]] }],
-    images: ["758055020.jpg"],
+    specs: [{ group: "Dimensions", rows: [["Height", "9U (approx. 500mm)"], ["Width & Depth", "600 Ãƒâ€” 600 mm"], ["Loading Capacity", "60 kg"]] }],
+    images: ["assets/img/products/solitine-panel-24p.jpg"],
     documents: [{ type: "datasheet", label: "SOL_266_Rack_Specs.pdf", size: "1.5 MB", url: "#", demo: true }],
     warranty: "1 Year Official Warranty",
     status: "in-stock",
@@ -1228,20 +1228,20 @@ window.SBC_DATA.products = [
     features: [
       "Ultra-fast 6-second typical splicing time and 15-second heating time",
       "Direct 4-motor core-to-core optical alignment technology",
-      "5.0-inch high-resolution touch display with 380Ã— magnification",
+      "5.0-inch high-resolution touch display with 380Ãƒâ€” magnification",
       "High-capacity 5200 mAh lithium battery supporting over 300 splices per charge"
     ],
     specs: [
       { group: "Splicing", rows: [["Applicable Fibers", "SM (ITU-T G.652&G.657), MM (G.651), DS (G.653), NZDS (G.655)"], ["Splice Loss", "0.02dB (SM), 0.01dB (MM)"]] },
       { group: "Power", rows: [["Battery", "5200 mAh Rechargeable"], ["Weight", "1.7 kg (without battery)"]] }
     ],
-    images: ["935229729.jpg"],
+    images: ["assets/img/products/tumtec-fst-18s.webp"],
     documents: [{ type: "datasheet", label: "Tumtec_FST18S_Brochure.pdf", size: "4.6 MB", url: "#", demo: true }],
     warranty: "2 Years Official Warranty",
     status: "in-stock",
     stock: 5,
     isNew: true,
-    price: { retail: 109000, compareAt: 115000, dealer: 96000, moq: 1, pack: 1, quoteOnly: true, demo: true }, // Quote only Â§12.5
+    price: { retail: 109000, compareAt: 115000, dealer: 96000, moq: 1, pack: 1, quoteOnly: true, demo: true }, // Quote only Ã‚Â§12.5
     flags: { bestSeller: true, recommended: true },
     alternatives: ["tumtec-a9plus"]
   },
@@ -1255,15 +1255,15 @@ window.SBC_DATA.products = [
     category: "fiber-tools",
     subcategory: "Cleavers",
     tags: ["tumtec", "fiber cleaver", "precision cutting"],
-    attrs: { cleaveAngle: "< 0.5 Degrees", bladeLife: "48,000 Cleaves (16 positions Ã— 3000)", operation: "One-Step Automatic" },
+    attrs: { cleaveAngle: "< 0.5 Degrees", bladeLife: "48,000 Cleaves (16 positions Ãƒâ€” 3000)", operation: "One-Step Automatic" },
     summary: "Professional one-step automatic fiber cleaver delivering precise cleave angles below 0.5 degrees for zero-loss fusion splicing.",
     features: [
       "Automatic carriage return and fiber scrap collection box",
       "Long-life tungsten blade with 48,000 cleaves capacity",
-      "Universal fiber clamp accommodating 250Î¼m, 900Î¼m, and drop cables"
+      "Universal fiber clamp accommodating 250ÃŽÂ¼m, 900ÃŽÂ¼m, and drop cables"
     ],
-    specs: [{ group: "Specs", rows: [["Cleave Angle", "Typical < 0.5Â°"], ["Blade Positions", "16 Points"], ["Blade Life", "48,000 times"]] }],
-    images: ["1288293163.jpg"],
+    specs: [{ group: "Specs", rows: [["Cleave Angle", "Typical < 0.5Ã‚Â°"], ["Blade Positions", "16 Points"], ["Blade Life", "48,000 times"]] }],
+    images: ["assets/img/products/tumtec-fst-18s.webp"],
     documents: [{ type: "datasheet", label: "Tumtec_A9_Cleaver_Guide.pdf", size: "1.7 MB", url: "#", demo: true }],
     warranty: "1 Year Official Warranty",
     status: "in-stock",
@@ -1283,15 +1283,15 @@ window.SBC_DATA.products = [
     category: "fiber-tools",
     subcategory: "Power Meters & Testers",
     tags: ["solitine", "power meter", "vfl", "fiber tester", "rj45 tester"],
-    attrs: { wavelengthRange: "800â€“1700nm", vflPower: "10mW (up to 10km)", rj45Tester: true },
+    attrs: { wavelengthRange: "800Ã¢â‚¬â€œ1700nm", vflPower: "10mW (up to 10km)", rj45Tester: true },
     summary: "3-in-1 fiber optic power meter, 10mW visual fault locator (VFL), and RJ45 Ethernet network cable continuity tester.",
     features: [
       "Measures optical power across 850/1300/1310/1490/1550/1625nm wavelengths",
       "Integrated 10mW red laser VFL for locating fiber breaks up to 10 km",
       "Detachable RJ45 network cable sequence tester"
     ],
-    specs: [{ group: "Testing", rows: [["Power Range", "-70 to +10 dBm"], ["VFL Distance", "8â€“10 km"]] }],
-    images: ["350586369.jpg"],
+    specs: [{ group: "Testing", rows: [["Power Range", "-70 to +10 dBm"], ["VFL Distance", "8Ã¢â‚¬â€œ10 km"]] }],
+    images: ["assets/img/products/solitine-panel-24p.jpg"],
     documents: [],
     warranty: "1 Year Official Warranty",
     status: "in-stock",
@@ -1323,7 +1323,7 @@ window.SBC_DATA.products = [
       "Detachable braided Type-C cable"
     ],
     specs: [{ group: "Hardware", rows: [["Keys", "87 Keys TKL"], ["Switches", "Hot-swap Red/Linear"], ["Interface", "USB Type-C"]] }],
-    images: ["36742764.png"],
+    images: ["assets/img/products/meetion-mk008-pro.jpg"],
     documents: [],
     warranty: "1 Year Official Warranty",
     status: "in-stock",
@@ -1347,7 +1347,7 @@ window.SBC_DATA.products = [
     summary: "Ergonomic dual-mode wireless mouse connecting via Bluetooth and 2.4G nano receiver with silent clicks for office comfort.",
     features: ["Dual connectivity: easily switch between 2 laptops", "Whisper-quiet silent micro-switches", "Rechargeable internal lithium cell"],
     specs: [{ group: "Specs", rows: [["DPI Levels", "1000-1600-2400 DPI"], ["Battery", "Rechargeable 500 mAh"]] }],
-    images: ["1202424832.jpg"],
+    images: ["assets/img/products/meetion-btm012.jpg"],
     documents: [],
     warranty: "1 Year Official Warranty",
     status: "in-stock",
@@ -1363,7 +1363,7 @@ window.SBC_DATA.products = [
     sku: "SBC-MTN-G3330",
     brand: "meetion",
     model: "MT-G3330",
-    name: "Meetion MT-G3330 Hades RGB Gaming Mouse â€“ 7+1 Buttons, 10000 DPI, Professional Esports Mouse",
+    name: "Meetion MT-G3330 Hades RGB Gaming Mouse Ã¢â‚¬â€œ 7+1 Buttons, 10000 DPI, Professional Esports Mouse",
     category: "peripherals-audio",
     subcategory: "Mice",
     tags: ["meetion", "gaming mouse", "10000 dpi", "rgb", "esports"],
@@ -1371,7 +1371,7 @@ window.SBC_DATA.products = [
     summary: "Esports tournament-grade optical gaming mouse with PMW3325 sensor, 10,000 DPI resolution, RGB illumination, and 20M click switches.",
     features: ["Pixart PMW3325 gaming sensor with 100 IPS tracking", "7+1 programmable macro buttons with software profile saving", "Chroma RGB lighting with 16.8M colors"],
     specs: [{ group: "Sensor", rows: [["DPI Range", "200 to 10000 DPI"], ["Polling Rate", "1000 Hz (1ms)"]] }],
-    images: ["1589070421.jpg"],
+    images: ["assets/img/products/meetion-hp022.jpg"],
     documents: [],
     warranty: "1 Year Official Warranty",
     status: "in-stock",
@@ -1395,7 +1395,7 @@ window.SBC_DATA.products = [
     summary: "Ultra-slim wireless desktop keyboard and mouse combo with responsive scissor-switch keys and whisper-quiet operation.",
     features: ["Single 2.4G USB nano receiver for both keyboard and mouse", "Low-profile scissor key mechanisms for effortless typing", "Full numerical keypad"],
     specs: [{ group: "Hardware", rows: [["Connectivity", "2.4 GHz (10m range)"], ["Power", "AAA Batteries"]] }],
-    images: ["1694178577.png"],
+    images: ["assets/img/products/meetion-ikey-c210.webp"],
     documents: [],
     warranty: "1 Year Official Warranty",
     status: "in-stock",
@@ -1418,8 +1418,8 @@ window.SBC_DATA.products = [
     attrs: { drivers: "50mm Neodymium", microphone: "Omnidirectional Noise-Cancelling", connection: "3.5mm + USB for RGB" },
     summary: "Over-ear gaming headset featuring 50mm dynamic drivers, breathable memory-foam ear cushions, and flexible noise-cancelling microphone.",
     features: ["50mm high-fidelity audio drivers delivering deep bass", "Noise-cancelling bendable microphone for clear voice calls", "Comfortable memory foam headband"],
-    specs: [{ group: "Audio", rows: [["Driver Diameter", "50 mm"], ["Frequency Response", "20 Hz â€“ 20 kHz"]] }],
-    images: ["836755513.png"],
+    specs: [{ group: "Audio", rows: [["Driver Diameter", "50 mm"], ["Frequency Response", "20 Hz Ã¢â‚¬â€œ 20 kHz"]] }],
+    images: ["assets/img/products/meetion-hp022.jpg"],
     documents: [],
     warranty: "1 Year Official Warranty",
     status: "in-stock",
@@ -1435,7 +1435,7 @@ window.SBC_DATA.products = [
     sku: "SBC-SLT-SE108",
     brand: "solitine",
     model: "Enter SE108 Soundbar",
-    name: "SOLITINE ENTER BAR SE108 Sound Bar â€“ 32W RMS with Subwoofer",
+    name: "SOLITINE ENTER BAR SE108 Sound Bar Ã¢â‚¬â€œ 32W RMS with Subwoofer",
     category: "peripherals-audio",
     subcategory: "Soundbars & Speakers",
     tags: ["solitine", "soundbar", "speaker", "bluetooth speaker"],
@@ -1443,7 +1443,7 @@ window.SBC_DATA.products = [
     summary: "Desktop soundbar featuring 32W RMS stereo audio output with dedicated bass radiator, Bluetooth 5.3, and multi-input connectivity.",
     features: ["32W RMS rich acoustic output with dual full-range speakers", "Bluetooth 5.3 wireless streaming up to 10 meters", "Slim under-monitor desktop profile"],
     specs: [{ group: "Audio", rows: [["Output Power", "32W RMS"], ["Inputs", "Bluetooth, AUX 3.5mm, USB, Optical"]] }],
-    images: ["98013276.jpg"],
+    images: ["assets/img/products/solitine-panel-24p.jpg"],
     documents: [],
     warranty: "1 Year Official Warranty",
     status: "in-stock",
@@ -1466,19 +1466,19 @@ window.SBC_DATA.products = [
     category: "computer-accessories",
     subcategory: "Monitors",
     tags: ["hkc", "monitor", "21.5 inch", "fhd", "ips"],
-    attrs: { screenSize: "21.45-inch", panelType: "VA / Wide-View", resolution: "FHD (1920Ã—1080)", refreshRate: "75 Hz", ports: "HDMI + VGA" },
+    attrs: { screenSize: "21.45-inch", panelType: "VA / Wide-View", resolution: "FHD (1920Ãƒâ€”1080)", refreshRate: "75 Hz", ports: "HDMI + VGA" },
     summary: "Frameless 21.45-inch Full HD business monitor with 75Hz refresh rate, low blue light eye protection, and HDMI/VGA video connectivity.",
     features: [
-      "Crisp 1920Ã—1080 Full HD resolution with 3000:1 high contrast ratio",
+      "Crisp 1920Ãƒâ€”1080 Full HD resolution with 3000:1 high contrast ratio",
       "Three-sided micro-edge ultra-narrow bezel design",
       "Flicker-free and Low Blue Light eye-care certification",
-      "Standard VESA 75Ã—75mm wall-mount support"
+      "Standard VESA 75Ãƒâ€”75mm wall-mount support"
     ],
     specs: [
-      { group: "Display", rows: [["Panel Size", "21.45 Inches"], ["Resolution", "1920 Ã— 1080 FHD"], ["Refresh Rate", "75 Hz"], ["Aspect Ratio", "16:9"]] },
-      { group: "Connectivity", rows: [["Inputs", "1Ã— HDMI 1.4, 1Ã— VGA"], ["Power", "External DC 12V 2A"]] }
+      { group: "Display", rows: [["Panel Size", "21.45 Inches"], ["Resolution", "1920 Ãƒâ€” 1080 FHD"], ["Refresh Rate", "75 Hz"], ["Aspect Ratio", "16:9"]] },
+      { group: "Connectivity", rows: [["Inputs", "1Ãƒâ€” HDMI 1.4, 1Ãƒâ€” VGA"], ["Power", "External DC 12V 2A"]] }
     ],
-    images: ["1290613650.png"],
+    images: ["assets/img/products/hkc-monitor.webp"],
     documents: [{ type: "datasheet", label: "HKC_MB21V19F_Specs.pdf", size: "1.9 MB", url: "#", demo: true }],
     warranty: "3 Years Official Warranty",
     status: "in-stock",
@@ -1507,7 +1507,7 @@ window.SBC_DATA.products = [
       "Full safety protections: OVP, UVP, SCP, OPP"
     ],
     specs: [{ group: "Electrical", rows: [["Continuous Power", "450W"], ["Form Factor", "ATX 12V"], ["Efficiency", "80 PLUS Bronze"]] }],
-    images: ["1090225660.jpg"],
+    images: ["assets/img/products/solitine-panel-24p.jpg"],
     documents: [{ type: "datasheet", label: "Solitine_PSU_450_Manual.pdf", size: "1.6 MB", url: "#", demo: true }],
     warranty: "2 Years Official Warranty",
     status: "in-stock",
@@ -1519,10 +1519,10 @@ window.SBC_DATA.products = [
   },
 
   /* --------------------------------------------------------------------------
-     Additional SKUs to satisfy required status mix (Â§12.5):
-     - â‰¥ 3 out-of-stock
-     - â‰¥ 3 low-stock
-     - â‰¥ 2 preorder
+     Additional SKUs to satisfy required status mix (Ã‚Â§12.5):
+     - Ã¢â€°Â¥ 3 out-of-stock
+     - Ã¢â€°Â¥ 3 low-stock
+     - Ã¢â€°Â¥ 2 preorder
      -------------------------------------------------------------------------- */
   {
     id: "ubiquiti-u6-pro",
@@ -1535,12 +1535,12 @@ window.SBC_DATA.products = [
     tags: ["ubiquiti", "unifi", "u6", "wifi 6"],
     attrs: { wifiStandard: "Wi-Fi 6", poe: true, weatherProof: "IP54" },
     summary: "High-performance ceiling-mounted Wi-Fi 6 access point designed for large commercial offices and high-density environments.",
-    features: ["5.3 Gbps aggregate throughput", "4Ã—4 MU-MIMO and OFDMA", "PoE powered"],
+    features: ["5.3 Gbps aggregate throughput", "4Ãƒâ€”4 MU-MIMO and OFDMA", "PoE powered"],
     specs: [{ group: "Wireless", rows: [["Throughput", "5.3 Gbps"], ["Antenna", "Internal Omni"]] }],
-    images: ["1834271858.jpg"],
+    images: ["assets/img/products/mikrotik-cap-ac.webp"],
     documents: [],
     warranty: "1 Year Official Warranty",
-    status: "out-of-stock", // Out-of-stock #1 (Â§12.5)
+    status: "out-of-stock", // Out-of-stock #1 (Ã‚Â§12.5)
     stock: 0,
     isNew: false,
     price: { retail: 21500, compareAt: null, dealer: 18920, moq: 2, pack: 1, quoteOnly: false, demo: true },
@@ -1561,10 +1561,10 @@ window.SBC_DATA.products = [
     summary: "Low Smoke Zero Halogen (LSZH) Cat6 solid copper data cable engineered for enterprise banking, hospital, and mission-critical fitouts.",
     features: ["Flame-retardant LSZH outer sheath", "Pure copper 23 AWG conductors", "Certified for high-density horizontal cabling"],
     specs: [{ group: "Cable", rows: [["Jacket", "LSZH Violet"], ["Standard", "ISO/IEC 11801"]] }],
-    images: ["764580136.png"],
+    images: ["assets/img/products/dbc-c6-305m.webp"],
     documents: [],
     warranty: "25-Year System Warranty",
-    status: "out-of-stock", // Out-of-stock #2 (Â§12.5)
+    status: "out-of-stock", // Out-of-stock #2 (Ã‚Â§12.5)
     stock: 0,
     isNew: false,
     price: { retail: 14800, compareAt: null, dealer: 13020, moq: 2, pack: 1, quoteOnly: false, demo: true },
@@ -1584,11 +1584,11 @@ window.SBC_DATA.products = [
     attrs: { ponType: "XPON", lanPorts: 1 },
     summary: "Ultra-compact single Gigabit port bridge XPON ONU designed for zero-loss routing through external Wi-Fi 6 gateways.",
     features: ["Small footprint bridge optical terminal", "Compatible with Huawei and ZTE OLTs", "Low power consumption"],
-    specs: [{ group: "Optical", rows: [["Ports", "1Ã— GE"], ["Standard", "ITU-T G.984"]] }],
-    images: ["1513048010.jpg"],
+    specs: [{ group: "Optical", rows: [["Ports", "1Ãƒâ€” GE"], ["Standard", "ITU-T G.984"]] }],
+    images: ["assets/img/products/vsol-v2801sg.jpg"],
     documents: [],
     warranty: "1 Year Official Warranty",
-    status: "out-of-stock", // Out-of-stock #3 (Â§12.5)
+    status: "out-of-stock", // Out-of-stock #3 (Ã‚Â§12.5)
     stock: 0,
     isNew: false,
     price: { retail: 1350, compareAt: null, dealer: 1180, moq: 20, pack: 10, quoteOnly: false, demo: true },
@@ -1609,10 +1609,10 @@ window.SBC_DATA.products = [
     summary: "Upcoming flagship tri-band Wi-Fi 7 router boasting dual 10G SFP+ ports and 320 MHz channels for future-proof connectivity.",
     features: ["Tri-band BE19000 speeds", "Dual 10-Gigabit ports", "Available for pre-order"],
     specs: [{ group: "Next-Gen", rows: [["Bandwidth", "320 MHz"], ["Speed", "19 Gbps Aggregate"]] }],
-    images: ["1363865235.jpg"],
+    images: ["assets/img/products/tenda-ax12-pro.jpg"],
     documents: [],
     warranty: "2 Years Official Warranty",
-    status: "preorder", // Pre-order #1 (Â§12.5)
+    status: "preorder", // Pre-order #1 (Ã‚Â§12.5)
     stock: 0,
     isNew: true,
     price: { retail: 34000, compareAt: 38000, dealer: 29920, moq: 1, pack: 1, quoteOnly: false, demo: true },
@@ -1633,10 +1633,10 @@ window.SBC_DATA.products = [
     summary: "Next-generation 5.2kW off-grid solar inverter with dual AC outputs and lithium battery cold-start function.",
     features: ["5200W pure sine wave output", "Can work without battery connected in daytime", "Available for pre-order shipment"],
     specs: [{ group: "Solar", rows: [["Rated Power", "5200W"], ["Solar Input", "450V Max"]] }],
-    images: ["799614444.jpg"],
+    images: ["assets/img/products/must-ew2110-800.jpg"],
     documents: [],
     warranty: "2 Years Official Warranty",
-    status: "preorder", // Pre-order #2 (Â§12.5)
+    status: "preorder", // Pre-order #2 (Ã‚Â§12.5)
     stock: 0,
     isNew: true,
     price: { retail: 84000, compareAt: null, dealer: 73920, moq: 1, pack: 1, quoteOnly: false, demo: true },
