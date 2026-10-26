@@ -6,6 +6,18 @@
 window.SBC_DATA = window.SBC_DATA || {};
 window.SBC_DATA.brands = [
   {
+    slug: "meetion",
+    name: "Meetion",
+    hero: true,
+    featured: true,
+    isPrimaryFocus: true,
+    logo: "assets/brand image/924112071.png",
+    remoteLogo: "https://www.southbanglabd.com/backend/brand/logo/924112071.png",
+    description: "Official Authorized Bangladesh Distributor — Pro Mechanical RGB Keyboards, Ergonomic Wireless Mice, Headsets & Office Combos with 1-Year Direct Replacement Warranty.",
+    authorized: true,
+    distributorBadge: "Official Bangladesh Distributor"
+  },
+  {
     slug: "tenda",
     name: "Tenda",
     hero: true,
@@ -41,17 +53,7 @@ window.SBC_DATA.brands = [
     description: "High-precision optical fusion splicers and professional fiber cleaving equipment.",
     authorized: true
   },
-  {
-    slug: "meetion",
-    name: "Meetion",
-    hero: true,
-    logo: "assets/brand image/924112071.png",
-    remoteLogo: "https://www.southbanglabd.com/backend/brand/logo/924112071.png",
-    description: "Official Authorized Bangladesh Distributor — Pro Mechanical RGB Keyboards, Ergonomic Wireless Mice, Headsets & Office Combos.",
-    authorized: true,
-    featured: true,
-    distributorBadge: "Official Bangladesh Distributor"
-  },
+
   {
     slug: "must",
     name: "Must",

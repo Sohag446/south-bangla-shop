@@ -1,4 +1,4 @@
-﻿<!doctype html>
+<!doctype html>
 <html lang="en">
 <head>
   <meta charset="utf-8">
@@ -75,6 +75,7 @@
 
   <!-- Standard Prototype Scripts -->
   <script defer src="js/config.js"></script>
+  <script defer src="js/i18n/bn.js"></script>
   <script defer src="js/i18n/en.js"></script>
   <script defer src="js/core/util.js"></script>
   <script defer src="js/core/storage.js"></script>
@@ -179,6 +180,10 @@
             ui.toast(`Downloading: ${btn.dataset.title} (Simulation)`, "success");
           });
         });
+
+        if (window.SBC && window.SBC.i18n && typeof window.SBC.i18n.translatePage === "function") {
+          window.SBC.i18n.translatePage();
+        }
       }
 
       document.getElementById("dl-search").addEventListener("input", renderDownloads);
@@ -190,3 +195,4 @@
   </script>
 </body>
 </html>
+

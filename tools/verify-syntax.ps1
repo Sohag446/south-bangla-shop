@@ -17,3 +17,11 @@ Write-Output "layout.js - Open Braces: $openB, Close: $closeB"
 if ($openB -ne $closeB) {
     Write-Error "Brace mismatch in js/layout.js!"
 }
+
+$enJs = Get-Content js\i18n\en.js -Raw
+$enOpenB = ([regex]::Matches($enJs, '\{')).Count
+$enCloseB = ([regex]::Matches($enJs, '\}')).Count
+Write-Output "en.js - Open Braces: $enOpenB, Close: $enCloseB"
+if ($enOpenB -ne $enCloseB) {
+    Write-Error "Brace mismatch in js/i18n/en.js!"
+}

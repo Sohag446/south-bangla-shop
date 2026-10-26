@@ -122,10 +122,12 @@ window.SBC.layout = (function () {
     const cartCount = store.getCartCount();
     const wishlistCount = store.getWishlistCount();
     const session = store.getSession();
+    const t = window.SBC.t || function(k, f) { return f || k; };
+    const currentLang = (window.SBC.config && window.SBC.config.LANG) || "bn";
 
     const accountUrl = session ? (session.type === "dealer" ? util.U('dealer/dashboard.html') : util.U('account/index.html')) : util.U('login.html');
-    const accountUserText = session ? (session.name ? session.name.split(' ')[0] : 'My Account') : 'My Account';
-    const accountSubText = session ? (session.type === "dealer" ? 'Dealer Portal' : 'Dashboard') : 'Login / Register';
+    const accountUserText = session ? (session.name ? session.name.split(' ')[0] : t("header.myAccount", "My Account")) : t("header.myAccount", "My Account");
+    const accountSubText = session ? (session.type === "dealer" ? t("header.dealerPortal", "Dealer Portal") : t("header.dashboard", "Dashboard")) : t("header.loginRegister", "Login / Register");
 
     return `
       <header class="sbc-header">
@@ -135,7 +137,7 @@ window.SBC.layout = (function () {
             <div class="sbc-topbar__left">
               <a href="tel:+8809639257121" class="sbc-topbar__link">
                 ${ui.icon("phone", "xs")}
-                <span>+88 09639 257 121</span>
+                <span>${t("topbar.phone", "+88 09639 257 121")}</span>
               </a>
               <a href="mailto:info@southbanglabd.com" class="sbc-topbar__link">
                 ${ui.icon("mail", "xs")}
@@ -143,19 +145,34 @@ window.SBC.layout = (function () {
               </a>
               <span class="sbc-topbar__item">
                 ${ui.icon("map-pin", "xs")}
-                <span>Elephant Road, Dhaka</span>
+                <span>${t("topbar.location", "Elephant Road, Dhaka")}</span>
               </span>
             </div>
             <div class="sbc-topbar__right">
-              <a href="${util.U('branches.html')}" class="sbc-topbar__link">Track Order</a>
+              <a href="${util.U('branches.html')}" class="sbc-topbar__link">${t("topbar.trackOrder", "Track Order")}</a>
               <span class="sbc-topbar__divider">|</span>
-              <a href="${util.U('support.html')}" class="sbc-topbar__link">Support</a>
+              <a href="${util.U('support.html')}" class="sbc-topbar__link">${t("topbar.support", "Support")}</a>
               <span class="sbc-topbar__divider">|</span>
-              <a href="${util.U('faq.html')}" class="sbc-topbar__link">FAQ</a>
+              <a href="${util.U('faq.html')}" class="sbc-topbar__link">${t("topbar.faq", "FAQ")}</a>
               <span class="sbc-topbar__divider">|</span>
-              <div class="sbc-topbar__lang" title="Select Language">
-                <span>English</span>
-                ${ui.icon("chevron-down", "xs")}
+              
+              <!-- Interactive Language Switcher -->
+              <div class="sbc-topbar__lang-wrap" id="sbc-topbar-lang-wrap">
+                <button type="button" class="sbc-topbar__lang-btn" id="sbc-lang-btn" aria-haspopup="true" aria-expanded="false" title="${t('topbar.language', 'Language')}">
+                  <span class="js-current-lang-flag">${currentLang === 'bn' ? '🇧🇩' : '🇬🇧'}</span>
+                  <span class="js-current-lang-text">${currentLang === 'bn' ? 'বাংলা' : 'English'}</span>
+                  ${ui.icon("chevron-down", "xs")}
+                </button>
+                <div class="sbc-topbar__lang-dropdown" id="sbc-lang-dropdown">
+                  <button type="button" class="sbc-lang-option ${currentLang === 'bn' ? 'is-active' : ''}" data-action="set-lang" data-lang="bn">
+                    <span class="sbc-lang-option-content"><span>🇧🇩</span> <span>বাংলা (Bangla)</span></span>
+                    ${currentLang === 'bn' ? '<span class="sbc-lang-check">✓</span>' : ''}
+                  </button>
+                  <button type="button" class="sbc-lang-option ${currentLang === 'en' ? 'is-active' : ''}" data-action="set-lang" data-lang="en">
+                    <span class="sbc-lang-option-content"><span>🇬🇧</span> <span>English</span></span>
+                    ${currentLang === 'en' ? '<span class="sbc-lang-check">✓</span>' : ''}
+                  </button>
+                </div>
               </div>
             </div>
           </div>
@@ -172,8 +189,8 @@ window.SBC.layout = (function () {
             <!-- Search Form -->
             <div class="sbc-main-header__search" id="sbc-desktop-search-wrap">
               <form action="${util.U('shop.html')}" method="GET" class="sbc-main-search-form" id="sbc-search-form">
-                <input type="search" name="q" class="sbc-main-search-form__input" placeholder="Search products, brands and models..." autocomplete="off" id="sbc-global-search">
-                <button type="submit" class="sbc-main-search-form__submit" aria-label="Search">
+                <input type="search" name="q" class="sbc-main-search-form__input" placeholder="${t('header.searchPlaceholder', 'Search products, brands and models...')}" autocomplete="off" id="sbc-global-search">
+                <button type="submit" class="sbc-main-search-form__submit" aria-label="${t('common.filter', 'Search')}">
                   ${ui.icon("search", "sm")}
                 </button>
               </form>
@@ -183,7 +200,7 @@ window.SBC.layout = (function () {
             <!-- Action Badges (My Account, Wishlist, Cart) -->
             <div class="sbc-main-header__actions">
               <!-- Account -->
-              <a href="${accountUrl}" class="sbc-header-action sbc-header-action--account" title="Customer / Dealer Account">
+              <a href="${accountUrl}" class="sbc-header-action sbc-header-action--account" title="${t('header.myAccount', 'Customer / Dealer Account')}">
                 <div class="sbc-header-action__icon sbc-header-action__icon--user">
                   ${ui.icon("user", "md")}
                 </div>
@@ -194,22 +211,22 @@ window.SBC.layout = (function () {
               </a>
 
               <!-- Wishlist -->
-              <a href="${util.U('wishlist.html')}" class="sbc-header-action sbc-header-action--wishlist" title="Saved Wishlist">
+              <a href="${util.U('wishlist.html')}" class="sbc-header-action sbc-header-action--wishlist" title="${t('header.wishlist', 'Saved Wishlist')}">
                 <div class="sbc-header-action__icon">
                   ${ui.icon("heart", "md")}
                 </div>
                 <div class="sbc-header-action__text">
-                  <span class="sbc-header-action__title">Wishlist <span class="sbc-header-action__count js-wishlist-badge">(${wishlistCount})</span></span>
+                  <span class="sbc-header-action__title">${t('header.wishlist', 'Wishlist')} <span class="sbc-header-action__count js-wishlist-badge">(${wishlistCount})</span></span>
                 </div>
               </a>
 
               <!-- Cart -->
-              <a href="${util.U('cart.html')}" class="sbc-header-action sbc-header-action--cart js-open-mini-cart" title="Shopping Cart">
+              <a href="${util.U('cart.html')}" class="sbc-header-action sbc-header-action--cart js-open-mini-cart" title="${t('header.cart', 'Shopping Cart')}">
                 <div class="sbc-header-action__icon">
                   ${ui.icon("shopping-cart", "md")}
                 </div>
                 <div class="sbc-header-action__text">
-                  <span class="sbc-header-action__title">Cart <span class="sbc-header-action__count js-cart-badge">(${cartCount})</span></span>
+                  <span class="sbc-header-action__title">${t('header.cart', 'Cart')} <span class="sbc-header-action__count js-cart-badge">(${cartCount})</span></span>
                 </div>
               </a>
             </div>
@@ -222,89 +239,116 @@ window.SBC.layout = (function () {
             <div class="sbc-navbar__menu">
               <!-- 1. Home -->
               <div class="sbc-nav-item">
-                <a href="${util.U('index.html')}" class="sbc-nav-link ${currentPage === 'home' ? 'is-active' : ''}">Home</a>
+                <a href="${util.U('index.html')}" class="sbc-nav-link ${currentPage === 'home' ? 'is-active' : ''}">${t('nav.home', 'Home')}</a>
               </div>
 
               <!-- 2. About Us -->
               <div class="sbc-nav-item">
-                <a href="${util.U('about.html')}" class="sbc-nav-link ${currentPage === 'about' ? 'is-active' : ''}">About Us</a>
+                <a href="${util.U('about.html')}" class="sbc-nav-link ${currentPage === 'about' ? 'is-active' : ''}">${t('nav.about', 'About Us')}</a>
               </div>
 
               <!-- 3. Shop + Mega Menu -->
               <div class="sbc-nav-item sbc-nav-item--has-megamenu">
                 <a href="${util.U('shop.html')}" class="sbc-nav-link ${currentPage === 'shop' || currentPage === 'products' ? 'is-active' : ''}" aria-haspopup="true" aria-expanded="false" id="nav-shop-btn">
-                  Shop ${ui.icon("chevron-down", "xs")}
+                  ${t('nav.shop', 'Shop')} ${ui.icon("chevron-down", "xs")}
                 </a>
                 <div class="sbc-megamenu sbc-megamenu--shop" id="shop-megamenu" role="region" aria-labelledby="nav-shop-btn">
                   <div class="sbc-megamenu__header">
                     <div>
-                      <div class="sbc-megamenu__header-title">Hardware Catalogue &amp; Equipment</div>
-                      <div class="sbc-megamenu__header-sub">Authentic ICT devices, passive optical equipment &amp; enterprise power backup</div>
+                      <div class="sbc-megamenu__header-title">${t('nav.hardwareCatalog', 'Hardware Catalogue & Equipment')}</div>
+                      <div class="sbc-megamenu__header-sub">${t('nav.hardwareCatalogSub', 'Authentic ICT devices, passive optical equipment & enterprise power backup')}</div>
                     </div>
                     <a href="${util.U('shop.html')}#shop-catalog" style="color:var(--c-primary);font-weight:700;font-size:12px;text-decoration:none;">
-                      All 500+ Catalog SKUs &rarr;
+                      ${t('nav.allSkus', 'All 500+ Catalog SKUs →')}
                     </a>
                   </div>
-                  <div class="sbc-megamenu__inner">
+
+                  <!-- Meetion Official Brand Partner Spotlight Ad Banner (Matches Brands Mega Menu Design) -->
+                  <div class="sbc-brands-meetion-banner">
+                    <div class="sbc-brands-meetion-banner__left">
+                      <div class="sbc-brands-meetion-banner__header">
+                        <span class="sbc-meetion-highlight-pill">★ ${t('ad.meetionBadge', 'OFFICIAL DISTRIBUTOR')}</span>
+                        <span style="font-size:11px;font-weight:700;color:#dc2626;letter-spacing:0.5px;">MEETION BANGLADESH</span>
+                      </div>
+                      <h4 class="sbc-brands-meetion-banner__title">${t('ad.meetionTitle', 'Meetion Gaming & Ergonomic Gear')}</h4>
+                      <p class="sbc-brands-meetion-banner__desc">${t('ad.meetionDesc', 'Mechanical Keyboards, Wireless Silent Mice & Noise-Cancelling Headsets with 1-Year Official Warranty.')}</p>
+                    </div>
+                    <div class="sbc-brands-meetion-banner__right">
+                      <img src="${util.getRoot()}assets/brand image/924112071.png" alt="Meetion Logo" class="sbc-brands-meetion-banner__logo">
+                      <a href="${util.U('shop.html', { b: 'meetion' })}#shop-catalog" class="sbc-brands-meetion-banner__btn">
+                        ${t('ad.meetionCta', 'Shop Meetion Gear →')}
+                      </a>
+                    </div>
+                  </div>
+
+                  <div class="sbc-megamenu__inner" style="grid-template-columns: repeat(4, 1fr); gap: 20px;">
                     <!-- Column 1: Hardware Categories -->
                     <div class="sbc-megamenu__col">
-                      <div class="sbc-megamenu__heading">Networking Categories</div>
+                      <div class="sbc-megamenu__heading">${t('nav.categories', 'Networking Categories')}</div>
                       <ul class="sbc-megamenu__list">
-                        <li><a href="${util.U('shop.html', { c: 'routers-wifi' })}#shop-catalog">${ui.icon("wifi", "sm")} Routers &amp; Wi-Fi</a></li>
-                        <li><a href="${util.U('shop.html', { c: 'switches' })}#shop-catalog">${ui.icon("server", "sm")} Switches &amp; PoE</a></li>
-                        <li><a href="${util.U('shop.html', { c: 'fiber-pon' })}#shop-catalog">${ui.icon("activity", "sm")} Fiber, PON &amp; ONU</a></li>
-                        <li><a href="${util.U('shop.html', { c: 'wireless-outdoor' })}#shop-catalog">${ui.icon("radio", "sm")} Access Points &amp; Outdoor</a></li>
-                        <li><a href="${util.U('shop.html', { c: 'security-cctv' })}#shop-catalog">${ui.icon("shield", "sm")} CCTV &amp; Surveillance</a></li>
+                        <li><a href="${util.U('shop.html', { c: 'routers-wifi' })}#shop-catalog">${ui.icon("wifi", "sm")} ${t('cat.routersWifi', 'Routers & Wi-Fi')}</a></li>
+                        <li><a href="${util.U('shop.html', { c: 'switches' })}#shop-catalog">${ui.icon("server", "sm")} ${t('cat.switches', 'Switches & PoE')}</a></li>
+                        <li><a href="${util.U('shop.html', { c: 'fiber-pon' })}#shop-catalog">${ui.icon("activity", "sm")} ${t('cat.fiberPon', 'Fiber, PON & ONU')}</a></li>
+                        <li><a href="${util.U('shop.html', { c: 'wireless-outdoor' })}#shop-catalog">${ui.icon("radio", "sm")} ${t('cat.wirelessOutdoor', 'Access Points & Outdoor')}</a></li>
+                        <li><a href="${util.U('shop.html', { c: 'security-cctv' })}#shop-catalog">${ui.icon("shield", "sm")} ${t('cat.securityCctv', 'CCTV & Surveillance')}</a></li>
                       </ul>
                     </div>
 
                     <!-- Column 2: Infrastructure & Power -->
                     <div class="sbc-megamenu__col">
-                      <div class="sbc-megamenu__heading">Power &amp; Infrastructure</div>
+                      <div class="sbc-megamenu__heading">${t('cat.powerBackup', 'Power & Infrastructure')}</div>
                       <ul class="sbc-megamenu__list">
-                        <li><a href="${util.U('shop.html', { c: 'power-backup' })}#shop-catalog">${ui.icon("zap", "sm")} Power &amp; Online UPS</a></li>
-                        <li><a href="${util.U('shop.html', { c: 'cabling-racks' })}#shop-catalog">${ui.icon("layers", "sm")} Cabling &amp; Server Racks</a></li>
-                        <li><a href="${util.U('shop.html', { c: 'fiber-tools' })}#shop-catalog">${ui.icon("tool", "sm")} Fiber Tools &amp; Splicers</a></li>
-                        <li><a href="${util.U('shop.html', { c: 'peripherals-audio' })}#shop-catalog">${ui.icon("headphones", "sm")} Peripherals &amp; Audio</a></li>
-                        <li><a href="${util.U('shop.html', { c: 'computer-accessories' })}#shop-catalog">${ui.icon("cpu", "sm")} Computer Accessories</a></li>
+                        <li><a href="${util.U('shop.html', { c: 'power-backup' })}#shop-catalog">${ui.icon("zap", "sm")} ${t('cat.powerBackup', 'Power & Online UPS')}</a></li>
+                        <li><a href="${util.U('shop.html', { c: 'cabling-racks' })}#shop-catalog">${ui.icon("layers", "sm")} ${t('cat.cablingRacks', 'Cabling & Server Racks')}</a></li>
+                        <li><a href="${util.U('shop.html', { c: 'fiber-tools' })}#shop-catalog">${ui.icon("tool", "sm")} ${t('cat.fiberTools', 'Fiber Tools & Splicers')}</a></li>
+                        <li><a href="${util.U('shop.html', { c: 'peripherals-audio' })}#shop-catalog" style="font-weight:700;color:#dc2626;">${ui.icon("headphones", "sm")} ${t('cat.peripheralsAudio', 'Peripherals & Audio')} (Meetion)</a></li>
+                        <li><a href="${util.U('shop.html', { c: 'computer-accessories' })}#shop-catalog">${ui.icon("cpu", "sm")} ${t('cat.computerAccessories', 'Computer Accessories')}</a></li>
                       </ul>
                     </div>
 
-                    <!-- Column 3: Featured Brands -->
+                    <!-- Column 3: Featured Brands (Meetion Highlighted at Top) -->
                     <div class="sbc-megamenu__col">
-                      <div class="sbc-megamenu__heading">Top Partner Brands</div>
+                      <div class="sbc-megamenu__heading">${t('nav.brands', 'Top Partner Brands')}</div>
                       <ul class="sbc-megamenu__list">
+                        <li style="background:#fff1f2;border-radius:4px;padding:3px 6px;">
+                          <a href="${util.U('shop.html', { b: 'meetion' })}#shop-catalog" style="color:#b91c1c;font-weight:800;">
+                            <strong>Meetion</strong> &mdash; ${t('meetion.badge', 'Official Distributor')}
+                          </a>
+                        </li>
                         <li><a href="${util.U('shop.html', { b: 'tenda' })}#shop-catalog"><strong>Tenda</strong> &mdash; Wi-Fi &amp; Networking</a></li>
                         <li><a href="${util.U('shop.html', { b: 'cisco' })}#shop-catalog"><strong>Cisco</strong> &mdash; Enterprise Switches</a></li>
                         <li><a href="${util.U('shop.html', { b: 'solitine' })}#shop-catalog"><strong>Solitine</strong> &mdash; Cabling &amp; Fiber</a></li>
                         <li><a href="${util.U('shop.html', { b: 'must' })}#shop-catalog"><strong>Must</strong> &mdash; Power &amp; UPS</a></li>
-                        <li><a href="${util.U('shop.html', { b: 'meetion' })}#shop-catalog"><strong>Meetion</strong> &mdash; Peripherals &amp; Audio</a></li>
                       </ul>
                       <a href="${util.U('brand.html')}" class="sbc-megamenu__viewall">
-                        View All 14 Brands &rarr;
+                        ${t('mobile.viewAllBrands', 'View All 14 Brands →')}
                       </a>
                     </div>
 
-                    <!-- Column 4: Solutions & Commercial -->
+                    <!-- Column 4: Quick Solution Cards -->
                     <div class="sbc-megamenu__col sbc-megamenu__col--featured">
-                      <div class="sbc-megamenu__heading" style="border:none;margin-bottom:8px;">Enterprise Solutions</div>
+                      <div class="sbc-megamenu__heading">${t('nav.solutions', 'Solutions & Tools')}</div>
                       <div class="sbc-megamenu__cards">
                         <a href="${util.U('configurator.html')}" class="sbc-megamenu-card">
-                          <div class="sbc-megamenu-card__icon">${ui.icon("sliders", "md")}</div>
+                          <div class="sbc-megamenu-card__icon">${ui.icon("sliders", "sm")}</div>
                           <div class="sbc-megamenu-card__body">
-                            <strong>Network Configurator</strong>
-                            <span>Step-by-step equipment matching</span>
+                            <strong>${t('footer.solutions', 'Network Configurator')}</strong>
+                            <span>Custom ISP & Enterprise Bill of Materials</span>
                           </div>
                         </a>
-                        <a href="${util.U('quote.html')}" class="sbc-megamenu-card">
-                          <div class="sbc-megamenu-card__icon">${ui.icon("file-text", "md")}</div>
+                        <a href="${util.U('quote.html')}" class="sbc-megamenu-card" style="margin-top:8px;">
+                          <div class="sbc-megamenu-card__icon" style="background:#fef2f2;color:#dc2626;">${ui.icon("file-text", "sm")}</div>
                           <div class="sbc-megamenu-card__body">
-                            <strong>Request a Quote</strong>
-                            <span>Instant B2B pricing &amp; tender RFP</span>
+                            <strong>${t('common.requestQuote', 'Commercial Quotation')}</strong>
+                            <span>Bulk Wholesale Pricing for Dealers</span>
                           </div>
                         </a>
-                        <a href="${util.U('shop.html')}#shop-catalog" class="sbc-btn sbc-btn--primary sbc-btn--sm sbc-btn--full" style="text-align:center;margin-top:4px;">
-                          Explore Shop Catalog &rarr;
+                        <a href="${util.U('dealer/index.html')}" class="sbc-megamenu-card" style="margin-top:8px;">
+                          <div class="sbc-megamenu-card__icon" style="background:#f0fdf4;color:#16a34a;">${ui.icon("users", "sm")}</div>
+                          <div class="sbc-megamenu-card__body">
+                            <strong>${t('nav.dealers', 'Dealer Network')}</strong>
+                            <span>Join SBC Nationwide Distribution</span>
+                          </div>
                         </a>
                       </div>
                     </div>
@@ -312,99 +356,117 @@ window.SBC.layout = (function () {
                 </div>
               </div>
 
-              <!-- 4. Brands + Mega Menu (Highlighting Meetion) -->
+              <!-- 4. Brands + Mega Menu (Meetion Highlighted as #1) -->
               <div class="sbc-nav-item sbc-nav-item--has-megamenu">
                 <a href="${util.U('brand.html')}" class="sbc-nav-link ${currentPage === 'brand' || currentPage === 'brands' ? 'is-active' : ''}" aria-haspopup="true" aria-expanded="false" id="nav-brands-btn">
-                  Brands ${ui.icon("chevron-down", "xs")}
+                  ${t('nav.brands', 'Brands')} ${ui.icon("chevron-down", "xs")}
                 </a>
                 <div class="sbc-megamenu sbc-megamenu--brands" id="brands-megamenu" role="region" aria-labelledby="nav-brands-btn">
                   <div class="sbc-megamenu__header">
                     <div>
-                      <div class="sbc-megamenu__header-title">Official Authorized Brand Partnerships</div>
-                      <div class="sbc-megamenu__header-sub">Direct importer partnerships with genuine manufacturer warranty &amp; technical RMA</div>
+                      <div class="sbc-megamenu__header-title">${t('home.brandsHeading', 'Official Authorized Brand Partnerships')}</div>
+                      <div class="sbc-megamenu__header-sub">${t('home.brandsSub', 'Direct importer partnerships with genuine manufacturer warranty & technical RMA')}</div>
                     </div>
                     <a href="${util.U('brand.html')}" style="color:var(--c-primary);font-weight:700;font-size:12px;text-decoration:none;">
-                      All 14 Brands &rarr;
+                      ${t('mobile.viewAllBrands', 'All 14 Brands →')}
                     </a>
                   </div>
 
-                  <!-- 5-Column Grid with All 14 Verified Partner Brands -->
+                  <!-- Meetion Official Brand Partner Spotlight Ad Banner -->
+                  <div class="sbc-brands-meetion-banner">
+                    <div class="sbc-brands-meetion-banner__left">
+                      <div class="sbc-brands-meetion-banner__header">
+                        <span class="sbc-meetion-highlight-pill">★ ${t('ad.meetionBadge', 'EXCLUSIVE DISTRIBUTOR')}</span>
+                        <span style="font-size:11px;font-weight:700;color:#dc2626;letter-spacing:0.5px;">MEETION BANGLADESH</span>
+                      </div>
+                      <h4 class="sbc-brands-meetion-banner__title">${t('ad.brandsMeetionTitle', 'Meetion Official Bangladesh Flagship Partner')}</h4>
+                      <p class="sbc-brands-meetion-banner__desc">${t('ad.brandsMeetionText', 'South Bangla Computers is the exclusive authorized distributor for Meetion in Bangladesh. Complete lineup of hot-swap keyboards, wireless mice, RGB headsets with 1-year direct replacement warranty.')}</p>
+                    </div>
+                    <div class="sbc-brands-meetion-banner__right">
+                      <img src="${util.getRoot()}assets/brand image/924112071.png" alt="Meetion Logo" class="sbc-brands-meetion-banner__logo">
+                      <a href="${util.U('shop.html', { b: 'meetion' })}#shop-catalog" class="sbc-brands-meetion-banner__btn">
+                        ${t('ad.meetionCta', 'Explore Meetion Gear →')}
+                      </a>
+                    </div>
+                  </div>
+
+                  <!-- 5-Column Grid with Meetion Prominently First -->
                   <div class="sbc-brands-grid" style="display:grid;grid-template-columns:repeat(5, 1fr);gap:10px;">
+                    <!-- Brand 1: MEETION (FLAGSHIP FOCUS) -->
+                    <a href="${util.U('shop.html', { b: 'meetion' })}#shop-catalog" class="sbc-brand-card sbc-brand-card--meetion" style="border:2px solid #ef4444;background:#fff5f5;position:relative;">
+                      <span class="sbc-meetion-highlight-pill" style="position:absolute;top:-8px;right:8px;">★ Official</span>
+                      <div class="sbc-brand-card__logo"><img src="${util.getRoot()}assets/brand image/924112071.png" alt="Meetion" loading="lazy"></div>
+                      <span class="sbc-brand-card__name" style="color:#b91c1c;font-weight:800;">Meetion</span>
+                      <span style="font-size:10px;color:#b91c1c;margin-top:2px;font-weight:600;">Gaming &amp; Ergonomic Gear</span>
+                    </a>
+
+                    <!-- Brand 2: Tenda -->
                     <a href="${util.U('shop.html', { b: 'tenda' })}#shop-catalog" class="sbc-brand-card">
                       <div class="sbc-brand-card__logo"><img src="${util.getRoot()}assets/brand image/292026613.png" alt="Tenda" loading="lazy"></div>
                       <span class="sbc-brand-card__name">Tenda</span>
                       <span style="font-size:10px;color:var(--c-text-muted);margin-top:2px;">Wi-Fi 7 / 6 Routers &amp; Mesh</span>
                     </a>
+
+                    <!-- Brand 3: Cisco -->
                     <a href="${util.U('shop.html', { b: 'cisco' })}#shop-catalog" class="sbc-brand-card">
                       <div class="sbc-brand-card__logo"><img src="${util.getRoot()}assets/brand image/1202929252.png" alt="Cisco" loading="lazy"></div>
                       <span class="sbc-brand-card__name">Cisco</span>
                       <span style="font-size:10px;color:var(--c-text-muted);margin-top:2px;">Enterprise Switches &amp; Routers</span>
                     </a>
+
+                    <!-- Brand 4: Solitine -->
                     <a href="${util.U('shop.html', { b: 'solitine' })}#shop-catalog" class="sbc-brand-card">
                       <div class="sbc-brand-card__logo"><img src="${util.getRoot()}assets/brand image/1773848880.png" alt="Solitine" loading="lazy"></div>
                       <span class="sbc-brand-card__name">Solitine</span>
                       <span style="font-size:10px;color:var(--c-text-muted);margin-top:2px;">Armored Fiber &amp; Patch Cords</span>
                     </a>
+
+                    <!-- Brand 5: HSGQ -->
                     <a href="${util.U('shop.html', { b: 'hsgq' })}#shop-catalog" class="sbc-brand-card">
                       <div class="sbc-brand-card__logo"><img src="${util.getRoot()}assets/brand image/1261830325.png" alt="HSGQ" loading="lazy"></div>
                       <span class="sbc-brand-card__name">HSGQ</span>
                       <span style="font-size:10px;color:var(--c-text-muted);margin-top:2px;">EPON / GPON OLTs &amp; ONUs</span>
                     </a>
+
+                    <!-- Brand 6: Must -->
                     <a href="${util.U('shop.html', { b: 'must' })}#shop-catalog" class="sbc-brand-card">
                       <div class="sbc-brand-card__logo"><img src="${util.getRoot()}assets/brand image/1525673256.png" alt="Must" loading="lazy"></div>
                       <span class="sbc-brand-card__name">Must</span>
                       <span style="font-size:10px;color:var(--c-text-muted);margin-top:2px;">Online UPS &amp; Solar Inverters</span>
                     </a>
+
+                    <!-- Brand 7: Tumtec -->
                     <a href="${util.U('shop.html', { b: 'tumtec' })}#shop-catalog" class="sbc-brand-card">
                       <div class="sbc-brand-card__logo"><img src="${util.getRoot()}assets/brand image/533885831.png" alt="Tumtec" loading="lazy"></div>
                       <span class="sbc-brand-card__name">Tumtec</span>
                       <span style="font-size:10px;color:var(--c-text-muted);margin-top:2px;">Optical Fusion Splicers</span>
                     </a>
+
+                    <!-- Brand 8: Ubiquiti -->
                     <a href="${util.U('shop.html', { b: 'ubiquiti' })}#shop-catalog" class="sbc-brand-card">
                       <div class="sbc-brand-card__logo"><img src="${util.getRoot()}assets/brand image/580336898.png" alt="Ubiquiti" loading="lazy"></div>
                       <span class="sbc-brand-card__name">Ubiquiti</span>
                       <span style="font-size:10px;color:var(--c-text-muted);margin-top:2px;">UniFi Enterprise Wireless</span>
                     </a>
+
+                    <!-- Brand 9: Marsriva -->
                     <a href="${util.U('shop.html', { b: 'marsriva' })}#shop-catalog" class="sbc-brand-card">
                       <div class="sbc-brand-card__logo"><img src="${util.getRoot()}assets/brand image/1619816335.png" alt="Marsriva" loading="lazy"></div>
                       <span class="sbc-brand-card__name">Marsriva</span>
                       <span style="font-size:10px;color:var(--c-text-muted);margin-top:2px;">Smart Mini DC Router UPS</span>
                     </a>
+
+                    <!-- Brand 10: Rosenberger -->
                     <a href="${util.U('shop.html', { b: 'rosenberger' })}#shop-catalog" class="sbc-brand-card">
                       <div class="sbc-brand-card__logo"><img src="${util.getRoot()}assets/brand image/1461064408.png" alt="Rosenberger" loading="lazy"></div>
                       <span class="sbc-brand-card__name">Rosenberger</span>
                       <span style="font-size:10px;color:var(--c-text-muted);margin-top:2px;">Structured Cabling Systems</span>
                     </a>
-                    <a href="${util.U('shop.html', { b: 'ip-com' })}#shop-catalog" class="sbc-brand-card">
-                      <div class="sbc-brand-card__logo"><img src="${util.getRoot()}assets/brand image/425038089.png" alt="IP-Com" loading="lazy"></div>
-                      <span class="sbc-brand-card__name">IP-Com</span>
-                      <span style="font-size:10px;color:var(--c-text-muted);margin-top:2px;">Commercial PoE &amp; Long APs</span>
-                    </a>
-                    <a href="${util.U('shop.html', { b: 'ewin' })}#shop-catalog" class="sbc-brand-card">
-                      <div class="sbc-brand-card__logo"><img src="${util.getRoot()}assets/brand image/256242652.png" alt="Ewin" loading="lazy"></div>
-                      <span class="sbc-brand-card__name">Ewin</span>
-                      <span style="font-size:10px;color:var(--c-text-muted);margin-top:2px;">Network Peripherals &amp; Cards</span>
-                    </a>
-                    <a href="${util.U('shop.html', { b: 'hkc' })}#shop-catalog" class="sbc-brand-card">
-                      <div class="sbc-brand-card__logo"><img src="${util.getRoot()}assets/brand image/1314348991.png" alt="HKC" loading="lazy"></div>
-                      <span class="sbc-brand-card__name">HKC</span>
-                      <span style="font-size:10px;color:var(--c-text-muted);margin-top:2px;">High-Definition Monitors</span>
-                    </a>
-                    <a href="${util.U('shop.html', { b: 'phyhome' })}#shop-catalog" class="sbc-brand-card">
-                      <div class="sbc-brand-card__logo"><img src="${util.getRoot()}assets/brand image/331461559.png" alt="Phyhome" loading="lazy"></div>
-                      <span class="sbc-brand-card__name">Phyhome</span>
-                      <span style="font-size:10px;color:var(--c-text-muted);margin-top:2px;">FTTH Active Transceivers</span>
-                    </a>
-                    <a href="${util.U('shop.html', { b: 'meetion' })}#shop-catalog" class="sbc-brand-card">
-                      <div class="sbc-brand-card__logo"><img src="${util.getRoot()}assets/brand image/924112071.png" alt="Meetion" loading="lazy"></div>
-                      <span class="sbc-brand-card__name">Meetion</span>
-                      <span style="font-size:10px;color:var(--c-text-muted);margin-top:2px;">Peripherals &amp; Audio</span>
-                    </a>
                   </div>
 
                   <div class="sbc-megamenu__footer-bar">
-                    <span>100% Genuine Authorized Hardware with Direct Manufacturer Warranty</span>
-                    <a href="${util.U('brand.html')}">Browse All 14 Partner Brands &rarr;</a>
+                    <span>${t('meetion.guarantee', '100% Genuine Authorized Hardware with Direct Manufacturer Warranty')}</span>
+                    <a href="${util.U('brand.html')}">${t('mobile.viewAllBrands', 'Browse All 14 Partner Brands →')}</a>
                   </div>
                 </div>
               </div>
@@ -412,23 +474,23 @@ window.SBC.layout = (function () {
               <!-- 5. Solutions Dropdown -->
               <div class="sbc-nav-item sbc-nav-item--has-dropdown">
                 <a href="${util.U('configurator.html')}" class="sbc-nav-link ${currentPage === 'configurator' || currentPage === 'quote' ? 'is-active' : ''}" aria-haspopup="true" aria-expanded="false" id="nav-solutions-btn">
-                  Solutions ${ui.icon("chevron-down", "xs")}
+                  ${t('nav.solutions', 'Solutions')} ${ui.icon("chevron-down", "xs")}
                 </a>
                 <div class="sbc-dropdown-menu" id="solutions-dropdown" role="menu" aria-labelledby="nav-solutions-btn">
                   <a href="${util.U('configurator.html')}" class="sbc-dropdown-link" role="menuitem">Network Solution Configurator</a>
-                  <a href="${util.U('quote.html')}" class="sbc-dropdown-link" role="menuitem">Commercial Tender &amp; RFP Quote</a>
-                  <a href="${util.U('dealer/index.html')}" class="sbc-dropdown-link" role="menuitem">Dealer &amp; Reseller Program</a>
+                  <a href="${util.U('quote.html')}" class="sbc-dropdown-link" role="menuitem">${t('common.requestQuote', 'Commercial Tender & RFP Quote')}</a>
+                  <a href="${util.U('dealer/index.html')}" class="sbc-dropdown-link" role="menuitem">${t('nav.dealers', 'Dealer & Reseller Program')}</a>
                   <a href="${util.U('dealer/login.html')}" class="sbc-dropdown-link" role="menuitem">Dealer Portal Login</a>
                   <div style="border-top:1px solid var(--gray-100);margin:4px 0;"></div>
                   <a href="${util.U('branches.html')}" class="sbc-dropdown-link" role="menuitem" style="color:var(--c-primary);font-weight:600;">12 Nationwide Service Centers</a>
-                  <a href="${util.U('support.html')}" class="sbc-dropdown-link" role="menuitem">Customer Support &amp; RMA Helpdesk</a>
-                  <a href="${util.U('warranty.html')}" class="sbc-dropdown-link" role="menuitem">Warranty Policy &amp; Terms</a>
+                  <a href="${util.U('support.html')}" class="sbc-dropdown-link" role="menuitem">${t('nav.support', 'Customer Support & RMA Helpdesk')}</a>
+                  <a href="${util.U('warranty.html')}" class="sbc-dropdown-link" role="menuitem">${t('common.warranty', 'Warranty Policy & Terms')}</a>
                 </div>
               </div>
 
               <!-- 6. Contact -->
               <div class="sbc-nav-item">
-                <a href="${util.U('contact.html')}" class="sbc-nav-link ${currentPage === 'contact' ? 'is-active' : ''}">Contact</a>
+                <a href="${util.U('contact.html')}" class="sbc-nav-link ${currentPage === 'contact' ? 'is-active' : ''}">${t('nav.contact', 'Contact')}</a>
               </div>
             </div>
           </div>
@@ -446,14 +508,14 @@ window.SBC.layout = (function () {
             </a>
 
             <div class="sbc-header__mobile-actions">
-              <a href="${accountUrl}" class="sbc-header__mobile-action" title="Account" aria-label="Account">
+              <a href="${accountUrl}" class="sbc-header__mobile-action" title="${t('header.myAccount', 'Account')}" aria-label="Account">
                 ${ui.icon("user", "sm")}
               </a>
-              <a href="${util.U('wishlist.html')}" class="sbc-header__mobile-action" title="Wishlist" aria-label="Wishlist">
+              <a href="${util.U('wishlist.html')}" class="sbc-header__mobile-action" title="${t('header.wishlist', 'Wishlist')}" aria-label="Wishlist">
                 ${ui.icon("heart", "sm")}
                 <span class="sbc-header__mobile-badge js-wishlist-badge" style="${wishlistCount === 0 ? 'display:none;' : ''}">${wishlistCount}</span>
               </a>
-              <a href="${util.U('cart.html')}" class="sbc-header__mobile-action js-open-mini-cart" title="Shopping Cart" aria-label="Cart">
+              <a href="${util.U('cart.html')}" class="sbc-header__mobile-action js-open-mini-cart" title="${t('header.cart', 'Shopping Cart')}" aria-label="Cart">
                 ${ui.icon("shopping-cart", "sm")}
                 <span class="sbc-header__mobile-badge js-cart-badge">${cartCount}</span>
               </a>
@@ -462,7 +524,7 @@ window.SBC.layout = (function () {
 
           <div class="sbc-header__mobile-search">
             <form action="${util.U('shop.html')}" method="GET" class="sbc-main-search-form" id="sbc-mobile-search-form">
-              <input type="search" name="q" class="sbc-main-search-form__input" placeholder="Search products, brands and models..." autocomplete="off" id="sbc-mobile-search">
+              <input type="search" name="q" class="sbc-main-search-form__input" placeholder="${t('header.searchPlaceholder', 'Search products, brands and models...')}" autocomplete="off" id="sbc-mobile-search">
               <button type="submit" class="sbc-main-search-form__submit" aria-label="Search">
                 ${ui.icon("search", "sm")}
               </button>
@@ -474,10 +536,12 @@ window.SBC.layout = (function () {
     `;
   }
 
+
   /**
    * Render Footer (H12) - 5-Column Design Matching Screenshot
    */
   function renderFooter() {
+    const t = window.SBC.t || function(k, f) { return f || k; };
     return `
       <footer class="sbc-footer-v2">
         <div class="l-container">
@@ -487,11 +551,11 @@ window.SBC.layout = (function () {
               <div class="sbc-footer-v2__logo-wrap">
                 <img src="${util.getRoot()}assets/img/logo.png" alt="South Bangla Computers" class="sbc-footer-v2__logo" onerror="this.src='${util.getRoot()}sbc-logo-24-style.png'">
               </div>
-              <p class="sbc-footer-v2__tagline">Networking | IT Equipment | Computer Accessories</p>
+              <p class="sbc-footer-v2__tagline">${t("site.tagline", "Striving For ICT Excellence Since 1999")}</p>
               <div class="sbc-footer-v2__contact-list">
                 <a href="tel:+8809639257121" class="sbc-footer-v2__contact-item">
                   ${ui.icon("phone", "sm")}
-                  <span>+88 09639 257 121</span>
+                  <span>${t("topbar.phone", "+88 09639 257 121")}</span>
                 </a>
                 <a href="mailto:info@southbanglabd.com" class="sbc-footer-v2__contact-item">
                   ${ui.icon("mail", "sm")}
@@ -499,47 +563,47 @@ window.SBC.layout = (function () {
                 </a>
                 <div class="sbc-footer-v2__contact-item">
                   ${ui.icon("map-pin", "sm")}
-                  <span>323, Akram Serenity, Elephant Road, Dhaka-1205</span>
+                  <span>${t("footer.officeAddress", "Subastu Suraiya Trade Center (Level-3), 66 Elephant Road, Dhaka-1205")}</span>
                 </div>
               </div>
             </div>
 
             <!-- Col 2: Quick Links -->
             <div class="sbc-footer-v2__col">
-              <h4 class="sbc-footer-v2__title">Quick Links</h4>
+              <h4 class="sbc-footer-v2__title">${t("footer.quickLinks", "Quick Links")}</h4>
               <ul class="sbc-footer-v2__list">
-                <li><a href="${util.U('index.html')}">Home</a></li>
-                <li><a href="${util.U('shop.html')}">Shop Catalog</a></li>
-                <li><a href="${util.U('brand.html')}">Partner Brands</a></li>
-                <li><a href="${util.U('configurator.html')}">Solutions</a></li>
-                <li><a href="${util.U('about.html')}">About Us</a></li>
-                <li><a href="${util.U('contact.html')}">Contact Us</a></li>
+                <li><a href="${util.U('index.html')}">${t("nav.home", "Home")}</a></li>
+                <li><a href="${util.U('shop.html')}">${t("nav.shop", "Shop Catalog")}</a></li>
+                <li><a href="${util.U('brand.html')}">${t("nav.brands", "Partner Brands")}</a></li>
+                <li><a href="${util.U('configurator.html')}">${t("nav.solutions", "Solutions")}</a></li>
+                <li><a href="${util.U('about.html')}">${t("nav.about", "About Us")}</a></li>
+                <li><a href="${util.U('contact.html')}">${t("nav.contact", "Contact Us")}</a></li>
               </ul>
             </div>
 
             <!-- Col 3: Customer Service -->
             <div class="sbc-footer-v2__col">
-              <h4 class="sbc-footer-v2__title">Customer Service</h4>
+              <h4 class="sbc-footer-v2__title">${t("footer.customerService", "Customer Service")}</h4>
               <ul class="sbc-footer-v2__list">
-                <li><a href="${util.U('support.html')}">Technical Support</a></li>
-                <li><a href="${util.U('faq.html')}">FAQ</a></li>
-                <li><a href="${util.U('warranty.html')}">Warranty Policy</a></li>
+                <li><a href="${util.U('support.html')}">${t("nav.support", "Technical Support")}</a></li>
+                <li><a href="${util.U('faq.html')}">${t("topbar.faq", "FAQ")}</a></li>
+                <li><a href="${util.U('warranty.html')}">${t("common.warranty", "Warranty Policy")}</a></li>
                 <li><a href="${util.U('returns.html')}">Return &amp; Refund</a></li>
                 <li><a href="${util.U('shipping.html')}">Delivery &amp; Logistics</a></li>
                 <li><a href="${util.U('privacy.html')}">Privacy Policy</a></li>
               </ul>
             </div>
 
-            <!-- Col 4: Top Brands -->
+            <!-- Col 4: Top Brands (Meetion Highlighted) -->
             <div class="sbc-footer-v2__col">
-              <h4 class="sbc-footer-v2__title">Partner Brands</h4>
+              <h4 class="sbc-footer-v2__title">${t("nav.brands", "Partner Brands")}</h4>
               <ul class="sbc-footer-v2__list">
+                <li><a href="${util.U('shop.html', { b: 'meetion' })}#shop-catalog" style="color:#b91c1c;font-weight:700;">★ Meetion (Official)</a></li>
                 <li><a href="${util.U('shop.html', { b: 'tenda' })}#shop-catalog">Tenda</a></li>
                 <li><a href="${util.U('shop.html', { b: 'cisco' })}#shop-catalog">Cisco</a></li>
                 <li><a href="${util.U('shop.html', { b: 'solitine' })}#shop-catalog">Solitine</a></li>
                 <li><a href="${util.U('shop.html', { b: 'must' })}#shop-catalog">Must</a></li>
                 <li><a href="${util.U('shop.html', { b: 'hsgq' })}#shop-catalog">HSGQ</a></li>
-                <li><a href="${util.U('shop.html', { b: 'meetion' })}#shop-catalog">Meetion</a></li>
               </ul>
             </div>
 
@@ -569,7 +633,7 @@ window.SBC.layout = (function () {
         <div class="sbc-footer-v2__bottom">
           <div class="l-container sbc-footer-v2__bottom-inner">
             <p class="sbc-footer-v2__copy">
-              &copy; 2026 South Bangla Computers. All rights reserved.
+              ${t("footer.copyright", "© 2026 South Bangla Computers. All rights reserved.")}
             </p>
             <div class="sbc-footer-v2__legal">
               <a href="${util.U('privacy.html')}">Privacy</a>
@@ -582,6 +646,7 @@ window.SBC.layout = (function () {
       </footer>
     `;
   }
+
 
   /**
    * Render Compare Sticky Bottom Bar
@@ -740,6 +805,41 @@ window.SBC.layout = (function () {
         return;
       }
 
+      // Language Switcher Dropdown Toggle
+      const langBtn = e.target.closest("#sbc-lang-btn");
+      if (langBtn) {
+        e.preventDefault();
+        e.stopPropagation();
+        const wrap = document.getElementById("sbc-topbar-lang-wrap");
+        if (wrap) {
+          const isOpen = wrap.classList.contains("is-open");
+          wrap.classList.toggle("is-open", !isOpen);
+          langBtn.setAttribute("aria-expanded", !isOpen ? "true" : "false");
+        }
+        return;
+      }
+
+      // Language Switch Action (Desktop & Mobile) - Immediate clean reload
+      const setLangBtn = e.target.closest('[data-action="set-lang"]');
+      if (setLangBtn) {
+        e.preventDefault();
+        const targetLang = setLangBtn.getAttribute("data-lang");
+        if (targetLang) {
+          try {
+            localStorage.setItem("sbc.lang", targetLang);
+            localStorage.setItem("sbc_lang", targetLang);
+          } catch (err) {}
+          if (window.SBC && typeof window.SBC.setLanguage === "function") {
+            window.SBC.setLanguage(targetLang);
+          } else {
+            window.location.reload();
+          }
+        }
+        const wrap = document.getElementById("sbc-topbar-lang-wrap");
+        if (wrap) wrap.classList.remove("is-open");
+        return;
+      }
+
       // Copy address
       const copyBtn = e.target.closest(".js-copy-address");
       if (copyBtn) {
@@ -751,6 +851,7 @@ window.SBC.layout = (function () {
         }
         return;
       }
+
 
       // Open disclosure modal
       if (e.target.closest(".js-open-disclosure")) {
@@ -861,6 +962,8 @@ window.SBC.layout = (function () {
           const link = item.querySelector(".sbc-nav-link");
           if (link) link.setAttribute("aria-expanded", "false");
         });
+        const langWrap = document.getElementById("sbc-topbar-lang-wrap");
+        if (langWrap) langWrap.classList.remove("is-open");
       }
     });
 
@@ -872,7 +975,12 @@ window.SBC.layout = (function () {
           if (link) link.setAttribute("aria-expanded", "false");
         });
       }
+      if (!e.target.closest("#sbc-topbar-lang-wrap")) {
+        const langWrap = document.getElementById("sbc-topbar-lang-wrap");
+        if (langWrap) langWrap.classList.remove("is-open");
+      }
     });
+
   }
 
   /**
@@ -881,54 +989,80 @@ window.SBC.layout = (function () {
   function openMobileNav() {
     const session = store.getSession();
     const accountUrl = session ? (session.type === "dealer" ? util.U('dealer/dashboard.html') : util.U('account/index.html')) : util.U('login.html');
-    const accountLabel = session ? (session.name || 'My Account') : 'Sign In / Register';
+    const t = window.SBC.t || function(k, f) { return f || k; };
+    const currentLang = (window.SBC.config && window.SBC.config.LANG) || "bn";
+    const accountLabel = session ? (session.name || t('header.myAccount', 'My Account')) : t('header.loginRegister', 'Sign In / Register');
     const cartCount = store.getCartCount();
     const wishlistCount = store.getWishlistCount();
 
     ui.drawer({
       position: "left",
-      title: "Menu",
+      title: t("mobile.menu", "Menu"),
       content: `
         <div class="sbc-mobile-nav">
-          <a href="${util.U('index.html')}" class="sbc-mobile-nav__item">Home</a>
-          <a href="${util.U('about.html')}" class="sbc-mobile-nav__item">About Us</a>
+          <!-- Mobile Language Switcher (Requirement 3) -->
+          <div class="sbc-mobile-lang-bar">
+            <div class="sbc-mobile-lang-title">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" style="width:13px;height:13px;"><circle cx="12" cy="12" r="10"></circle><line x1="2" y1="12" x2="22" y2="12"></line><path d="M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z"></path></svg>
+              <span>${t("mobile.language", "ভাষা / Language")}</span>
+            </div>
+            <div class="sbc-mobile-lang-options">
+              <button type="button" class="sbc-mobile-lang-btn ${currentLang === 'bn' ? 'is-active' : ''}" data-action="set-lang" data-lang="bn">
+                <span>🇧🇩</span>
+                <span>বাংলা</span>
+              </button>
+              <button type="button" class="sbc-mobile-lang-btn ${currentLang === 'en' ? 'is-active' : ''}" data-action="set-lang" data-lang="en">
+                <span>🇬🇧</span>
+                <span>English</span>
+              </button>
+            </div>
+          </div>
+
+          <a href="${util.U('index.html')}" class="sbc-mobile-nav__item">${t("nav.home", "Home")}</a>
+          <a href="${util.U('about.html')}" class="sbc-mobile-nav__item">${t("nav.about", "About Us")}</a>
 
           <!-- Shop Accordion -->
           <div class="sbc-accordion js-accordion">
             <button class="sbc-accordion__trigger js-accordion-trigger" type="button" aria-expanded="false">
-              <span>Shop by Category</span>
+              <span>${t("mobile.shopCat", "Shop by Category")}</span>
               ${ui.icon("chevron-down", "sm")}
             </button>
             <div class="sbc-accordion__content">
-              <a href="${util.U('shop.html')}#shop-catalog" class="sbc-accordion__link" style="color:var(--c-primary);font-weight:700;">All 500+ Catalog SKUs &rarr;</a>
-              <a href="${util.U('shop.html', { c: 'routers-wifi' })}#shop-catalog" class="sbc-accordion__link">Routers &amp; Wi-Fi</a>
-              <a href="${util.U('shop.html', { c: 'switches' })}#shop-catalog" class="sbc-accordion__link">Switches &amp; PoE</a>
-              <a href="${util.U('shop.html', { c: 'fiber-pon' })}#shop-catalog" class="sbc-accordion__link">Fiber, PON &amp; ONU</a>
-              <a href="${util.U('shop.html', { c: 'wireless-outdoor' })}#shop-catalog" class="sbc-accordion__link">Access Points &amp; Outdoor</a>
-              <a href="${util.U('shop.html', { c: 'security-cctv' })}#shop-catalog" class="sbc-accordion__link">CCTV &amp; Security</a>
-              <a href="${util.U('shop.html', { c: 'power-backup' })}#shop-catalog" class="sbc-accordion__link">Power &amp; Backup (UPS)</a>
-              <a href="${util.U('shop.html', { c: 'cabling-racks' })}#shop-catalog" class="sbc-accordion__link">Cabling &amp; Server Racks</a>
-              <a href="${util.U('shop.html', { c: 'fiber-tools' })}#shop-catalog" class="sbc-accordion__link">Fiber Tools &amp; Splicers</a>
-              <a href="${util.U('shop.html', { c: 'peripherals-audio' })}#shop-catalog" class="sbc-accordion__link">Peripherals &amp; Audio</a>
-              <a href="${util.U('shop.html', { c: 'computer-accessories' })}#shop-catalog" class="sbc-accordion__link">Computer Accessories</a>
+              <a href="${util.U('shop.html')}#shop-catalog" class="sbc-accordion__link" style="color:var(--c-primary);font-weight:700;">${t("nav.allSkus", "All 500+ Catalog SKUs →")}</a>
+              <a href="${util.U('shop.html', { c: 'routers-wifi' })}#shop-catalog" class="sbc-accordion__link">${t("cat.routersWifi", "Routers & Wi-Fi")}</a>
+              <a href="${util.U('shop.html', { c: 'switches' })}#shop-catalog" class="sbc-accordion__link">${t("cat.switches", "Switches & PoE")}</a>
+              <a href="${util.U('shop.html', { c: 'fiber-pon' })}#shop-catalog" class="sbc-accordion__link">${t("cat.fiberPon", "Fiber, PON & ONU")}</a>
+              <a href="${util.U('shop.html', { c: 'wireless-outdoor' })}#shop-catalog" class="sbc-accordion__link">${t("cat.wirelessOutdoor", "Access Points & Outdoor")}</a>
+              <a href="${util.U('shop.html', { c: 'security-cctv' })}#shop-catalog" class="sbc-accordion__link">${t("cat.securityCctv", "CCTV & Security")}</a>
+              <a href="${util.U('shop.html', { c: 'power-backup' })}#shop-catalog" class="sbc-accordion__link">${t("cat.powerBackup", "Power & Backup (UPS)")}</a>
+              <a href="${util.U('shop.html', { c: 'cabling-racks' })}#shop-catalog" class="sbc-accordion__link">${t("cat.cablingRacks", "Cabling & Server Racks")}</a>
+              <a href="${util.U('shop.html', { c: 'fiber-tools' })}#shop-catalog" class="sbc-accordion__link">${t("cat.fiberTools", "Fiber Tools & Splicers")}</a>
+              <a href="${util.U('shop.html', { c: 'peripherals-audio' })}#shop-catalog" class="sbc-accordion__link" style="color:#b91c1c;font-weight:700;">★ ${t("cat.peripheralsAudio", "Peripherals & Audio")} (Meetion)</a>
+              <a href="${util.U('shop.html', { c: 'computer-accessories' })}#shop-catalog" class="sbc-accordion__link">${t("cat.computerAccessories", "Computer Accessories")}</a>
             </div>
           </div>
 
-          <!-- Brands Accordion -->
+          <!-- Brands Accordion (Meetion #1 at Top) -->
           <div class="sbc-accordion js-accordion">
             <button class="sbc-accordion__trigger js-accordion-trigger" type="button" aria-expanded="false">
-              <span>Brands &amp; Partners (14)</span>
+              <span>${t("mobile.brandsPartners", "Brands & Partners (14)")}</span>
               ${ui.icon("chevron-down", "sm")}
             </button>
             <div class="sbc-accordion__content">
               <div class="sbc-mobile-brands-grid">
-                <a href="${util.U('shop.html', { b: 'cisco' })}#shop-catalog" class="sbc-brand-card" style="min-height:74px;padding:8px 4px;">
-                  <div class="sbc-brand-card__logo" style="height:30px;"><img src="${util.getRoot()}assets/brand image/1202929252.png" alt="Cisco" style="max-height:26px;"></div>
-                  <span class="sbc-brand-card__name" style="font-size:11px;">Cisco</span>
+                <!-- Meetion Highlighted as #1 Brand in Mobile Menu -->
+                <a href="${util.U('shop.html', { b: 'meetion' })}#shop-catalog" class="sbc-brand-card" style="min-height:78px;padding:8px 4px;border:2px solid #ef4444;background:#fff5f5;position:relative;">
+                  <span style="position:absolute;top:2px;right:4px;font-size:8px;font-weight:800;background:#dc2626;color:#fff;padding:1px 4px;border-radius:3px;">OFFICIAL</span>
+                  <div class="sbc-brand-card__logo" style="height:30px;"><img src="${util.getRoot()}assets/brand image/924112071.png" alt="Meetion" style="max-height:26px;"></div>
+                  <span class="sbc-brand-card__name" style="font-size:11px;font-weight:800;color:#b91c1c;">Meetion</span>
                 </a>
                 <a href="${util.U('shop.html', { b: 'tenda' })}#shop-catalog" class="sbc-brand-card" style="min-height:74px;padding:8px 4px;">
                   <div class="sbc-brand-card__logo" style="height:30px;"><img src="${util.getRoot()}assets/brand image/292026613.png" alt="Tenda" style="max-height:26px;"></div>
                   <span class="sbc-brand-card__name" style="font-size:11px;">Tenda</span>
+                </a>
+                <a href="${util.U('shop.html', { b: 'cisco' })}#shop-catalog" class="sbc-brand-card" style="min-height:74px;padding:8px 4px;">
+                  <div class="sbc-brand-card__logo" style="height:30px;"><img src="${util.getRoot()}assets/brand image/1202929252.png" alt="Cisco" style="max-height:26px;"></div>
+                  <span class="sbc-brand-card__name" style="font-size:11px;">Cisco</span>
                 </a>
                 <a href="${util.U('shop.html', { b: 'solitine' })}#shop-catalog" class="sbc-brand-card" style="min-height:74px;padding:8px 4px;">
                   <div class="sbc-brand-card__logo" style="height:30px;"><img src="${util.getRoot()}assets/brand image/1773848880.png" alt="Solitine" style="max-height:26px;"></div>
@@ -950,34 +1084,30 @@ window.SBC.layout = (function () {
                   <div class="sbc-brand-card__logo" style="height:30px;"><img src="${util.getRoot()}assets/brand image/580336898.png" alt="Ubiquiti" style="max-height:26px;"></div>
                   <span class="sbc-brand-card__name" style="font-size:11px;">Ubiquiti</span>
                 </a>
-                <a href="${util.U('shop.html', { b: 'marsriva' })}#shop-catalog" class="sbc-brand-card" style="min-height:74px;padding:8px 4px;">
-                  <div class="sbc-brand-card__logo" style="height:30px;"><img src="${util.getRoot()}assets/brand image/1619816335.png" alt="Marsriva" style="max-height:26px;"></div>
-                  <span class="sbc-brand-card__name" style="font-size:11px;">Marsriva</span>
-                </a>
               </div>
-              <a href="${util.U('brand.html')}" class="sbc-accordion__link" style="color:var(--c-primary);font-weight:700;margin-top:8px;">View All 14 Partner Brands &rarr;</a>
+              <a href="${util.U('brand.html')}" class="sbc-accordion__link" style="color:var(--c-primary);font-weight:700;margin-top:8px;">${t("mobile.viewAllBrands", "View All 14 Partner Brands →")}</a>
             </div>
           </div>
 
           <!-- Solutions Accordion -->
           <div class="sbc-accordion js-accordion">
             <button class="sbc-accordion__trigger js-accordion-trigger" type="button" aria-expanded="false">
-              <span>Solutions &amp; Services</span>
+              <span>${t("mobile.solutions", "Solutions & Services")}</span>
               ${ui.icon("chevron-down", "sm")}
             </button>
             <div class="sbc-accordion__content">
               <a href="${util.U('configurator.html')}" class="sbc-accordion__link" style="color:var(--c-primary);font-weight:600;">Network Solution Configurator</a>
-              <a href="${util.U('quote.html')}" class="sbc-accordion__link">Commercial Tender &amp; RFP Quote</a>
-              <a href="${util.U('dealer/index.html')}" class="sbc-accordion__link">Dealer &amp; Reseller Program</a>
+              <a href="${util.U('quote.html')}" class="sbc-accordion__link">${t("common.requestQuote", "Commercial Tender & RFP Quote")}</a>
+              <a href="${util.U('dealer/index.html')}" class="sbc-accordion__link">${t("nav.dealers", "Dealer & Reseller Program")}</a>
               <a href="${util.U('branches.html')}" class="sbc-accordion__link" style="color:var(--c-primary);font-weight:600;">12 Service Centers &amp; Branches &rarr;</a>
-              <a href="${util.U('support.html')}" class="sbc-accordion__link">Customer Support &amp; RMA</a>
+              <a href="${util.U('support.html')}" class="sbc-accordion__link">${t("nav.support", "Customer Support & RMA")}</a>
               <a href="${util.U('downloads.html')}" class="sbc-accordion__link">Firmware &amp; Drivers</a>
-              <a href="${util.U('warranty.html')}" class="sbc-accordion__link">Warranty Policy &amp; Terms</a>
-              <a href="${util.U('faq.html')}" class="sbc-accordion__link">Frequently Asked Questions</a>
+              <a href="${util.U('warranty.html')}" class="sbc-accordion__link">${t("common.warranty", "Warranty Policy & Terms")}</a>
+              <a href="${util.U('faq.html')}" class="sbc-accordion__link">${t("topbar.faq", "Frequently Asked Questions")}</a>
             </div>
           </div>
 
-          <a href="${util.U('contact.html')}" class="sbc-mobile-nav__item">Contact Us</a>
+          <a href="${util.U('contact.html')}" class="sbc-mobile-nav__item">${t("nav.contact", "Contact Us")}</a>
 
           <!-- Mobile Shopping Links -->
           <div style="border-top:1px solid var(--gray-200);margin-top:12px;padding-top:12px;display:flex;flex-direction:column;gap:4px;">
@@ -986,24 +1116,25 @@ window.SBC.layout = (function () {
               <span>${util.esc(accountLabel)}</span>
             </a>
             <a href="${util.U('wishlist.html')}" class="sbc-mobile-nav__item" style="display:flex;align-items:center;justify-content:space-between;">
-              <span style="display:flex;align-items:center;gap:10px;">${ui.icon("heart", "sm")} Wishlist</span>
+              <span style="display:flex;align-items:center;gap:10px;">${ui.icon("heart", "sm")} ${t("header.wishlist", "Wishlist")}</span>
               <span class="sbc-announcement__badge js-wishlist-badge" style="${wishlistCount === 0 ? 'display:none;' : ''}">${wishlistCount}</span>
             </a>
             <a href="${util.U('cart.html')}" class="sbc-mobile-nav__item" style="display:flex;align-items:center;justify-content:space-between;">
-              <span style="display:flex;align-items:center;gap:10px;">${ui.icon("shopping-cart", "sm")} Shopping Cart</span>
+              <span style="display:flex;align-items:center;gap:10px;">${ui.icon("shopping-cart", "sm")} ${t("header.cart", "Shopping Cart")}</span>
               <span class="sbc-announcement__badge js-cart-badge">${cartCount}</span>
             </a>
           </div>
 
           <!-- Contact box -->
           <div style="background:var(--gray-50);border-radius:var(--r-md);padding:12px;margin-top:16px;">
-            <div style="font-size:11px;color:var(--gray-500);text-transform:uppercase;font-weight:700;margin-bottom:4px;">Sales &amp; Support</div>
-            <a href="tel:+8809639257121" style="font-size:14px;font-weight:700;color:var(--navy-900);text-decoration:none;">+88 09639 257 121</a>
-            <div style="font-size:11px;color:var(--gray-500);margin-top:4px;">Sat &ndash; Thu: 10:00 AM &ndash; 8:00 PM</div>
+            <div style="font-size:11px;color:var(--gray-500);text-transform:uppercase;font-weight:700;margin-bottom:4px;">${t("mobile.salesSupport", "Sales & Support")}</div>
+            <a href="tel:+8809639257121" style="font-size:14px;font-weight:700;color:var(--navy-900);text-decoration:none;">${t("topbar.phone", "+88 09639 257 121")}</a>
+            <div style="font-size:11px;color:var(--gray-500);margin-top:4px;">${t("mobile.hours", "Sat – Thu: 10:00 AM – 8:00 PM")}</div>
           </div>
         </div>
       `
     });
+
 
     // Attach accordion click listeners inside drawer
     setTimeout(() => {
@@ -1025,15 +1156,16 @@ window.SBC.layout = (function () {
    */
   function openMiniCartDrawer() {
     const items = store.getCartDetails();
+    const t = window.SBC.t || function(k, f) { return f || k; };
     let bodyHtml = "";
 
     if (items.length === 0) {
       bodyHtml = `
         <div style="text-align:center;padding:40px 20px;">
           <div style="color:var(--gray-300);margin-bottom:12px;">${ui.icon("shopping-cart", "xl")}</div>
-          <h4 style="margin-bottom:8px;">Your cart is empty</h4>
-          <p style="font-size:var(--fs-xs);color:var(--c-text-muted);margin-bottom:20px;">Explore our catalog to find networking solutions.</p>
-          <a href="${util.U('shop.html')}" class="sbc-btn sbc-btn--primary sbc-btn--sm js-drawer-close">Shop Products</a>
+          <h4 style="margin-bottom:8px;">${t("cart.emptyTitle", "Your cart is empty")}</h4>
+          <p style="font-size:var(--fs-xs);color:var(--c-text-muted);margin-bottom:20px;">${t("cart.emptySub", "Explore our catalog to find official networking and Meetion gear.")}</p>
+          <a href="${util.U('shop.html')}" class="sbc-btn sbc-btn--primary sbc-btn--sm js-drawer-close">${t("cart.shopNow", "Shop Products")}</a>
         </div>
       `;
     } else {
@@ -1061,22 +1193,23 @@ window.SBC.layout = (function () {
     const subtotal = store.getCartSubtotal();
     const footerHtml = items.length === 0 ? "" : `
       <div style="display:flex;align-items:center;justify-content:space-between;margin-bottom:14px;">
-        <span style="font-weight:600;">Subtotal:</span>
+        <span style="font-weight:600;">${t("cart.subtotal", "Subtotal:")}</span>
         <span style="font-size:var(--fs-h3);font-weight:700;color:var(--navy-900);">${util.formatBDT(subtotal)}</span>
       </div>
       <div style="display:flex;gap:8px;">
-        <a href="${util.U('cart.html')}" class="sbc-btn sbc-btn--outline sbc-btn--full">View Cart</a>
-        <a href="${util.U('checkout.html')}" class="sbc-btn sbc-btn--primary sbc-btn--full">Checkout</a>
+        <a href="${util.U('cart.html')}" class="sbc-btn sbc-btn--outline sbc-btn--full">${t("cart.viewCart", "View Cart")}</a>
+        <a href="${util.U('checkout.html')}" class="sbc-btn sbc-btn--primary sbc-btn--full">${t("cart.checkout", "Checkout")}</a>
       </div>
     `;
 
     ui.drawer({
       position: "right",
-      title: `Shopping Cart (${store.getCartCount()})`,
+      title: `${t("cart.title", "Shopping Cart")} (${store.getCartCount()})`,
       content: bodyHtml,
       footer: footerHtml
     });
   }
+
 
   /**
    * Render Floating Utility Controls (WhatsApp, Cart, Scroll To Top)
@@ -1233,6 +1366,11 @@ window.SBC.layout = (function () {
     setupDelegation();
     initSmartStickyHeader();
 
+    // Auto-translate page elements according to active language
+    if (window.SBC && window.SBC.i18n && typeof window.SBC.i18n.translatePage === "function") {
+      try { window.SBC.i18n.translatePage(); } catch (e) {}
+    }
+
     // Mark ready & trigger ready event
     window.SBC.isReady = true;
     window.dispatchEvent(new Event("SBC:ready"));
@@ -1246,6 +1384,8 @@ window.SBC.layout = (function () {
 
   return {
     init,
+    renderHeader,
+    renderFooter,
     openMiniCart: openMiniCartDrawer,
     openMobileNav,
     showDisclosureModal

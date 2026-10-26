@@ -21,25 +21,30 @@ window.SBC.cards = (function () {
     const isDiscontinued = p.status === "discontinued";
     const isOutOfStock = p.status === "out-of-stock";
     const isQuoteOnly = p.price && p.price.quoteOnly;
+    const isMeetion = (p.brand || "").toLowerCase() === "meetion";
+    const t = window.SBC.t || function(k, f) { return f || k; };
 
     // Badges logic (max 2 badges)
     const badges = [];
-    if (p.isNew && !isDiscontinued) {
-      badges.push(`<span class="sbc-badge sbc-badge--new">New</span>`);
+    if (isMeetion) {
+      badges.push(`<span class="sbc-badge" style="background:#dc2626;color:#ffffff;font-weight:700;">★ Meetion</span>`);
+    } else if (p.isNew && !isDiscontinued) {
+      badges.push(`<span class="sbc-badge sbc-badge--new">${t("common.new", "New")}</span>`);
     }
+
     if (p.price && p.price.compareAt && p.price.compareAt > p.price.retail && !isDiscontinued) {
       const discountPercent = Math.round(((p.price.compareAt - p.price.retail) / p.price.compareAt) * 100);
       badges.push(`<span class="sbc-badge sbc-badge--discount">-${discountPercent}%</span>`);
     } else if (p.status === "in-stock") {
-      badges.push(`<span class="sbc-badge sbc-badge--in-stock">In stock</span>`);
+      badges.push(`<span class="sbc-badge sbc-badge--in-stock">${t("common.inStock", "In stock")}</span>`);
     } else if (p.status === "low-stock") {
-      badges.push(`<span class="sbc-badge sbc-badge--low-stock">Low stock</span>`);
+      badges.push(`<span class="sbc-badge sbc-badge--low-stock">${t("common.lowStock", "Low stock")}</span>`);
     } else if (p.status === "preorder") {
-      badges.push(`<span class="sbc-badge sbc-badge--preorder">Pre-order</span>`);
+      badges.push(`<span class="sbc-badge sbc-badge--preorder">${t("common.preorder", "Pre-order")}</span>`);
     } else if (isOutOfStock) {
-      badges.push(`<span class="sbc-badge sbc-badge--out-of-stock">Out of stock</span>`);
+      badges.push(`<span class="sbc-badge sbc-badge--out-of-stock">${t("common.outOfStock", "Out of stock")}</span>`);
     } else if (isDiscontinued) {
-      badges.push(`<span class="sbc-badge sbc-badge--discontinued">Discontinued</span>`);
+      badges.push(`<span class="sbc-badge sbc-badge--discontinued">${t("common.discontinued", "Discontinued")}</span>`);
     }
 
     // Pricing display
@@ -47,7 +52,7 @@ window.SBC.cards = (function () {
     if (isQuoteOnly) {
       priceHtml = `
         <div class="sbc-price-retail" style="font-size:var(--fs-body);color:var(--c-text-muted);">
-          Price on Request
+          ${t("common.priceOnRequest", "Price on Request")}
         </div>
       `;
     } else if (isDealer && p.price.dealer) {
@@ -56,7 +61,7 @@ window.SBC.cards = (function () {
           ${util.formatBDT(p.price.dealer)}
           <span class="sbc-price-retail--strike">${util.formatBDT(p.price.retail)}</span>
         </div>
-        <div class="sbc-price-dealer">Dealer Price (MOQ: ${p.price.moq || 1})</div>
+        <div class="sbc-price-dealer">${t("common.dealerPrice", "Dealer price")} (MOQ: ${p.price.moq || 1})</div>
       `;
     } else if (p.price && p.price.retail) {
       priceHtml = `
@@ -64,7 +69,7 @@ window.SBC.cards = (function () {
           ${util.formatBDT(p.price.retail)}
           ${p.price.compareAt ? `<span class="sbc-price-retail--strike">${util.formatBDT(p.price.compareAt)}</span>` : ""}
         </div>
-        <span class="sbc-badge sbc-badge--demo" style="margin-top:4px;">Demo price</span>
+        <span class="sbc-badge sbc-badge--demo" style="margin-top:4px;">${t("common.demoPrice", "Demo price")}</span>
       `;
     }
 
@@ -73,25 +78,25 @@ window.SBC.cards = (function () {
     if (isDiscontinued) {
       actionBtn = `
         <a href="${util.U('product.html', { id: p.id })}" class="sbc-btn sbc-btn--outline sbc-btn--sm sbc-btn--full">
-          View Alternatives
+          ${t("common.viewAlternatives", "View Alternatives")}
         </a>
       `;
     } else if (isQuoteOnly) {
       actionBtn = `
         <a href="${util.U('quote.html', { product: p.id })}" class="sbc-btn sbc-btn--primary sbc-btn--sm sbc-btn--full">
-          ${ui.icon("file-text", "sm")} Request Quote
+          ${ui.icon("file-text", "sm")} ${t("common.requestQuote", "Request Quote")}
         </a>
       `;
     } else if (isOutOfStock) {
       actionBtn = `
         <button class="sbc-btn sbc-btn--outline sbc-btn--sm sbc-btn--full js-notify-stock" data-id="${util.esc(p.id)}">
-          ${ui.icon("bell", "sm")} Notify Me
+          ${ui.icon("bell", "sm")} ${t("common.notifyMe", "Notify Me")}
         </button>
       `;
     } else {
       actionBtn = `
         <button class="sbc-btn sbc-btn--primary sbc-btn--sm sbc-btn--full js-add-cart" data-id="${util.esc(p.id)}">
-          ${ui.icon("shopping-cart", "sm")} Add to Cart
+          ${ui.icon("shopping-cart", "sm")} ${t("common.addToCart", "Add to Cart")}
         </button>
       `;
     }
@@ -100,7 +105,7 @@ window.SBC.cards = (function () {
     const resolvedImg = util.imgUrl(firstImage);
 
     return `
-      <article class="sbc-card ${options.className || ''}" data-product-id="${util.esc(p.id)}">
+      <article class="sbc-card ${options.className || ''} ${isMeetion ? 'sbc-card--meetion' : ''}" data-product-id="${util.esc(p.id)}">
         <div class="sbc-card__badges">
           ${badges.slice(0, 2).join("")}
         </div>
@@ -113,8 +118,9 @@ window.SBC.cards = (function () {
           <img src="${util.esc(resolvedImg)}" alt="${util.esc(p.name)}" loading="lazy" onerror="this.onerror=null;this.src='${util.getRoot()}assets/img/placeholder-product.svg';">
         </a>
 
-        <div class="sbc-card__brand">
-          <a href="${util.U('brand.html', { b: p.brand })}" style="color:inherit;">${util.esc(p.brand)}</a>
+        <div class="sbc-card__brand" style="display:flex;align-items:center;justify-content:space-between;">
+          <a href="${util.U('brand.html', { b: p.brand })}" style="color:inherit;font-weight:700;">${util.esc(p.brand)}</a>
+          ${isMeetion ? `<span style="font-size:10px;font-weight:700;color:#dc2626;">★ Official</span>` : ''}
         </div>
 
         <h3 class="sbc-card__title">
@@ -122,7 +128,7 @@ window.SBC.cards = (function () {
         </h3>
 
         <div class="sbc-card__meta">
-          <span>Model: ${util.esc(p.model)}</span>
+          <span>${t("common.model", "Model")}: ${util.esc(p.model)}</span>
         </div>
 
         <div class="sbc-card__pricing">
@@ -135,10 +141,11 @@ window.SBC.cards = (function () {
 
         <label class="sbc-card__compare">
           <input type="checkbox" class="js-toggle-compare" data-id="${util.esc(p.id)}" ${isCompared ? 'checked' : ''}>
-          <span>Compare</span>
+          <span>${t("common.compare", "Compare")}</span>
         </label>
       </article>
     `;
+
   }
 
   /**
@@ -146,18 +153,34 @@ window.SBC.cards = (function () {
    */
   function categoryTile(c, productCount = 0) {
     if (!c) return "";
+    const t = window.SBC.t || function(k, f) { return f || k; };
+    const catKeyMap = {
+      "routers-wifi": "cat.routersWifi",
+      "switches": "cat.switches",
+      "fiber-pon": "cat.fiberPon",
+      "wireless-outdoor": "cat.wirelessOutdoor",
+      "security-cctv": "cat.securityCctv",
+      "power-backup": "cat.powerBackup",
+      "cabling-racks": "cat.cablingRacks",
+      "fiber-tools": "cat.fiberTools",
+      "peripherals-audio": "cat.peripheralsAudio",
+      "computer-accessories": "cat.computerAccessories"
+    };
+    const translatedName = catKeyMap[c.slug] ? t(catKeyMap[c.slug], c.name) : c.name;
+    const countSuffix = t("common.productsCount", "Products");
     return `
       <a href="${util.U('category.html', { c: c.slug })}" class="sbc-category-tile">
         <div class="sbc-category-tile__icon">
           ${ui.icon(c.icon || "box", "lg")}
         </div>
         <div class="sbc-category-tile__info">
-          <strong>${util.esc(c.name)}</strong>
-          <span>${productCount} Products</span>
+          <strong>${util.esc(translatedName)}</strong>
+          <span>${productCount} ${countSuffix}</span>
         </div>
       </a>
     `;
   }
+
 
   /**
    * Render Brand Logo Tile

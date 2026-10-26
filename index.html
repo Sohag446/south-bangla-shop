@@ -1,4 +1,4 @@
-﻿<!doctype html>
+<!doctype html>
 <html lang="en">
 
 <head>
@@ -9,7 +9,7 @@
     content="Authorized distributor of networking devices, Wi-Fi 7/6 routers, PoE switches, GPON/EPON fiber ONUs, online UPS, and cabling infrastructure across Bangladesh.">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Caveat:wght@600;700&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Caveat:wght@600;700&family=Hind+Siliguri:wght@400;500;600;700&family=Plus+Jakarta+Sans:ital,wght@0,300;0,400;0,500;0,600;0,700;0,800;1,400&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="css/tokens.css">
   <link rel="stylesheet" href="css/base.css">
   <link rel="stylesheet" href="css/layout.css">
@@ -1929,30 +1929,30 @@
       <div class="l-container sbc-hero__container">
         <!-- Handwritten Glowing Script Tagline in Top-Right Corner (from screenshot) -->
         <div class="sbc-hero__script-badge" aria-hidden="true">
-          <span>Better Network</span>
-          <span>Brighter Future</span>
+          <span data-i18n="home.heroScript1">Better Network</span>
+          <span data-i18n="home.heroScript2">Brighter Future</span>
         </div>
 
         <!-- Left-Aligned Content Matching Screenshot -->
         <div class="sbc-hero__content">
           <div class="sbc-hero__tag">
             <span class="sbc-hero__tag-dash">―</span>
-            <span class="sbc-hero__tag-text">NETWORKING &amp; IT EQUIPMENT DISTRIBUTOR</span>
+            <span class="sbc-hero__tag-text" data-i18n="home.heroSubtitleTag">NETWORKING &amp; IT EQUIPMENT DISTRIBUTOR</span>
           </div>
           <h1 id="hero-heading" class="sbc-hero__title">
-            South Bangla Computers<br>
-            <span class="sbc-hero__title-accent">Your Trusted IT Partner</span>
+            <span data-i18n="home.heroTitle1">South Bangla Computers</span><br>
+            <span class="sbc-hero__title-accent" data-i18n="home.heroTitleAccent">Your Trusted IT Partner</span>
           </h1>
-          <p class="sbc-hero__desc">
+          <p class="sbc-hero__desc" data-i18n="home.heroDescText">
             We provide high-quality networking solutions, computer accessories and IT equipment for businesses,
             institutions and individuals across Bangladesh.
           </p>
           <div class="sbc-hero__btn-group">
             <a href="shop.html" class="sbc-hero-btn sbc-hero-btn--primary">
-              Shop Now &rarr;
+              <span data-i18n="home.heroShopNow">Shop Now &rarr;</span>
             </a>
             <a href="configurator.html" class="sbc-hero-btn sbc-hero-btn--secondary">
-              Explore Solutions &rarr;
+              <span data-i18n="home.heroSolutions">Explore Solutions &rarr;</span>
             </a>
           </div>
         </div>
@@ -1966,7 +1966,7 @@
           <svg class="sbc-icon sbc-icon--sm" aria-hidden="true">
             <use href="#icon-shield"></use>
           </svg>
-          <span>Trusted Brands</span>
+          <span data-i18n="home.trustedBrandsTitle">Trusted Brands</span>
         </div>
         <div class="sbc-brand-slider-wrap">
           <div class="sbc-brand-slider" id="home-brand-slider">
@@ -2130,118 +2130,344 @@
     </section>
 
     <!-- =====================================================================
-         SECTION 1: EXPLORE OUR PRODUCT CATEGORIES (Matching Screenshot)
+         SECTION 3: MEETION OFFICIAL BRAND PRODUCTS (PRIMARY AUTHORIZED PARTNER)
          ===================================================================== -->
-    <section class="sbc-home-section" aria-labelledby="cat-heading">
+    <section class="sbc-home-section sbc-meetion-section" aria-labelledby="meetion-heading"
+      style="padding: 48px 0; background: linear-gradient(180deg, #f8fafc 0%, #edf2f9 100%); border-top: 2px solid #e60012; border-bottom: 1px solid #cbd5e1; position: relative;">
       <div class="l-container">
-        <div class="sbc-sec-header">
+        <!-- Section Heading Bar with Official Meetion Brand Badge -->
+        <div class="sbc-sec-header"
+          style="display:flex; justify-content:space-between; align-items:flex-end; margin-bottom:28px; flex-wrap:wrap; gap:16px;">
           <div>
-            <div class="sbc-sec-tag">
-              <span class="sbc-sec-tag__dash">―</span>
-              <span class="sbc-sec-tag__text">SHOP BY CATEGORY</span>
+            <div class="sbc-sec-tag"
+              style="display:inline-flex; align-items:center; gap:8px; background: rgba(230,0,18,0.08); border: 1px solid rgba(230,0,18,0.25); color:#c62828; padding: 4px 12px; border-radius: 9999px; font-size:11.5px; font-weight:800; letter-spacing:1px; text-transform:uppercase; margin-bottom:8px;">
+              <span style="display:inline-block; width:8px; height:8px; border-radius:50%; background:#e60012;"></span>
+              <span data-i18n="home.meetionTag">OFFICIAL DISTRIBUTOR FOCUS • MEETION BANGLADESH</span>
             </div>
-            <h2 id="cat-heading" class="sbc-sec-title">Explore Our Product Categories</h2>
+            <h2 id="meetion-heading" style="font-size:28px; font-weight:800; color:#071526; margin:0 0 6px 0; display:flex; align-items:center; gap:10px; flex-wrap:wrap;">
+              <span data-i18n="home.meetionHeading">Meetion Gaming &amp; Office Peripherals</span>
+              <span style="font-size: 13px; font-weight:700; color: #fff; background: #e60012; padding: 2px 10px; border-radius: 4px; letter-spacing:0.5px;" data-i18n="home.meetionWarrantyBadge">OFFICIAL WARRANTY</span>
+            </h2>
+            <p style="font-size:14.5px; color:#475569; margin:0; max-width:680px;" data-i18n="home.meetionSub">
+              South Bangla Computers is the official authorized partner of Meetion in Bangladesh. Genuine optical switches, ergonomic gaming gear, and nationwide warranty coverage.
+            </p>
           </div>
-          <a href="shop.html" class="sbc-sec-viewall">
-            <span>View All Categories</span>
-            <svg class="sbc-icon sbc-icon--xs" aria-hidden="true">
-              <use href="#icon-arrow-right"></use>
-            </svg>
-          </a>
+          <div style="display:flex; align-items:center; gap:16px;">
+            <div
+              style="height:44px; padding:4px 14px; background:#fff; border:1px solid #cbd5e1; border-radius:8px; display:flex; align-items:center; box-shadow:0 2px 6px rgba(0,0,0,0.04);">
+              <img src="assets/brand image/924112071.png" alt="Meetion Bangladesh"
+                style="height:26px; width:auto; object-fit:contain;">
+            </div>
+            <a href="shop.html?b=meetion#shop-catalog" class="sbc-sec-link"
+              style="color:#e60012; font-weight:700; font-size:14px; text-decoration:none; display:inline-flex; align-items:center; gap:6px; background:#fff; padding:8px 16px; border-radius:8px; border:1px solid #fecaca; box-shadow:0 1px 3px rgba(0,0,0,0.05); transition:all 0.2s ease;">
+              <span data-i18n="home.meetionViewAll">View All Meetion Products</span>
+              <svg class="sbc-icon sbc-icon--xs" aria-hidden="true">
+                <use href="#icon-arrow-right"></use>
+              </svg>
+            </a>
+          </div>
         </div>
 
-        <div class="sbc-cat-cards-grid">
-          <!-- Card 1: Wi-Fi Routers -->
-          <a href="category.html?c=routers-wifi" class="sbc-cat-card">
-            <div class="sbc-cat-card__media">
-              <img src="assets/img/home/cat_wifi_routers.jpg" alt="Wi-Fi Routers" loading="lazy">
-            </div>
-            <div class="sbc-cat-card__bar">
-              <div class="sbc-cat-card__icon">
+        <!-- 10-Product Grid (2 Rows of 5 Cards) Using Standard SBC Showcase Cards -->
+        <div class="sbc-popular-grid">
+          <!-- Meetion Product 1: MK008 Pro -->
+          <div class="sbc-showcase-pcard">
+            <div class="sbc-showcase-pcard__top">
+              <span class="sbc-showcase-pcard__badge sbc-showcase-pcard__badge--bestseller">Flagship</span>
+              <button type="button" class="sbc-showcase-pcard__wishlist js-toggle-wishlist" data-id="meetion-mk008-pro"
+                aria-label="Add to Wishlist">
                 <svg class="sbc-icon sbc-icon--sm" aria-hidden="true">
-                  <use href="#icon-wifi"></use>
+                  <use href="#icon-heart"></use>
                 </svg>
-              </div>
-              <div class="sbc-cat-card__info">
-                <h3 class="sbc-cat-card__title">Wi-Fi Routers</h3>
-                <span class="sbc-cat-card__desc">Home &amp; Business Routers</span>
-              </div>
-              <div class="sbc-cat-card__arrow" aria-hidden="true">
-                <svg class="sbc-icon sbc-icon--xs">
-                  <use href="#icon-arrow-right"></use>
-                </svg>
-              </div>
+              </button>
             </div>
-          </a>
+            <a href="product.html?id=meetion-mk008-pro" class="sbc-showcase-pcard__imglink">
+              <img src="assets/img/products/meetion-mk008-pro.jpg"
+                alt="Meetion MT-MK008 Pro Optical RGB Hot-Swap Keyboard" loading="lazy">
+            </a>
+            <div class="sbc-showcase-pcard__meta">
+              <span class="sbc-showcase-pcard__brand">MEETION</span>
+              <h3 class="sbc-showcase-pcard__title">
+                <a href="product.html?id=meetion-mk008-pro">Meetion MT-MK008 Pro Optical RGB Hot-Swap Keyboard</a>
+              </h3>
+              <div class="sbc-showcase-pcard__price">৳ 2,850</div>
+            </div>
+            <button type="button" class="sbc-showcase-pcard__cartbtn js-add-cart" data-id="meetion-mk008-pro">
+              <svg class="sbc-icon sbc-icon--sm" aria-hidden="true">
+                <use href="#icon-shopping-cart"></use>
+              </svg>
+              <span data-i18n="card.addToCart">Add to Cart</span>
+            </button>
+          </div>
 
-          <!-- Card 2: Network Switches -->
-          <a href="category.html?c=switches" class="sbc-cat-card">
-            <div class="sbc-cat-card__media">
-              <img src="assets/img/home/cat_network_switches.jpg" alt="Network Switches" loading="lazy">
-            </div>
-            <div class="sbc-cat-card__bar">
-              <div class="sbc-cat-card__icon">
+          <!-- Meetion Product 2: BTM032R -->
+          <div class="sbc-showcase-pcard">
+            <div class="sbc-showcase-pcard__top">
+              <span class="sbc-showcase-pcard__badge sbc-showcase-pcard__badge--toprated">Rechargeable</span>
+              <button type="button" class="sbc-showcase-pcard__wishlist js-toggle-wishlist" data-id="meetion-btm032r"
+                aria-label="Add to Wishlist">
                 <svg class="sbc-icon sbc-icon--sm" aria-hidden="true">
-                  <use href="#icon-server"></use>
+                  <use href="#icon-heart"></use>
                 </svg>
-              </div>
-              <div class="sbc-cat-card__info">
-                <h3 class="sbc-cat-card__title">Network Switches</h3>
-                <span class="sbc-cat-card__desc">Managed &amp; Unmanaged Switches</span>
-              </div>
-              <div class="sbc-cat-card__arrow" aria-hidden="true">
-                <svg class="sbc-icon sbc-icon--xs">
-                  <use href="#icon-arrow-right"></use>
-                </svg>
-              </div>
+              </button>
             </div>
-          </a>
+            <a href="product.html?id=meetion-btm032r" class="sbc-showcase-pcard__imglink">
+              <img src="assets/img/products/meetion-btm032r.jpg" alt="Meetion BTM032R Dual-Mode Silent Wireless Mouse"
+                loading="lazy">
+            </a>
+            <div class="sbc-showcase-pcard__meta">
+              <span class="sbc-showcase-pcard__brand">MEETION</span>
+              <h3 class="sbc-showcase-pcard__title">
+                <a href="product.html?id=meetion-btm032r">Meetion BTM032R Dual-Mode Silent Wireless Mouse</a>
+              </h3>
+              <div class="sbc-showcase-pcard__price">৳ 1,190</div>
+            </div>
+            <button type="button" class="sbc-showcase-pcard__cartbtn js-add-cart" data-id="meetion-btm032r">
+              <svg class="sbc-icon sbc-icon--sm" aria-hidden="true">
+                <use href="#icon-shopping-cart"></use>
+              </svg>
+              <span data-i18n="card.addToCart">Add to Cart</span>
+            </button>
+          </div>
 
-          <!-- Card 3: Fiber Optic -->
-          <a href="category.html?c=fiber-pon" class="sbc-cat-card">
-            <div class="sbc-cat-card__media">
-              <img src="assets/img/home/cat_fiber_optic.jpg" alt="Fiber Optic" loading="lazy">
-            </div>
-            <div class="sbc-cat-card__bar">
-              <div class="sbc-cat-card__icon">
+          <!-- Meetion Product 3: Vibekey B68 -->
+          <div class="sbc-showcase-pcard">
+            <div class="sbc-showcase-pcard__top">
+              <span class="sbc-showcase-pcard__badge sbc-showcase-pcard__badge--toprated">Tri-Mode</span>
+              <button type="button" class="sbc-showcase-pcard__wishlist js-toggle-wishlist"
+                data-id="meetion-vibekey-b68" aria-label="Add to Wishlist">
                 <svg class="sbc-icon sbc-icon--sm" aria-hidden="true">
-                  <use href="#icon-tool"></use>
+                  <use href="#icon-heart"></use>
                 </svg>
-              </div>
-              <div class="sbc-cat-card__info">
-                <h3 class="sbc-cat-card__title">Fiber Optic</h3>
-                <span class="sbc-cat-card__desc">Fiber Cable &amp; Accessories</span>
-              </div>
-              <div class="sbc-cat-card__arrow" aria-hidden="true">
-                <svg class="sbc-icon sbc-icon--xs">
-                  <use href="#icon-arrow-right"></use>
-                </svg>
-              </div>
+              </button>
             </div>
-          </a>
+            <a href="product.html?id=meetion-vibekey-b68" class="sbc-showcase-pcard__imglink">
+              <img src="assets/img/products/meetion-vibekey-b68.webp" alt="Meetion Vibekey B68 68% Wireless Keyboard"
+                loading="lazy">
+            </a>
+            <div class="sbc-showcase-pcard__meta">
+              <span class="sbc-showcase-pcard__brand">MEETION</span>
+              <h3 class="sbc-showcase-pcard__title">
+                <a href="product.html?id=meetion-vibekey-b68">Meetion Vibekey B68 68% Wireless Gasket Keyboard</a>
+              </h3>
+              <div class="sbc-showcase-pcard__price">৳ 3,450</div>
+            </div>
+            <button type="button" class="sbc-showcase-pcard__cartbtn js-add-cart" data-id="meetion-vibekey-b68">
+              <svg class="sbc-icon sbc-icon--sm" aria-hidden="true">
+                <use href="#icon-shopping-cart"></use>
+              </svg>
+              <span data-i18n="card.addToCart">Add to Cart</span>
+            </button>
+          </div>
 
-          <!-- Card 4: UPS & Power -->
-          <a href="category.html?c=power-backup" class="sbc-cat-card">
-            <div class="sbc-cat-card__media">
-              <img src="assets/img/home/cat_ups_power.jpg" alt="UPS & Power" loading="lazy">
-            </div>
-            <div class="sbc-cat-card__bar">
-              <div class="sbc-cat-card__icon">
+          <!-- Meetion Product 4: iKey C210 -->
+          <div class="sbc-showcase-pcard">
+            <div class="sbc-showcase-pcard__top sbc-showcase-pcard__top--rightonly">
+              <button type="button" class="sbc-showcase-pcard__wishlist js-toggle-wishlist" data-id="meetion-ikey-c210"
+                aria-label="Add to Wishlist">
                 <svg class="sbc-icon sbc-icon--sm" aria-hidden="true">
-                  <use href="#icon-zap"></use>
+                  <use href="#icon-heart"></use>
                 </svg>
-              </div>
-              <div class="sbc-cat-card__info">
-                <h3 class="sbc-cat-card__title">UPS &amp; Power</h3>
-                <span class="sbc-cat-card__desc">Backup Power Solutions</span>
-              </div>
-              <div class="sbc-cat-card__arrow" aria-hidden="true">
-                <svg class="sbc-icon sbc-icon--xs">
-                  <use href="#icon-arrow-right"></use>
-                </svg>
-              </div>
+              </button>
             </div>
-          </a>
+            <a href="product.html?id=meetion-ikey-c210" class="sbc-showcase-pcard__imglink">
+              <img src="assets/img/products/meetion-ikey-c210.webp" alt="Meetion iKey C210 Ultra-Thin Wireless Combo"
+                loading="lazy">
+            </a>
+            <div class="sbc-showcase-pcard__meta">
+              <span class="sbc-showcase-pcard__brand">MEETION</span>
+              <h3 class="sbc-showcase-pcard__title">
+                <a href="product.html?id=meetion-ikey-c210">Meetion iKey C210 Ultra-Thin Wireless Combo</a>
+              </h3>
+              <div class="sbc-showcase-pcard__price">৳ 1,250</div>
+            </div>
+            <button type="button" class="sbc-showcase-pcard__cartbtn js-add-cart" data-id="meetion-ikey-c210">
+              <svg class="sbc-icon sbc-icon--sm" aria-hidden="true">
+                <use href="#icon-shopping-cart"></use>
+              </svg>
+              <span data-i18n="card.addToCart">Add to Cart</span>
+            </button>
+          </div>
+
+          <!-- Meetion Product 5: HP022 -->
+          <div class="sbc-showcase-pcard">
+            <div class="sbc-showcase-pcard__top">
+              <span class="sbc-showcase-pcard__badge sbc-showcase-pcard__badge--toprated">7.1 Audio</span>
+              <button type="button" class="sbc-showcase-pcard__wishlist js-toggle-wishlist" data-id="meetion-hp022"
+                aria-label="Add to Wishlist">
+                <svg class="sbc-icon sbc-icon--sm" aria-hidden="true">
+                  <use href="#icon-heart"></use>
+                </svg>
+              </button>
+            </div>
+            <a href="product.html?id=meetion-hp022" class="sbc-showcase-pcard__imglink">
+              <img src="assets/img/products/meetion-hp022.jpg" alt="Meetion MT-HP022 7.1 Noise-Cancelling Headset"
+                loading="lazy">
+            </a>
+            <div class="sbc-showcase-pcard__meta">
+              <span class="sbc-showcase-pcard__brand">MEETION</span>
+              <h3 class="sbc-showcase-pcard__title">
+                <a href="product.html?id=meetion-hp022">Meetion MT-HP022 7.1 Noise-Cancelling Headset</a>
+              </h3>
+              <div class="sbc-showcase-pcard__price">৳ 2,150</div>
+            </div>
+            <button type="button" class="sbc-showcase-pcard__cartbtn js-add-cart" data-id="meetion-hp022">
+              <svg class="sbc-icon sbc-icon--sm" aria-hidden="true">
+                <use href="#icon-shopping-cart"></use>
+              </svg>
+              <span data-i18n="card.addToCart">Add to Cart</span>
+            </button>
+          </div>
+
+          <!-- Meetion Product 6: BTM012 Dual-Mode Wireless Mouse -->
+          <div class="sbc-showcase-pcard">
+            <div class="sbc-showcase-pcard__top">
+              <span class="sbc-showcase-pcard__badge sbc-showcase-pcard__badge--toprated">Ergonomic</span>
+              <button type="button" class="sbc-showcase-pcard__wishlist js-toggle-wishlist" data-id="meetion-btm012"
+                aria-label="Add to Wishlist">
+                <svg class="sbc-icon sbc-icon--sm" aria-hidden="true">
+                  <use href="#icon-heart"></use>
+                </svg>
+              </button>
+            </div>
+            <a href="product.html?id=meetion-btm012" class="sbc-showcase-pcard__imglink">
+              <img src="assets/img/products/meetion-btm012.jpg" alt="Meetion BTM012 Dual-Mode Ergonomic Wireless Mouse"
+                loading="lazy">
+            </a>
+            <div class="sbc-showcase-pcard__meta">
+              <span class="sbc-showcase-pcard__brand">MEETION</span>
+              <h3 class="sbc-showcase-pcard__title">
+                <a href="product.html?id=meetion-btm012">Meetion BTM012 Dual-Mode Ergonomic Wireless Mouse</a>
+              </h3>
+              <div class="sbc-showcase-pcard__price">৳ 1,450</div>
+            </div>
+            <button type="button" class="sbc-showcase-pcard__cartbtn js-add-cart" data-id="meetion-btm012">
+              <svg class="sbc-icon sbc-icon--sm" aria-hidden="true">
+                <use href="#icon-shopping-cart"></use>
+              </svg>
+              <span data-i18n="card.addToCart">Add to Cart</span>
+            </button>
+          </div>
+
+          <!-- Meetion Product 7: MT-SP2011 RGB Gaming Speakers -->
+          <div class="sbc-showcase-pcard">
+            <div class="sbc-showcase-pcard__top">
+              <span class="sbc-showcase-pcard__badge sbc-showcase-pcard__badge--bestseller">RGB Rainbow</span>
+              <button type="button" class="sbc-showcase-pcard__wishlist js-toggle-wishlist" data-id="meetion-sp2011"
+                aria-label="Add to Wishlist">
+                <svg class="sbc-icon sbc-icon--sm" aria-hidden="true">
+                  <use href="#icon-heart"></use>
+                </svg>
+              </button>
+            </div>
+            <a href="product.html?id=meetion-sp2011" class="sbc-showcase-pcard__imglink">
+              <img src="assets/img/products/meetion-sp2011.webp" alt="Meetion MT-SP2011 Gaming Stereo Desktop Speakers"
+                loading="lazy">
+            </a>
+            <div class="sbc-showcase-pcard__meta">
+              <span class="sbc-showcase-pcard__brand">MEETION</span>
+              <h3 class="sbc-showcase-pcard__title">
+                <a href="product.html?id=meetion-sp2011">Meetion MT-SP2011 Gaming Stereo Desktop Speakers</a>
+              </h3>
+              <div class="sbc-showcase-pcard__price">৳ 1,450</div>
+            </div>
+            <button type="button" class="sbc-showcase-pcard__cartbtn js-add-cart" data-id="meetion-sp2011">
+              <svg class="sbc-icon sbc-icon--sm" aria-hidden="true">
+                <use href="#icon-shopping-cart"></use>
+              </svg>
+              <span data-i18n="card.addToCart">Add to Cart</span>
+            </button>
+          </div>
+
+          <!-- Meetion Product 8: SP2010 Multimedia Desktop Speakers -->
+          <div class="sbc-showcase-pcard">
+            <div class="sbc-showcase-pcard__top">
+              <span class="sbc-showcase-pcard__badge sbc-showcase-pcard__badge--toprated">2.0 Stereo</span>
+              <button type="button" class="sbc-showcase-pcard__wishlist js-toggle-wishlist" data-id="meetion-sp2010"
+                aria-label="Add to Wishlist">
+                <svg class="sbc-icon sbc-icon--sm" aria-hidden="true">
+                  <use href="#icon-heart"></use>
+                </svg>
+              </button>
+            </div>
+            <a href="product.html?id=meetion-sp2010" class="sbc-showcase-pcard__imglink">
+              <img src="assets/img/products/meetion-sp2010.webp"
+                alt="Meetion SP2010 2.0 Office Desktop Multimedia Speakers" loading="lazy">
+            </a>
+            <div class="sbc-showcase-pcard__meta">
+              <span class="sbc-showcase-pcard__brand">MEETION</span>
+              <h3 class="sbc-showcase-pcard__title">
+                <a href="product.html?id=meetion-sp2010">Meetion SP2010 2.0 Office Desktop Multimedia Speakers</a>
+              </h3>
+              <div class="sbc-showcase-pcard__price">৳ 1,150</div>
+            </div>
+            <button type="button" class="sbc-showcase-pcard__cartbtn js-add-cart" data-id="meetion-sp2010">
+              <svg class="sbc-icon sbc-icon--sm" aria-hidden="true">
+                <use href="#icon-shopping-cart"></use>
+              </svg>
+              <span data-i18n="card.addToCart">Add to Cart</span>
+            </button>
+          </div>
+
+          <!-- Meetion Product 9: MT-U002 RGB Stand -->
+          <div class="sbc-showcase-pcard">
+            <div class="sbc-showcase-pcard__top">
+              <span class="sbc-showcase-pcard__badge sbc-showcase-pcard__badge--bestseller">RGB Hub</span>
+              <button type="button" class="sbc-showcase-pcard__wishlist js-toggle-wishlist" data-id="meetion-u002"
+                aria-label="Add to Wishlist">
+                <svg class="sbc-icon sbc-icon--sm" aria-hidden="true">
+                  <use href="#icon-heart"></use>
+                </svg>
+              </button>
+            </div>
+            <a href="product.html?id=meetion-u002" class="sbc-showcase-pcard__imglink">
+              <img src="assets/img/products/meetion-u002.png" alt="Meetion MT-U002 Headset Stand with USB Hub"
+                loading="lazy">
+            </a>
+            <div class="sbc-showcase-pcard__meta">
+              <span class="sbc-showcase-pcard__brand">MEETION</span>
+              <h3 class="sbc-showcase-pcard__title">
+                <a href="product.html?id=meetion-u002">Meetion MT-U002 RGB Gaming Headset Stand with USB Hub</a>
+              </h3>
+              <div class="sbc-showcase-pcard__price">৳ 1,250</div>
+            </div>
+            <button type="button" class="sbc-showcase-pcard__cartbtn js-add-cart" data-id="meetion-u002">
+              <svg class="sbc-icon sbc-icon--sm" aria-hidden="true">
+                <use href="#icon-shopping-cart"></use>
+              </svg>
+              <span data-i18n="card.addToCart">Add to Cart</span>
+            </button>
+          </div>
+
+          <!-- Meetion Product 10: MT-H390 Flexible Conference Microphone -->
+          <div class="sbc-showcase-pcard">
+            <div class="sbc-showcase-pcard__top">
+              <span class="sbc-showcase-pcard__badge sbc-showcase-pcard__badge--toprated">HD Voice</span>
+              <button type="button" class="sbc-showcase-pcard__wishlist js-toggle-wishlist" data-id="meetion-h390"
+                aria-label="Add to Wishlist">
+                <svg class="sbc-icon sbc-icon--sm" aria-hidden="true">
+                  <use href="#icon-heart"></use>
+                </svg>
+              </button>
+            </div>
+            <a href="product.html?id=meetion-h390" class="sbc-showcase-pcard__imglink">
+              <img src="assets/img/products/meetion-h390.png" alt="Meetion MT-H390 High-Sensitivity Flexible Microphone"
+                loading="lazy">
+            </a>
+            <div class="sbc-showcase-pcard__meta">
+              <span class="sbc-showcase-pcard__brand">MEETION</span>
+              <h3 class="sbc-showcase-pcard__title">
+                <a href="product.html?id=meetion-h390">Meetion MT-H390 High-Sensitivity Flexible Microphone</a>
+              </h3>
+              <div class="sbc-showcase-pcard__price">৳ 850</div>
+            </div>
+            <button type="button" class="sbc-showcase-pcard__cartbtn js-add-cart" data-id="meetion-h390">
+              <svg class="sbc-icon sbc-icon--sm" aria-hidden="true">
+                <use href="#icon-shopping-cart"></use>
+              </svg>
+              <span data-i18n="card.addToCart">Add to Cart</span>
+            </button>
+          </div>
         </div>
       </div>
     </section>
@@ -2255,12 +2481,12 @@
           <div>
             <div class="sbc-sec-tag">
               <span class="sbc-sec-tag__dash">―</span>
-              <span class="sbc-sec-tag__text">BEST SELLING PRODUCTS</span>
+              <span class="sbc-sec-tag__text" data-i18n="home.popularTag">BEST SELLING PRODUCTS</span>
             </div>
-            <h2 id="popular-heading" class="sbc-sec-title">Popular Products</h2>
+            <h2 id="popular-heading" class="sbc-sec-title" data-i18n="home.popularHeading">Popular Products</h2>
           </div>
           <a href="shop.html" class="sbc-sec-viewall">
-            <span>View All Products</span>
+            <span data-i18n="home.viewAllProducts">View All Products</span>
             <svg class="sbc-icon sbc-icon--xs" aria-hidden="true">
               <use href="#icon-arrow-right"></use>
             </svg>
@@ -2294,7 +2520,7 @@
               <svg class="sbc-icon sbc-icon--sm" aria-hidden="true">
                 <use href="#icon-shopping-cart"></use>
               </svg>
-              <span>Add to Cart</span>
+              <span data-i18n="card.addToCart">Add to Cart</span>
             </button>
           </div>
 
@@ -2324,7 +2550,7 @@
               <svg class="sbc-icon sbc-icon--sm" aria-hidden="true">
                 <use href="#icon-shopping-cart"></use>
               </svg>
-              <span>Add to Cart</span>
+              <span data-i18n="card.addToCart">Add to Cart</span>
             </button>
           </div>
 
@@ -2347,19 +2573,20 @@
               <h3 class="sbc-showcase-pcard__title">
                 <a href="product.html?id=solitine-fiber-patch">Solitine SC-LC Duplex Single-Mode 3m Fiber Patch Cord</a>
               </h3>
-              <div class="sbc-showcase-pcard__price">৳ 280</div>
+              <div class="sbc-showcase-pcard__price">৳ 380</div>
             </div>
             <button type="button" class="sbc-showcase-pcard__cartbtn js-add-cart" data-id="solitine-fiber-patch">
               <svg class="sbc-icon sbc-icon--sm" aria-hidden="true">
                 <use href="#icon-shopping-cart"></use>
               </svg>
-              <span>Add to Cart</span>
+              <span data-i18n="card.addToCart">Add to Cart</span>
             </button>
           </div>
 
-          <!-- Product 4: Must Line Interactive UPS -->
+          <!-- Product 5: Must EW2110-800 800VA Line Interactive UPS -->
           <div class="sbc-showcase-pcard">
-            <div class="sbc-showcase-pcard__top sbc-showcase-pcard__top--rightonly">
+            <div class="sbc-showcase-pcard__top">
+              <span class="sbc-showcase-badge sbc-showcase-badge--blue">Line Interactive</span>
               <button type="button" class="sbc-showcase-pcard__wishlist js-toggle-wishlist" data-id="must-ew2110-800"
                 aria-label="Add to Wishlist">
                 <svg class="sbc-icon sbc-icon--sm" aria-hidden="true">
@@ -2382,7 +2609,7 @@
               <svg class="sbc-icon sbc-icon--sm" aria-hidden="true">
                 <use href="#icon-shopping-cart"></use>
               </svg>
-              <span>Add to Cart</span>
+              <span data-i18n="card.addToCart">Add to Cart</span>
             </button>
           </div>
 
@@ -2410,7 +2637,7 @@
               <svg class="sbc-icon sbc-icon--sm" aria-hidden="true">
                 <use href="#icon-shopping-cart"></use>
               </svg>
-              <span>Add to Cart</span>
+              <span data-i18n="card.addToCart">Add to Cart</span>
             </button>
           </div>
 
@@ -2440,7 +2667,7 @@
               <svg class="sbc-icon sbc-icon--sm" aria-hidden="true">
                 <use href="#icon-shopping-cart"></use>
               </svg>
-              <span>Add to Cart</span>
+              <span data-i18n="card.addToCart">Add to Cart</span>
             </button>
           </div>
 
@@ -2470,7 +2697,7 @@
               <svg class="sbc-icon sbc-icon--sm" aria-hidden="true">
                 <use href="#icon-shopping-cart"></use>
               </svg>
-              <span>Add to Cart</span>
+              <span data-i18n="card.addToCart">Add to Cart</span>
             </button>
           </div>
 
@@ -2500,7 +2727,7 @@
               <svg class="sbc-icon sbc-icon--sm" aria-hidden="true">
                 <use href="#icon-shopping-cart"></use>
               </svg>
-              <span>Add to Cart</span>
+              <span data-i18n="card.addToCart">Add to Cart</span>
             </button>
           </div>
 
@@ -2530,7 +2757,7 @@
               <svg class="sbc-icon sbc-icon--sm" aria-hidden="true">
                 <use href="#icon-shopping-cart"></use>
               </svg>
-              <span>Add to Cart</span>
+              <span data-i18n="card.addToCart">Add to Cart</span>
             </button>
           </div>
 
@@ -2560,356 +2787,130 @@
               <svg class="sbc-icon sbc-icon--sm" aria-hidden="true">
                 <use href="#icon-shopping-cart"></use>
               </svg>
-              <span>Add to Cart</span>
+              <span data-i18n="card.addToCart">Add to Cart</span>
             </button>
           </div>
         </div>
       </div>
     </section>
 
-    <!-- =====================================================================
-         MEETION BRAND PRODUCTS (AUTHORIZED PARTNER BRAND)
+        <!-- =====================================================================
+         SECTION 5: SHOP BY CATEGORY
          ===================================================================== -->
-    <section class="sbc-home-section sbc-meetion-section" aria-labelledby="meetion-heading"
-      style="padding: 44px 0; background: #f8fafc; border-top: 1px solid #e2e8f0; border-bottom: 1px solid #e2e8f0;">
+    <section class="sbc-home-section sbc-cat-section" aria-labelledby="cat-heading">
       <div class="l-container">
-        <!-- Section Heading Bar (Consistent with Popular Products) -->
-        <div class="sbc-sec-header"
-          style="display:flex; justify-content:space-between; align-items:flex-end; margin-bottom:24px; flex-wrap:wrap; gap:16px;">
+        <div class="sbc-sec-header">
           <div>
-            <div class="sbc-sec-tag"
-              style="display:inline-flex; align-items:center; gap:6px; color:#0070ba; font-size:11.5px; font-weight:800; letter-spacing:1px; text-transform:uppercase; margin-bottom:4px;">
-              <span>―</span>
-              <span>FEATURED BRAND PARTNER</span>
+            <div class="sbc-sec-tag">
+              <span class="sbc-sec-tag__dash" aria-hidden="true">—</span>
+              <span class="sbc-sec-tag__text" data-i18n="home.catTag">SHOP BY CATEGORY</span>
             </div>
-            <h2 id="meetion-heading" style="font-size:26px; font-weight:800; color:#071526; margin:0 0 6px 0;">
-              Meetion Gaming &amp; Office Peripherals
-            </h2>
-            <p style="font-size:14px; color:#64748b; margin:0;">
-              Genuine optical switches, manufacturer warranty, and ergonomic computer accessories across Bangladesh.
-            </p>
+            <h2 id="cat-heading" class="sbc-sec-title" data-i18n="home.catHeading">Explore Our Product Categories</h2>
           </div>
-          <div style="display:flex; align-items:center; gap:16px;">
-            <div
-              style="height:36px; padding:4px 10px; background:#fff; border:1px solid #e2e8f0; border-radius:6px; display:flex; align-items:center;">
-              <img src="assets/brand image/924112071.png" alt="Meetion Bangladesh"
-                style="height:22px; width:auto; object-fit:contain;">
-            </div>
-            <a href="shop.html?b=meetion#shop-catalog" class="sbc-sec-link"
-              style="color:#0070ba; font-weight:700; font-size:14px; text-decoration:none; display:inline-flex; align-items:center; gap:4px;">
-              <span>View All Meetion Products</span>
-              <svg class="sbc-icon sbc-icon--xs" aria-hidden="true">
-                <use href="#icon-arrow-right"></use>
-              </svg>
-            </a>
-          </div>
+          <a href="shop.html" class="sbc-sec-viewall">
+            <span data-i18n="home.viewAllCategories">View All Categories</span>
+            <svg class="sbc-icon sbc-icon--xs" aria-hidden="true">
+              <use href="#icon-arrow-right"></use>
+            </svg>
+          </a>
         </div>
 
-        <!-- 10-Product Grid (2 Rows of 5 Cards) Using Standard SBC Showcase Cards -->
-        <div class="sbc-popular-grid">
-          <!-- Product 1: MK008 Pro -->
-          <div class="sbc-showcase-pcard">
-            <div class="sbc-showcase-pcard__top">
-              <span class="sbc-showcase-pcard__badge sbc-showcase-pcard__badge--bestseller">Flagship</span>
-              <button type="button" class="sbc-showcase-pcard__wishlist js-toggle-wishlist" data-id="meetion-mk008-pro"
-                aria-label="Add to Wishlist">
+        <div class="sbc-cat-cards-grid">
+          <!-- Card 1: Wi-Fi Routers -->
+          <a href="category.html?c=routers-wifi" class="sbc-cat-card">
+            <div class="sbc-cat-card__media">
+              <img src="assets/img/home/cat_wifi_routers.jpg" alt="Wi-Fi Routers" loading="lazy">
+            </div>
+            <div class="sbc-cat-card__bar">
+              <div class="sbc-cat-card__icon">
                 <svg class="sbc-icon sbc-icon--sm" aria-hidden="true">
-                  <use href="#icon-heart"></use>
+                  <use href="#icon-wifi"></use>
                 </svg>
-              </button>
+              </div>
+              <div class="sbc-cat-card__info">
+                <h3 class="sbc-cat-card__title" data-i18n="cat.wifiTitle">Wi-Fi Routers</h3>
+                <span class="sbc-cat-card__desc" data-i18n="cat.wifiDesc">Home &amp; Business Routers</span>
+              </div>
+              <div class="sbc-cat-card__arrow" aria-hidden="true">
+                <svg class="sbc-icon sbc-icon--xs">
+                  <use href="#icon-arrow-right"></use>
+                </svg>
+              </div>
             </div>
-            <a href="product.html?id=meetion-mk008-pro" class="sbc-showcase-pcard__imglink">
-              <img src="assets/img/products/meetion-mk008-pro.jpg"
-                alt="Meetion MT-MK008 Pro Optical RGB Hot-Swap Keyboard" loading="lazy">
-            </a>
-            <div class="sbc-showcase-pcard__meta">
-              <span class="sbc-showcase-pcard__brand">MEETION</span>
-              <h3 class="sbc-showcase-pcard__title">
-                <a href="product.html?id=meetion-mk008-pro">Meetion MT-MK008 Pro Optical RGB Hot-Swap Keyboard</a>
-              </h3>
-              <div class="sbc-showcase-pcard__price">৳ 2,850</div>
-            </div>
-            <button type="button" class="sbc-showcase-pcard__cartbtn js-add-cart" data-id="meetion-mk008-pro">
-              <svg class="sbc-icon sbc-icon--sm" aria-hidden="true">
-                <use href="#icon-shopping-cart"></use>
-              </svg>
-              <span>Add to Cart</span>
-            </button>
-          </div>
+          </a>
 
-          <!-- Product 2: BTM032R -->
-          <div class="sbc-showcase-pcard">
-            <div class="sbc-showcase-pcard__top">
-              <span class="sbc-showcase-pcard__badge sbc-showcase-pcard__badge--toprated">Rechargeable</span>
-              <button type="button" class="sbc-showcase-pcard__wishlist js-toggle-wishlist" data-id="meetion-btm032r"
-                aria-label="Add to Wishlist">
+          <!-- Card 2: Network Switches -->
+          <a href="category.html?c=switches" class="sbc-cat-card">
+            <div class="sbc-cat-card__media">
+              <img src="assets/img/home/cat_network_switches.jpg" alt="Network Switches" loading="lazy">
+            </div>
+            <div class="sbc-cat-card__bar">
+              <div class="sbc-cat-card__icon">
                 <svg class="sbc-icon sbc-icon--sm" aria-hidden="true">
-                  <use href="#icon-heart"></use>
+                  <use href="#icon-server"></use>
                 </svg>
-              </button>
+              </div>
+              <div class="sbc-cat-card__info">
+                <h3 class="sbc-cat-card__title" data-i18n="cat.switchesTitle">Network Switches</h3>
+                <span class="sbc-cat-card__desc" data-i18n="cat.switchesDesc">Managed &amp; Unmanaged Switches</span>
+              </div>
+              <div class="sbc-cat-card__arrow" aria-hidden="true">
+                <svg class="sbc-icon sbc-icon--xs">
+                  <use href="#icon-arrow-right"></use>
+                </svg>
+              </div>
             </div>
-            <a href="product.html?id=meetion-btm032r" class="sbc-showcase-pcard__imglink">
-              <img src="assets/img/products/meetion-btm032r.jpg" alt="Meetion BTM032R Dual-Mode Silent Wireless Mouse"
-                loading="lazy">
-            </a>
-            <div class="sbc-showcase-pcard__meta">
-              <span class="sbc-showcase-pcard__brand">MEETION</span>
-              <h3 class="sbc-showcase-pcard__title">
-                <a href="product.html?id=meetion-btm032r">Meetion BTM032R Dual-Mode Silent Wireless Mouse</a>
-              </h3>
-              <div class="sbc-showcase-pcard__price">৳ 1,190</div>
-            </div>
-            <button type="button" class="sbc-showcase-pcard__cartbtn js-add-cart" data-id="meetion-btm032r">
-              <svg class="sbc-icon sbc-icon--sm" aria-hidden="true">
-                <use href="#icon-shopping-cart"></use>
-              </svg>
-              <span>Add to Cart</span>
-            </button>
-          </div>
+          </a>
 
-          <!-- Product 3: Vibekey B68 -->
-          <div class="sbc-showcase-pcard">
-            <div class="sbc-showcase-pcard__top">
-              <span class="sbc-showcase-pcard__badge sbc-showcase-pcard__badge--toprated">Tri-Mode</span>
-              <button type="button" class="sbc-showcase-pcard__wishlist js-toggle-wishlist"
-                data-id="meetion-vibekey-b68" aria-label="Add to Wishlist">
+          <!-- Card 3: Fiber Optic -->
+          <a href="category.html?c=fiber-pon" class="sbc-cat-card">
+            <div class="sbc-cat-card__media">
+              <img src="assets/img/home/cat_fiber_optic.jpg" alt="Fiber Optic" loading="lazy">
+            </div>
+            <div class="sbc-cat-card__bar">
+              <div class="sbc-cat-card__icon">
                 <svg class="sbc-icon sbc-icon--sm" aria-hidden="true">
-                  <use href="#icon-heart"></use>
+                  <use href="#icon-tool"></use>
                 </svg>
-              </button>
+              </div>
+              <div class="sbc-cat-card__info">
+                <h3 class="sbc-cat-card__title" data-i18n="cat.fiberTitle">Fiber Optic</h3>
+                <span class="sbc-cat-card__desc" data-i18n="cat.fiberDesc">Fiber Cable &amp; Accessories</span>
+              </div>
+              <div class="sbc-cat-card__arrow" aria-hidden="true">
+                <svg class="sbc-icon sbc-icon--xs">
+                  <use href="#icon-arrow-right"></use>
+                </svg>
+              </div>
             </div>
-            <a href="product.html?id=meetion-vibekey-b68" class="sbc-showcase-pcard__imglink">
-              <img src="assets/img/products/meetion-vibekey-b68.webp" alt="Meetion Vibekey B68 68% Wireless Keyboard"
-                loading="lazy">
-            </a>
-            <div class="sbc-showcase-pcard__meta">
-              <span class="sbc-showcase-pcard__brand">MEETION</span>
-              <h3 class="sbc-showcase-pcard__title">
-                <a href="product.html?id=meetion-vibekey-b68">Meetion Vibekey B68 68% Wireless Gasket Keyboard</a>
-              </h3>
-              <div class="sbc-showcase-pcard__price">৳ 3,450</div>
-            </div>
-            <button type="button" class="sbc-showcase-pcard__cartbtn js-add-cart" data-id="meetion-vibekey-b68">
-              <svg class="sbc-icon sbc-icon--sm" aria-hidden="true">
-                <use href="#icon-shopping-cart"></use>
-              </svg>
-              <span>Add to Cart</span>
-            </button>
-          </div>
+          </a>
 
-          <!-- Product 4: iKey C210 -->
-          <div class="sbc-showcase-pcard">
-            <div class="sbc-showcase-pcard__top sbc-showcase-pcard__top--rightonly">
-              <button type="button" class="sbc-showcase-pcard__wishlist js-toggle-wishlist" data-id="meetion-ikey-c210"
-                aria-label="Add to Wishlist">
+          <!-- Card 4: UPS & Power -->
+          <a href="category.html?c=power-backup" class="sbc-cat-card">
+            <div class="sbc-cat-card__media">
+              <img src="assets/img/home/cat_ups_power.jpg" alt="UPS & Power" loading="lazy">
+            </div>
+            <div class="sbc-cat-card__bar">
+              <div class="sbc-cat-card__icon">
                 <svg class="sbc-icon sbc-icon--sm" aria-hidden="true">
-                  <use href="#icon-heart"></use>
+                  <use href="#icon-zap"></use>
                 </svg>
-              </button>
-            </div>
-            <a href="product.html?id=meetion-ikey-c210" class="sbc-showcase-pcard__imglink">
-              <img src="assets/img/products/meetion-ikey-c210.webp" alt="Meetion iKey C210 Ultra-Thin Wireless Combo"
-                loading="lazy">
-            </a>
-            <div class="sbc-showcase-pcard__meta">
-              <span class="sbc-showcase-pcard__brand">MEETION</span>
-              <h3 class="sbc-showcase-pcard__title">
-                <a href="product.html?id=meetion-ikey-c210">Meetion iKey C210 Ultra-Thin Wireless Combo</a>
-              </h3>
-              <div class="sbc-showcase-pcard__price">৳ 1,250</div>
-            </div>
-            <button type="button" class="sbc-showcase-pcard__cartbtn js-add-cart" data-id="meetion-ikey-c210">
-              <svg class="sbc-icon sbc-icon--sm" aria-hidden="true">
-                <use href="#icon-shopping-cart"></use>
-              </svg>
-              <span>Add to Cart</span>
-            </button>
-          </div>
-
-          <!-- Product 5: HP022 -->
-          <div class="sbc-showcase-pcard">
-            <div class="sbc-showcase-pcard__top">
-              <span class="sbc-showcase-pcard__badge sbc-showcase-pcard__badge--toprated">7.1 Audio</span>
-              <button type="button" class="sbc-showcase-pcard__wishlist js-toggle-wishlist" data-id="meetion-hp022"
-                aria-label="Add to Wishlist">
-                <svg class="sbc-icon sbc-icon--sm" aria-hidden="true">
-                  <use href="#icon-heart"></use>
+              </div>
+              <div class="sbc-cat-card__info">
+                <h3 class="sbc-cat-card__title" data-i18n="cat.upsTitle">UPS &amp; Power</h3>
+                <span class="sbc-cat-card__desc" data-i18n="cat.upsDesc">Backup Power Solutions</span>
+              </div>
+              <div class="sbc-cat-card__arrow" aria-hidden="true">
+                <svg class="sbc-icon sbc-icon--xs">
+                  <use href="#icon-arrow-right"></use>
                 </svg>
-              </button>
+              </div>
             </div>
-            <a href="product.html?id=meetion-hp022" class="sbc-showcase-pcard__imglink">
-              <img src="assets/img/products/meetion-hp022.jpg" alt="Meetion MT-HP022 7.1 Noise-Cancelling Headset"
-                loading="lazy">
-            </a>
-            <div class="sbc-showcase-pcard__meta">
-              <span class="sbc-showcase-pcard__brand">MEETION</span>
-              <h3 class="sbc-showcase-pcard__title">
-                <a href="product.html?id=meetion-hp022">Meetion MT-HP022 7.1 Noise-Cancelling Headset</a>
-              </h3>
-              <div class="sbc-showcase-pcard__price">৳ 2,150</div>
-            </div>
-            <button type="button" class="sbc-showcase-pcard__cartbtn js-add-cart" data-id="meetion-hp022">
-              <svg class="sbc-icon sbc-icon--sm" aria-hidden="true">
-                <use href="#icon-shopping-cart"></use>
-              </svg>
-              <span>Add to Cart</span>
-            </button>
-          </div>
-
-          <!-- Product 6: BTM012 Dual-Mode Wireless Mouse -->
-          <div class="sbc-showcase-pcard">
-            <div class="sbc-showcase-pcard__top">
-              <span class="sbc-showcase-pcard__badge sbc-showcase-pcard__badge--toprated">Ergonomic</span>
-              <button type="button" class="sbc-showcase-pcard__wishlist js-toggle-wishlist" data-id="meetion-btm012"
-                aria-label="Add to Wishlist">
-                <svg class="sbc-icon sbc-icon--sm" aria-hidden="true">
-                  <use href="#icon-heart"></use>
-                </svg>
-              </button>
-            </div>
-            <a href="product.html?id=meetion-btm012" class="sbc-showcase-pcard__imglink">
-              <img src="assets/img/products/meetion-btm012.jpg" alt="Meetion BTM012 Dual-Mode Ergonomic Wireless Mouse"
-                loading="lazy">
-            </a>
-            <div class="sbc-showcase-pcard__meta">
-              <span class="sbc-showcase-pcard__brand">MEETION</span>
-              <h3 class="sbc-showcase-pcard__title">
-                <a href="product.html?id=meetion-btm012">Meetion BTM012 Dual-Mode Ergonomic Wireless Mouse</a>
-              </h3>
-              <div class="sbc-showcase-pcard__price">৳ 1,450</div>
-            </div>
-            <button type="button" class="sbc-showcase-pcard__cartbtn js-add-cart" data-id="meetion-btm012">
-              <svg class="sbc-icon sbc-icon--sm" aria-hidden="true">
-                <use href="#icon-shopping-cart"></use>
-              </svg>
-              <span>Add to Cart</span>
-            </button>
-          </div>
-
-          <!-- Product 7: MT-SP2011 RGB Gaming Speakers -->
-          <div class="sbc-showcase-pcard">
-            <div class="sbc-showcase-pcard__top">
-              <span class="sbc-showcase-pcard__badge sbc-showcase-pcard__badge--bestseller">RGB Rainbow</span>
-              <button type="button" class="sbc-showcase-pcard__wishlist js-toggle-wishlist" data-id="meetion-sp2011"
-                aria-label="Add to Wishlist">
-                <svg class="sbc-icon sbc-icon--sm" aria-hidden="true">
-                  <use href="#icon-heart"></use>
-                </svg>
-              </button>
-            </div>
-            <a href="product.html?id=meetion-sp2011" class="sbc-showcase-pcard__imglink">
-              <img src="assets/img/products/meetion-sp2011.webp" alt="Meetion MT-SP2011 Gaming Stereo Desktop Speakers"
-                loading="lazy">
-            </a>
-            <div class="sbc-showcase-pcard__meta">
-              <span class="sbc-showcase-pcard__brand">MEETION</span>
-              <h3 class="sbc-showcase-pcard__title">
-                <a href="product.html?id=meetion-sp2011">Meetion MT-SP2011 Gaming Stereo Desktop Speakers</a>
-              </h3>
-              <div class="sbc-showcase-pcard__price">৳ 1,450</div>
-            </div>
-            <button type="button" class="sbc-showcase-pcard__cartbtn js-add-cart" data-id="meetion-sp2011">
-              <svg class="sbc-icon sbc-icon--sm" aria-hidden="true">
-                <use href="#icon-shopping-cart"></use>
-              </svg>
-              <span>Add to Cart</span>
-            </button>
-          </div>
-
-          <!-- Product 8: SP2010 Multimedia Desktop Speakers -->
-          <div class="sbc-showcase-pcard">
-            <div class="sbc-showcase-pcard__top">
-              <span class="sbc-showcase-pcard__badge sbc-showcase-pcard__badge--toprated">2.0 Stereo</span>
-              <button type="button" class="sbc-showcase-pcard__wishlist js-toggle-wishlist" data-id="meetion-sp2010"
-                aria-label="Add to Wishlist">
-                <svg class="sbc-icon sbc-icon--sm" aria-hidden="true">
-                  <use href="#icon-heart"></use>
-                </svg>
-              </button>
-            </div>
-            <a href="product.html?id=meetion-sp2010" class="sbc-showcase-pcard__imglink">
-              <img src="assets/img/products/meetion-sp2010.webp"
-                alt="Meetion SP2010 2.0 Office Desktop Multimedia Speakers" loading="lazy">
-            </a>
-            <div class="sbc-showcase-pcard__meta">
-              <span class="sbc-showcase-pcard__brand">MEETION</span>
-              <h3 class="sbc-showcase-pcard__title">
-                <a href="product.html?id=meetion-sp2010">Meetion SP2010 2.0 Office Desktop Multimedia Speakers</a>
-              </h3>
-              <div class="sbc-showcase-pcard__price">৳ 1,150</div>
-            </div>
-            <button type="button" class="sbc-showcase-pcard__cartbtn js-add-cart" data-id="meetion-sp2010">
-              <svg class="sbc-icon sbc-icon--sm" aria-hidden="true">
-                <use href="#icon-shopping-cart"></use>
-              </svg>
-              <span>Add to Cart</span>
-            </button>
-          </div>
-
-          <!-- Product 9: MT-U002 RGB Headset Stand -->
-          <div class="sbc-showcase-pcard">
-            <div class="sbc-showcase-pcard__top">
-              <span class="sbc-showcase-pcard__badge sbc-showcase-pcard__badge--toprated">RGB Stand</span>
-              <button type="button" class="sbc-showcase-pcard__wishlist js-toggle-wishlist" data-id="meetion-u002"
-                aria-label="Add to Wishlist">
-                <svg class="sbc-icon sbc-icon--sm" aria-hidden="true">
-                  <use href="#icon-heart"></use>
-                </svg>
-              </button>
-            </div>
-            <a href="product.html?id=meetion-u002" class="sbc-showcase-pcard__imglink">
-              <img src="assets/img/products/meetion-u002.png" alt="Meetion MT-U002 RGB Stand for Gaming Headsets"
-                loading="lazy">
-            </a>
-            <div class="sbc-showcase-pcard__meta">
-              <span class="sbc-showcase-pcard__brand">MEETION</span>
-              <h3 class="sbc-showcase-pcard__title">
-                <a href="product.html?id=meetion-u002">Meetion MT-U002 RGB Stand for Gaming Headsets</a>
-              </h3>
-              <div class="sbc-showcase-pcard__price">৳ 1,250</div>
-            </div>
-            <button type="button" class="sbc-showcase-pcard__cartbtn js-add-cart" data-id="meetion-u002">
-              <svg class="sbc-icon sbc-icon--sm" aria-hidden="true">
-                <use href="#icon-shopping-cart"></use>
-              </svg>
-              <span>Add to Cart</span>
-            </button>
-          </div>
-
-          <!-- Product 10: MT-H390 Flexible Conference Microphone -->
-          <div class="sbc-showcase-pcard">
-            <div class="sbc-showcase-pcard__top">
-              <span class="sbc-showcase-pcard__badge sbc-showcase-pcard__badge--toprated">HD Voice</span>
-              <button type="button" class="sbc-showcase-pcard__wishlist js-toggle-wishlist" data-id="meetion-h390"
-                aria-label="Add to Wishlist">
-                <svg class="sbc-icon sbc-icon--sm" aria-hidden="true">
-                  <use href="#icon-heart"></use>
-                </svg>
-              </button>
-            </div>
-            <a href="product.html?id=meetion-h390" class="sbc-showcase-pcard__imglink">
-              <img src="assets/img/products/meetion-h390.png" alt="Meetion MT-H390 High-Sensitivity Flexible Microphone"
-                loading="lazy">
-            </a>
-            <div class="sbc-showcase-pcard__meta">
-              <span class="sbc-showcase-pcard__brand">MEETION</span>
-              <h3 class="sbc-showcase-pcard__title">
-                <a href="product.html?id=meetion-h390">Meetion MT-H390 High-Sensitivity Flexible Microphone</a>
-              </h3>
-              <div class="sbc-showcase-pcard__price">৳ 850</div>
-            </div>
-            <button type="button" class="sbc-showcase-pcard__cartbtn js-add-cart" data-id="meetion-h390">
-              <svg class="sbc-icon sbc-icon--sm" aria-hidden="true">
-                <use href="#icon-shopping-cart"></use>
-              </svg>
-              <span>Add to Cart</span>
-            </button>
-          </div>
+          </a>
         </div>
       </div>
     </section>
-
-    <!-- =====================================================================
+<!-- =====================================================================
          SECTION 3: ENTERPRISE NETWORK PLANNING ARCHITECTURE (EXECUTIVE REDESIGN)
          ===================================================================== -->
     <section class="sbc-plan-section" aria-labelledby="plan-heading">
@@ -2919,12 +2920,12 @@
             <div class="sbc-plan-box__header">
               <div class="sbc-plan-status-pill">
                 <span class="sbc-plan-status-pill__pulse"></span>
-                <span>FREE TURNKEY ARCHITECTURE &amp; SIZING ADVICE</span>
+                <span data-i18n="home.planPill">FREE TURNKEY ARCHITECTURE &amp; SIZING ADVICE</span>
               </div>
               <h2 id="plan-heading" class="sbc-plan-box__title">
-                Build Your Custom <span class="sbc-plan-box__title-accent">Enterprise Network Plan</span>
+                <span data-i18n="home.planTitle">Build Your Custom</span> <span class="sbc-plan-box__title-accent" data-i18n="home.planTitleAccent">Enterprise Network Plan</span>
               </h2>
-              <p class="sbc-plan-box__desc">
+              <p class="sbc-plan-box__desc" data-i18n="home.planDesc">
                 From high-density corporate Wi-Fi 7 to carrier-grade FTTH distribution and PoE security backbones, our
                 certified Cisco &amp; Tenda engineers design turnkey solutions with verified equipment lists and
                 tender-ready BOMs.
@@ -2934,13 +2935,13 @@
             <div class="sbc-plan-box__actions-wrap">
               <div class="sbc-plan-box__actions">
                 <a href="configurator.html" class="sbc-plan-btn sbc-plan-btn--primary">
-                  <span>Start Network Configurator</span>
+                  <span data-i18n="home.planCta">Start Network Configurator</span>
                   <svg class="sbc-icon sbc-icon--xs" aria-hidden="true">
                     <use href="#icon-arrow-right"></use>
                   </svg>
                 </a>
                 <a href="quote.html" class="sbc-plan-btn sbc-plan-btn--secondary">
-                  <span>Request Corporate RFQ</span>
+                  <span data-i18n="home.planQuote">Request Corporate RFQ</span>
                   <svg class="sbc-icon sbc-icon--xs" aria-hidden="true">
                     <use href="#icon-file-text"></use>
                   </svg>
@@ -2974,69 +2975,69 @@
             <!-- Step 1 -->
             <div class="sbc-plan-card">
               <div class="sbc-plan-card__header">
-                <span class="sbc-plan-card__num">01</span>
+                <span class="sbc-plan-card__num" data-i18n="flow.step1Num">01</span>
                 <div class="sbc-plan-card__icon-wrap">
                   <svg class="sbc-icon sbc-icon--md" aria-hidden="true">
                     <use href="#icon-sliders"></use>
                   </svg>
                 </div>
               </div>
-              <h3 class="sbc-plan-card__title">Define Scale &amp; Needs</h3>
-              <p class="sbc-plan-card__desc">
+              <h3 class="sbc-plan-card__title" data-i18n="flow.step1Title">Define Scale &amp; Needs</h3>
+              <p class="sbc-plan-card__desc" data-i18n="flow.step1Desc">
                 Select your deployment tier — SMB office, corporate campus, ISP substation, or surveillance topology.
               </p>
-              <div class="sbc-plan-card__tag">User Capacity &amp; Bandwidth</div>
+              <div class="sbc-plan-card__tag" data-i18n="flow.step1Tag">User Capacity &amp; Bandwidth</div>
             </div>
 
             <!-- Step 2 -->
             <div class="sbc-plan-card">
               <div class="sbc-plan-card__header">
-                <span class="sbc-plan-card__num">02</span>
+                <span class="sbc-plan-card__num" data-i18n="flow.step2Num">02</span>
                 <div class="sbc-plan-card__icon-wrap">
                   <svg class="sbc-icon sbc-icon--md" aria-hidden="true">
                     <use href="#icon-cpu"></use>
                   </svg>
                 </div>
               </div>
-              <h3 class="sbc-plan-card__title">Automated Sizing</h3>
-              <p class="sbc-plan-card__desc">
+              <h3 class="sbc-plan-card__title" data-i18n="flow.step2Title">Automated Sizing</h3>
+              <p class="sbc-plan-card__desc" data-i18n="flow.step2Desc">
                 Automated matching of core routers, PoE+ switch ports, and Wi-Fi 7 access points.
               </p>
-              <div class="sbc-plan-card__tag">Zero Port Bottlenecks</div>
+              <div class="sbc-plan-card__tag" data-i18n="flow.step2Tag">Zero Port Bottlenecks</div>
             </div>
 
             <!-- Step 3 -->
             <div class="sbc-plan-card">
               <div class="sbc-plan-card__header">
-                <span class="sbc-plan-card__num">03</span>
+                <span class="sbc-plan-card__num" data-i18n="flow.step3Num">03</span>
                 <div class="sbc-plan-card__icon-wrap">
                   <svg class="sbc-icon sbc-icon--md" aria-hidden="true">
                     <use href="#icon-layers"></use>
                   </svg>
                 </div>
               </div>
-              <h3 class="sbc-plan-card__title">Topology &amp; Pricing</h3>
-              <p class="sbc-plan-card__desc">
+              <h3 class="sbc-plan-card__title" data-i18n="flow.step3Title">Topology &amp; Pricing</h3>
+              <p class="sbc-plan-card__desc" data-i18n="flow.step3Desc">
                 Review dynamic SVG architecture diagram with transparent distributor bill of materials.
               </p>
-              <div class="sbc-plan-card__tag">Tender-Ready Quotation</div>
+              <div class="sbc-plan-card__tag" data-i18n="flow.step3Tag">Tender-Ready Quotation</div>
             </div>
 
             <!-- Step 4 -->
             <div class="sbc-plan-card">
               <div class="sbc-plan-card__header">
-                <span class="sbc-plan-card__num">04</span>
+                <span class="sbc-plan-card__num" data-i18n="flow.step4Num">04</span>
                 <div class="sbc-plan-card__icon-wrap">
                   <svg class="sbc-icon sbc-icon--md" aria-hidden="true">
                     <use href="#icon-truck"></use>
                   </svg>
                 </div>
               </div>
-              <h3 class="sbc-plan-card__title">Nationwide Delivery</h3>
-              <p class="sbc-plan-card__desc">
+              <h3 class="sbc-plan-card__title" data-i18n="flow.step4Title">Nationwide Delivery</h3>
+              <p class="sbc-plan-card__desc" data-i18n="flow.step4Desc">
                 Direct dispatch from Multiplan Center central warehouse with official distributor warranty.
               </p>
-              <div class="sbc-plan-card__tag">All 64 Districts Supported</div>
+              <div class="sbc-plan-card__tag" data-i18n="flow.step4Tag">All 64 Districts Supported</div>
             </div>
           </div>
         </div>
@@ -3052,12 +3053,12 @@
           <div class="sbc-auth-brands-info">
             <div class="sbc-sec-tag">
               <span class="sbc-sec-tag__dash">―</span>
-              <span class="sbc-sec-tag__text">OFFICIAL BRAND PARTNERS</span>
+              <span class="sbc-sec-tag__text" data-i18n="brands.tag">OFFICIAL BRAND PARTNERS</span>
             </div>
-            <h2 id="auth-brands-heading" class="sbc-auth-brands-title">
+            <h2 id="auth-brands-heading" class="sbc-auth-brands-title" data-i18n="brands.heading">
               Trusted Brands. Genuine Hardware.
             </h2>
-            <p class="sbc-auth-brands-desc">
+            <p class="sbc-auth-brands-desc" data-i18n="brands.sub">
               Direct supplier and technology partner for leading networking and IT hardware brands in Bangladesh.
             </p>
           </div>
@@ -3068,7 +3069,7 @@
               <div class="sbc-auth-brand-box__logo">
                 <img src="assets/brand image/292026613.png" alt="Tenda" loading="lazy">
               </div>
-              <span class="sbc-auth-brand-box__label">Official Brand Partner</span>
+              <span class="sbc-auth-brand-box__label" data-i18n="brands.officialPartner">Official Brand Partner</span>
             </a>
 
             <!-- Meetion -->
@@ -3076,7 +3077,7 @@
               <div class="sbc-auth-brand-box__logo">
                 <img src="assets/brand image/924112071.png" alt="Meetion" loading="lazy">
               </div>
-              <span class="sbc-auth-brand-box__label">Official Brand Partner</span>
+              <span class="sbc-auth-brand-box__label" data-i18n="brands.officialPartner">Official Brand Partner</span>
             </a>
 
             <!-- Cisco -->
@@ -3084,7 +3085,7 @@
               <div class="sbc-auth-brand-box__logo">
                 <img src="assets/brand image/1202929252.png" alt="Cisco" loading="lazy">
               </div>
-              <span class="sbc-auth-brand-box__label">Enterprise Hardware Partner</span>
+              <span class="sbc-auth-brand-box__label" data-i18n="brands.enterprisePartner">Enterprise Hardware Partner</span>
             </a>
           </div>
         </div>
@@ -3105,8 +3106,8 @@
               </svg>
             </div>
             <div class="sbc-trust-col__content">
-              <h4 class="sbc-trust-col__title">100% Genuine Products</h4>
-              <p class="sbc-trust-col__desc">Get original hardware with verified warranty and technical support.</p>
+              <h4 class="sbc-trust-col__title" data-i18n="trust.genuineTitle">100% Genuine Products</h4>
+              <p class="sbc-trust-col__desc" data-i18n="trust.genuineDesc">Get original hardware with verified warranty and technical support.</p>
             </div>
           </div>
 
@@ -3121,8 +3122,8 @@
               </svg>
             </div>
             <div class="sbc-trust-col__content">
-              <h4 class="sbc-trust-col__title">Expert Technical Support</h4>
-              <p class="sbc-trust-col__desc">Our team is always ready to help you with the right solution.</p>
+              <h4 class="sbc-trust-col__title" data-i18n="trust.supportTitle">Expert Technical Support</h4>
+              <p class="sbc-trust-col__desc" data-i18n="trust.supportDesc">Our team is always ready to help you with the right solution.</p>
             </div>
           </div>
 
@@ -3137,8 +3138,8 @@
               </svg>
             </div>
             <div class="sbc-trust-col__content">
-              <h4 class="sbc-trust-col__title">Nationwide Delivery</h4>
-              <p class="sbc-trust-col__desc">Fast, safe and reliable delivery across Bangladesh.</p>
+              <h4 class="sbc-trust-col__title" data-i18n="trust.deliveryTitle">Nationwide Delivery</h4>
+              <p class="sbc-trust-col__desc" data-i18n="trust.deliveryDesc">Fast, safe and reliable delivery across Bangladesh.</p>
             </div>
           </div>
         </div>
@@ -3155,15 +3156,15 @@
             <img src="assets/img/home/b2b_handshake.jpg" alt="B2B Dealer Partnership Handshake" loading="lazy">
           </div>
           <div class="sbc-dealer-banner__content">
-            <span class="sbc-dealer-banner__badge">B2B DEALER NETWORK</span>
-            <h3 class="sbc-dealer-banner__title">Grow Together with SBC</h3>
-            <p class="sbc-dealer-banner__desc">
+            <span class="sbc-dealer-banner__badge" data-i18n="dealer.badge">B2B DEALER NETWORK</span>
+            <h3 class="sbc-dealer-banner__title" data-i18n="dealer.title">Grow Together with SBC</h3>
+            <p class="sbc-dealer-banner__desc" data-i18n="dealer.desc">
               Become our dealer and get exclusive benefits, best pricing and dedicated support for your business.
             </p>
           </div>
           <div class="sbc-dealer-banner__action">
             <a href="dealer/register.html" class="sbc-dealer-banner__btn">
-              <span>Join Dealer Program</span>
+              <span data-i18n="dealer.joinBtn">Join Dealer Program</span>
               <svg class="sbc-icon sbc-icon--xs" aria-hidden="true">
                 <use href="#icon-arrow-right"></use>
               </svg>
@@ -3182,12 +3183,12 @@
           <div>
             <div class="sbc-sec-tag">
               <span class="sbc-sec-tag__dash">―</span>
-              <span class="sbc-sec-tag__text">TECHNICAL GUIDES</span>
+              <span class="sbc-sec-tag__text" data-i18n="guides.tag">TECHNICAL GUIDES</span>
             </div>
-            <h2 id="guides-heading" class="sbc-sec-title">Learn &amp; Grow</h2>
+            <h2 id="guides-heading" class="sbc-sec-title" data-i18n="guides.title">Learn &amp; Grow</h2>
           </div>
           <a href="news.html" class="sbc-sec-viewall">
-            <span>View All Guides</span>
+            <span data-i18n="guides.viewAll">View All Guides</span>
             <svg class="sbc-icon sbc-icon--xs" aria-hidden="true">
               <use href="#icon-arrow-right"></use>
             </svg>
@@ -3271,20 +3272,20 @@
     <section class="sbc-home-conclusion-cta" aria-labelledby="conclusion-cta-title">
       <div class="sbc-home-conclusion-cta__inner">
         <div class="sbc-home-conclusion-cta__content">
-          <span class="sbc-home-conclusion-cta__tag">BANGLADESH'S TRUSTED COMPUTER &amp; NETWORKING DISTRIBUTOR</span>
-          <h2 id="conclusion-cta-title" class="sbc-home-conclusion-cta__title">
+          <span class="sbc-home-conclusion-cta__tag" data-i18n="conclusion.tag">BANGLADESH'S TRUSTED COMPUTER &amp; NETWORKING DISTRIBUTOR</span>
+          <h2 id="conclusion-cta-title" class="sbc-home-conclusion-cta__title" data-i18n="conclusion.title">
             Need Bulk Hardware Procurement or Technical Assistance?
           </h2>
-          <p class="sbc-home-conclusion-cta__desc">
+          <p class="sbc-home-conclusion-cta__desc" data-i18n="conclusion.desc">
             South Bangla Computers delivers 100% genuine ICT hardware, volume wholesale tiers for computer retailers and
             ISPs, and authorized manufacturer warranties across all 64 districts.
           </p>
         </div>
         <div class="sbc-home-conclusion-cta__actions">
-          <a href="shop.html" class="sbc-banner-btn sbc-banner-btn--primary">
+          <a href="shop.html" class="sbc-banner-btn sbc-banner-btn--primary" data-i18n="conclusion.exploreBtn">
             Explore All Products &rarr;
           </a>
-          <a href="quote.html" class="sbc-banner-btn sbc-banner-btn--secondary-blue">
+          <a href="quote.html" class="sbc-banner-btn sbc-banner-btn--secondary-blue" data-i18n="conclusion.quoteBtn">
             Request Commercial Quote
           </a>
         </div>
@@ -3302,7 +3303,7 @@
               <img src="assets/img/logo.png" alt="South Bangla Computers" class="sbc-footer-v2__logo"
                 onerror="this.src='sbc-logo-24-style.png'">
             </div>
-            <p class="sbc-footer-v2__tagline">Networking | IT Equipment | Computer Accessories</p>
+            <p class="sbc-footer-v2__tagline" data-i18n="footer.tagline">Networking | IT Equipment | Computer Accessories</p>
             <div class="sbc-footer-v2__contact-list">
               <a href="tel:+8809639257121" class="sbc-footer-v2__contact-item">
                 <svg class="sbc-icon sbc-icon--sm" aria-hidden="true">
@@ -3320,40 +3321,40 @@
                 <svg class="sbc-icon sbc-icon--sm" aria-hidden="true">
                   <use href="#icon-map-pin"></use>
                 </svg>
-                <span>323, Akram Serenity, Elephant Road, Dhaka-1205</span>
+                <span data-i18n="footer.elephantRoad">323, Akram Serenity, Elephant Road, Dhaka-1205</span>
               </div>
             </div>
           </div>
 
           <!-- Col 2: Quick Links -->
           <div class="sbc-footer-v2__col">
-            <h4 class="sbc-footer-v2__title">Quick Links</h4>
+            <h4 class="sbc-footer-v2__title" data-i18n="footer.quickLinks">Quick Links</h4>
             <ul class="sbc-footer-v2__list">
-              <li><a href="index.html">Home</a></li>
-              <li><a href="shop.html">Shop Catalog</a></li>
-              <li><a href="brand.html">Partner Brands</a></li>
-              <li><a href="configurator.html">Solutions</a></li>
-              <li><a href="about.html">About Us</a></li>
-              <li><a href="contact.html">Contact Us</a></li>
+              <li><a href="index.html" data-i18n="footer.home">Home</a></li>
+              <li><a href="shop.html" data-i18n="footer.shopCatalog">Shop Catalog</a></li>
+              <li><a href="brand.html" data-i18n="footer.partnerBrands">Partner Brands</a></li>
+              <li><a href="configurator.html" data-i18n="footer.solutions">Solutions</a></li>
+              <li><a href="about.html" data-i18n="footer.aboutUs">About Us</a></li>
+              <li><a href="contact.html" data-i18n="footer.contactUs">Contact Us</a></li>
             </ul>
           </div>
 
           <!-- Col 3: Customer Service -->
           <div class="sbc-footer-v2__col">
-            <h4 class="sbc-footer-v2__title">Customer Service</h4>
+            <h4 class="sbc-footer-v2__title" data-i18n="footer.customerService">Customer Service</h4>
             <ul class="sbc-footer-v2__list">
-              <li><a href="support.html">Technical Support</a></li>
-              <li><a href="faq.html">FAQ</a></li>
-              <li><a href="warranty.html">Warranty Policy</a></li>
-              <li><a href="returns.html">Return &amp; Refund</a></li>
-              <li><a href="shipping.html">Delivery &amp; Logistics</a></li>
-              <li><a href="privacy.html">Privacy Policy</a></li>
+              <li><a href="support.html" data-i18n="footer.techSupport">Technical Support</a></li>
+              <li><a href="faq.html" data-i18n="footer.faq">FAQ</a></li>
+              <li><a href="warranty.html" data-i18n="footer.warrantyPolicy">Warranty Policy</a></li>
+              <li><a href="returns.html" data-i18n="footer.returnRefund">Return &amp; Refund</a></li>
+              <li><a href="shipping.html" data-i18n="footer.deliveryLogistics">Delivery &amp; Logistics</a></li>
+              <li><a href="privacy.html" data-i18n="footer.privacyPolicy">Privacy Policy</a></li>
             </ul>
           </div>
 
           <!-- Col 4: Top Brands -->
           <div class="sbc-footer-v2__col">
-            <h4 class="sbc-footer-v2__title">Partner Brands</h4>
+            <h4 class="sbc-footer-v2__title" data-i18n="footer.partnerBrands">Partner Brands</h4>
             <ul class="sbc-footer-v2__list">
               <li><a href="shop.html?b=tenda#shop-catalog">Tenda</a></li>
               <li><a href="shop.html?b=cisco#shop-catalog">Cisco</a></li>
@@ -3366,7 +3367,7 @@
 
           <!-- Col 5: Follow Us -->
           <div class="sbc-footer-v2__col sbc-footer-v2__col--social">
-            <h4 class="sbc-footer-v2__title">Connect With Us</h4>
+            <h4 class="sbc-footer-v2__title" data-i18n="footer.connectWithUs">Connect With Us</h4>
             <div class="sbc-footer-v2__socials">
               <a href="https://www.facebook.com" target="_blank" rel="noopener noreferrer"
                 class="sbc-footer-v2__social-btn" aria-label="Facebook">
@@ -3388,8 +3389,8 @@
               </a>
             </div>
             <div class="sbc-footer-v2__motto">
-              <span>Better Network</span>
-              <span>Brighter Future</span>
+              <span data-i18n="footer.motto1">Better Network</span>
+              <span data-i18n="footer.motto2">Brighter Future</span>
             </div>
           </div>
         </div>
@@ -3398,14 +3399,14 @@
       <!-- Bottom Copyright Bar -->
       <div class="sbc-footer-v2__bottom">
         <div class="l-container sbc-footer-v2__bottom-inner">
-          <p class="sbc-footer-v2__copy">
+          <p class="sbc-footer-v2__copy" data-i18n="footer.copyright">
             &copy; 2026 South Bangla Computers. All rights reserved.
           </p>
           <div class="sbc-footer-v2__legal">
-            <a href="privacy.html">Privacy</a>
-            <a href="terms.html">Terms</a>
-            <a href="returns.html">Return &amp; Refund</a>
-            <a href="sitemap.xml">Sitemap</a>
+            <a href="privacy.html" data-i18n="footer.privacy">Privacy</a>
+            <a href="terms.html" data-i18n="footer.terms">Terms</a>
+            <a href="returns.html" data-i18n="footer.returns">Return &amp; Refund</a>
+            <a href="sitemap.xml" data-i18n="footer.sitemap">Sitemap</a>
           </div>
         </div>
       </div>
@@ -3415,6 +3416,7 @@
 
   <!-- Standard Prototype Scripts -->
   <script defer src="js/config.js"></script>
+  <script defer src="js/i18n/bn.js"></script>
   <script defer src="js/i18n/en.js"></script>
   <script defer src="js/core/util.js"></script>
   <script defer src="js/core/storage.js"></script>
@@ -3449,12 +3451,15 @@
 
       // Render Categories Grid (H4)
       const catGrid = document.getElementById("home-category-grid");
-      if (catGrid && cats.length) {
-        catGrid.innerHTML = cats.map(c => {
-          const count = prods.filter(p => p.category === c.slug).length;
-          return window.SBC.cards.categoryTile(c, count);
-        }).join("");
+      function renderCategories() {
+        if (catGrid && cats.length) {
+          catGrid.innerHTML = cats.map(c => {
+            const count = prods.filter(p => p.category === c.slug).length;
+            return window.SBC.cards.categoryTile(c, count);
+          }).join("");
+        }
       }
+      renderCategories();
 
       // Render Featured Products (H5)
       const featuredGrid = document.getElementById("home-featured-grid");
@@ -3462,14 +3467,24 @@
         function renderFeaturedTab(tabType) {
           let filtered = [];
           if (tabType === "bestSeller") {
-            filtered = prods.filter(p => p.flags && p.flags.bestSeller).slice(0, 8);
+            filtered = prods.filter(p => p.flags && p.flags.bestSeller);
           } else if (tabType === "new") {
-            filtered = prods.filter(p => p.isNew && p.status !== 'discontinued').slice(0, 8);
+            filtered = prods.filter(p => p.isNew && p.status !== 'discontinued');
           } else {
-            filtered = prods.filter(p => p.flags && p.flags.recommended).slice(0, 8);
+            filtered = prods.filter(p => p.flags && p.flags.recommended);
           }
-          if (filtered.length === 0) filtered = prods.slice(0, 8);
-          featuredGrid.innerHTML = filtered.map(p => window.SBC.cards.productCard(p)).join("");
+          if (filtered.length === 0) filtered = prods.slice(0, 16);
+
+          // Priority sorting: Meetion products always come first
+          filtered.sort((a, b) => {
+            const aMeetion = (a.brand || "").toLowerCase() === "meetion";
+            const bMeetion = (b.brand || "").toLowerCase() === "meetion";
+            if (aMeetion && !bMeetion) return -1;
+            if (!aMeetion && bMeetion) return 1;
+            return 0;
+          });
+
+          featuredGrid.innerHTML = filtered.slice(0, 8).map(p => window.SBC.cards.productCard(p)).join("");
         }
         renderFeaturedTab("bestSeller");
 
@@ -3479,6 +3494,14 @@
             btn.classList.add("is-active");
             renderFeaturedTab(btn.dataset.tab);
           });
+        });
+
+        // Dynamic update on language change
+        window.addEventListener("sbc:languageChange", () => {
+          renderCategories();
+          const activeTabBtn = document.querySelector("#home-featured-tabs .sbc-tab-btn.is-active");
+          const currentTab = activeTabBtn ? activeTabBtn.dataset.tab : "bestSeller";
+          renderFeaturedTab(currentTab);
         });
       }
 

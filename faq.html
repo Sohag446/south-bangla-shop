@@ -1,4 +1,4 @@
-﻿<!doctype html>
+<!doctype html>
 <html lang="en">
 <head>
   <meta charset="utf-8">
@@ -56,6 +56,7 @@
 
   <!-- Standard Prototype Scripts -->
   <script defer src="js/config.js"></script>
+  <script defer src="js/i18n/bn.js"></script>
   <script defer src="js/i18n/en.js"></script>
   <script defer src="js/core/util.js"></script>
   <script defer src="js/core/storage.js"></script>
@@ -91,9 +92,11 @@
 
       function renderFaqs() {
         const filtered = allFaqs.filter(f => {
+          const q = (f.question || f.q || "").toLowerCase();
+          const a = (f.answer || f.a || "").toLowerCase();
           if (currentCat !== "all" && f.category !== currentCat) return false;
           if (searchQuery) {
-            const match = f.q.toLowerCase().includes(searchQuery) || f.a.toLowerCase().includes(searchQuery);
+            const match = q.includes(searchQuery) || a.includes(searchQuery);
             if (!match) return false;
           }
           return true;
@@ -109,20 +112,30 @@
           return;
         }
 
-        container.innerHTML = filtered.map((f, idx) => `
+        const isBn = (window.SBC && window.SBC.config && window.SBC.config.LANG === "bn");
+        container.innerHTML = filtered.map((f, idx) => {
+          const qText = (isBn && f.questionBn) ? f.questionBn : (f.question || f.q || "");
+          const aText = (isBn && f.answerBn) ? f.answerBn : (f.answer || f.a || "");
+          const catText = (isBn && f.categoryBn) ? f.categoryBn : (f.category || "");
+          return `
           <div class="sbc-faq-item" style="background:#fff;border:1px solid var(--gray-200);border-radius:var(--r-md);overflow:hidden;">
             <button class="sbc-faq-trigger" style="width:100%;text-align:left;padding:16px 20px;background:none;border:none;cursor:pointer;display:flex;justify-content:space-between;align-items:center;font-size:15px;font-weight:700;color:var(--navy-900);">
-              <span>${util.esc(f.q)}</span>
+              <span>${util ? util.esc(qText) : qText}</span>
               <span class="faq-icon" style="font-size:18px;color:var(--gray-400);transition:transform 0.2s;">+</span>
             </button>
             <div class="sbc-faq-answer" style="display:none;padding:0 20px 16px;font-size:14px;color:var(--c-text-secondary);line-height:1.6;border-top:1px solid var(--gray-100);padding-top:12px;">
-              ${util.esc(f.a)}
+              ${util ? util.esc(aText) : aText}
               <div style="margin-top:8px;">
-                <span class="sbc-badge" style="font-size:10px;">${util.esc(f.category)}</span>
+                <span class="sbc-badge" style="font-size:10px;">${util ? util.esc(catText) : catText}</span>
               </div>
             </div>
           </div>
-        `).join("");
+        `;
+        }).join("");
+
+        if (window.SBC && window.SBC.i18n && typeof window.SBC.i18n.translatePage === "function") {
+          window.SBC.i18n.translatePage();
+        }
 
         container.querySelectorAll(".sbc-faq-trigger").forEach(btn => {
           btn.addEventListener("click", () => {
@@ -163,3 +176,4 @@
   </script>
 </body>
 </html>
+

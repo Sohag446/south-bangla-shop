@@ -407,19 +407,23 @@ window.SBC.shop = (function () {
     }).join("");
 
     const priceFormatted = p.price && p.price.retail ? util.formatBDT(p.price.retail) : "৳ —";
+    const isMeetion = (p.brand || "").toLowerCase() === "meetion";
+    const addCartText = window.SBC && window.SBC.t ? window.SBC.t("card.addToCart", "Add to Cart") : "Add to Cart";
+    const detailsText = window.SBC && window.SBC.t ? window.SBC.t("card.viewDetails", "Details") : "Details";
 
     return `
-      <article class="glam-card" data-product-id="${util.esc(p.id)}">
+      <article class="glam-card ${isMeetion ? 'glam-card--meetion' : ''}" data-product-id="${util.esc(p.id)}" ${isMeetion ? 'style="border-color:rgba(230,0,18,0.25);"' : ''}>
         <div class="glam-card__media">
+          ${isMeetion ? '<span class="sbc-meetion-highlight-pill" style="position:absolute;top:10px;left:10px;z-index:2;background:#e60012;color:#fff;font-size:10.5px;font-weight:800;padding:2px 8px;border-radius:4px;box-shadow:0 2px 6px rgba(230,0,18,0.35);">★ Meetion</span>' : ''}
           <a href="product.html?id=${encodeURIComponent(p.id)}" class="glam-card__img-link" title="${util.esc(p.name)}">
             <img src="${util.esc(resolvedImg)}" alt="${util.esc(p.name)}" loading="lazy" onerror="this.onerror=null;this.src='assets/img/placeholder-product.svg';">
           </a>
           <div class="glam-card__overlay">
             <button type="button" class="glam-card__action-btn js-add-cart-glam" data-id="${util.esc(p.id)}">
-              Add to Cart
+              ${addCartText}
             </button>
             <a href="product.html?id=${encodeURIComponent(p.id)}" class="glam-card__action-btn" style="text-decoration:none;">
-              Details
+              ${detailsText}
             </a>
           </div>
         </div>
@@ -433,10 +437,10 @@ window.SBC.shop = (function () {
         </div>
         <div style="display:flex;align-items:center;justify-content:space-between;">
           <div class="glam-card__dots">${dots}</div>
-          <span class="glam-card__brand-badge">${util.esc(p.brand)}</span>
+          <span class="glam-card__brand-badge" ${isMeetion ? 'style="background:rgba(230,0,18,0.08);color:#e60012;font-weight:800;border:1px solid rgba(230,0,18,0.2);"' : ''}>${isMeetion ? '★ ' : ''}${util.esc(p.brand)}</span>
         </div>
         <button type="button" class="glam-card__mobile-btn js-add-cart-glam" data-id="${util.esc(p.id)}" aria-label="Add ${util.esc(p.name)} to cart">
-          Add to Cart
+          ${addCartText}
         </button>
       </article>
     `;
