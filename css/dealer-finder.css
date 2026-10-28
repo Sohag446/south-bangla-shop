@@ -1,0 +1,642 @@
+/* ==========================================================================
+   South Bangla Computers — Dealer Finder Stylesheet
+   Design Tokens compliant: Ocean Blue (#005883 / #1558D6), Navy (#0B1F3A),
+   Subtle Surfaces, Accessible Form Elements, and Responsive Cards
+   ========================================================================== */
+
+/* ── Full Width Page Banner Theme ── */
+.sbc-page-banner--dealer-finder {
+  background: linear-gradient(135deg, #0B1F3A 0%, #004566 50%, #005883 100%);
+  color: #ffffff;
+  position: relative;
+  overflow: hidden;
+  padding: 44px 0;
+}
+
+.sbc-page-banner--dealer-finder::before {
+  content: "";
+  position: absolute;
+  top: -50%;
+  right: -10%;
+  width: 500px;
+  height: 500px;
+  background: radial-gradient(circle, rgba(255, 255, 255, 0.08) 0%, transparent 70%);
+  border-radius: 50%;
+  pointer-events: none;
+}
+
+/* ── Selected Product Banner Card ── */
+.df-selected-product-card {
+  background: #ffffff;
+  border: 1.5px solid var(--gray-200, #E3E7ED);
+  border-radius: 16px;
+  padding: 20px 24px;
+  margin-bottom: 24px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 20px;
+  box-shadow: 0 2px 10px rgba(11, 31, 58, 0.04);
+  transition: border-color 0.2s ease;
+}
+
+.df-selected-product-card:hover {
+  border-color: var(--blue-600, #1558D6);
+}
+
+.df-product-details-wrap {
+  display: flex;
+  align-items: center;
+  gap: 18px;
+}
+
+.df-product-thumb {
+  width: 80px;
+  height: 80px;
+  border-radius: 12px;
+  background: var(--gray-50, #F7F8FA);
+  border: 1px solid var(--gray-200, #E3E7ED);
+  object-fit: contain;
+  padding: 6px;
+  flex-shrink: 0;
+}
+
+.df-product-badge-row {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  margin-bottom: 6px;
+}
+
+.df-product-pill {
+  font-size: 11px;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+  color: var(--blue-700, #1048B0);
+  background: var(--blue-50, #EAF1FD);
+  padding: 3px 10px;
+  border-radius: 9999px;
+}
+
+.df-product-sku {
+  font-size: 12px;
+  color: var(--gray-500, #6B7685);
+  font-family: var(--font-mono, monospace);
+}
+
+.df-product-title {
+  font-size: 18px;
+  font-weight: 700;
+  color: var(--navy-900, #0B1F3A);
+  margin: 0 0 6px;
+  line-height: 1.3;
+}
+
+.df-product-meta-row {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+  font-size: 13px;
+}
+
+.df-product-price {
+  font-weight: 800;
+  color: var(--navy-900, #0B1F3A);
+  font-size: 16px;
+}
+
+.df-product-stock-tag {
+  display: inline-flex;
+  align-items: center;
+  gap: 4px;
+  color: #15803d;
+  font-weight: 600;
+  font-size: 12.5px;
+}
+
+.df-product-card-actions {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  flex-shrink: 0;
+}
+
+/* ── Geolocation Status Box ── */
+.df-geo-status-box {
+  border-radius: 14px;
+  padding: 16px 20px;
+  margin-bottom: 24px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 16px;
+  flex-wrap: wrap;
+  transition: all 0.25s ease;
+}
+
+.df-geo-status-box--detecting {
+  background: #eff6ff;
+  border: 1.5px solid #bfdbfe;
+  color: #1e40af;
+}
+
+.df-geo-status-box--granted {
+  background: #ecfdf5;
+  border: 1.5px solid #a7f3d0;
+  color: #065f46;
+}
+
+.df-geo-status-box--denied {
+  background: #fffbeb;
+  border: 1.5px solid #fde68a;
+  color: #92400e;
+}
+
+.df-geo-status-content {
+  display: flex;
+  align-items: center;
+  gap: 14px;
+}
+
+.df-geo-status-icon-wrap {
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+}
+
+.df-geo-status-box--detecting .df-geo-status-icon-wrap {
+  background: #dbeafe;
+  color: #2563eb;
+  animation: df-radar-pulse 1.8s infinite ease-in-out;
+}
+
+.df-geo-status-box--granted .df-geo-status-icon-wrap {
+  background: #d1fae5;
+  color: #059669;
+}
+
+.df-geo-status-box--denied .df-geo-status-icon-wrap {
+  background: #fef3c7;
+  color: #d97706;
+}
+
+@keyframes df-radar-pulse {
+  0% { transform: scale(0.95); opacity: 0.7; }
+  50% { transform: scale(1.1); opacity: 1; }
+  100% { transform: scale(0.95); opacity: 0.7; }
+}
+
+.df-geo-status-title {
+  font-size: 14.5px;
+  font-weight: 700;
+  margin: 0 0 2px;
+}
+
+.df-geo-status-desc {
+  font-size: 12.5px;
+  margin: 0;
+  opacity: 0.9;
+}
+
+.df-geo-status-actions {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.df-privacy-notice {
+  font-size: 11.5px;
+  color: var(--gray-500, #6B7685);
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  margin-top: -14px;
+  margin-bottom: 22px;
+  padding: 0 4px;
+}
+
+/* ── Filter & Search Control Panel ── */
+.df-filter-card {
+  background: #ffffff;
+  border: 1px solid var(--gray-200, #E3E7ED);
+  border-radius: 16px;
+  padding: 20px;
+  margin-bottom: 28px;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.03);
+}
+
+.df-filter-grid {
+  display: grid;
+  grid-template-columns: 2fr 1.2fr 1.2fr auto;
+  gap: 14px;
+  align-items: flex-end;
+}
+
+.df-control-group {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+}
+
+.df-control-label {
+  font-size: 12px;
+  font-weight: 700;
+  color: var(--navy-900, #0B1F3A);
+  letter-spacing: 0.2px;
+}
+
+.df-input,
+.df-select {
+  height: 44px;
+  padding: 0 14px;
+  border: 1.5px solid var(--gray-300, #CBD2DC);
+  border-radius: 10px;
+  font-family: inherit;
+  font-size: 13.5px;
+  color: var(--navy-900, #0B1F3A);
+  background-color: #ffffff;
+  outline: none;
+  transition: all 0.15s ease;
+  width: 100%;
+  box-sizing: border-box;
+}
+
+.df-input:focus,
+.df-select:focus {
+  border-color: var(--blue-600, #1558D6);
+  box-shadow: 0 0 0 3px rgba(21, 88, 214, 0.15);
+}
+
+/* ── Results Bar ── */
+.df-results-bar {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 18px;
+  padding-bottom: 12px;
+  border-bottom: 1px solid var(--gray-200, #E3E7ED);
+  flex-wrap: wrap;
+  gap: 10px;
+}
+
+.df-results-count {
+  font-size: 14px;
+  font-weight: 700;
+  color: var(--navy-900, #0B1F3A);
+}
+
+.df-results-tags {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+/* ── Dealer Cards Grid ── */
+.df-dealer-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(340px, 1fr));
+  gap: 22px;
+}
+
+.df-dealer-card {
+  background: #ffffff;
+  border: 1.5px solid var(--gray-200, #E3E7ED);
+  border-radius: 16px;
+  padding: 22px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  transition: all 0.2s cubic-bezier(0.16, 1, 0.3, 1);
+  position: relative;
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.02);
+}
+
+.df-dealer-card:hover {
+  border-color: var(--blue-600, #1558D6);
+  transform: translateY(-3px);
+  box-shadow: 0 10px 24px -4px rgba(11, 31, 58, 0.08);
+}
+
+/* Nearest Outlet Highlight */
+.df-dealer-card--nearest {
+  border: 2px solid #059669;
+  background: linear-gradient(to bottom, #f0fdf4 0%, #ffffff 130px);
+  box-shadow: 0 4px 16px rgba(5, 150, 105, 0.12);
+}
+
+.df-dealer-card--nearest:hover {
+  border-color: #047857;
+  box-shadow: 0 12px 28px -4px rgba(5, 150, 105, 0.18);
+}
+
+/* Test Fixture Style */
+.df-dealer-card--test-fixture {
+  border: 1.5px dashed #d97706;
+  background: #fffbeb;
+}
+
+.df-card-top-badges {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 8px;
+  margin-bottom: 12px;
+  flex-wrap: wrap;
+}
+
+.df-nearest-pill {
+  display: inline-flex;
+  align-items: center;
+  gap: 5px;
+  background: #059669;
+  color: #ffffff;
+  font-size: 11px;
+  font-weight: 700;
+  padding: 3px 10px;
+  border-radius: 9999px;
+  letter-spacing: 0.3px;
+  box-shadow: 0 2px 6px rgba(5, 150, 105, 0.25);
+}
+
+.df-distance-badge {
+  display: inline-flex;
+  align-items: center;
+  gap: 4px;
+  background: #e0f2fe;
+  color: #0369a1;
+  font-size: 12px;
+  font-weight: 700;
+  padding: 3px 9px;
+  border-radius: 9999px;
+}
+
+.df-fixture-pill {
+  display: inline-flex;
+  align-items: center;
+  gap: 4px;
+  background: #fef3c7;
+  color: #92400e;
+  border: 1px solid #fde68a;
+  font-size: 11px;
+  font-weight: 700;
+  padding: 2px 8px;
+  border-radius: 6px;
+}
+
+.df-dealer-name {
+  font-size: 16.5px;
+  font-weight: 700;
+  color: var(--navy-900, #0B1F3A);
+  margin: 0 0 8px;
+  line-height: 1.35;
+}
+
+.df-dealer-status-row {
+  margin-bottom: 12px;
+}
+
+.df-stock-badge {
+  display: inline-flex;
+  align-items: center;
+  gap: 5px;
+  font-size: 12px;
+  font-weight: 700;
+  padding: 4px 10px;
+  border-radius: 9999px;
+}
+
+.df-stock-badge--confirmed {
+  background: #dcfce7;
+  color: #15803d;
+}
+
+.df-stock-badge--check {
+  background: #fef3c7;
+  color: #b45309;
+}
+
+.df-stock-badge--verified-showroom {
+  background: #dbeafe;
+  color: #1d4ed8;
+}
+
+.df-dealer-address-row {
+  display: flex;
+  align-items: flex-start;
+  gap: 8px;
+  font-size: 13px;
+  color: var(--gray-700, #3A4452);
+  line-height: 1.5;
+  margin-bottom: 10px;
+}
+
+.df-dealer-address-row svg {
+  flex-shrink: 0;
+  margin-top: 3px;
+  color: var(--blue-600, #1558D6);
+}
+
+.df-dealer-meta-tags {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  flex-wrap: wrap;
+  margin-bottom: 12px;
+}
+
+.df-area-tag {
+  font-size: 11.5px;
+  font-weight: 600;
+  background: var(--gray-100, #F3F5F8);
+  color: var(--gray-700, #3A4452);
+  padding: 3px 8px;
+  border-radius: 6px;
+}
+
+.df-dealer-hours-row {
+  display: flex;
+  align-items: center;
+  gap: 7px;
+  font-size: 12.5px;
+  color: var(--gray-500, #6B7685);
+  margin-bottom: 12px;
+}
+
+.df-dealer-hours-row svg {
+  color: var(--gray-400, #9ca3af);
+  flex-shrink: 0;
+}
+
+.df-dealer-contact-row {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  margin-bottom: 16px;
+  font-size: 13px;
+}
+
+.df-dealer-phone-link {
+  color: var(--blue-600, #1558D6);
+  font-weight: 700;
+  text-decoration: none;
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  transition: color 0.15s;
+}
+
+.df-dealer-phone-link:hover {
+  color: var(--blue-700, #1048B0);
+  text-decoration: underline;
+}
+
+/* Action Buttons inside Card */
+.df-dealer-actions {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 10px;
+  padding-top: 14px;
+  border-top: 1px solid var(--gray-100, #F3F5F8);
+}
+
+.df-btn {
+  height: 40px;
+  border-radius: 8px;
+  font-size: 13px;
+  font-weight: 700;
+  cursor: pointer;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 6px;
+  text-decoration: none;
+  box-sizing: border-box;
+  transition: all 0.15s ease;
+  font-family: inherit;
+}
+
+.df-btn--primary {
+  background: var(--blue-600, #1558D6);
+  color: #ffffff;
+  border: none;
+}
+
+.df-btn--primary:hover {
+  background: var(--blue-700, #1048B0);
+}
+
+.df-btn--outline {
+  background: #ffffff;
+  color: var(--navy-900, #0B1F3A);
+  border: 1.5px solid var(--gray-300, #CBD2DC);
+}
+
+.df-btn--outline:hover {
+  border-color: var(--blue-600, #1558D6);
+  color: var(--blue-600, #1558D6);
+  background: var(--blue-50, #EAF1FD);
+}
+
+.df-btn--sm {
+  height: 36px;
+  padding: 0 12px;
+  font-size: 12px;
+}
+
+/* ── Empty State ── */
+.df-empty-state {
+  text-align: center;
+  padding: 56px 24px;
+  background: #ffffff;
+  border: 1.5px solid var(--gray-200, #E3E7ED);
+  border-radius: 16px;
+  max-width: 640px;
+  margin: 0 auto;
+}
+
+.df-empty-icon {
+  width: 64px;
+  height: 64px;
+  background: var(--gray-100, #F3F5F8);
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin: 0 auto 16px;
+  color: var(--gray-400, #9ca3af);
+}
+
+.df-empty-title {
+  font-size: 19px;
+  font-weight: 700;
+  color: var(--navy-900, #0B1F3A);
+  margin: 0 0 10px;
+}
+
+.df-empty-desc {
+  font-size: 14px;
+  color: var(--gray-700, #3A4452);
+  line-height: 1.6;
+  max-width: 500px;
+  margin: 0 auto 24px;
+}
+
+.df-empty-actions {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 12px;
+  flex-wrap: wrap;
+}
+
+/* ── Responsive Adaptations ── */
+@media (max-width: 900px) {
+  .df-filter-grid {
+    grid-template-columns: 1fr 1fr;
+  }
+  .df-control-group--search {
+    grid-column: span 2;
+  }
+  .df-control-group--reset {
+    grid-column: span 2;
+  }
+  .df-selected-product-card {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+  .df-product-card-actions {
+    width: 100%;
+    flex-direction: row;
+  }
+  .df-product-card-actions .df-btn {
+    flex: 1;
+  }
+}
+
+@media (max-width: 640px) {
+  .df-filter-grid {
+    grid-template-columns: 1fr;
+  }
+  .df-control-group--search {
+    grid-column: span 1;
+  }
+  .df-control-group--reset {
+    grid-column: span 1;
+  }
+  .df-dealer-grid {
+    grid-template-columns: 1fr;
+  }
+  .df-geo-status-box {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+  .df-geo-status-actions {
+    width: 100%;
+    justify-content: flex-start;
+  }
+}

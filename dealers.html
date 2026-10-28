@@ -1,0 +1,147 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Find Your Nearest Meetion Dealer | South Bangla Computers</title>
+  <meta name="description" content="Find authorized Meetion dealers, retail partners, and South Bangla Computers showrooms across Bangladesh with instant GPS proximity sorting and local warranty verification.">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="css/tokens.css">
+  <link rel="stylesheet" href="css/base.css">
+  <link rel="stylesheet" href="css/layout.css">
+  <link rel="stylesheet" href="css/components.css">
+  <link rel="stylesheet" href="css/dealer-finder.css">
+  <link rel="stylesheet" href="css/print.css" media="print">
+</head>
+<body data-root="" data-page="dealers">
+  <!-- Shared Global Header -->
+  <div id="sbc-header"></div>
+
+  <!-- ========================================================================
+       DEALER FINDER HERO BANNER (Global SBC Consistent Style)
+       ======================================================================== -->
+  <section class="sbc-page-banner sbc-page-banner--dealer-finder" aria-label="Dealer Finder Banner">
+    <div class="sbc-page-banner__inner l-container">
+      <div class="sbc-page-banner__content">
+        <nav class="sbc-page-banner__crumb" aria-label="Breadcrumb">
+          <a href="index.html">Home</a>
+          <span class="sbc-page-banner__crumb-sep">/</span>
+          <a href="shop.html">Shop</a>
+          <span class="sbc-page-banner__crumb-sep">/</span>
+          <span class="sbc-page-banner__crumb-current" id="df-crumb-product">Nearest Dealer</span>
+        </nav>
+        <h1 class="sbc-page-banner__title" id="df-page-heading">
+          <span class="sbc-page-banner__title-line1">Find Your Nearest</span>
+          <span class="sbc-page-banner__title-line2">Meetion Dealer</span>
+        </h1>
+        <p class="sbc-page-banner__desc" id="df-page-subtitle">
+          Find participating retailers near your location and discover where to purchase your selected Meetion product.
+        </p>
+      </div>
+    </div>
+  </section>
+
+  <!-- ========================================================================
+       MAIN DEALER FINDER CONTENT
+       ======================================================================== -->
+  <main id="main-content" class="l-container" style="padding-top: var(--sp-8, 32px); padding-bottom: var(--sp-16, 64px);">
+
+    <!-- Compact Selected Product Section (Populated when navigated from single product page) -->
+    <div id="df-selected-product" class="df-selected-product-card" style="display:none;" aria-label="Selected Product Information">
+      <!-- Populated via js/dealer-finder.js -->
+    </div>
+
+    <!-- Automatic Location Detection Status Banner -->
+    <div id="df-geo-status-box" class="df-geo-status-box df-geo-status-box--detecting" role="region" aria-live="polite" aria-label="Location Status">
+      <!-- Populated via js/dealer-finder.js -->
+    </div>
+
+    <!-- Location Privacy Disclosure -->
+    <div class="df-privacy-notice" aria-label="Location Privacy Notice">
+      <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true">
+        <rect x="3" y="11" width="18" height="11" rx="2" ry="2"></rect>
+        <path d="M7 11V7a5 5 0 0 1 10 0v4"></path>
+      </svg>
+      <span><strong>Location Privacy:</strong> Coordinates are processed locally in your browser to calculate distances. We never store, transmit, or log your precise GPS coordinates.</span>
+    </div>
+
+    <!-- Manual Location & Keyword Filter Controls -->
+    <section class="df-filter-card" aria-label="Dealer Search and Filters">
+      <div class="df-filter-grid">
+        <!-- Search Keyword -->
+        <div class="df-control-group df-control-group--search">
+          <label class="df-control-label" for="df-search-input">Search Dealers &amp; Markets</label>
+          <input type="text" id="df-search-input" class="df-input" placeholder="Search by dealer name, market, road (e.g., Multiplan, IDB, Agrabad)..." aria-label="Search dealers by keyword">
+        </div>
+
+        <!-- Division Filter -->
+        <div class="df-control-group">
+          <label class="df-control-label" for="df-filter-division">Division</label>
+          <select id="df-filter-division" class="df-select" aria-label="Filter dealers by Bangladesh Division">
+            <option value="all">All Divisions (Nationwide)</option>
+          </select>
+        </div>
+
+        <!-- District Filter -->
+        <div class="df-control-group">
+          <label class="df-control-label" for="df-filter-district">District</label>
+          <select id="df-filter-district" class="df-select" disabled aria-label="Filter dealers by Bangladesh District">
+            <option value="all">All Districts</option>
+          </select>
+        </div>
+
+        <!-- Reset Button -->
+        <div class="df-control-group df-control-group--reset">
+          <button type="button" class="df-btn df-btn--outline" id="df-filter-reset" style="height:44px;padding:0 18px;" aria-label="Reset all search filters">
+            Reset Filters
+          </button>
+        </div>
+      </div>
+    </section>
+
+    <!-- Results Status Bar -->
+    <div class="df-results-bar">
+      <div id="df-results-count" class="df-results-count" aria-live="polite">
+        Loading participating dealers…
+      </div>
+    </div>
+
+    <!-- Dealers Cards Grid Container -->
+    <section id="df-dealer-grid" class="df-dealer-grid" aria-label="Matching Dealers List">
+      <!-- Populated via js/dealer-finder.js -->
+    </section>
+  </main>
+
+  <!-- Shared Global Footer -->
+  <div id="sbc-footer"></div>
+  <div id="sbc-toast" role="status" aria-live="polite"></div>
+
+  <!-- Standard Prototype Scripts -->
+  <script defer src="js/config.js"></script>
+  <script defer src="js/i18n/bn.js"></script>
+  <script defer src="js/i18n/en.js"></script>
+  <script defer src="js/core/util.js"></script>
+  <script defer src="js/core/storage.js"></script>
+  <script defer src="data/categories.js"></script>
+  <script defer src="data/brands.js"></script>
+  <script defer src="data/districts.js"></script>
+  <script defer src="data/branches.js"></script>
+  <script defer src="data/shop-products.js"></script>
+  <script defer src="data/products.js"></script>
+  <script defer src="data/dealers.js"></script>
+  <script defer src="js/core/store.js"></script>
+  <script defer src="js/core/ui.js"></script>
+  <script defer src="js/layout.js"></script>
+  <script defer src="js/dealer-finder.js"></script>
+
+  <script defer>
+    window.addEventListener("DOMContentLoaded", function () {
+      if (window.SBC && window.SBC.dealerFinder) {
+        window.SBC.dealerFinder.init();
+      }
+    });
+  </script>
+</body>
+</html>

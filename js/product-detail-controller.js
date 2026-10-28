@@ -398,6 +398,20 @@ window.SBC.pdp = (function () {
       });
     }
 
+    // Find Nearest Dealer Button
+    const findDealerBtn = document.getElementById("pdp-btn-find-dealer");
+    if (findDealerBtn) {
+      findDealerBtn.addEventListener("click", (e) => {
+        e.preventDefault();
+        if (!currentProduct) {
+          window.location.href = util.U("dealers.html");
+          return;
+        }
+        const identifier = currentProduct.slug || currentProduct.id || currentProduct.sku;
+        window.location.href = util.U("dealers.html", { product: identifier });
+      });
+    }
+
     // Wishlist Button
     const wishlistBtn = document.getElementById("pdp-btn-wishlist");
     if (wishlistBtn) {

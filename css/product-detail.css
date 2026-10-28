@@ -447,6 +447,61 @@ body.pdp-page {
   box-shadow: 0 6px 16px rgba(0, 88, 131, 0.24);
 }
 
+/* Find Nearest Dealer Action (Product Level) */
+.pdp-dealer-action-wrap {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 6px;
+  width: 100%;
+  margin-top: 2px;
+}
+
+.pdp-btn-find-dealer {
+  width: 100%;
+  height: 44px;
+  background: #ffffff;
+  color: var(--pdp-primary);
+  border: 1.5px solid var(--pdp-primary);
+  border-radius: var(--pdp-radius-md);
+  font-family: var(--pdp-font);
+  font-size: 13.5px;
+  font-weight: 700;
+  letter-spacing: 0.15px;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  text-decoration: none;
+  box-sizing: border-box;
+  transition: all 0.2s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.pdp-btn-find-dealer:hover {
+  background: var(--pdp-primary-soft);
+  color: var(--pdp-primary-hover);
+  border-color: var(--pdp-primary-hover);
+  transform: translateY(-1px);
+  box-shadow: 0 4px 12px rgba(0, 88, 131, 0.12);
+}
+
+.pdp-btn-find-dealer:active {
+  transform: translateY(0);
+}
+
+.pdp-btn-find-dealer:focus-visible {
+  outline: 2px solid var(--pdp-primary);
+  outline-offset: 2px;
+}
+
+.pdp-dealer-subtext {
+  font-size: 11.5px;
+  color: var(--pdp-text-muted);
+  text-align: center;
+  line-height: 1.4;
+}
+
 /* Service perks bar */
 .pdp-perks-row {
   display: grid;

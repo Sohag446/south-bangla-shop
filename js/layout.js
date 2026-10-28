@@ -482,7 +482,8 @@ window.SBC.layout = (function () {
                   <a href="${util.U('dealer/index.html')}" class="sbc-dropdown-link" role="menuitem">${t('nav.dealers', 'Dealer & Reseller Program')}</a>
                   <a href="${util.U('dealer/login.html')}" class="sbc-dropdown-link" role="menuitem">Dealer Portal Login</a>
                   <div style="border-top:1px solid var(--gray-100);margin:4px 0;"></div>
-                  <a href="${util.U('branches.html')}" class="sbc-dropdown-link" role="menuitem" style="color:var(--c-primary);font-weight:600;">12 Nationwide Service Centers</a>
+                  <a href="${util.U('dealers.html')}" class="sbc-dropdown-link" role="menuitem" style="color:var(--c-primary);font-weight:600;">Find Nearest Dealer &rarr;</a>
+                  <a href="${util.U('branches.html')}" class="sbc-dropdown-link" role="menuitem">12 Nationwide Service Centers</a>
                   <a href="${util.U('support.html')}" class="sbc-dropdown-link" role="menuitem">${t('nav.support', 'Customer Support & RMA Helpdesk')}</a>
                   <a href="${util.U('warranty.html')}" class="sbc-dropdown-link" role="menuitem">${t('common.warranty', 'Warranty Policy & Terms')}</a>
                 </div>
@@ -1099,7 +1100,8 @@ window.SBC.layout = (function () {
               <a href="${util.U('configurator.html')}" class="sbc-accordion__link" style="color:var(--c-primary);font-weight:600;">Network Solution Configurator</a>
               <a href="${util.U('quote.html')}" class="sbc-accordion__link">${t("common.requestQuote", "Commercial Tender & RFP Quote")}</a>
               <a href="${util.U('dealer/index.html')}" class="sbc-accordion__link">${t("nav.dealers", "Dealer & Reseller Program")}</a>
-              <a href="${util.U('branches.html')}" class="sbc-accordion__link" style="color:var(--c-primary);font-weight:600;">12 Service Centers &amp; Branches &rarr;</a>
+              <a href="${util.U('dealers.html')}" class="sbc-accordion__link" style="color:var(--c-primary);font-weight:600;">Find Nearest Dealer &rarr;</a>
+              <a href="${util.U('branches.html')}" class="sbc-accordion__link">12 Service Centers &amp; Branches &rarr;</a>
               <a href="${util.U('support.html')}" class="sbc-accordion__link">${t("nav.support", "Customer Support & RMA")}</a>
               <a href="${util.U('downloads.html')}" class="sbc-accordion__link">Firmware &amp; Drivers</a>
               <a href="${util.U('warranty.html')}" class="sbc-accordion__link">${t("common.warranty", "Warranty Policy & Terms")}</a>
